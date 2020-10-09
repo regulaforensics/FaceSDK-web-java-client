@@ -1,0 +1,19 @@
+{
+  "artifactId": "webclient",
+  "artifactVersion": "5.1.0",
+  "groupId": "com.regula.facerecognition",
+  "library": "okhttp-gson",
+  "useRuntimeException": true,
+  "hideGenerationTimestamp": true,
+  "invokerPackage": "com.regula.facerecognition.webclient",
+  "modelPackage": "com.regula.facerecognition.webclient.gen.model",
+  "apiPackage": "com.regula.facerecognition.webclient.gen.api",
+  "sourceFolder": "src/main/generated",
+  "languageSpecificPrimitives": [
+    "int"
+  ],
+  "typeMappings": {
+    "Integer": "int",
+    "Float": "float"
+  }
+}
