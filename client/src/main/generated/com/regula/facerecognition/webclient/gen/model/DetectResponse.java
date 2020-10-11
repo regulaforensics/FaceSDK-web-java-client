@@ -38,11 +38,11 @@ public class DetectResponse {
 
   public static final String SERIALIZED_NAME_DETECTOR_TYPE = "detectorType";
   @SerializedName(SERIALIZED_NAME_DETECTOR_TYPE)
-  private int detectorType;
+  private Integer detectorType;
 
   public static final String SERIALIZED_NAME_LANDMARKS_TYPE = "landmarksType";
   @SerializedName(SERIALIZED_NAME_LANDMARKS_TYPE)
-  private int landmarksType;
+  private Integer landmarksType;
 
 
   public DetectResponse detections(List<Detection> detections) {
@@ -72,7 +72,7 @@ public class DetectResponse {
   }
 
 
-  public DetectResponse detectorType(int detectorType) {
+  public DetectResponse detectorType(Integer detectorType) {
     
     this.detectorType = detectorType;
     return this;
@@ -85,17 +85,17 @@ public class DetectResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Internal.")
 
-  public int getDetectorType() {
+  public Integer getDetectorType() {
     return detectorType;
   }
 
 
-  public void setDetectorType(int detectorType) {
+  public void setDetectorType(Integer detectorType) {
     this.detectorType = detectorType;
   }
 
 
-  public DetectResponse landmarksType(int landmarksType) {
+  public DetectResponse landmarksType(Integer landmarksType) {
     
     this.landmarksType = landmarksType;
     return this;
@@ -108,12 +108,12 @@ public class DetectResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Internal.")
 
-  public int getLandmarksType() {
+  public Integer getLandmarksType() {
     return landmarksType;
   }
 
 
-  public void setLandmarksType(int landmarksType) {
+  public void setLandmarksType(Integer landmarksType) {
     this.landmarksType = landmarksType;
   }
 

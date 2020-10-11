@@ -39,7 +39,7 @@ public class DepthLivenessItem {
 
   public static final String SERIALIZED_NAME_DEPTH_SCALE = "depthScale";
   @SerializedName(SERIALIZED_NAME_DEPTH_SCALE)
-  private float depthScale;
+  private Float depthScale;
 
 
   public DepthLivenessItem dataScene(byte[] dataScene) {
@@ -86,7 +86,7 @@ public class DepthLivenessItem {
   }
 
 
-  public DepthLivenessItem depthScale(float depthScale) {
+  public DepthLivenessItem depthScale(Float depthScale) {
     
     this.depthScale = depthScale;
     return this;
@@ -98,12 +98,12 @@ public class DepthLivenessItem {
   **/
   @ApiModelProperty(required = true, value = "Normalized factor for color depth.")
 
-  public float getDepthScale() {
+  public Float getDepthScale() {
     return depthScale;
   }
 
 
-  public void setDepthScale(float depthScale) {
+  public void setDepthScale(Float depthScale) {
     this.depthScale = depthScale;
   }
 

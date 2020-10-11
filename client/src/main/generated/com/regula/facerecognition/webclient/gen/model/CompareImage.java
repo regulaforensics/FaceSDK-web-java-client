@@ -32,7 +32,7 @@ import java.io.IOException;
 public class CompareImage {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
-  private int index;
+  private Integer index;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -43,7 +43,7 @@ public class CompareImage {
   private byte[] data;
 
 
-  public CompareImage index(int index) {
+  public CompareImage index(Integer index) {
     
     this.index = index;
     return this;
@@ -56,12 +56,12 @@ public class CompareImage {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public int getIndex() {
+  public Integer getIndex() {
     return index;
   }
 
 
-  public void setIndex(int index) {
+  public void setIndex(Integer index) {
     this.index = index;
   }
 
