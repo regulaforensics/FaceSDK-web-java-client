@@ -32,11 +32,11 @@ import java.math.BigDecimal;
 public class CompareImageResult {
   public static final String SERIALIZED_NAME_FIRST_INDEX = "firstIndex";
   @SerializedName(SERIALIZED_NAME_FIRST_INDEX)
-  private int firstIndex;
+  private Integer firstIndex;
 
   public static final String SERIALIZED_NAME_SECOND_INDEX = "secondIndex";
   @SerializedName(SERIALIZED_NAME_SECOND_INDEX)
-  private int secondIndex;
+  private Integer secondIndex;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -55,7 +55,7 @@ public class CompareImageResult {
   private String errorMsg;
 
 
-  public CompareImageResult firstIndex(int firstIndex) {
+  public CompareImageResult firstIndex(Integer firstIndex) {
     
     this.firstIndex = firstIndex;
     return this;
@@ -68,17 +68,17 @@ public class CompareImageResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public int getFirstIndex() {
+  public Integer getFirstIndex() {
     return firstIndex;
   }
 
 
-  public void setFirstIndex(int firstIndex) {
+  public void setFirstIndex(Integer firstIndex) {
     this.firstIndex = firstIndex;
   }
 
 
-  public CompareImageResult secondIndex(int secondIndex) {
+  public CompareImageResult secondIndex(Integer secondIndex) {
     
     this.secondIndex = secondIndex;
     return this;
@@ -91,12 +91,12 @@ public class CompareImageResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public int getSecondIndex() {
+  public Integer getSecondIndex() {
     return secondIndex;
   }
 
 
-  public void setSecondIndex(int secondIndex) {
+  public void setSecondIndex(Integer secondIndex) {
     this.secondIndex = secondIndex;
   }
 

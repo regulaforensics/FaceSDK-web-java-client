@@ -20,8 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facerecognition.webclient.gen.model.FaceRecognitionResultCode;
-import com.regula.facerecognition.webclient.gen.model.LivenessStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -37,15 +35,15 @@ public class LivenessResultItem {
 
   public static final String SERIALIZED_NAME_LIVENESS_STATUS = "livenessStatus";
   @SerializedName(SERIALIZED_NAME_LIVENESS_STATUS)
-  private LivenessStatus livenessStatus;
+  private Integer livenessStatus;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  private FaceRecognitionResultCode code;
+  private Integer code;
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
-  private int index;
+  private Integer index;
 
 
   public LivenessResultItem face(byte[] face) {
@@ -70,7 +68,7 @@ public class LivenessResultItem {
   }
 
 
-  public LivenessResultItem livenessStatus(LivenessStatus livenessStatus) {
+  public LivenessResultItem livenessStatus(Integer livenessStatus) {
     
     this.livenessStatus = livenessStatus;
     return this;
@@ -82,17 +80,17 @@ public class LivenessResultItem {
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public LivenessStatus getLivenessStatus() {
+  public Integer getLivenessStatus() {
     return livenessStatus;
   }
 
 
-  public void setLivenessStatus(LivenessStatus livenessStatus) {
+  public void setLivenessStatus(Integer livenessStatus) {
     this.livenessStatus = livenessStatus;
   }
 
 
-  public LivenessResultItem code(FaceRecognitionResultCode code) {
+  public LivenessResultItem code(Integer code) {
     
     this.code = code;
     return this;
@@ -105,17 +103,17 @@ public class LivenessResultItem {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public FaceRecognitionResultCode getCode() {
+  public Integer getCode() {
     return code;
   }
 
 
-  public void setCode(FaceRecognitionResultCode code) {
+  public void setCode(Integer code) {
     this.code = code;
   }
 
 
-  public LivenessResultItem index(int index) {
+  public LivenessResultItem index(Integer index) {
     
     this.index = index;
     return this;
@@ -128,12 +126,12 @@ public class LivenessResultItem {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public int getIndex() {
+  public Integer getIndex() {
     return index;
   }
 
 
-  public void setIndex(int index) {
+  public void setIndex(Integer index) {
     this.index = index;
   }
 

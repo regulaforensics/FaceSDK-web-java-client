@@ -8,12 +8,5 @@
   "invokerPackage": "com.regula.facerecognition.webclient",
   "modelPackage": "com.regula.facerecognition.webclient.gen.model",
   "apiPackage": "com.regula.facerecognition.webclient.gen.api",
-  "sourceFolder": "src/main/generated",
-  "languageSpecificPrimitives": [
-    "int"
-  ],
-  "typeMappings": {
-    "Integer": "int",
-    "Float": "float"
-  }
+  "sourceFolder": "src/main/generated"
 }
