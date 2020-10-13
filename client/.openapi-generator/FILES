@@ -26,9 +26,7 @@ src/main/generated/com/regula/facerecognition/webclient/gen/model/DepthLivenessI
 src/main/generated/com/regula/facerecognition/webclient/gen/model/DetectRequest.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/DetectResponse.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/Detection.java
-src/main/generated/com/regula/facerecognition/webclient/gen/model/FaceRecognitionResultCode.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/ImageLiveness.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/ImageLivenessItem.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/LivenessResultItem.java
-src/main/generated/com/regula/facerecognition/webclient/gen/model/LivenessStatus.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/OperationLog.java
