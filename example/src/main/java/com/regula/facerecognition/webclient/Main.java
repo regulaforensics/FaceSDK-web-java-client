@@ -30,7 +30,7 @@ public class Main {
         var compareRequest = new CompareRequest().images(
                 List.of(compareImage1, compareImage2, compareImage3)
         );
-        var compareResponse = sdk.getMatchingApi().compare(compareRequest);
+        var compareResponse = sdk.matchingApi.compare(compareRequest);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                         Compare Results                         ");
@@ -42,7 +42,7 @@ public class Main {
         }
 
         var detectRequest = new DetectRequest().image(face2);
-        var detectResponse = sdk.getMatchingApi().detect(detectRequest);
+        var detectResponse = sdk.matchingApi.detect(detectRequest);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                         Detect Results                          ");
@@ -54,7 +54,7 @@ public class Main {
             System.out.format("roi: %s%n", i.getRoi());
         }
 
-        var videoLivenessResult = sdk.getLivenessApi().checkVideoLiveness(realVideo1);
+        var videoLivenessResult = sdk.livenessApi.checkVideoLiveness(realVideo1);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                   Check video liveness result                   ");
@@ -63,7 +63,7 @@ public class Main {
 
         var depthLivenessItem1 = new DepthLivenessItem().dataScene(realFrame1).dataDepth(realDepth1).depthScale(0.001f);
         var depthLiveness = new DepthLiveness().addImagesItem(depthLivenessItem1);
-        var depthResult = sdk.getLivenessApi().checkDepthLiveness(depthLiveness);
+        var depthResult = sdk.livenessApi.checkDepthLiveness(depthLiveness);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                   Check depth liveness result                   ");
@@ -76,7 +76,7 @@ public class Main {
 
         var imageLivenessItem1 = new ImageLivenessItem().data(realImage1);
         var imageLiveness = new ImageLiveness().addImagesItem(imageLivenessItem1);
-        var imageLivenessResult = sdk.getLivenessApi().checkImageLiveness(imageLiveness);
+        var imageLivenessResult = sdk.livenessApi.checkImageLiveness(imageLiveness);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                   Check image liveness result                   ");

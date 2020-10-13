@@ -6,8 +6,8 @@ import com.regula.facerecognition.webclient.gen.api.MatchingApi;
 public class Sdk {
     private ApiClient apiClient;
 
-    private MatchingApi matchingApi;
-    private LivenessApi livenessApi;
+    public final MatchingApi matchingApi;
+    public final LivenessApi livenessApi;
 
     public Sdk() {
         this(Configuration.getDefaultApiClient());
@@ -37,13 +37,5 @@ public class Sdk {
 
     public ApiClient getApiClient() {
         return this.apiClient;
-    }
-
-    public MatchingApi getMatchingApi() {
-        return this.matchingApi;
-    }
-
-    public LivenessApi getLivenessApi() {
-        return this.livenessApi;
     }
 }
