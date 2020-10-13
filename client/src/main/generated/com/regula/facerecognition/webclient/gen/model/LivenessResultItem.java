@@ -20,6 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facerecognition.webclient.gen.model.FaceRecognitionResultCode;
+import com.regula.facerecognition.webclient.gen.model.LivenessStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -35,11 +37,11 @@ public class LivenessResultItem {
 
   public static final String SERIALIZED_NAME_LIVENESS_STATUS = "livenessStatus";
   @SerializedName(SERIALIZED_NAME_LIVENESS_STATUS)
-  private Integer livenessStatus;
+  private LivenessStatus livenessStatus;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  private Integer code;
+  private FaceRecognitionResultCode code;
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -68,7 +70,7 @@ public class LivenessResultItem {
   }
 
 
-  public LivenessResultItem livenessStatus(Integer livenessStatus) {
+  public LivenessResultItem livenessStatus(LivenessStatus livenessStatus) {
     
     this.livenessStatus = livenessStatus;
     return this;
@@ -80,17 +82,17 @@ public class LivenessResultItem {
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public Integer getLivenessStatus() {
+  public LivenessStatus getLivenessStatus() {
     return livenessStatus;
   }
 
 
-  public void setLivenessStatus(Integer livenessStatus) {
+  public void setLivenessStatus(LivenessStatus livenessStatus) {
     this.livenessStatus = livenessStatus;
   }
 
 
-  public LivenessResultItem code(Integer code) {
+  public LivenessResultItem code(FaceRecognitionResultCode code) {
     
     this.code = code;
     return this;
@@ -103,12 +105,12 @@ public class LivenessResultItem {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getCode() {
+  public FaceRecognitionResultCode getCode() {
     return code;
   }
 
 
-  public void setCode(Integer code) {
+  public void setCode(FaceRecognitionResultCode code) {
     this.code = code;
   }
 

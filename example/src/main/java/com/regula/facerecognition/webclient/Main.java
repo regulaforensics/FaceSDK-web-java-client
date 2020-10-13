@@ -69,9 +69,9 @@ public class Main {
         System.out.println("                   Check depth liveness result                   ");
         System.out.println("-----------------------------------------------------------------");
         for (var i : depthResult) {
-            System.out.format("index: %d%n", i.getIndex());
-            System.out.format("code: %d%n", i.getCode());
-            System.out.format("livenessStatus: %d%n", i.getLivenessStatus());
+            System.out.format("index: %s%n", i.getIndex());
+            System.out.format("code: %s%n", i.getCode());
+            System.out.format("livenessStatus: %s%n", i.getLivenessStatus());
         }
 
         var imageLivenessItem1 = new ImageLivenessItem().data(realImage1);
@@ -82,9 +82,9 @@ public class Main {
         System.out.println("                   Check image liveness result                   ");
         System.out.println("-----------------------------------------------------------------");
         for (var i : imageLivenessResult) {
-            System.out.format("index: %d%n", i.getIndex());
-            System.out.format("code: %d%n", i.getCode());
-            System.out.format("livenessStatus: %d%n", i.getLivenessStatus());
+            System.out.format("index: %s%n", i.getIndex());
+            System.out.format("code: %s%n", i.getCode());
+            System.out.format("livenessStatus: %s%n", i.getLivenessStatus());
         }
         System.out.println("-----------------------------------------------------------------");
     }
