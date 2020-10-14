@@ -88,7 +88,7 @@ public class LivenessApi extends com.regula.facerecognition.webclient.gen.api.Li
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/liveness";
+        String localVarPath = "/api/liveness";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

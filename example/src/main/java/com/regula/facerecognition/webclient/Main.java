@@ -12,9 +12,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         var apiBasePath = System.getenv(API_BASE_PATH);
         if (apiBasePath == null) {
-            apiBasePath = "http://localhost:41101/api";
+            apiBasePath = "http://localhost:41101";
         }
-
         byte[] face1 = readFile("face_1.jpg");
         byte[] face2 = readFile("face_2.jpg");
         byte[] realVideo1 = readFile("real_video_1.mp4");
