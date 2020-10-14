@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facerecognition.webclient.gen.model.ImageSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -36,7 +35,7 @@ public class CompareImage {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  private ImageSource type;
+  private Integer type;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -66,7 +65,7 @@ public class CompareImage {
   }
 
 
-  public CompareImage type(ImageSource type) {
+  public CompareImage type(Integer type) {
     
     this.type = type;
     return this;
@@ -79,12 +78,12 @@ public class CompareImage {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageSource getType() {
+  public Integer getType() {
     return type;
   }
 
 
-  public void setType(ImageSource type) {
+  public void setType(Integer type) {
     this.type = type;
   }
 
