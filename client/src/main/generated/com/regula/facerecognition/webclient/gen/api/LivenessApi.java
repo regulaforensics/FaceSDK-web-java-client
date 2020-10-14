@@ -76,7 +76,7 @@ public class LivenessApi {
         Object localVarPostBody = depthLiveness;
 
         // create path and map variables
-        String localVarPath = "/liveness/depth";
+        String localVarPath = "/api/liveness/depth";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -194,7 +194,7 @@ public class LivenessApi {
         Object localVarPostBody = imageLiveness;
 
         // create path and map variables
-        String localVarPath = "/liveness/image";
+        String localVarPath = "/api/liveness/image";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -312,7 +312,7 @@ public class LivenessApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/liveness";
+        String localVarPath = "/api/liveness";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

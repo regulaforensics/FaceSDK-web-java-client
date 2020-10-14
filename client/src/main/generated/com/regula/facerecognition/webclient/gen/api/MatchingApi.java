@@ -76,7 +76,7 @@ public class MatchingApi {
         Object localVarPostBody = compareRequest;
 
         // create path and map variables
-        String localVarPath = "/compare";
+        String localVarPath = "/api/compare";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -194,7 +194,7 @@ public class MatchingApi {
         Object localVarPostBody = detectRequest;
 
         // create path and map variables
-        String localVarPath = "/detect";
+        String localVarPath = "/api/detect";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
