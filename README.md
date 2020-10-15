@@ -38,7 +38,7 @@ var compareImage2 = new CompareImage().index(1).data(face1).type(ImageSource.DOC
 var compareImage3 = new CompareImage().index(3).data(face2).type(ImageSource.LIVE);
 
 var compareRequest = new CompareRequest().images(List.of(compareImage1, compareImage2, compareImage3));
-var compareResponse = sdk.getMatchingApi().compare(compareRequest);
+var compareResponse = sdk.matchingApi.compare(compareRequest);
 ```
 
 You can find a more detailed example in  [example](./example) folder.
