@@ -2,24 +2,24 @@ package com.regula.facerecognition.webclient;
 
 import com.regula.facerecognition.webclient.gen.api.MatchingApi;
 
-public class Sdk {
+public class FaceSdk {
   private ApiClient apiClient;
 
   public final MatchingApi matchingApi;
 
-  public Sdk() {
+  public FaceSdk() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public Sdk(String basePath) {
+  public FaceSdk(String basePath) {
     this(basePath, false, false);
   }
 
-  public Sdk(String basePath, boolean debugging) {
+  public FaceSdk(String basePath, boolean debugging) {
     this(basePath, debugging, false);
   }
 
-  public Sdk(String basePath, boolean debugging, boolean verifyingSsl) {
+  public FaceSdk(String basePath, boolean debugging, boolean verifyingSsl) {
     this(Configuration.getDefaultApiClient());
 
     this.apiClient.setBasePath(basePath);
@@ -27,7 +27,7 @@ public class Sdk {
     this.apiClient.setVerifyingSsl(verifyingSsl);
   }
 
-  public Sdk(ApiClient apiClient) {
+  public FaceSdk(ApiClient apiClient) {
     this.apiClient = apiClient;
     this.matchingApi = new MatchingApi(apiClient);
   }

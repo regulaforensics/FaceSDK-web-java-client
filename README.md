@@ -28,7 +28,7 @@ dependencies {
 ## Example
 Performing request:
 ```java
-var sdk = new Sdk(apiBasePath);
+var sdk = new FaceSdk(apiBasePath);
 
 byte[] face1 = readFile("face_1.jpg");
 byte[] face2 = readFile("face_2.jpg");
