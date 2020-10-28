@@ -14,41 +14,34 @@ package com.regula.facerecognition.webclient.gen.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-/** CompareRequest */
+/** FaceRecognitionResult */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class CompareRequest {
-  public static final String SERIALIZED_NAME_IMAGES = "images";
+public class FaceRecognitionResult {
+  public static final String SERIALIZED_NAME_CODE = "code";
 
-  @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<CompareImage> images = new ArrayList<CompareImage>();
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private Integer code;
 
-  public CompareRequest images(List<CompareImage> images) {
+  public FaceRecognitionResult code(Integer code) {
 
-    this.images = images;
-    return this;
-  }
-
-  public CompareRequest addImagesItem(CompareImage imagesItem) {
-    this.images.add(imagesItem);
+    this.code = code;
     return this;
   }
 
   /**
-   * Get images
+   * Get code
    *
-   * @return images
+   * @return code
    */
   @ApiModelProperty(required = true, value = "")
-  public List<CompareImage> getImages() {
-    return images;
+  public Integer getCode() {
+    return code;
   }
 
-  public void setImages(List<CompareImage> images) {
-    this.images = images;
+  public void setCode(Integer code) {
+    this.code = code;
   }
 
   @Override
@@ -59,20 +52,20 @@ public class CompareRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CompareRequest compareRequest = (CompareRequest) o;
-    return Objects.equals(this.images, compareRequest.images);
+    FaceRecognitionResult faceRecognitionResult = (FaceRecognitionResult) o;
+    return Objects.equals(this.code, faceRecognitionResult.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(images);
+    return Objects.hash(code);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CompareRequest {\n");
-    sb.append("    images: ").append(toIndentedString(images)).append("\n");
+    sb.append("class FaceRecognitionResult {\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }
