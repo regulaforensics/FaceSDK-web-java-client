@@ -11,8 +11,9 @@ Instead of using enums, generator produces static constants.
 2. Generate normal models with substituted by primitive values enums
 
 To regenerate models from openapi definition, 
-clone [latest open api definitions](https://github.com/regulaforensics/FaceRecognition-web-openapi)
-and use next command from the project root:
+clone [latest open api definitions](https://github.com/regulaforensics/FaceRecognition-web-openapi) 
+to a client's parent folder `./../`.
+Than,use next command from the project root:
 ```bash
 ./update-models.sh
 ```
