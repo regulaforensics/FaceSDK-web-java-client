@@ -17,7 +17,7 @@ public class Main {
         byte[] face1 = readFile("face_1.jpg");
         byte[] face2 = readFile("face_2.jpg");
 
-        var sdk = new Sdk(apiBasePath);
+        var sdk = new FaceSdk(apiBasePath);
 
         var compareImage1 = new CompareImage().index(0).data(face1).type(ImageSource.LIVE);
         var compareImage2 = new CompareImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
