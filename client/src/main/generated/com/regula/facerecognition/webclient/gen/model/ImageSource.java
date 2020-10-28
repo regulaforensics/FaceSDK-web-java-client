@@ -10,23 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.regula.facerecognition.webclient.gen.model;
 
-/**
- * Face photo image source
- */
+/** Face photo image source */
 public class ImageSource {
 
-    public static final Integer DOCUMENT_PRINTED = 1;
+  public static final Integer DOCUMENT_PRINTED = 1;
 
-    public static final Integer DOCUMENT_RFID = 2;
+  public static final Integer DOCUMENT_RFID = 2;
 
-    public static final Integer LIVE = 3;
+  public static final Integer LIVE = 3;
 
-    public static final Integer DOCUMENT_WITH_LIVE = 4;
+  public static final Integer DOCUMENT_WITH_LIVE = 4;
 
-    public static final Integer EXTERNAL = 5;
-
+  public static final Integer EXTERNAL = 5;
 }
-
