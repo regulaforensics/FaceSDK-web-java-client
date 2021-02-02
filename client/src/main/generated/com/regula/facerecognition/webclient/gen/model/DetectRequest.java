@@ -25,6 +25,11 @@ public class DetectRequest {
   @SerializedName(SERIALIZED_NAME_IMAGE)
   private byte[] image;
 
+  public static final String SERIALIZED_NAME_THUMBNAILS = "thumbnails";
+
+  @SerializedName(SERIALIZED_NAME_THUMBNAILS)
+  private Boolean thumbnails = false;
+
   public static final String SERIALIZED_NAME_ONLY_CENTRAL_FACE = "onlyCentralFace";
 
   @SerializedName(SERIALIZED_NAME_ONLY_CENTRAL_FACE)
@@ -49,6 +54,27 @@ public class DetectRequest {
 
   public void setImage(byte[] image) {
     this.image = image;
+  }
+
+  public DetectRequest thumbnails(Boolean thumbnails) {
+
+    this.thumbnails = thumbnails;
+    return this;
+  }
+
+  /**
+   * Enable formatted detections&#39; thumbnails in the response
+   *
+   * @return thumbnails
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Enable formatted detections' thumbnails in the response")
+  public Boolean getThumbnails() {
+    return thumbnails;
+  }
+
+  public void setThumbnails(Boolean thumbnails) {
+    this.thumbnails = thumbnails;
   }
 
   public DetectRequest onlyCentralFace(Boolean onlyCentralFace) {
@@ -82,12 +108,13 @@ public class DetectRequest {
     }
     DetectRequest detectRequest = (DetectRequest) o;
     return Arrays.equals(this.image, detectRequest.image)
+        && Objects.equals(this.thumbnails, detectRequest.thumbnails)
         && Objects.equals(this.onlyCentralFace, detectRequest.onlyCentralFace);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(Arrays.hashCode(image), onlyCentralFace);
+    return Objects.hash(Arrays.hashCode(image), thumbnails, onlyCentralFace);
   }
 
   @Override
@@ -95,6 +122,7 @@ public class DetectRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class DetectRequest {\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
     sb.append("    onlyCentralFace: ").append(toIndentedString(onlyCentralFace)).append("\n");
     sb.append("}");
     return sb.toString();
