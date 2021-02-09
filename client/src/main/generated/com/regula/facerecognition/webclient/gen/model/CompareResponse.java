@@ -31,6 +31,11 @@ public class CompareResponse {
   @SerializedName(SERIALIZED_NAME_RESULTS)
   private List<CompareImageResult> results = new ArrayList<CompareImageResult>();
 
+  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
+
+  @SerializedName(SERIALIZED_NAME_DETECTIONS)
+  private List<CompareImageDetection> detections = new ArrayList<CompareImageDetection>();
+
   public CompareResponse code(Integer code) {
 
     this.code = code;
@@ -76,6 +81,31 @@ public class CompareResponse {
     this.results = results;
   }
 
+  public CompareResponse detections(List<CompareImageDetection> detections) {
+
+    this.detections = detections;
+    return this;
+  }
+
+  public CompareResponse addDetectionsItem(CompareImageDetection detectionsItem) {
+    this.detections.add(detectionsItem);
+    return this;
+  }
+
+  /**
+   * Get detections
+   *
+   * @return detections
+   */
+  @ApiModelProperty(required = true, value = "")
+  public List<CompareImageDetection> getDetections() {
+    return detections;
+  }
+
+  public void setDetections(List<CompareImageDetection> detections) {
+    this.detections = detections;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -86,12 +116,13 @@ public class CompareResponse {
     }
     CompareResponse compareResponse = (CompareResponse) o;
     return Objects.equals(this.code, compareResponse.code)
-        && Objects.equals(this.results, compareResponse.results);
+        && Objects.equals(this.results, compareResponse.results)
+        && Objects.equals(this.detections, compareResponse.detections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, results);
+    return Objects.hash(code, results, detections);
   }
 
   @Override
@@ -100,6 +131,7 @@ public class CompareResponse {
     sb.append("class CompareResponse {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("}");
     return sb.toString();
   }

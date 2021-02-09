@@ -21,10 +21,36 @@ import java.util.Objects;
 /** CompareRequest */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CompareRequest {
+  public static final String SERIALIZED_NAME_THUMBNAILS = "thumbnails";
+
+  @SerializedName(SERIALIZED_NAME_THUMBNAILS)
+  private Boolean thumbnails;
+
   public static final String SERIALIZED_NAME_IMAGES = "images";
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
   private List<CompareImage> images = new ArrayList<CompareImage>();
+
+  public CompareRequest thumbnails(Boolean thumbnails) {
+
+    this.thumbnails = thumbnails;
+    return this;
+  }
+
+  /**
+   * Get thumbnails
+   *
+   * @return thumbnails
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public Boolean getThumbnails() {
+    return thumbnails;
+  }
+
+  public void setThumbnails(Boolean thumbnails) {
+    this.thumbnails = thumbnails;
+  }
 
   public CompareRequest images(List<CompareImage> images) {
 
@@ -60,18 +86,20 @@ public class CompareRequest {
       return false;
     }
     CompareRequest compareRequest = (CompareRequest) o;
-    return Objects.equals(this.images, compareRequest.images);
+    return Objects.equals(this.thumbnails, compareRequest.thumbnails)
+        && Objects.equals(this.images, compareRequest.images);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(images);
+    return Objects.hash(thumbnails, images);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompareRequest {\n");
+    sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");
     return sb.toString();
