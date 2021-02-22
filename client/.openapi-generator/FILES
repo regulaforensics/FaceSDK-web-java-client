@@ -17,6 +17,7 @@ src/main/generated/com/regula/facerecognition/webclient/auth/HttpBasicAuth.java
 src/main/generated/com/regula/facerecognition/webclient/auth/HttpBearerAuth.java
 src/main/generated/com/regula/facerecognition/webclient/gen/api/MatchingApi.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/CompareImage.java
+src/main/generated/com/regula/facerecognition/webclient/gen/model/CompareImageDetection.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/CompareImageResult.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/CompareRequest.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/CompareResponse.java
@@ -24,5 +25,6 @@ src/main/generated/com/regula/facerecognition/webclient/gen/model/DetectRequest.
 src/main/generated/com/regula/facerecognition/webclient/gen/model/DetectResponse.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/DetectResult.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/Detection.java
+src/main/generated/com/regula/facerecognition/webclient/gen/model/DetectionFace.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/FaceRecognitionResult.java
 src/main/generated/com/regula/facerecognition/webclient/gen/model/OperationLog.java

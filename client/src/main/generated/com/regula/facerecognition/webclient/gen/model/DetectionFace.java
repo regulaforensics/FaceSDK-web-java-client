@@ -17,70 +17,63 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
-/** Detection */
+/** DetectionFace */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class Detection {
-  public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
+public class DetectionFace {
+  public static final String SERIALIZED_NAME_FACE_INDEX = "faceIndex";
 
-  @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  private Map<String, Object> attributes = null;
+  @SerializedName(SERIALIZED_NAME_FACE_INDEX)
+  private Integer faceIndex;
 
   public static final String SERIALIZED_NAME_LANDMARKS = "landmarks";
 
   @SerializedName(SERIALIZED_NAME_LANDMARKS)
-  private List<List<BigDecimal>> landmarks = new ArrayList<List<BigDecimal>>();
+  private List<List<BigDecimal>> landmarks = null;
 
   public static final String SERIALIZED_NAME_ROI = "roi";
 
   @SerializedName(SERIALIZED_NAME_ROI)
-  private List<BigDecimal> roi = new ArrayList<BigDecimal>();
+  private List<BigDecimal> roi = null;
 
   public static final String SERIALIZED_NAME_THUMBNAIL = "thumbnail";
 
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
   private byte[] thumbnail;
 
-  public Detection attributes(Map<String, Object> attributes) {
+  public DetectionFace faceIndex(Integer faceIndex) {
 
-    this.attributes = attributes;
-    return this;
-  }
-
-  public Detection putAttributesItem(String key, Object attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new HashMap<String, Object>();
-    }
-    this.attributes.put(key, attributesItem);
+    this.faceIndex = faceIndex;
     return this;
   }
 
   /**
-   * Get attributes
+   * Get faceIndex
    *
-   * @return attributes
+   * @return faceIndex
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "{\"age\":\"adult\",\"emotion\":\"smile\"}", value = "")
-  public Map<String, Object> getAttributes() {
-    return attributes;
+  @ApiModelProperty(value = "")
+  public Integer getFaceIndex() {
+    return faceIndex;
   }
 
-  public void setAttributes(Map<String, Object> attributes) {
-    this.attributes = attributes;
+  public void setFaceIndex(Integer faceIndex) {
+    this.faceIndex = faceIndex;
   }
 
-  public Detection landmarks(List<List<BigDecimal>> landmarks) {
+  public DetectionFace landmarks(List<List<BigDecimal>> landmarks) {
 
     this.landmarks = landmarks;
     return this;
   }
 
-  public Detection addLandmarksItem(List<BigDecimal> landmarksItem) {
+  public DetectionFace addLandmarksItem(List<BigDecimal> landmarksItem) {
+    if (this.landmarks == null) {
+      this.landmarks = new ArrayList<List<BigDecimal>>();
+    }
     this.landmarks.add(landmarksItem);
     return this;
   }
@@ -90,9 +83,9 @@ public class Detection {
    *
    * @return landmarks
    */
+  @javax.annotation.Nullable
   @ApiModelProperty(
       example = "[[\"x\",\"y\"]]",
-      required = true,
       value = "Main coordinates of the detected face (eyes, nose, lips, ears and etc.).")
   public List<List<BigDecimal>> getLandmarks() {
     return landmarks;
@@ -102,13 +95,16 @@ public class Detection {
     this.landmarks = landmarks;
   }
 
-  public Detection roi(List<BigDecimal> roi) {
+  public DetectionFace roi(List<BigDecimal> roi) {
 
     this.roi = roi;
     return this;
   }
 
-  public Detection addRoiItem(BigDecimal roiItem) {
+  public DetectionFace addRoiItem(BigDecimal roiItem) {
+    if (this.roi == null) {
+      this.roi = new ArrayList<BigDecimal>();
+    }
     this.roi.add(roiItem);
     return this;
   }
@@ -120,9 +116,9 @@ public class Detection {
    *
    * @return roi
    */
+  @javax.annotation.Nullable
   @ApiModelProperty(
       example = "[\"x\",\"y\",\"width\",\"height\"]",
-      required = true,
       value =
           "Rectangular area of the detected face. First element - X-axis coordinate. Second element - Y-axis coordinate. (X, Y) - left top point. Third element - rectangular width. Fourth element - rectangular height.")
   public List<BigDecimal> getRoi() {
@@ -133,7 +129,7 @@ public class Detection {
     this.roi = roi;
   }
 
-  public Detection thumbnail(byte[] thumbnail) {
+  public DetectionFace thumbnail(byte[] thumbnail) {
 
     this.thumbnail = thumbnail;
     return this;
@@ -162,23 +158,23 @@ public class Detection {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Detection detection = (Detection) o;
-    return Objects.equals(this.attributes, detection.attributes)
-        && Objects.equals(this.landmarks, detection.landmarks)
-        && Objects.equals(this.roi, detection.roi)
-        && Arrays.equals(this.thumbnail, detection.thumbnail);
+    DetectionFace detectionFace = (DetectionFace) o;
+    return Objects.equals(this.faceIndex, detectionFace.faceIndex)
+        && Objects.equals(this.landmarks, detectionFace.landmarks)
+        && Objects.equals(this.roi, detectionFace.roi)
+        && Arrays.equals(this.thumbnail, detectionFace.thumbnail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attributes, landmarks, roi, Arrays.hashCode(thumbnail));
+    return Objects.hash(faceIndex, landmarks, roi, Arrays.hashCode(thumbnail));
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Detection {\n");
-    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("class DetectionFace {\n");
+    sb.append("    faceIndex: ").append(toIndentedString(faceIndex)).append("\n");
     sb.append("    landmarks: ").append(toIndentedString(landmarks)).append("\n");
     sb.append("    roi: ").append(toIndentedString(roi)).append("\n");
     sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");

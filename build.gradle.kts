@@ -8,7 +8,7 @@ allprojects {
     group = "com.regula.facerecognition"
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 

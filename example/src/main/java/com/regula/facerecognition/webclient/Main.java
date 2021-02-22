@@ -30,9 +30,10 @@ public class Main {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                         Compare Results                         ");
         System.out.println("-----------------------------------------------------------------");
-        for (var i : compareResponse.getResults()) {
+        for (var comparison : compareResponse.getResults()) {
             System.out.format(
-                    "pair(%d, %d) similarity: %f%n", i.getFirstIndex(), i.getSecondIndex(), i.getSimilarity()
+                    "pair(%d, %d) similarity: %f%n",
+                    comparison.getFirstIndex(), comparison.getSecondIndex(), comparison.getSimilarity()
             );
         }
 
@@ -45,9 +46,10 @@ public class Main {
         System.out.println("-----------------------------------------------------------------");
         System.out.format("detectorType: %d%n", detectResults.getDetectorType());
         System.out.format("landmarkType: %d%n", detectResults.getLandmarksType());
-        for (var i : detectResults.getDetections()) {
-            System.out.format("landmarks: %s%n", i.getLandmarks());
-            System.out.format("roi: %s%n", i.getRoi());
+        for (var detection : detectResults.getDetections()) {
+            System.out.format("landmarks: %s%n", detection.getLandmarks());
+            System.out.format("roi: %s%n", detection.getRoi());
+            System.out.format("attributes: %s%n", detection.getAttributes());
         }
         System.out.println("-----------------------------------------------------------------");
     }
