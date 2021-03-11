@@ -19,10 +19,10 @@ import java.util.Objects;
 /** OperationLog */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OperationLog {
-  public static final String SERIALIZED_NAME_SUCCESS = "success";
+  public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
 
-  @SerializedName(SERIALIZED_NAME_SUCCESS)
-  private Boolean success;
+  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
+  private Integer statusCode;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
 
@@ -34,30 +34,25 @@ public class OperationLog {
   @SerializedName(SERIALIZED_NAME_MSG)
   private String msg;
 
-  public static final String SERIALIZED_NAME_PAYLOAD = "payload";
+  public OperationLog statusCode(Integer statusCode) {
 
-  @SerializedName(SERIALIZED_NAME_PAYLOAD)
-  private Object payload;
-
-  public OperationLog success(Boolean success) {
-
-    this.success = success;
+    this.statusCode = statusCode;
     return this;
   }
 
   /**
-   * Get success
+   * Get statusCode
    *
-   * @return success
+   * @return statusCode
    */
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Boolean getSuccess() {
-    return success;
+  public Integer getStatusCode() {
+    return statusCode;
   }
 
-  public void setSuccess(Boolean success) {
-    this.success = success;
+  public void setStatusCode(Integer statusCode) {
+    this.statusCode = statusCode;
   }
 
   public OperationLog type(String type) {
@@ -102,27 +97,6 @@ public class OperationLog {
     this.msg = msg;
   }
 
-  public OperationLog payload(Object payload) {
-
-    this.payload = payload;
-    return this;
-  }
-
-  /**
-   * Get payload
-   *
-   * @return payload
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  public Object getPayload() {
-    return payload;
-  }
-
-  public void setPayload(Object payload) {
-    this.payload = payload;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -132,25 +106,23 @@ public class OperationLog {
       return false;
     }
     OperationLog operationLog = (OperationLog) o;
-    return Objects.equals(this.success, operationLog.success)
+    return Objects.equals(this.statusCode, operationLog.statusCode)
         && Objects.equals(this.type, operationLog.type)
-        && Objects.equals(this.msg, operationLog.msg)
-        && Objects.equals(this.payload, operationLog.payload);
+        && Objects.equals(this.msg, operationLog.msg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(success, type, msg, payload);
+    return Objects.hash(statusCode, type, msg);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OperationLog {\n");
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
-    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

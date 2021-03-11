@@ -72,12 +72,15 @@ public class CompareImageDetection {
   }
 
   /**
-   * Get imageIndex
+   * Image index used to identify input photos between themselves. If not specified, than input list
+   * index is used
    *
    * @return imageIndex
    */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(
+      required = true,
+      value =
+          "Image index used to identify input photos between themselves. If not specified, than input list index is used")
   public Integer getImageIndex() {
     return imageIndex;
   }
@@ -97,8 +100,7 @@ public class CompareImageDetection {
    *
    * @return status
    */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Integer getStatus() {
     return status;
   }

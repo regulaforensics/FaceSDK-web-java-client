@@ -50,12 +50,12 @@ public class DetectionFace {
   }
 
   /**
-   * Get faceIndex
+   * Faces index used to identify faces in scope of one photo.
    *
    * @return faceIndex
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Faces index used to identify faces in scope of one photo.")
   public Integer getFaceIndex() {
     return faceIndex;
   }

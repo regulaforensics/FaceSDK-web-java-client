@@ -29,12 +29,12 @@ public class CompareResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
 
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<CompareImageResult> results = new ArrayList<CompareImageResult>();
+  private List<CompareImageResult> results = null;
 
   public static final String SERIALIZED_NAME_DETECTIONS = "detections";
 
   @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<CompareImageDetection> detections = new ArrayList<CompareImageDetection>();
+  private List<CompareImageDetection> detections = null;
 
   public CompareResponse code(Integer code) {
 
@@ -63,6 +63,9 @@ public class CompareResponse {
   }
 
   public CompareResponse addResultsItem(CompareImageResult resultsItem) {
+    if (this.results == null) {
+      this.results = new ArrayList<CompareImageResult>();
+    }
     this.results.add(resultsItem);
     return this;
   }
@@ -72,7 +75,8 @@ public class CompareResponse {
    *
    * @return results
    */
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
   public List<CompareImageResult> getResults() {
     return results;
   }
@@ -88,6 +92,9 @@ public class CompareResponse {
   }
 
   public CompareResponse addDetectionsItem(CompareImageDetection detectionsItem) {
+    if (this.detections == null) {
+      this.detections = new ArrayList<CompareImageDetection>();
+    }
     this.detections.add(detectionsItem);
     return this;
   }
@@ -97,7 +104,8 @@ public class CompareResponse {
    *
    * @return detections
    */
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
   public List<CompareImageDetection> getDetections() {
     return detections;
   }

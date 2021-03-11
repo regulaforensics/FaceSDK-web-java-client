@@ -25,10 +25,20 @@ public class CompareImageResult {
   @SerializedName(SERIALIZED_NAME_FIRST_INDEX)
   private Integer firstIndex;
 
+  public static final String SERIALIZED_NAME_FIRST_FACE_INDEX = "firstFaceIndex";
+
+  @SerializedName(SERIALIZED_NAME_FIRST_FACE_INDEX)
+  private Integer firstFaceIndex;
+
   public static final String SERIALIZED_NAME_SECOND_INDEX = "secondIndex";
 
   @SerializedName(SERIALIZED_NAME_SECOND_INDEX)
   private Integer secondIndex;
+
+  public static final String SERIALIZED_NAME_SECOND_FACE_INDEX = "secondFaceIndex";
+
+  @SerializedName(SERIALIZED_NAME_SECOND_FACE_INDEX)
+  private Integer secondFaceIndex;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
 
@@ -43,7 +53,7 @@ public class CompareImageResult {
   public static final String SERIALIZED_NAME_ERROR_CODE = "errorCode";
 
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
-  private String errorCode;
+  private Integer errorCode;
 
   public static final String SERIALIZED_NAME_ERROR_MSG = "errorMsg";
 
@@ -57,18 +67,42 @@ public class CompareImageResult {
   }
 
   /**
-   * Get firstIndex
+   * Image index used to identify input photos between themselves. If not specified, than input list
+   * index is used
    *
    * @return firstIndex
    */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(
+      required = true,
+      value =
+          "Image index used to identify input photos between themselves. If not specified, than input list index is used")
   public Integer getFirstIndex() {
     return firstIndex;
   }
 
   public void setFirstIndex(Integer firstIndex) {
     this.firstIndex = firstIndex;
+  }
+
+  public CompareImageResult firstFaceIndex(Integer firstFaceIndex) {
+
+    this.firstFaceIndex = firstFaceIndex;
+    return this;
+  }
+
+  /**
+   * Faces index used to identify faces in scope of one photo.
+   *
+   * @return firstFaceIndex
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Faces index used to identify faces in scope of one photo.")
+  public Integer getFirstFaceIndex() {
+    return firstFaceIndex;
+  }
+
+  public void setFirstFaceIndex(Integer firstFaceIndex) {
+    this.firstFaceIndex = firstFaceIndex;
   }
 
   public CompareImageResult secondIndex(Integer secondIndex) {
@@ -78,18 +112,42 @@ public class CompareImageResult {
   }
 
   /**
-   * Get secondIndex
+   * Image index used to identify input photos between themselves. If not specified, than input list
+   * index is used
    *
    * @return secondIndex
    */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(
+      required = true,
+      value =
+          "Image index used to identify input photos between themselves. If not specified, than input list index is used")
   public Integer getSecondIndex() {
     return secondIndex;
   }
 
   public void setSecondIndex(Integer secondIndex) {
     this.secondIndex = secondIndex;
+  }
+
+  public CompareImageResult secondFaceIndex(Integer secondFaceIndex) {
+
+    this.secondFaceIndex = secondFaceIndex;
+    return this;
+  }
+
+  /**
+   * Faces index used to identify faces in scope of one photo.
+   *
+   * @return secondFaceIndex
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Faces index used to identify faces in scope of one photo.")
+  public Integer getSecondFaceIndex() {
+    return secondFaceIndex;
+  }
+
+  public void setSecondFaceIndex(Integer secondFaceIndex) {
+    this.secondFaceIndex = secondFaceIndex;
   }
 
   public CompareImageResult score(BigDecimal score) {
@@ -134,7 +192,7 @@ public class CompareImageResult {
     this.similarity = similarity;
   }
 
-  public CompareImageResult errorCode(String errorCode) {
+  public CompareImageResult errorCode(Integer errorCode) {
 
     this.errorCode = errorCode;
     return this;
@@ -147,11 +205,11 @@ public class CompareImageResult {
    */
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public String getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(String errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
@@ -186,7 +244,9 @@ public class CompareImageResult {
     }
     CompareImageResult compareImageResult = (CompareImageResult) o;
     return Objects.equals(this.firstIndex, compareImageResult.firstIndex)
+        && Objects.equals(this.firstFaceIndex, compareImageResult.firstFaceIndex)
         && Objects.equals(this.secondIndex, compareImageResult.secondIndex)
+        && Objects.equals(this.secondFaceIndex, compareImageResult.secondFaceIndex)
         && Objects.equals(this.score, compareImageResult.score)
         && Objects.equals(this.similarity, compareImageResult.similarity)
         && Objects.equals(this.errorCode, compareImageResult.errorCode)
@@ -195,7 +255,15 @@ public class CompareImageResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstIndex, secondIndex, score, similarity, errorCode, errorMsg);
+    return Objects.hash(
+        firstIndex,
+        firstFaceIndex,
+        secondIndex,
+        secondFaceIndex,
+        score,
+        similarity,
+        errorCode,
+        errorMsg);
   }
 
   @Override
@@ -203,7 +271,9 @@ public class CompareImageResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompareImageResult {\n");
     sb.append("    firstIndex: ").append(toIndentedString(firstIndex)).append("\n");
+    sb.append("    firstFaceIndex: ").append(toIndentedString(firstFaceIndex)).append("\n");
     sb.append("    secondIndex: ").append(toIndentedString(secondIndex)).append("\n");
+    sb.append("    secondFaceIndex: ").append(toIndentedString(secondFaceIndex)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");

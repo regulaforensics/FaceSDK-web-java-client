@@ -3,12 +3,12 @@
 ENUM_MAPPINGS="ImageSource=Integer,FaceRecognitionResultCode=Integer,LivenessStatus=Integer" \
 \
 && docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "${PWD}/../FaceRecognition-web-openapi:/definitions" \
-openapitools/openapi-generator-cli:v5.0.0-beta2 generate \
+openapitools/openapi-generator-cli:v5.0.1 generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
 \
 && docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "${PWD}/../FaceRecognition-web-openapi:/definitions" \
-openapitools/openapi-generator-cli:v5.0.0-beta2 generate \
+openapitools/openapi-generator-cli:v5.0.1 generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
 --import-mappings $ENUM_MAPPINGS || exit 1
