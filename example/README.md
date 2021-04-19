@@ -1,4 +1,4 @@
-# Regula Face Recognition java client compatible with jvm and android
+# Regula Face SDK java client compatible with jvm and android
 
 Requirements:
 - installed java 11+
@@ -11,11 +11,11 @@ java --version
 
 Cloning example:
 ```bash
-git clone https://github.com/regulaforensics/FaceRecognition-web-java-client
-cd FaceRecognition-web-java-client
+git clone https://github.com/regulaforensics/FaceSDK-web-java-client
+cd FaceSDK-web-java-client
 ```
 
-### Running with local Face Recognition web API installation
+### Running with local Face SDK web API installation
 
 :warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
 
