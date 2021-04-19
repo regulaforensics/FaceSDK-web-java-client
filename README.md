@@ -1,12 +1,12 @@
-# Regula Face Recognition java client compatible with jvm and android
+# Regula Face SDK java client compatible with jvm and android
 
-[![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceRecognition-web-openapi)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceSDK-web-openapi)
 
 Face recognition as easy as reading two bytes.
 
 If you have any problems with or questions about this client, please contact us
-through a [GitHub issue](https://github.com/regulaforensics/FaceRecognition-web-java-client/issues).
-You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceRecognition-web-java-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can.
+through a [GitHub issue](https://github.com/regulaforensics/FaceSDK-web-java-client/issues).
+You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceSDK-web-java-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
 
 ## Install package
