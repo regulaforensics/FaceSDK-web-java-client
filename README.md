@@ -1,4 +1,4 @@
-# Regula Face SDK java client compatible with jvm and android
+# Regula FaceSDK java client compatible with jvm and android
 
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceSDK-web-openapi)
 
@@ -16,12 +16,12 @@ and declare client as regular dependency.
 ```gradle
 repositories {
     maven {
-        url = uri("https://maven.regulaforensics.com/RegulaFaceRecognitionWebClient")
+        url = uri("https://maven.regulaforensics.com/RegulaFaceSDKWebClient")
     }
 }
 
 dependencies {
-    implementation("com.regula.facerecognition:webclient:1.3.0")
+    implementation("com.regula.facesdk:webclient:1.3.0")
 }
 ```
 

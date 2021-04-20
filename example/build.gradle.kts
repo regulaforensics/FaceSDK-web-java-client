@@ -5,7 +5,7 @@ plugins {
 
 
 application {
-    mainClass.set("com.regula.facerecognition.webclient.Main")
+    mainClass.set("com.regula.facesdk.webclient.Main")
 }
 
 java {

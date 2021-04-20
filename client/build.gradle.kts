@@ -46,8 +46,8 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
         repositories {
             maven {
 
-                val releasesRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceRecognitionWebClient")
-                val betaRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceRecognitionWebClient/Beta")
+                val releasesRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceSDKWebClient")
+                val betaRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceSDKWebClient/Beta")
 
                 name = "regulaforensics"
                 url = if (version.toString().contains("beta")) betaRepoUrl else releasesRepoUrl
