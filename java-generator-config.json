@@ -1,12 +1,12 @@
 {
   "artifactId": "webclient",
   "artifactVersion": "1.3.0",
-  "groupId": "com.regula.facerecognition",
+  "groupId": "com.regula.facesdk",
   "library": "okhttp-gson",
   "useRuntimeException": true,
   "hideGenerationTimestamp": true,
-  "invokerPackage": "com.regula.facerecognition.webclient",
-  "modelPackage": "com.regula.facerecognition.webclient.gen.model",
-  "apiPackage": "com.regula.facerecognition.webclient.gen.api",
+  "invokerPackage": "com.regula.facesdk.webclient",
+  "modelPackage": "com.regula.facesdk.webclient.gen.model",
+  "apiPackage": "com.regula.facesdk.webclient.gen.api",
   "sourceFolder": "src/main/generated"
 }

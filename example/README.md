@@ -52,4 +52,4 @@ BUILD SUCCESSFUL in 13s
 6:00:26 PM: Task execution finished 'Main.main()'.
 ```
 
-Edit [example](../example/src/main/java/com/regula/facerecognition/webclient/Main.java) on your own , and re-run to see your results.
+Edit [example](../example/src/main/java/com/regula/facesdk/webclient/Main.java) on your own , and re-run to see your results.

@@ -5,7 +5,7 @@ plugins {
 }
 
 allprojects {
-    group = "com.regula.facerecognition"
+    group = "com.regula.facesdk"
 
     repositories {
         mavenCentral()
