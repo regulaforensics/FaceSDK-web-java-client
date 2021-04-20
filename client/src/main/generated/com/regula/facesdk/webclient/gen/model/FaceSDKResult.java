@@ -16,15 +16,15 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
-/** FaceRecognitionResult */
+/** FaceSDKResult */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FaceRecognitionResult {
+public class FaceSDKResult {
   public static final String SERIALIZED_NAME_CODE = "code";
 
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
 
-  public FaceRecognitionResult code(Integer code) {
+  public FaceSDKResult code(Integer code) {
 
     this.code = code;
     return this;
@@ -52,8 +52,8 @@ public class FaceRecognitionResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FaceRecognitionResult faceRecognitionResult = (FaceRecognitionResult) o;
-    return Objects.equals(this.code, faceRecognitionResult.code);
+    FaceSDKResult faceSDKResult = (FaceSDKResult) o;
+    return Objects.equals(this.code, faceSDKResult.code);
   }
 
   @Override
@@ -64,7 +64,7 @@ public class FaceRecognitionResult {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FaceRecognitionResult {\n");
+    sb.append("class FaceSDKResult {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();

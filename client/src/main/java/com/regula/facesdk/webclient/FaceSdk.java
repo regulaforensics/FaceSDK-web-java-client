@@ -1,6 +1,6 @@
 package com.regula.facesdk.webclient;
 
-import com.regula.facesdk.webclient.gen.api.MatchingApi;
+import com.regula.facesdk.webclient.api.MatchingApi;
 
 public class FaceSdk {
   private ApiClient apiClient;

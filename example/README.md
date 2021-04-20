@@ -1,4 +1,4 @@
-# Regula Face SDK java client compatible with jvm and android
+# Regula FaceSDK java client compatible with jvm and android
 
 Requirements:
 - installed java 11+
@@ -33,7 +33,7 @@ This sample generates next text output:
 
 ```text
 -----------------------------------------------------------------
-                         Compare Results                         
+                         Matching Results                         
 -----------------------------------------------------------------
 pair(0, 1) similarity: 0.999585
 pair(0, 3) similarity: 0.008510

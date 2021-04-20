@@ -19,10 +19,10 @@ import com.regula.facesdk.webclient.ApiException;
 import com.regula.facesdk.webclient.ApiResponse;
 import com.regula.facesdk.webclient.Configuration;
 import com.regula.facesdk.webclient.Pair;
-import com.regula.facesdk.webclient.gen.model.CompareRequest;
-import com.regula.facesdk.webclient.gen.model.CompareResponse;
 import com.regula.facesdk.webclient.gen.model.DetectRequest;
 import com.regula.facesdk.webclient.gen.model.DetectResponse;
+import com.regula.facesdk.webclient.gen.model.MatchRequest;
+import com.regula.facesdk.webclient.gen.model.MatchResponse;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,136 +48,6 @@ public class MatchingApi {
     this.localVarApiClient = apiClient;
   }
 
-  /**
-   * Build call for compare
-   *
-   * @param compareRequest (required)
-   * @param _callback Callback for upload/download progress
-   * @return Call to execute
-   * @throws ApiException If fail to serialize the request body object
-   * @http.response.details
-   *     <table summary="Response Details" border="1">
-   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
-   * </table>
-   */
-  public okhttp3.Call compareCall(CompareRequest compareRequest, final ApiCallback _callback)
-      throws ApiException {
-    Object localVarPostBody = compareRequest;
-
-    // create path and map variables
-    String localVarPath = "/api/compare";
-
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    final String[] localVarAccepts = {"application/json"};
-    final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-    if (localVarAccept != null) {
-      localVarHeaderParams.put("Accept", localVarAccept);
-    }
-
-    final String[] localVarContentTypes = {"application/json"};
-    final String localVarContentType =
-        localVarApiClient.selectHeaderContentType(localVarContentTypes);
-    localVarHeaderParams.put("Content-Type", localVarContentType);
-
-    String[] localVarAuthNames = new String[] {};
-    return localVarApiClient.buildCall(
-        localVarPath,
-        "POST",
-        localVarQueryParams,
-        localVarCollectionQueryParams,
-        localVarPostBody,
-        localVarHeaderParams,
-        localVarCookieParams,
-        localVarFormParams,
-        localVarAuthNames,
-        _callback);
-  }
-
-  @SuppressWarnings("rawtypes")
-  private okhttp3.Call compareValidateBeforeCall(
-      CompareRequest compareRequest, final ApiCallback _callback) throws ApiException {
-
-    // verify the required parameter 'compareRequest' is set
-    if (compareRequest == null) {
-      throw new ApiException(
-          "Missing the required parameter 'compareRequest' when calling compare(Async)");
-    }
-
-    okhttp3.Call localVarCall = compareCall(compareRequest, _callback);
-    return localVarCall;
-  }
-
-  /**
-   * Compare provided face images in all combinations and return similarity score for each pair.
-   *
-   * @param compareRequest (required)
-   * @return CompareResponse
-   * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-   *     response body
-   * @http.response.details
-   *     <table summary="Response Details" border="1">
-   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
-   * </table>
-   */
-  public CompareResponse compare(CompareRequest compareRequest) throws ApiException {
-    ApiResponse<CompareResponse> localVarResp = compareWithHttpInfo(compareRequest);
-    return localVarResp.getData();
-  }
-
-  /**
-   * Compare provided face images in all combinations and return similarity score for each pair.
-   *
-   * @param compareRequest (required)
-   * @return ApiResponse&lt;CompareResponse&gt;
-   * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-   *     response body
-   * @http.response.details
-   *     <table summary="Response Details" border="1">
-   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
-   * </table>
-   */
-  public ApiResponse<CompareResponse> compareWithHttpInfo(CompareRequest compareRequest)
-      throws ApiException {
-    okhttp3.Call localVarCall = compareValidateBeforeCall(compareRequest, null);
-    Type localVarReturnType = new TypeToken<CompareResponse>() {}.getType();
-    return localVarApiClient.execute(localVarCall, localVarReturnType);
-  }
-
-  /**
-   * Compare provided face images in all combinations and return similarity score for each pair.
-   * (asynchronously)
-   *
-   * @param compareRequest (required)
-   * @param _callback The callback to be executed when the API call finishes
-   * @return The request call
-   * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-   * @http.response.details
-   *     <table summary="Response Details" border="1">
-   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
-   * </table>
-   */
-  public okhttp3.Call compareAsync(
-      CompareRequest compareRequest, final ApiCallback<CompareResponse> _callback)
-      throws ApiException {
-
-    okhttp3.Call localVarCall = compareValidateBeforeCall(compareRequest, _callback);
-    Type localVarReturnType = new TypeToken<CompareResponse>() {}.getType();
-    localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-    return localVarCall;
-  }
   /**
    * Build call for detect
    *
@@ -304,6 +174,135 @@ public class MatchingApi {
 
     okhttp3.Call localVarCall = detectValidateBeforeCall(detectRequest, _callback);
     Type localVarReturnType = new TypeToken<DetectResponse>() {}.getType();
+    localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+    return localVarCall;
+  }
+  /**
+   * Build call for match
+   *
+   * @param matchRequest (required)
+   * @param _callback Callback for upload/download progress
+   * @return Call to execute
+   * @throws ApiException If fail to serialize the request body object
+   * @http.response.details
+   *     <table summary="Response Details" border="1">
+   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * </table>
+   */
+  public okhttp3.Call matchCall(MatchRequest matchRequest, final ApiCallback _callback)
+      throws ApiException {
+    Object localVarPostBody = matchRequest;
+
+    // create path and map variables
+    String localVarPath = "/api/match";
+
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    final String[] localVarAccepts = {"application/json"};
+    final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+    if (localVarAccept != null) {
+      localVarHeaderParams.put("Accept", localVarAccept);
+    }
+
+    final String[] localVarContentTypes = {"application/json"};
+    final String localVarContentType =
+        localVarApiClient.selectHeaderContentType(localVarContentTypes);
+    localVarHeaderParams.put("Content-Type", localVarContentType);
+
+    String[] localVarAuthNames = new String[] {};
+    return localVarApiClient.buildCall(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAuthNames,
+        _callback);
+  }
+
+  @SuppressWarnings("rawtypes")
+  private okhttp3.Call matchValidateBeforeCall(
+      MatchRequest matchRequest, final ApiCallback _callback) throws ApiException {
+
+    // verify the required parameter 'matchRequest' is set
+    if (matchRequest == null) {
+      throw new ApiException(
+          "Missing the required parameter 'matchRequest' when calling match(Async)");
+    }
+
+    okhttp3.Call localVarCall = matchCall(matchRequest, _callback);
+    return localVarCall;
+  }
+
+  /**
+   * Compare provided face images in all combinations and return similarity score for each pair.
+   *
+   * @param matchRequest (required)
+   * @return MatchResponse
+   * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+   *     response body
+   * @http.response.details
+   *     <table summary="Response Details" border="1">
+   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * </table>
+   */
+  public MatchResponse match(MatchRequest matchRequest) throws ApiException {
+    ApiResponse<MatchResponse> localVarResp = matchWithHttpInfo(matchRequest);
+    return localVarResp.getData();
+  }
+
+  /**
+   * Compare provided face images in all combinations and return similarity score for each pair.
+   *
+   * @param matchRequest (required)
+   * @return ApiResponse&lt;MatchResponse&gt;
+   * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+   *     response body
+   * @http.response.details
+   *     <table summary="Response Details" border="1">
+   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * </table>
+   */
+  public ApiResponse<MatchResponse> matchWithHttpInfo(MatchRequest matchRequest)
+      throws ApiException {
+    okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, null);
+    Type localVarReturnType = new TypeToken<MatchResponse>() {}.getType();
+    return localVarApiClient.execute(localVarCall, localVarReturnType);
+  }
+
+  /**
+   * Compare provided face images in all combinations and return similarity score for each pair.
+   * (asynchronously)
+   *
+   * @param matchRequest (required)
+   * @param _callback The callback to be executed when the API call finishes
+   * @return The request call
+   * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+   * @http.response.details
+   *     <table summary="Response Details" border="1">
+   * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+   * <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * </table>
+   */
+  public okhttp3.Call matchAsync(
+      MatchRequest matchRequest, final ApiCallback<MatchResponse> _callback) throws ApiException {
+
+    okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, _callback);
+    Type localVarReturnType = new TypeToken<MatchResponse>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
   }

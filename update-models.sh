@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ENUM_MAPPINGS="ImageSource=Integer,FaceRecognitionResultCode=Integer,LivenessStatus=Integer" \
+ENUM_MAPPINGS="ImageSource=Integer,FaceSDKResultCode=Integer,LivenessStatus=Integer" \
 \
 && docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "${PWD}/../FaceSDK-web-openapi:/definitions" \
 openapitools/openapi-generator-cli:v5.0.1 generate \

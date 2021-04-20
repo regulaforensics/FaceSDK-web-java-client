@@ -19,18 +19,18 @@ public class Main {
 
         var sdk = new FaceSdk(apiBasePath);
 
-        var compareImage1 = new CompareImage().index(0).data(face1).type(ImageSource.LIVE);
-        var compareImage2 = new CompareImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
-        var compareImage3 = new CompareImage().index(3).data(face2).type(ImageSource.LIVE);
-        var compareRequest = new CompareRequest().images(
-                List.of(compareImage1, compareImage2, compareImage3)
+        var matchImage1 = new MatchImage().index(0).data(face1).type(ImageSource.LIVE);
+        var matchImage2 = new MatchImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
+        var matchImage3 = new MatchImage().index(3).data(face2).type(ImageSource.LIVE);
+        var matchRequest = new MatchRequest().images(
+                List.of(matchImage1, matchImage2, matchImage3)
         );
-        var compareResponse = sdk.matchingApi.compare(compareRequest);
+        var matchResponse = sdk.matchingApi.match(matchRequest);
 
         System.out.println("-----------------------------------------------------------------");
-        System.out.println("                         Compare Results                         ");
+        System.out.println("                         Matching Results                         ");
         System.out.println("-----------------------------------------------------------------");
-        for (var comparison : compareResponse.getResults()) {
+        for (var comparison : matchResponse.getResults()) {
             System.out.format(
                     "pair(%d, %d) similarity: %f%n",
                     comparison.getFirstIndex(), comparison.getSecondIndex(), comparison.getSimilarity()
@@ -52,6 +52,7 @@ public class Main {
             System.out.format("attributes: %s%n", detection.getAttributes());
         }
         System.out.println("-----------------------------------------------------------------");
+        System.exit(0);
     }
 
     private static byte[] readFile(String filePath) throws IOException {
