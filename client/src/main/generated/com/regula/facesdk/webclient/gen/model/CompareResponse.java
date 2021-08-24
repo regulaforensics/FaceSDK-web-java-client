@@ -15,10 +15,10 @@ package com.regula.facesdk.webclient.gen.model;
 // since = "3.0", use MatchResponse
 @Deprecated
 public class CompareResponse extends MatchResponse {
-    public CompareResponse(MatchResponse origin) {
-        super();
-        setCode(origin.getCode());
-        setDetections(origin.getDetections());
-        setResults(origin.getResults());
-    }
+  public CompareResponse(MatchResponse origin) {
+    super();
+    setCode(origin.getCode());
+    setDetections(origin.getDetections());
+    setResults(origin.getResults());
+  }
 }
