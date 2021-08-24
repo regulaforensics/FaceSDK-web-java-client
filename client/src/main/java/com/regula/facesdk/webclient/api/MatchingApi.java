@@ -6,15 +6,15 @@ import com.regula.facesdk.webclient.gen.model.CompareResponse;
 import com.regula.facesdk.webclient.gen.model.MatchRequest;
 
 public class MatchingApi extends com.regula.facesdk.webclient.gen.api.MatchingApi {
-    public MatchingApi() {
-        super();
-    }
+  public MatchingApi() {
+    super();
+  }
 
-    public MatchingApi(ApiClient apiClient) {
-        super(apiClient);
-    }
+  public MatchingApi(ApiClient apiClient) {
+    super(apiClient);
+  }
 
-    public CompareResponse compare(MatchRequest matchRequest) throws ApiException {
-        return new CompareResponse(super.match(matchRequest));
-    }
+  public CompareResponse compare(MatchRequest matchRequest) throws ApiException {
+    return new CompareResponse(super.match(matchRequest));
+  }
 }

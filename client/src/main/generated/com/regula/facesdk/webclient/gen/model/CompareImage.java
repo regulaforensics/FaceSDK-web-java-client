@@ -14,5 +14,4 @@ package com.regula.facesdk.webclient.gen.model;
 
 // since = "3.0", use MatchImage
 @Deprecated
-public class CompareImage extends MatchImage {
-}
+public class CompareImage extends MatchImage {}
