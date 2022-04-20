@@ -25,6 +25,11 @@ import java.util.Objects;
 /** Detection */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Detection {
+  public static final String SERIALIZED_NAME_CROP = "crop";
+
+  @SerializedName(SERIALIZED_NAME_CROP)
+  private byte[] crop;
+
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
 
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
@@ -35,6 +40,11 @@ public class Detection {
   @SerializedName(SERIALIZED_NAME_LANDMARKS)
   private List<List<BigDecimal>> landmarks = new ArrayList<List<BigDecimal>>();
 
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+
+  @SerializedName(SERIALIZED_NAME_QUALITY)
+  private DetectionQuality quality;
+
   public static final String SERIALIZED_NAME_ROI = "roi";
 
   @SerializedName(SERIALIZED_NAME_ROI)
@@ -44,6 +54,27 @@ public class Detection {
 
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
   private byte[] thumbnail;
+
+  public Detection crop(byte[] crop) {
+
+    this.crop = crop;
+    return this;
+  }
+
+  /**
+   * Base64 encoded image
+   *
+   * @return crop
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Base64 encoded image")
+  public byte[] getCrop() {
+    return crop;
+  }
+
+  public void setCrop(byte[] crop) {
+    this.crop = crop;
+  }
 
   public Detection attributes(Map<String, Object> attributes) {
 
@@ -100,6 +131,27 @@ public class Detection {
 
   public void setLandmarks(List<List<BigDecimal>> landmarks) {
     this.landmarks = landmarks;
+  }
+
+  public Detection quality(DetectionQuality quality) {
+
+    this.quality = quality;
+    return this;
+  }
+
+  /**
+   * Get quality
+   *
+   * @return quality
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public DetectionQuality getQuality() {
+    return quality;
+  }
+
+  public void setQuality(DetectionQuality quality) {
+    this.quality = quality;
   }
 
   public Detection roi(List<BigDecimal> roi) {
@@ -163,23 +215,28 @@ public class Detection {
       return false;
     }
     Detection detection = (Detection) o;
-    return Objects.equals(this.attributes, detection.attributes)
+    return Arrays.equals(this.crop, detection.crop)
+        && Objects.equals(this.attributes, detection.attributes)
         && Objects.equals(this.landmarks, detection.landmarks)
+        && Objects.equals(this.quality, detection.quality)
         && Objects.equals(this.roi, detection.roi)
         && Arrays.equals(this.thumbnail, detection.thumbnail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attributes, landmarks, roi, Arrays.hashCode(thumbnail));
+    return Objects.hash(
+        Arrays.hashCode(crop), attributes, landmarks, quality, roi, Arrays.hashCode(thumbnail));
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Detection {\n");
+    sb.append("    crop: ").append(toIndentedString(crop)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    landmarks: ").append(toIndentedString(landmarks)).append("\n");
+    sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    roi: ").append(toIndentedString(roi)).append("\n");
     sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
     sb.append("}");
