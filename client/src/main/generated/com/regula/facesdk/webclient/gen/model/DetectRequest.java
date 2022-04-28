@@ -25,6 +25,11 @@ public class DetectRequest {
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
 
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+
+  @SerializedName(SERIALIZED_NAME_QUALITY)
+  private QualityRequest quality;
+
   public static final String SERIALIZED_NAME_IMAGE = "image";
 
   @SerializedName(SERIALIZED_NAME_IMAGE)
@@ -64,6 +69,27 @@ public class DetectRequest {
 
   public void setTag(String tag) {
     this.tag = tag;
+  }
+
+  public DetectRequest quality(QualityRequest quality) {
+
+    this.quality = quality;
+    return this;
+  }
+
+  /**
+   * Get quality
+   *
+   * @return quality
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public QualityRequest getQuality() {
+    return quality;
+  }
+
+  public void setQuality(QualityRequest quality) {
+    this.quality = quality;
   }
 
   public DetectRequest image(byte[] image) {
@@ -160,6 +186,7 @@ public class DetectRequest {
     }
     DetectRequest detectRequest = (DetectRequest) o;
     return Objects.equals(this.tag, detectRequest.tag)
+        && Objects.equals(this.quality, detectRequest.quality)
         && Arrays.equals(this.image, detectRequest.image)
         && Objects.equals(this.thumbnails, detectRequest.thumbnails)
         && Objects.equals(this.attributes, detectRequest.attributes)
@@ -168,7 +195,8 @@ public class DetectRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, Arrays.hashCode(image), thumbnails, attributes, onlyCentralFace);
+    return Objects.hash(
+        tag, quality, Arrays.hashCode(image), thumbnails, attributes, onlyCentralFace);
   }
 
   @Override
@@ -176,6 +204,7 @@ public class DetectRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class DetectRequest {\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
