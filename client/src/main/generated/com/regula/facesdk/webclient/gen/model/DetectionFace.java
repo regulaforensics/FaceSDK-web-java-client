@@ -26,7 +26,7 @@ public class DetectionFace {
   public static final String SERIALIZED_NAME_FACE_INDEX = "faceIndex";
 
   @SerializedName(SERIALIZED_NAME_FACE_INDEX)
-  private Integer faceIndex;
+  private BigDecimal faceIndex;
 
   public static final String SERIALIZED_NAME_LANDMARKS = "landmarks";
 
@@ -43,7 +43,7 @@ public class DetectionFace {
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
   private byte[] thumbnail;
 
-  public DetectionFace faceIndex(Integer faceIndex) {
+  public DetectionFace faceIndex(BigDecimal faceIndex) {
 
     this.faceIndex = faceIndex;
     return this;
@@ -56,11 +56,11 @@ public class DetectionFace {
    */
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Faces index used to identify faces in scope of one photo.")
-  public Integer getFaceIndex() {
+  public BigDecimal getFaceIndex() {
     return faceIndex;
   }
 
-  public void setFaceIndex(Integer faceIndex) {
+  public void setFaceIndex(BigDecimal faceIndex) {
     this.faceIndex = faceIndex;
   }
 
