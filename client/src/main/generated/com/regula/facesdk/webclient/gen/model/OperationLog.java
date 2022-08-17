@@ -16,52 +16,52 @@ package com.regula.facesdk.webclient.gen.model;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.Arrays;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * MatchImage
+ * OperationLog
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchImage {
-    public static final String SERIALIZED_NAME_INDEX = "index";
+public class OperationLog {
+    public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
     public static final String SERIALIZED_NAME_TYPE = "type";
-    public static final String SERIALIZED_NAME_DATA = "data";
-    @SerializedName(SERIALIZED_NAME_INDEX)
-    private Integer index;
+    public static final String SERIALIZED_NAME_MSG = "msg";
+    @SerializedName(SERIALIZED_NAME_STATUS_CODE)
+    private BigDecimal statusCode;
     @SerializedName(SERIALIZED_NAME_TYPE)
-    private ImageSource type;
-    @SerializedName(SERIALIZED_NAME_DATA)
-    private byte[] data;
+    private String type;
+    @SerializedName(SERIALIZED_NAME_MSG)
+    private String msg;
 
-    public MatchImage() {
+    public OperationLog() {
     }
 
-    public MatchImage index(Integer index) {
+    public OperationLog statusCode(BigDecimal statusCode) {
 
-        this.index = index;
+        this.statusCode = statusCode;
         return this;
     }
 
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Get statusCode
      *
-     * @return index
+     * @return statusCode
      **/
     @javax.annotation.Nullable
-    @ApiModelProperty(value = "Image index used to identify input photos between themselves. If not specified, than input list index is used")
+    @ApiModelProperty(value = "")
 
-    public Integer getIndex() {
-        return index;
+    public BigDecimal getStatusCode() {
+        return statusCode;
     }
 
 
-    public void setIndex(Integer index) {
-        this.index = index;
+    public void setStatusCode(BigDecimal statusCode) {
+        this.statusCode = statusCode;
     }
 
 
-    public MatchImage type(ImageSource type) {
+    public OperationLog type(String type) {
 
         this.type = type;
         return this;
@@ -75,37 +75,37 @@ public class MatchImage {
     @javax.annotation.Nullable
     @ApiModelProperty(value = "")
 
-    public ImageSource getType() {
+    public String getType() {
         return type;
     }
 
 
-    public void setType(ImageSource type) {
+    public void setType(String type) {
         this.type = type;
     }
 
 
-    public MatchImage data(byte[] data) {
+    public OperationLog msg(String msg) {
 
-        this.data = data;
+        this.msg = msg;
         return this;
     }
 
     /**
-     * Base64 encoded image
+     * Get msg
      *
-     * @return data
+     * @return msg
      **/
-    @javax.annotation.Nonnull
-    @ApiModelProperty(required = true, value = "Base64 encoded image")
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
 
-    public byte[] getData() {
-        return data;
+    public String getMsg() {
+        return msg;
     }
 
 
-    public void setData(byte[] data) {
-        this.data = data;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
 
@@ -117,24 +117,24 @@ public class MatchImage {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MatchImage matchImage = (MatchImage) o;
-        return Objects.equals(this.index, matchImage.index) &&
-                Objects.equals(this.type, matchImage.type) &&
-                Arrays.equals(this.data, matchImage.data);
+        OperationLog operationLog = (OperationLog) o;
+        return Objects.equals(this.statusCode, operationLog.statusCode) &&
+                Objects.equals(this.type, operationLog.type) &&
+                Objects.equals(this.msg, operationLog.msg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(index, type, Arrays.hashCode(data));
+        return Objects.hash(statusCode, type, msg);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class MatchImage {\n");
-        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("class OperationLog {\n");
+        sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -16,68 +16,69 @@ package com.regula.facesdk.webclient.gen.model;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.File;
 import java.util.Objects;
 
 /**
- * DetectResponse
+ * ImageFields
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class DetectResponse {
-    public static final String SERIALIZED_NAME_CODE = "code";
-    public static final String SERIALIZED_NAME_RESULTS = "results";
-    @SerializedName(SERIALIZED_NAME_CODE)
-    private FaceSDKResultCode code;
-    @SerializedName(SERIALIZED_NAME_RESULTS)
-    private DetectResult results;
+public class ImageFields {
+    public static final String SERIALIZED_NAME_CONTENT_TYPE = "content_type";
+    public static final String SERIALIZED_NAME_CONTENT = "content";
+    @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+    private String contentType;
+    @SerializedName(SERIALIZED_NAME_CONTENT)
+    private File content;
 
-    public DetectResponse() {
+    public ImageFields() {
     }
 
-    public DetectResponse code(FaceSDKResultCode code) {
+    public ImageFields contentType(String contentType) {
 
-        this.code = code;
+        this.contentType = contentType;
         return this;
     }
 
     /**
-     * Get code
+     * Get contentType
      *
-     * @return code
-     **/
-    @javax.annotation.Nonnull
-    @ApiModelProperty(required = true, value = "")
-
-    public FaceSDKResultCode getCode() {
-        return code;
-    }
-
-
-    public void setCode(FaceSDKResultCode code) {
-        this.code = code;
-    }
-
-
-    public DetectResponse results(DetectResult results) {
-
-        this.results = results;
-        return this;
-    }
-
-    /**
-     * Get results
-     *
-     * @return results
+     * @return contentType
      **/
     @javax.annotation.Nullable
     @ApiModelProperty(value = "")
 
-    public DetectResult getResults() {
-        return results;
+    public String getContentType() {
+        return contentType;
     }
 
 
-    public void setResults(DetectResult results) {
-        this.results = results;
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+
+    public ImageFields content(File content) {
+
+        this.content = content;
+        return this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return content
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+
+    public File getContent() {
+        return content;
+    }
+
+
+    public void setContent(File content) {
+        this.content = content;
     }
 
 
@@ -89,22 +90,22 @@ public class DetectResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DetectResponse detectResponse = (DetectResponse) o;
-        return Objects.equals(this.code, detectResponse.code) &&
-                Objects.equals(this.results, detectResponse.results);
+        ImageFields imageFields = (ImageFields) o;
+        return Objects.equals(this.contentType, imageFields.contentType) &&
+                Objects.equals(this.content, imageFields.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, results);
+        return Objects.hash(contentType, content);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DetectResponse {\n");
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("class ImageFields {\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("}");
         return sb.toString();
     }

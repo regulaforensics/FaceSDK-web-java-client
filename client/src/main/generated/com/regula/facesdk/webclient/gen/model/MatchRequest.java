@@ -10,136 +10,151 @@
  * Do not edit the class manually.
  */
 
+
 package com.regula.facesdk.webclient.gen.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** MatchRequest */
+/**
+ * MatchRequest
+ */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MatchRequest {
-  public static final String SERIALIZED_NAME_TAG = "tag";
+    public static final String SERIALIZED_NAME_TAG = "tag";
+    public static final String SERIALIZED_NAME_THUMBNAILS = "thumbnails";
+    public static final String SERIALIZED_NAME_IMAGES = "images";
+    @SerializedName(SERIALIZED_NAME_TAG)
+    private String tag;
+    @SerializedName(SERIALIZED_NAME_THUMBNAILS)
+    private Boolean thumbnails = false;
+    @SerializedName(SERIALIZED_NAME_IMAGES)
+    private List<MatchImage> images = new ArrayList<MatchImage>();
 
-  @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
-
-  public static final String SERIALIZED_NAME_THUMBNAILS = "thumbnails";
-
-  @SerializedName(SERIALIZED_NAME_THUMBNAILS)
-  private Boolean thumbnails = false;
-
-  public static final String SERIALIZED_NAME_IMAGES = "images";
-
-  @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<MatchImage> images = new ArrayList<MatchImage>();
-
-  public MatchRequest tag(String tag) {
-
-    this.tag = tag;
-    return this;
-  }
-
-  /**
-   * Get tag
-   *
-   * @return tag
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  public String getTag() {
-    return tag;
-  }
-
-  public void setTag(String tag) {
-    this.tag = tag;
-  }
-
-  public MatchRequest thumbnails(Boolean thumbnails) {
-
-    this.thumbnails = thumbnails;
-    return this;
-  }
-
-  /**
-   * Get thumbnails
-   *
-   * @return thumbnails
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  public Boolean getThumbnails() {
-    return thumbnails;
-  }
-
-  public void setThumbnails(Boolean thumbnails) {
-    this.thumbnails = thumbnails;
-  }
-
-  public MatchRequest images(List<MatchImage> images) {
-
-    this.images = images;
-    return this;
-  }
-
-  public MatchRequest addImagesItem(MatchImage imagesItem) {
-    this.images.add(imagesItem);
-    return this;
-  }
-
-  /**
-   * Get images
-   *
-   * @return images
-   */
-  @ApiModelProperty(required = true, value = "")
-  public List<MatchImage> getImages() {
-    return images;
-  }
-
-  public void setImages(List<MatchImage> images) {
-    this.images = images;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public MatchRequest() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public MatchRequest tag(String tag) {
+
+        this.tag = tag;
+        return this;
     }
-    MatchRequest matchRequest = (MatchRequest) o;
-    return Objects.equals(this.tag, matchRequest.tag)
-        && Objects.equals(this.thumbnails, matchRequest.thumbnails)
-        && Objects.equals(this.images, matchRequest.images);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(tag, thumbnails, images);
-  }
+    /**
+     * Get tag
+     *
+     * @return tag
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MatchRequest {\n");
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-    sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
-    sb.append("    images: ").append(toIndentedString(images)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public String getTag() {
+        return tag;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+
+    public MatchRequest thumbnails(Boolean thumbnails) {
+
+        this.thumbnails = thumbnails;
+        return this;
+    }
+
+    /**
+     * Get thumbnails
+     *
+     * @return thumbnails
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+
+    public Boolean getThumbnails() {
+        return thumbnails;
+    }
+
+
+    public void setThumbnails(Boolean thumbnails) {
+        this.thumbnails = thumbnails;
+    }
+
+
+    public MatchRequest images(List<MatchImage> images) {
+
+        this.images = images;
+        return this;
+    }
+
+    public MatchRequest addImagesItem(MatchImage imagesItem) {
+        this.images.add(imagesItem);
+        return this;
+    }
+
+    /**
+     * Get images
+     *
+     * @return images
+     **/
+    @javax.annotation.Nonnull
+    @ApiModelProperty(required = true, value = "")
+
+    public List<MatchImage> getImages() {
+        return images;
+    }
+
+
+    public void setImages(List<MatchImage> images) {
+        this.images = images;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MatchRequest matchRequest = (MatchRequest) o;
+        return Objects.equals(this.tag, matchRequest.tag) &&
+                Objects.equals(this.thumbnails, matchRequest.thumbnails) &&
+                Objects.equals(this.images, matchRequest.images);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tag, thumbnails, images);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class MatchRequest {\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
+        sb.append("    images: ").append(toIndentedString(images)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
 }
+

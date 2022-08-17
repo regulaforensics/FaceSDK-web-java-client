@@ -19,65 +19,65 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
- * DetectResponse
+ * PersonFields
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class DetectResponse {
-    public static final String SERIALIZED_NAME_CODE = "code";
-    public static final String SERIALIZED_NAME_RESULTS = "results";
-    @SerializedName(SERIALIZED_NAME_CODE)
-    private FaceSDKResultCode code;
-    @SerializedName(SERIALIZED_NAME_RESULTS)
-    private DetectResult results;
+public class PersonFields {
+    public static final String SERIALIZED_NAME_NAME = "name";
+    public static final String SERIALIZED_NAME_METADATA = "metadata";
+    @SerializedName(SERIALIZED_NAME_NAME)
+    private String name;
+    @SerializedName(SERIALIZED_NAME_METADATA)
+    private Object metadata;
 
-    public DetectResponse() {
+    public PersonFields() {
     }
 
-    public DetectResponse code(FaceSDKResultCode code) {
+    public PersonFields name(String name) {
 
-        this.code = code;
+        this.name = name;
         return this;
     }
 
     /**
-     * Get code
+     * Get name
      *
-     * @return code
-     **/
-    @javax.annotation.Nonnull
-    @ApiModelProperty(required = true, value = "")
-
-    public FaceSDKResultCode getCode() {
-        return code;
-    }
-
-
-    public void setCode(FaceSDKResultCode code) {
-        this.code = code;
-    }
-
-
-    public DetectResponse results(DetectResult results) {
-
-        this.results = results;
-        return this;
-    }
-
-    /**
-     * Get results
-     *
-     * @return results
+     * @return name
      **/
     @javax.annotation.Nullable
     @ApiModelProperty(value = "")
 
-    public DetectResult getResults() {
-        return results;
+    public String getName() {
+        return name;
     }
 
 
-    public void setResults(DetectResult results) {
-        this.results = results;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public PersonFields metadata(Object metadata) {
+
+        this.metadata = metadata;
+        return this;
+    }
+
+    /**
+     * Get metadata
+     *
+     * @return metadata
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+
+    public Object getMetadata() {
+        return metadata;
+    }
+
+
+    public void setMetadata(Object metadata) {
+        this.metadata = metadata;
     }
 
 
@@ -89,22 +89,22 @@ public class DetectResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DetectResponse detectResponse = (DetectResponse) o;
-        return Objects.equals(this.code, detectResponse.code) &&
-                Objects.equals(this.results, detectResponse.results);
+        PersonFields personFields = (PersonFields) o;
+        return Objects.equals(this.name, personFields.name) &&
+                Objects.equals(this.metadata, personFields.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, results);
+        return Objects.hash(name, metadata);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DetectResponse {\n");
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("class PersonFields {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

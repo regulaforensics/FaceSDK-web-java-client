@@ -10,147 +10,162 @@
  * Do not edit the class manually.
  */
 
+
 package com.regula.facesdk.webclient.gen.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** MatchResponse */
+/**
+ * MatchResponse
+ */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MatchResponse {
-  public static final String SERIALIZED_NAME_CODE = "code";
+    public static final String SERIALIZED_NAME_CODE = "code";
+    public static final String SERIALIZED_NAME_RESULTS = "results";
+    public static final String SERIALIZED_NAME_DETECTIONS = "detections";
+    @SerializedName(SERIALIZED_NAME_CODE)
+    private FaceSDKResultCode code;
+    @SerializedName(SERIALIZED_NAME_RESULTS)
+    private List<MatchImageResult> results = null;
+    @SerializedName(SERIALIZED_NAME_DETECTIONS)
+    private List<MatchImageDetection> detections = null;
 
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private Integer code;
-
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<MatchImageResult> results = null;
-
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchImageDetection> detections = null;
-
-  public MatchResponse code(Integer code) {
-
-    this.code = code;
-    return this;
-  }
-
-  /**
-   * Get code
-   *
-   * @return code
-   */
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCode() {
-    return code;
-  }
-
-  public void setCode(Integer code) {
-    this.code = code;
-  }
-
-  public MatchResponse results(List<MatchImageResult> results) {
-
-    this.results = results;
-    return this;
-  }
-
-  public MatchResponse addResultsItem(MatchImageResult resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<MatchImageResult>();
+    public MatchResponse() {
     }
-    this.results.add(resultsItem);
-    return this;
-  }
 
-  /**
-   * Get results
-   *
-   * @return results
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  public List<MatchImageResult> getResults() {
-    return results;
-  }
+    public MatchResponse code(FaceSDKResultCode code) {
 
-  public void setResults(List<MatchImageResult> results) {
-    this.results = results;
-  }
-
-  public MatchResponse detections(List<MatchImageDetection> detections) {
-
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchResponse addDetectionsItem(MatchImageDetection detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchImageDetection>();
+        this.code = code;
+        return this;
     }
-    this.detections.add(detectionsItem);
-    return this;
-  }
 
-  /**
-   * Get detections
-   *
-   * @return detections
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  public List<MatchImageDetection> getDetections() {
-    return detections;
-  }
+    /**
+     * Get code
+     *
+     * @return code
+     **/
+    @javax.annotation.Nonnull
+    @ApiModelProperty(required = true, value = "")
 
-  public void setDetections(List<MatchImageDetection> detections) {
-    this.detections = detections;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public FaceSDKResultCode getCode() {
+        return code;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+
+    public void setCode(FaceSDKResultCode code) {
+        this.code = code;
     }
-    MatchResponse matchResponse = (MatchResponse) o;
-    return Objects.equals(this.code, matchResponse.code)
-        && Objects.equals(this.results, matchResponse.results)
-        && Objects.equals(this.detections, matchResponse.detections);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code, results, detections);
-  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MatchResponse {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+    public MatchResponse results(List<MatchImageResult> results) {
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+        this.results = results;
+        return this;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+
+    public MatchResponse addResultsItem(MatchImageResult resultsItem) {
+        if (this.results == null) {
+            this.results = new ArrayList<MatchImageResult>();
+        }
+        this.results.add(resultsItem);
+        return this;
+    }
+
+    /**
+     * Get results
+     *
+     * @return results
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+
+    public List<MatchImageResult> getResults() {
+        return results;
+    }
+
+
+    public void setResults(List<MatchImageResult> results) {
+        this.results = results;
+    }
+
+
+    public MatchResponse detections(List<MatchImageDetection> detections) {
+
+        this.detections = detections;
+        return this;
+    }
+
+    public MatchResponse addDetectionsItem(MatchImageDetection detectionsItem) {
+        if (this.detections == null) {
+            this.detections = new ArrayList<MatchImageDetection>();
+        }
+        this.detections.add(detectionsItem);
+        return this;
+    }
+
+    /**
+     * Get detections
+     *
+     * @return detections
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+
+    public List<MatchImageDetection> getDetections() {
+        return detections;
+    }
+
+
+    public void setDetections(List<MatchImageDetection> detections) {
+        this.detections = detections;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MatchResponse matchResponse = (MatchResponse) o;
+        return Objects.equals(this.code, matchResponse.code) &&
+                Objects.equals(this.results, matchResponse.results) &&
+                Objects.equals(this.detections, matchResponse.detections);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, results, detections);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class MatchResponse {\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
 }
+

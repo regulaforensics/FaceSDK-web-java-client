@@ -10,73 +10,86 @@
  * Do not edit the class manually.
  */
 
+
 package com.regula.facesdk.webclient.gen.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Objects;
 
-/** FaceSDKResult */
+/**
+ * FaceSDKResult
+ */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FaceSDKResult {
-  public static final String SERIALIZED_NAME_CODE = "code";
+    public static final String SERIALIZED_NAME_CODE = "code";
+    @SerializedName(SERIALIZED_NAME_CODE)
+    private FaceSDKResultCode code;
 
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private Integer code;
-
-  public FaceSDKResult code(Integer code) {
-
-    this.code = code;
-    return this;
-  }
-
-  /**
-   * Get code
-   *
-   * @return code
-   */
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCode() {
-    return code;
-  }
-
-  public void setCode(Integer code) {
-    this.code = code;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public FaceSDKResult() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public FaceSDKResult code(FaceSDKResultCode code) {
+
+        this.code = code;
+        return this;
     }
-    FaceSDKResult faceSDKResult = (FaceSDKResult) o;
-    return Objects.equals(this.code, faceSDKResult.code);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code);
-  }
+    /**
+     * Get code
+     *
+     * @return code
+     **/
+    @javax.annotation.Nonnull
+    @ApiModelProperty(required = true, value = "")
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class FaceSDKResult {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public FaceSDKResultCode getCode() {
+        return code;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+
+
+    public void setCode(FaceSDKResultCode code) {
+        this.code = code;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        FaceSDKResult faceSDKResult = (FaceSDKResult) o;
+        return Objects.equals(this.code, faceSDKResult.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class FaceSDKResult {\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
 }
+

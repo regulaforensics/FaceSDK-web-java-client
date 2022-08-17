@@ -10,142 +10,154 @@
  * Do not edit the class manually.
  */
 
+
 package com.regula.facesdk.webclient.gen.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** MatchImageDetection */
+/**
+ * MatchImageDetection
+ */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MatchImageDetection {
-  public static final String SERIALIZED_NAME_FACES = "faces";
+    public static final String SERIALIZED_NAME_FACES = "faces";
+    public static final String SERIALIZED_NAME_IMAGE_INDEX = "imageIndex";
+    public static final String SERIALIZED_NAME_STATUS = "status";
+    @SerializedName(SERIALIZED_NAME_FACES)
+    private List<DetectionFace> faces = null;
+    @SerializedName(SERIALIZED_NAME_IMAGE_INDEX)
+    private Integer imageIndex;
+    @SerializedName(SERIALIZED_NAME_STATUS)
+    private FaceSDKResultCode status;
 
-  @SerializedName(SERIALIZED_NAME_FACES)
-  private List<DetectionFace> faces = null;
-
-  public static final String SERIALIZED_NAME_IMAGE_INDEX = "imageIndex";
-
-  @SerializedName(SERIALIZED_NAME_IMAGE_INDEX)
-  private Integer imageIndex;
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  private Integer status;
-
-  public MatchImageDetection faces(List<DetectionFace> faces) {
-
-    this.faces = faces;
-    return this;
-  }
-
-  public MatchImageDetection addFacesItem(DetectionFace facesItem) {
-    if (this.faces == null) {
-      this.faces = new ArrayList<DetectionFace>();
+    public MatchImageDetection() {
     }
-    this.faces.add(facesItem);
-    return this;
-  }
 
-  /**
-   * Get faces
-   *
-   * @return faces
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  public List<DetectionFace> getFaces() {
-    return faces;
-  }
+    public MatchImageDetection faces(List<DetectionFace> faces) {
 
-  public void setFaces(List<DetectionFace> faces) {
-    this.faces = faces;
-  }
-
-  public MatchImageDetection imageIndex(Integer imageIndex) {
-
-    this.imageIndex = imageIndex;
-    return this;
-  }
-
-  /**
-   * Image index used to identify input photos between themselves. If not specified, than input list
-   * index is used
-   *
-   * @return imageIndex
-   */
-  @ApiModelProperty(
-      required = true,
-      value =
-          "Image index used to identify input photos between themselves. If not specified, than input list index is used")
-  public Integer getImageIndex() {
-    return imageIndex;
-  }
-
-  public void setImageIndex(Integer imageIndex) {
-    this.imageIndex = imageIndex;
-  }
-
-  public MatchImageDetection status(Integer status) {
-
-    this.status = status;
-    return this;
-  }
-
-  /**
-   * Get status
-   *
-   * @return status
-   */
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStatus() {
-    return status;
-  }
-
-  public void setStatus(Integer status) {
-    this.status = status;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+        this.faces = faces;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public MatchImageDetection addFacesItem(DetectionFace facesItem) {
+        if (this.faces == null) {
+            this.faces = new ArrayList<DetectionFace>();
+        }
+        this.faces.add(facesItem);
+        return this;
     }
-    MatchImageDetection matchImageDetection = (MatchImageDetection) o;
-    return Objects.equals(this.faces, matchImageDetection.faces)
-        && Objects.equals(this.imageIndex, matchImageDetection.imageIndex)
-        && Objects.equals(this.status, matchImageDetection.status);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(faces, imageIndex, status);
-  }
+    /**
+     * Get faces
+     *
+     * @return faces
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MatchImageDetection {\n");
-    sb.append("    faces: ").append(toIndentedString(faces)).append("\n");
-    sb.append("    imageIndex: ").append(toIndentedString(imageIndex)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public List<DetectionFace> getFaces() {
+        return faces;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+
+
+    public void setFaces(List<DetectionFace> faces) {
+        this.faces = faces;
+    }
+
+
+    public MatchImageDetection imageIndex(Integer imageIndex) {
+
+        this.imageIndex = imageIndex;
+        return this;
+    }
+
+    /**
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     *
+     * @return imageIndex
+     **/
+    @javax.annotation.Nonnull
+    @ApiModelProperty(required = true, value = "Image index used to identify input photos between themselves. If not specified, than input list index is used")
+
+    public Integer getImageIndex() {
+        return imageIndex;
+    }
+
+
+    public void setImageIndex(Integer imageIndex) {
+        this.imageIndex = imageIndex;
+    }
+
+
+    public MatchImageDetection status(FaceSDKResultCode status) {
+
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return status
+     **/
+    @javax.annotation.Nonnull
+    @ApiModelProperty(required = true, value = "")
+
+    public FaceSDKResultCode getStatus() {
+        return status;
+    }
+
+
+    public void setStatus(FaceSDKResultCode status) {
+        this.status = status;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MatchImageDetection matchImageDetection = (MatchImageDetection) o;
+        return Objects.equals(this.faces, matchImageDetection.faces) &&
+                Objects.equals(this.imageIndex, matchImageDetection.imageIndex) &&
+                Objects.equals(this.status, matchImageDetection.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(faces, imageIndex, status);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class MatchImageDetection {\n");
+        sb.append("    faces: ").append(toIndentedString(faces)).append("\n");
+        sb.append("    imageIndex: ").append(toIndentedString(imageIndex)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
 }
+

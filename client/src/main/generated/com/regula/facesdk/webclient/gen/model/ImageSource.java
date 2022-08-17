@@ -10,18 +10,67 @@
  * Do not edit the class manually.
  */
 
+
 package com.regula.facesdk.webclient.gen.model;
 
-/** Face photo image source */
-public class ImageSource {
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
-  public static final Integer DOCUMENT_PRINTED = 1;
+import java.io.IOException;
 
-  public static final Integer DOCUMENT_RFID = 2;
+/**
+ * Face photo image source
+ */
+@JsonAdapter(ImageSource.Adapter.class)
+public enum ImageSource {
 
-  public static final Integer LIVE = 3;
+    DOCUMENT_PRINTED(1),
 
-  public static final Integer DOCUMENT_WITH_LIVE = 4;
+    DOCUMENT_RFID(2),
 
-  public static final Integer EXTERNAL = 5;
+    LIVE(3),
+
+    DOCUMENT_WITH_LIVE(4),
+
+    EXTERNAL(5);
+
+    private Integer value;
+
+    ImageSource(Integer value) {
+        this.value = value;
+    }
+
+    public static ImageSource fromValue(Integer value) {
+        for (ImageSource b : ImageSource.values()) {
+            if (b.value.equals(value)) {
+                return b;
+            }
+        }
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    public static class Adapter extends TypeAdapter<ImageSource> {
+        @Override
+        public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+            jsonWriter.value(enumeration.getValue());
+        }
+
+        @Override
+        public ImageSource read(final JsonReader jsonReader) throws IOException {
+            Integer value = jsonReader.nextInt();
+            return ImageSource.fromValue(value);
+        }
+    }
 }
+
