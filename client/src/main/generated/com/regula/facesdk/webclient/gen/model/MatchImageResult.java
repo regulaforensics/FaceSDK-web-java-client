@@ -28,7 +28,7 @@ public class MatchImageResult {
   public static final String SERIALIZED_NAME_FIRST_FACE_INDEX = "firstFaceIndex";
 
   @SerializedName(SERIALIZED_NAME_FIRST_FACE_INDEX)
-  private Integer firstFaceIndex;
+  private BigDecimal firstFaceIndex;
 
   public static final String SERIALIZED_NAME_SECOND_INDEX = "secondIndex";
 
@@ -38,7 +38,7 @@ public class MatchImageResult {
   public static final String SERIALIZED_NAME_SECOND_FACE_INDEX = "secondFaceIndex";
 
   @SerializedName(SERIALIZED_NAME_SECOND_FACE_INDEX)
-  private Integer secondFaceIndex;
+  private BigDecimal secondFaceIndex;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
 
@@ -84,7 +84,7 @@ public class MatchImageResult {
     this.firstIndex = firstIndex;
   }
 
-  public MatchImageResult firstFaceIndex(Integer firstFaceIndex) {
+  public MatchImageResult firstFaceIndex(BigDecimal firstFaceIndex) {
 
     this.firstFaceIndex = firstFaceIndex;
     return this;
@@ -97,11 +97,11 @@ public class MatchImageResult {
    */
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Faces index used to identify faces in scope of one photo.")
-  public Integer getFirstFaceIndex() {
+  public BigDecimal getFirstFaceIndex() {
     return firstFaceIndex;
   }
 
-  public void setFirstFaceIndex(Integer firstFaceIndex) {
+  public void setFirstFaceIndex(BigDecimal firstFaceIndex) {
     this.firstFaceIndex = firstFaceIndex;
   }
 
@@ -129,7 +129,7 @@ public class MatchImageResult {
     this.secondIndex = secondIndex;
   }
 
-  public MatchImageResult secondFaceIndex(Integer secondFaceIndex) {
+  public MatchImageResult secondFaceIndex(BigDecimal secondFaceIndex) {
 
     this.secondFaceIndex = secondFaceIndex;
     return this;
@@ -142,11 +142,11 @@ public class MatchImageResult {
    */
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Faces index used to identify faces in scope of one photo.")
-  public Integer getSecondFaceIndex() {
+  public BigDecimal getSecondFaceIndex() {
     return secondFaceIndex;
   }
 
-  public void setSecondFaceIndex(Integer secondFaceIndex) {
+  public void setSecondFaceIndex(BigDecimal secondFaceIndex) {
     this.secondFaceIndex = secondFaceIndex;
   }
 
