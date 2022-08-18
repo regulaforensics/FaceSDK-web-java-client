@@ -18,6 +18,8 @@ import io.swagger.annotations.ApiModelProperty;
 import org.threeten.bp.OffsetDateTime;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -32,7 +34,7 @@ public class Group {
     @SerializedName(SERIALIZED_NAME_NAME)
     private String name;
     @SerializedName(SERIALIZED_NAME_METADATA)
-    private Object metadata;
+    private Map<String, Object> metadata = null;
     @SerializedName(SERIALIZED_NAME_ID)
     private BigDecimal id;
     @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -65,9 +67,17 @@ public class Group {
     }
 
 
-    public Group metadata(Object metadata) {
+    public Group metadata(Map<String, Object> metadata) {
 
         this.metadata = metadata;
+        return this;
+    }
+
+    public Group putMetadataItem(String key, Object metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<String, Object>();
+        }
+        this.metadata.put(key, metadataItem);
         return this;
     }
 
@@ -79,12 +89,12 @@ public class Group {
     @javax.annotation.Nullable
     @ApiModelProperty(value = "")
 
-    public Object getMetadata() {
+    public Map<String, Object> getMetadata() {
         return metadata;
     }
 
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
 

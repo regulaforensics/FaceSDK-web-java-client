@@ -88,7 +88,7 @@ public enum FaceSDKResultCode {
 
     FACER_OUTPUT_IS_NOT_DEFINED(229);
 
-    private Integer value;
+    private final Integer value;
 
     FaceSDKResultCode(Integer value) {
         this.value = value;

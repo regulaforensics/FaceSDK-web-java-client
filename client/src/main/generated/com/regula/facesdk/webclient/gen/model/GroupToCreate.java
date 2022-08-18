@@ -16,6 +16,8 @@ package com.regula.facesdk.webclient.gen.model;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -28,7 +30,7 @@ public class GroupToCreate {
     @SerializedName(SERIALIZED_NAME_NAME)
     private String name;
     @SerializedName(SERIALIZED_NAME_METADATA)
-    private Object metadata;
+    private Map<String, Object> metadata = null;
 
     public GroupToCreate() {
     }
@@ -57,9 +59,17 @@ public class GroupToCreate {
     }
 
 
-    public GroupToCreate metadata(Object metadata) {
+    public GroupToCreate metadata(Map<String, Object> metadata) {
 
         this.metadata = metadata;
+        return this;
+    }
+
+    public GroupToCreate putMetadataItem(String key, Object metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<String, Object>();
+        }
+        this.metadata.put(key, metadataItem);
         return this;
     }
 
@@ -71,12 +81,12 @@ public class GroupToCreate {
     @javax.annotation.Nullable
     @ApiModelProperty(value = "")
 
-    public Object getMetadata() {
+    public Map<String, Object> getMetadata() {
         return metadata;
     }
 
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
 

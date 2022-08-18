@@ -18,9 +18,7 @@ import io.swagger.annotations.ApiModelProperty;
 import org.threeten.bp.OffsetDateTime;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * SearchPerson
@@ -36,7 +34,7 @@ public class SearchPerson {
     @SerializedName(SERIALIZED_NAME_NAME)
     private String name;
     @SerializedName(SERIALIZED_NAME_METADATA)
-    private Object metadata;
+    private Map<String, Object> metadata = null;
     @SerializedName(SERIALIZED_NAME_ID)
     private BigDecimal id;
     @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -73,9 +71,17 @@ public class SearchPerson {
     }
 
 
-    public SearchPerson metadata(Object metadata) {
+    public SearchPerson metadata(Map<String, Object> metadata) {
 
         this.metadata = metadata;
+        return this;
+    }
+
+    public SearchPerson putMetadataItem(String key, Object metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<String, Object>();
+        }
+        this.metadata.put(key, metadataItem);
         return this;
     }
 
@@ -87,12 +93,12 @@ public class SearchPerson {
     @javax.annotation.Nullable
     @ApiModelProperty(value = "")
 
-    public Object getMetadata() {
+    public Map<String, Object> getMetadata() {
         return metadata;
     }
 
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
 

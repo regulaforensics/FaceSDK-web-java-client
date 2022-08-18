@@ -36,7 +36,7 @@ public enum ImageSource {
 
     EXTERNAL(5);
 
-    private Integer value;
+    private final Integer value;
 
     ImageSource(Integer value) {
         this.value = value;
