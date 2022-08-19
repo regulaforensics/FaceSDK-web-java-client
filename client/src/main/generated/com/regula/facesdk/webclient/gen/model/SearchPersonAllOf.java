@@ -20,43 +20,53 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
+import com.regula.facesdk.webclient.gen.model.RecognizeImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * ImageFields
+ * SearchPersonAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class SearchPersonAllOf {
+  public static final String SERIALIZED_NAME_IMAGES = "images";
+  @SerializedName(SERIALIZED_NAME_IMAGES)
+  private List<RecognizeImage> images = null;
 
-  public ImageFields() { 
+  public SearchPersonAllOf() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public SearchPersonAllOf images(List<RecognizeImage> images) {
     
-    this.image = image;
+    this.images = images;
+    return this;
+  }
+
+  public SearchPersonAllOf addImagesItem(RecognizeImage imagesItem) {
+    if (this.images == null) {
+      this.images = new ArrayList<RecognizeImage>();
+    }
+    this.images.add(imagesItem);
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get images
+   * @return images
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public List<RecognizeImage> getImages() {
+    return images;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setImages(List<RecognizeImage> images) {
+    this.images = images;
   }
 
 
@@ -68,20 +78,20 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    SearchPersonAllOf searchPersonAllOf = (SearchPersonAllOf) o;
+    return Objects.equals(this.images, searchPersonAllOf.images);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(images);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class SearchPersonAllOf {\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");
     return sb.toString();
   }

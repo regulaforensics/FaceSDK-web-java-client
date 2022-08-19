@@ -25,34 +25,26 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Image
+ * PersonAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class Image {
+public class PersonAllOf {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
-
-  public static final String SERIALIZED_NAME_CONTENT_TYPE = "content_type";
-  @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
-  private String contentType;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private String createdAt;
 
-  public static final String SERIALIZED_NAME_PATH = "path";
-  @SerializedName(SERIALIZED_NAME_PATH)
-  private String path;
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private String updatedAt;
 
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
-  private String url;
-
-  public Image() { 
+  public PersonAllOf() { 
   }
 
-  public Image id(Integer id) {
+  public PersonAllOf id(Integer id) {
     
     this.id = id;
     return this;
@@ -75,30 +67,7 @@ public class Image {
   }
 
 
-  public Image contentType(String contentType) {
-    
-    this.contentType = contentType;
-    return this;
-  }
-
-   /**
-   * Get contentType
-   * @return contentType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getContentType() {
-    return contentType;
-  }
-
-
-  public void setContentType(String contentType) {
-    this.contentType = contentType;
-  }
-
-
-  public Image createdAt(String createdAt) {
+  public PersonAllOf createdAt(String createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -121,49 +90,26 @@ public class Image {
   }
 
 
-  public Image path(String path) {
+  public PersonAllOf updatedAt(String updatedAt) {
     
-    this.path = path;
+    this.updatedAt = updatedAt;
     return this;
   }
 
    /**
-   * Get path
-   * @return path
+   * Get updatedAt
+   * @return updatedAt
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getPath() {
-    return path;
+  public String getUpdatedAt() {
+    return updatedAt;
   }
 
 
-  public void setPath(String path) {
-    this.path = path;
-  }
-
-
-  public Image url(String url) {
-    
-    this.url = url;
-    return this;
-  }
-
-   /**
-   * Get url
-   * @return url
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getUrl() {
-    return url;
-  }
-
-
-  public void setUrl(String url) {
-    this.url = url;
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
   }
 
 
@@ -175,28 +121,24 @@ public class Image {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Image image = (Image) o;
-    return Objects.equals(this.id, image.id) &&
-        Objects.equals(this.contentType, image.contentType) &&
-        Objects.equals(this.createdAt, image.createdAt) &&
-        Objects.equals(this.path, image.path) &&
-        Objects.equals(this.url, image.url);
+    PersonAllOf personAllOf = (PersonAllOf) o;
+    return Objects.equals(this.id, personAllOf.id) &&
+        Objects.equals(this.createdAt, personAllOf.createdAt) &&
+        Objects.equals(this.updatedAt, personAllOf.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contentType, createdAt, path, url);
+    return Objects.hash(id, createdAt, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Image {\n");
+    sb.append("class PersonAllOf {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

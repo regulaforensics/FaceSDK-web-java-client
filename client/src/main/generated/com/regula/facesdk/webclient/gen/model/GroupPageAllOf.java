@@ -20,43 +20,53 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
+import com.regula.facesdk.webclient.gen.model.Group;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * ImageFields
+ * GroupPageAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class GroupPageAllOf {
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
+  private List<Group> items = null;
 
-  public ImageFields() { 
+  public GroupPageAllOf() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public GroupPageAllOf items(List<Group> items) {
     
-    this.image = image;
+    this.items = items;
+    return this;
+  }
+
+  public GroupPageAllOf addItemsItem(Group itemsItem) {
+    if (this.items == null) {
+      this.items = new ArrayList<Group>();
+    }
+    this.items.add(itemsItem);
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get items
+   * @return items
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public List<Group> getItems() {
+    return items;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setItems(List<Group> items) {
+    this.items = items;
   }
 
 
@@ -68,20 +78,20 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    GroupPageAllOf groupPageAllOf = (GroupPageAllOf) o;
+    return Objects.equals(this.items, groupPageAllOf.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(items);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class GroupPageAllOf {\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
   }

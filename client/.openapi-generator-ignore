@@ -18,4 +18,3 @@ src/main/AndroidManifest.xml
 # classes, modified after generation
 
 # useless classes
-**/*AllOf.java

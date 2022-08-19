@@ -20,43 +20,42 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFields
+ * RecognizeImageAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class RecognizeImageAllOf {
+  public static final String SERIALIZED_NAME_SIMILARITY = "similarity";
+  @SerializedName(SERIALIZED_NAME_SIMILARITY)
+  private Float similarity;
 
-  public ImageFields() { 
+  public RecognizeImageAllOf() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public RecognizeImageAllOf similarity(Float similarity) {
     
-    this.image = image;
+    this.similarity = similarity;
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get similarity
+   * @return similarity
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public Float getSimilarity() {
+    return similarity;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setSimilarity(Float similarity) {
+    this.similarity = similarity;
   }
 
 
@@ -68,20 +67,20 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    RecognizeImageAllOf recognizeImageAllOf = (RecognizeImageAllOf) o;
+    return Objects.equals(this.similarity, recognizeImageAllOf.similarity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(similarity);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class RecognizeImageAllOf {\n");
+    sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

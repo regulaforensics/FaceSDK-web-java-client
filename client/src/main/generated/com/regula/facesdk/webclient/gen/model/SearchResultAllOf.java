@@ -20,43 +20,42 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFields
+ * SearchResultAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class SearchResultAllOf {
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private Integer code;
 
-  public ImageFields() { 
+  public SearchResultAllOf() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public SearchResultAllOf code(Integer code) {
     
-    this.image = image;
+    this.code = code;
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get code
+   * @return code
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public Integer getCode() {
+    return code;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setCode(Integer code) {
+    this.code = code;
   }
 
 
@@ -68,20 +67,20 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    SearchResultAllOf searchResultAllOf = (SearchResultAllOf) o;
+    return Objects.equals(this.code, searchResultAllOf.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(code);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class SearchResultAllOf {\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }

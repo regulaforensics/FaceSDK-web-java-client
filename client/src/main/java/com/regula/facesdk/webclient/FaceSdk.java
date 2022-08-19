@@ -1,9 +1,15 @@
 package com.regula.facesdk.webclient;
 
 import com.regula.facesdk.webclient.api.MatchingApi;
+import com.regula.facesdk.webclient.gen.api.GroupApi;
+import com.regula.facesdk.webclient.gen.api.PersonApi;
+import com.regula.facesdk.webclient.gen.api.SearchApi;
 
 public class FaceSdk {
     public final MatchingApi matchingApi;
+    public final GroupApi groupApi;
+    public final PersonApi personApi;
+    public final SearchApi searchApi;
     private ApiClient apiClient;
 
     public FaceSdk() {
@@ -29,6 +35,9 @@ public class FaceSdk {
     public FaceSdk(ApiClient apiClient) {
         this.apiClient = apiClient;
         this.matchingApi = new MatchingApi(apiClient);
+        this.groupApi = new GroupApi(apiClient);
+        this.personApi = new PersonApi(apiClient);
+        this.searchApi = new SearchApi(apiClient);
     }
 
     public ApiClient getApiClient() {

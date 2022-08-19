@@ -20,11 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.FaceSDKResult;
-import com.regula.facesdk.webclient.gen.model.FaceSDKResultCode;
 import com.regula.facesdk.webclient.gen.model.MatchImageDetection;
 import com.regula.facesdk.webclient.gen.model.MatchImageResult;
-import com.regula.facesdk.webclient.gen.model.MatchResponseAllOf;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -32,14 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * MatchResponse
+ * MatchResponseAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchResponse {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private FaceSDKResultCode code;
-
+public class MatchResponseAllOf {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
   private List<MatchImageResult> results = null;
@@ -48,39 +41,16 @@ public class MatchResponse {
   @SerializedName(SERIALIZED_NAME_DETECTIONS)
   private List<MatchImageDetection> detections = null;
 
-  public MatchResponse() { 
+  public MatchResponseAllOf() { 
   }
 
-  public MatchResponse code(FaceSDKResultCode code) {
-    
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Get code
-   * @return code
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public FaceSDKResultCode getCode() {
-    return code;
-  }
-
-
-  public void setCode(FaceSDKResultCode code) {
-    this.code = code;
-  }
-
-
-  public MatchResponse results(List<MatchImageResult> results) {
+  public MatchResponseAllOf results(List<MatchImageResult> results) {
     
     this.results = results;
     return this;
   }
 
-  public MatchResponse addResultsItem(MatchImageResult resultsItem) {
+  public MatchResponseAllOf addResultsItem(MatchImageResult resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<MatchImageResult>();
     }
@@ -105,13 +75,13 @@ public class MatchResponse {
   }
 
 
-  public MatchResponse detections(List<MatchImageDetection> detections) {
+  public MatchResponseAllOf detections(List<MatchImageDetection> detections) {
     
     this.detections = detections;
     return this;
   }
 
-  public MatchResponse addDetectionsItem(MatchImageDetection detectionsItem) {
+  public MatchResponseAllOf addDetectionsItem(MatchImageDetection detectionsItem) {
     if (this.detections == null) {
       this.detections = new ArrayList<MatchImageDetection>();
     }
@@ -144,22 +114,20 @@ public class MatchResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchResponse matchResponse = (MatchResponse) o;
-    return Objects.equals(this.code, matchResponse.code) &&
-        Objects.equals(this.results, matchResponse.results) &&
-        Objects.equals(this.detections, matchResponse.detections);
+    MatchResponseAllOf matchResponseAllOf = (MatchResponseAllOf) o;
+    return Objects.equals(this.results, matchResponseAllOf.results) &&
+        Objects.equals(this.detections, matchResponseAllOf.detections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, results, detections);
+    return Objects.hash(results, detections);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchResponse {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("class MatchResponseAllOf {\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("}");

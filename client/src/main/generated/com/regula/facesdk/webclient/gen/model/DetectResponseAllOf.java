@@ -20,43 +20,43 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
+import com.regula.facesdk.webclient.gen.model.DetectResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFields
+ * DetectResponseAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class DetectResponseAllOf {
+  public static final String SERIALIZED_NAME_RESULTS = "results";
+  @SerializedName(SERIALIZED_NAME_RESULTS)
+  private DetectResult results;
 
-  public ImageFields() { 
+  public DetectResponseAllOf() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public DetectResponseAllOf results(DetectResult results) {
     
-    this.image = image;
+    this.results = results;
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get results
+   * @return results
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public DetectResult getResults() {
+    return results;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setResults(DetectResult results) {
+    this.results = results;
   }
 
 
@@ -68,20 +68,20 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    DetectResponseAllOf detectResponseAllOf = (DetectResponseAllOf) o;
+    return Objects.equals(this.results, detectResponseAllOf.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(results);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class DetectResponseAllOf {\n");
+    sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -20,43 +20,69 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFields
+ * GroupAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class GroupAllOf {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private Integer id;
 
-  public ImageFields() { 
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private String createdAt;
+
+  public GroupAllOf() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public GroupAllOf id(Integer id) {
     
-    this.image = image;
+    this.id = id;
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get id
+   * @return id
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public Integer getId() {
+    return id;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+
+  public GroupAllOf createdAt(String createdAt) {
+    
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCreatedAt() {
+    return createdAt;
+  }
+
+
+  public void setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
   }
 
 
@@ -68,20 +94,22 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    GroupAllOf groupAllOf = (GroupAllOf) o;
+    return Objects.equals(this.id, groupAllOf.id) &&
+        Objects.equals(this.createdAt, groupAllOf.createdAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(id, createdAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class GroupAllOf {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

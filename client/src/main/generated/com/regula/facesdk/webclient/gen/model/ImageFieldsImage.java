@@ -20,43 +20,69 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFields
+ * ImageFieldsImage
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+public class ImageFieldsImage {
+  public static final String SERIALIZED_NAME_CONTENT_TYPE = "content_type";
+  @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  private String contentType;
 
-  public ImageFields() { 
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  private byte[] content;
+
+  public ImageFieldsImage() { 
   }
 
-  public ImageFields image(ImageFieldsImage image) {
+  public ImageFieldsImage contentType(String contentType) {
     
-    this.image = image;
+    this.contentType = contentType;
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get contentType
+   * @return contentType
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
-    return image;
+  public String getContentType() {
+    return contentType;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
+  public void setContentType(String contentType) {
+    this.contentType = contentType;
+  }
+
+
+  public ImageFieldsImage content(byte[] content) {
+    
+    this.content = content;
+    return this;
+  }
+
+   /**
+   * Get content
+   * @return content
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public byte[] getContent() {
+    return content;
+  }
+
+
+  public void setContent(byte[] content) {
+    this.content = content;
   }
 
 
@@ -68,20 +94,22 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.image, imageFields.image);
+    ImageFieldsImage imageFieldsImage = (ImageFieldsImage) o;
+    return Objects.equals(this.contentType, imageFieldsImage.contentType) &&
+        Arrays.equals(this.content, imageFieldsImage.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(contentType, Arrays.hashCode(content));
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class ImageFieldsImage {\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }
