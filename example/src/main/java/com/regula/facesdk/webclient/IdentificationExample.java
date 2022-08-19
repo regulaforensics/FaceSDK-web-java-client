@@ -5,7 +5,6 @@ import com.regula.facesdk.webclient.gen.model.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 public class IdentificationExample {
     public static final String API_BASE_PATH = "API_BASE_PATH";
@@ -14,7 +13,7 @@ public class IdentificationExample {
     public static void main(String[] args) throws IOException {
         var apiBasePath = System.getenv(API_BASE_PATH);
         if (apiBasePath == null) {
-            apiBasePath = "http://revenger.local:41101";
+            apiBasePath = "http://127.0.0.0:41101";
         }
         byte[] face1 = readFile("face_1.jpg");
         byte[] face2 = readFile("face_2.jpg");
