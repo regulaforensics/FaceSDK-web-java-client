@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SearchPersonAllOf
+ * The array of Person images.
  */
+@ApiModel(description = "The array of Person images.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SearchPersonAllOf {
   public static final String SERIALIZED_NAME_IMAGES = "images";

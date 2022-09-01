@@ -52,11 +52,11 @@ public class MatchImage {
   }
 
    /**
-   * Image index used to identify input photos between themselves. If not specified, than input list index is used
+   * Image index used to identify input photos between themselves. If not specified, than input list index is used.
    * @return index
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Image index used to identify input photos between themselves. If not specified, than input list index is used")
+  @ApiModelProperty(value = "Image index used to identify input photos between themselves. If not specified, than input list index is used.")
 
   public Integer getIndex() {
     return index;
@@ -98,11 +98,11 @@ public class MatchImage {
   }
 
    /**
-   * Base64 encoded image
+   * Base64 encoded image.
    * @return data
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Base64 encoded image")
+  @ApiModelProperty(required = true, value = "Base64 encoded image.")
 
   public byte[] getData() {
     return data;

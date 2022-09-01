@@ -25,24 +25,24 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face photo image source.
+ * The aspect ratio according to which alignment is performed.
  */
-@JsonAdapter(ImageSource.Adapter.class)
-public enum ImageSource {
+@JsonAdapter(FaceAlignTypeQuality.Adapter.class)
+public enum FaceAlignTypeQuality {
   
-  DOCUMENT_PRINTED(1),
+  ALIGN_3x4(0),
   
-  DOCUMENT_RFID(2),
+  ALIGN_4x5(1),
   
-  LIVE(3),
+  ALIGN_2x3(2),
   
-  DOCUMENT_WITH_LIVE(4),
+  ALIGN_1x1(3),
   
-  EXTERNAL(5);
+  ALIGN_7x9(4);
 
   private Integer value;
 
-  ImageSource(Integer value) {
+  FaceAlignTypeQuality(Integer value) {
     this.value = value;
   }
 
@@ -55,8 +55,8 @@ public enum ImageSource {
     return String.valueOf(value);
   }
 
-  public static ImageSource fromValue(Integer value) {
-    for (ImageSource b : ImageSource.values()) {
+  public static FaceAlignTypeQuality fromValue(Integer value) {
+    for (FaceAlignTypeQuality b : FaceAlignTypeQuality.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -64,16 +64,16 @@ public enum ImageSource {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ImageSource> {
+  public static class Adapter extends TypeAdapter<FaceAlignTypeQuality> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceAlignTypeQuality enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ImageSource read(final JsonReader jsonReader) throws IOException {
+    public FaceAlignTypeQuality read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return ImageSource.fromValue(value);
+      return FaceAlignTypeQuality.fromValue(value);
     }
   }
 }

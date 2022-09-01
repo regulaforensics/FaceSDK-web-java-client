@@ -79,14 +79,14 @@ public class GroupApi {
 
     /**
      * Build call for createGroup
-     * @param groupToCreate Group to create (required)
+     * @param groupToCreate Request body for the group to create. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -153,13 +153,13 @@ public class GroupApi {
     /**
      * Create group
      * 
-     * @param groupToCreate Group to create (required)
+     * @param groupToCreate Request body for the group to create. (required)
      * @return Group
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -171,13 +171,13 @@ public class GroupApi {
     /**
      * Create group
      * 
-     * @param groupToCreate Group to create (required)
+     * @param groupToCreate Request body for the group to create. (required)
      * @return ApiResponse&lt;Group&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -190,14 +190,14 @@ public class GroupApi {
     /**
      * Create group (asynchronously)
      * 
-     * @param groupToCreate Group to create (required)
+     * @param groupToCreate Request body for the group to create. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -210,15 +210,15 @@ public class GroupApi {
     }
     /**
      * Build call for deleteGroup
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupCall(Integer groupId, final ApiCallback _callback) throws ApiException {
@@ -285,13 +285,13 @@ public class GroupApi {
     /**
      * Delete group
      * 
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public void deleteGroup(Integer groupId) throws ApiException {
@@ -301,14 +301,14 @@ public class GroupApi {
     /**
      * Delete group
      * 
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deleteGroupWithHttpInfo(Integer groupId) throws ApiException {
@@ -319,15 +319,15 @@ public class GroupApi {
     /**
      * Delete group (asynchronously)
      * 
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupAsync(Integer groupId, final ApiCallback<Void> _callback) throws ApiException {
@@ -338,20 +338,19 @@ public class GroupApi {
     }
     /**
      * Build call for getAllGroups
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Group name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllGroupsCall(Integer page, Integer size, String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllGroupsCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -385,10 +384,6 @@ public class GroupApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
-        if (name != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -410,7 +405,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllGroupsValidateBeforeCall(Integer page, Integer size, String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllGroupsValidateBeforeCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -423,7 +418,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllGroupsCall(page, size, name, _callback);
+        okhttp3.Call localVarCall = getAllGroupsCall(page, size, _callback);
         return localVarCall;
 
     }
@@ -431,40 +426,38 @@ public class GroupApi {
     /**
      * Get groups
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Group name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @return GroupPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public GroupPage getAllGroups(Integer page, Integer size, String name) throws ApiException {
-        ApiResponse<GroupPage> localVarResp = getAllGroupsWithHttpInfo(page, size, name);
+    public GroupPage getAllGroups(Integer page, Integer size) throws ApiException {
+        ApiResponse<GroupPage> localVarResp = getAllGroupsWithHttpInfo(page, size);
         return localVarResp.getData();
     }
 
     /**
      * Get groups
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Group name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @return ApiResponse&lt;GroupPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GroupPage> getAllGroupsWithHttpInfo(Integer page, Integer size, String name) throws ApiException {
-        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, name, null);
+    public ApiResponse<GroupPage> getAllGroupsWithHttpInfo(Integer page, Integer size) throws ApiException {
+        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, null);
         Type localVarReturnType = new TypeToken<GroupPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -472,40 +465,39 @@ public class GroupApi {
     /**
      * Get groups (asynchronously)
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Group name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllGroupsAsync(Integer page, Integer size, String name, final ApiCallback<GroupPage> _callback) throws ApiException {
+    public okhttp3.Call getAllGroupsAsync(Integer page, Integer size, final ApiCallback<GroupPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, name, _callback);
+        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, _callback);
         Type localVarReturnType = new TypeToken<GroupPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getAllPersonsByGroupId
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param groupId Group id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param groupId Group ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id or persons with person_ids not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAllPersonsByGroupIdCall(Integer page, Integer size, Integer groupId, final ApiCallback _callback) throws ApiException {
@@ -590,17 +582,17 @@ public class GroupApi {
     /**
      * Get group persons
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param groupId Group id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param groupId Group ID. (required)
      * @return PersonsPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id or persons with person_ids not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
     public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, Integer groupId) throws ApiException {
@@ -611,17 +603,17 @@ public class GroupApi {
     /**
      * Get group persons
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param groupId Group id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param groupId Group ID. (required)
      * @return ApiResponse&lt;PersonsPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id or persons with person_ids not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PersonsPage> getAllPersonsByGroupIdWithHttpInfo(Integer page, Integer size, Integer groupId) throws ApiException {
@@ -633,18 +625,18 @@ public class GroupApi {
     /**
      * Get group persons (asynchronously)
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param groupId Group id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param groupId Group ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id or persons with person_ids not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAllPersonsByGroupIdAsync(Integer page, Integer size, Integer groupId, final ApiCallback<PersonsPage> _callback) throws ApiException {
@@ -656,16 +648,16 @@ public class GroupApi {
     }
     /**
      * Build call for getGroup
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupCall(Integer groupId, final ApiCallback _callback) throws ApiException {
@@ -732,15 +724,15 @@ public class GroupApi {
     /**
      * Get group
      * 
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @return Group
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public Group getGroup(Integer groupId) throws ApiException {
@@ -751,15 +743,15 @@ public class GroupApi {
     /**
      * Get group
      * 
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @return ApiResponse&lt;Group&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Group> getGroupWithHttpInfo(Integer groupId) throws ApiException {
@@ -771,16 +763,16 @@ public class GroupApi {
     /**
      * Get group (asynchronously)
      * 
-     * @param groupId Group id (required)
+     * @param groupId Group ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return group </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAsync(Integer groupId, final ApiCallback<Group> _callback) throws ApiException {
@@ -792,17 +784,17 @@ public class GroupApi {
     }
     /**
      * Build call for updateGroup
-     * @param groupId Group id (required)
-     * @param groupToCreate Update group (required)
+     * @param groupId Group ID. (required)
+     * @param groupToCreate Request body for the group to update. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupCall(Integer groupId, GroupToCreate groupToCreate, final ApiCallback _callback) throws ApiException {
@@ -874,15 +866,15 @@ public class GroupApi {
     /**
      * Update group
      * 
-     * @param groupId Group id (required)
-     * @param groupToCreate Update group (required)
+     * @param groupId Group ID. (required)
+     * @param groupToCreate Request body for the group to update. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public void updateGroup(Integer groupId, GroupToCreate groupToCreate) throws ApiException {
@@ -892,16 +884,16 @@ public class GroupApi {
     /**
      * Update group
      * 
-     * @param groupId Group id (required)
-     * @param groupToCreate Update group (required)
+     * @param groupId Group ID. (required)
+     * @param groupToCreate Request body for the group to update. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> updateGroupWithHttpInfo(Integer groupId, GroupToCreate groupToCreate) throws ApiException {
@@ -912,17 +904,17 @@ public class GroupApi {
     /**
      * Update group (asynchronously)
      * 
-     * @param groupId Group id (required)
-     * @param groupToCreate Update group (required)
+     * @param groupId Group ID. (required)
+     * @param groupToCreate Request body for the group to update. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupAsync(Integer groupId, GroupToCreate groupToCreate, final ApiCallback<Void> _callback) throws ApiException {
@@ -933,17 +925,17 @@ public class GroupApi {
     }
     /**
      * Build call for updatePersonsInGroup
-     * @param groupId Group id (required)
-     * @param updateGroup Person ids to add or remove (required)
+     * @param groupId Group ID. (required)
+     * @param updateGroup Request body for person IDs to add or remove. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePersonsInGroupCall(Integer groupId, UpdateGroup updateGroup, final ApiCallback _callback) throws ApiException {
@@ -1015,15 +1007,15 @@ public class GroupApi {
     /**
      * Add/remove persons to group
      * 
-     * @param groupId Group id (required)
-     * @param updateGroup Person ids to add or remove (required)
+     * @param groupId Group ID. (required)
+     * @param updateGroup Request body for person IDs to add or remove. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public void updatePersonsInGroup(Integer groupId, UpdateGroup updateGroup) throws ApiException {
@@ -1033,16 +1025,16 @@ public class GroupApi {
     /**
      * Add/remove persons to group
      * 
-     * @param groupId Group id (required)
-     * @param updateGroup Person ids to add or remove (required)
+     * @param groupId Group ID. (required)
+     * @param updateGroup Request body for person IDs to add or remove. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> updatePersonsInGroupWithHttpInfo(Integer groupId, UpdateGroup updateGroup) throws ApiException {
@@ -1053,17 +1045,17 @@ public class GroupApi {
     /**
      * Add/remove persons to group (asynchronously)
      * 
-     * @param groupId Group id (required)
-     * @param updateGroup Person ids to add or remove (required)
+     * @param groupId Group ID. (required)
+     * @param updateGroup Request body for person IDs to add or remove. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Group with group_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePersonsInGroupAsync(Integer groupId, UpdateGroup updateGroup, final ApiCallback<Void> _callback) throws ApiException {

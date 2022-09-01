@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GroupAllOf
+ * Additional group data in the response, includes id and created_at.
  */
+@ApiModel(description = "Additional group data in the response, includes id and created_at.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GroupAllOf {
   public static final String SERIALIZED_NAME_ID = "id";
@@ -47,11 +48,11 @@ public class GroupAllOf {
   }
 
    /**
-   * Get id
+   * Group ID.
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Group ID.")
 
   public Integer getId() {
     return id;
@@ -70,11 +71,11 @@ public class GroupAllOf {
   }
 
    /**
-   * Get createdAt
+   * Group creation date.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Group creation date.")
 
   public String getCreatedAt() {
     return createdAt;

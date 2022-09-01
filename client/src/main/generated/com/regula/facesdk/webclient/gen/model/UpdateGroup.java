@@ -27,8 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * UpdateGroup
+ * Update group.
  */
+@ApiModel(description = "Update group.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateGroup {
   public static final String SERIALIZED_NAME_ADD_ITEMS = "addItems";
@@ -57,11 +58,11 @@ public class UpdateGroup {
   }
 
    /**
-   * Get addItems
+   * Add items.
    * @return addItems
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[1,2,3]", value = "")
+  @ApiModelProperty(example = "[1,2,3]", value = "Add items.")
 
   public List<Integer> getAddItems() {
     return addItems;
@@ -88,11 +89,11 @@ public class UpdateGroup {
   }
 
    /**
-   * Get removeItems
+   * Remove items.
    * @return removeItems
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[4,5,6]", value = "")
+  @ApiModelProperty(example = "[4,5,6]", value = "Remove items.")
 
   public List<Integer> getRemoveItems() {
     return removeItems;

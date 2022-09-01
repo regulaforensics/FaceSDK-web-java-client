@@ -65,11 +65,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Get id
+   * Response image ID.
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Response image ID.")
 
   public Integer getId() {
     return id;
@@ -88,11 +88,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Get contentType
+   * The original media type of the returned image.
    * @return contentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The original media type of the returned image.")
 
   public String getContentType() {
     return contentType;
@@ -111,11 +111,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Get createdAt
+   * The returned image creation date.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The returned image creation date.")
 
   public String getCreatedAt() {
     return createdAt;
@@ -134,11 +134,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Get path
+   * The returned image S3 path.
    * @return path
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The returned image S3 path.")
 
   public String getPath() {
     return path;
@@ -157,11 +157,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Get url
+   * The returned image URL.
    * @return url
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The returned image URL.")
 
   public String getUrl() {
     return url;
@@ -180,11 +180,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Get similarity
+   * The similarity score.
    * @return similarity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The similarity score.")
 
   public Float getSimilarity() {
     return similarity;

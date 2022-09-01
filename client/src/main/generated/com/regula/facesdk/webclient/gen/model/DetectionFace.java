@@ -89,11 +89,11 @@ public class DetectionFace {
   }
 
    /**
-   * Main coordinates of the detected face (eyes, nose, lips, ears and etc.).
+   * Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.
    * @return landmarks
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[[\"x\",\"y\"]]", value = "Main coordinates of the detected face (eyes, nose, lips, ears and etc.).")
+  @ApiModelProperty(example = "[[\"x\",\"y\"]]", value = "Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.")
 
   public List<List<BigDecimal>> getLandmarks() {
     return landmarks;
@@ -143,11 +143,11 @@ public class DetectionFace {
   }
 
    /**
-   * Formatted base64 face detection image.
+   * Base64 of the cropped portrait.
    * @return thumbnail
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Formatted base64 face detection image.")
+  @ApiModelProperty(value = "Base64 of the cropped portrait.")
 
   public byte[] getThumbnail() {
     return thumbnail;

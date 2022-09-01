@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.ProcessParam;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -32,6 +33,10 @@ public class DetectRequest {
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
+
+  public static final String SERIALIZED_NAME_PROCESS_PARAM = "processParam";
+  @SerializedName(SERIALIZED_NAME_PROCESS_PARAM)
+  private ProcessParam processParam;
 
   public static final String SERIALIZED_NAME_IMAGE = "image";
   @SerializedName(SERIALIZED_NAME_IMAGE)
@@ -75,6 +80,29 @@ public class DetectRequest {
   }
 
 
+  public DetectRequest processParam(ProcessParam processParam) {
+    
+    this.processParam = processParam;
+    return this;
+  }
+
+   /**
+   * Get processParam
+   * @return processParam
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ProcessParam getProcessParam() {
+    return processParam;
+  }
+
+
+  public void setProcessParam(ProcessParam processParam) {
+    this.processParam = processParam;
+  }
+
+
   public DetectRequest image(byte[] image) {
     
     this.image = image;
@@ -82,11 +110,11 @@ public class DetectRequest {
   }
 
    /**
-   * Base64 encoded image
+   * Base64 encoded image.
    * @return image
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Base64 encoded image")
+  @ApiModelProperty(value = "Base64 encoded image.")
 
   public byte[] getImage() {
     return image;
@@ -105,11 +133,11 @@ public class DetectRequest {
   }
 
    /**
-   * Enable formatted detections&#39; thumbnails in the response
+   * Whether to return the cropped portrains with the detected faces.
    * @return thumbnails
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Enable formatted detections' thumbnails in the response")
+  @ApiModelProperty(value = "Whether to return the cropped portrains with the detected faces.")
 
   public Boolean getThumbnails() {
     return thumbnails;
@@ -128,11 +156,11 @@ public class DetectRequest {
   }
 
    /**
-   * Enable face attributions detection, such as age or emotion and etc.
+   * Whether to evaluate attributes, such as age and emotions.
    * @return attributes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Enable face attributions detection, such as age or emotion and etc.")
+  @ApiModelProperty(value = "Whether to evaluate attributes, such as age and emotions.")
 
   public Boolean getAttributes() {
     return attributes;
@@ -151,11 +179,11 @@ public class DetectRequest {
   }
 
    /**
-   * True - main face; false - all faces.
+   * Whether to detect the only central face (true) or all the faces (false).
    * @return onlyCentralFace
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "True - main face; false - all faces.")
+  @ApiModelProperty(value = "Whether to detect the only central face (true) or all the faces (false).")
 
   public Boolean getOnlyCentralFace() {
     return onlyCentralFace;
@@ -177,6 +205,7 @@ public class DetectRequest {
     }
     DetectRequest detectRequest = (DetectRequest) o;
     return Objects.equals(this.tag, detectRequest.tag) &&
+        Objects.equals(this.processParam, detectRequest.processParam) &&
         Arrays.equals(this.image, detectRequest.image) &&
         Objects.equals(this.thumbnails, detectRequest.thumbnails) &&
         Objects.equals(this.attributes, detectRequest.attributes) &&
@@ -185,7 +214,7 @@ public class DetectRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, Arrays.hashCode(image), thumbnails, attributes, onlyCentralFace);
+    return Objects.hash(tag, processParam, Arrays.hashCode(image), thumbnails, attributes, onlyCentralFace);
   }
 
   @Override
@@ -193,6 +222,7 @@ public class DetectRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class DetectRequest {\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

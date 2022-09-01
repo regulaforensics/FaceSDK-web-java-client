@@ -43,11 +43,11 @@ public class SearchResultAllOf {
   }
 
    /**
-   * Get code
+   * The search result code.
    * @return code
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The search result code.")
 
   public Integer getCode() {
     return code;

@@ -60,11 +60,11 @@ public class Group {
   }
 
    /**
-   * Get name
+   * Group to create name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Group to create name.")
 
   public String getName() {
     return name;
@@ -91,11 +91,11 @@ public class Group {
   }
 
    /**
-   * Get metadata
+   * A free-form object containing group&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -114,11 +114,11 @@ public class Group {
   }
 
    /**
-   * Get id
+   * Group ID.
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Group ID.")
 
   public Integer getId() {
     return id;
@@ -137,11 +137,11 @@ public class Group {
   }
 
    /**
-   * Get createdAt
+   * Group creation date.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Group creation date.")
 
   public String getCreatedAt() {
     return createdAt;

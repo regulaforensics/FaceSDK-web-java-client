@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Page
+ * Information about current page number and total pages count
  */
+@ApiModel(description = "Information about current page number and total pages count")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Page {
   public static final String SERIALIZED_NAME_PAGE = "page";

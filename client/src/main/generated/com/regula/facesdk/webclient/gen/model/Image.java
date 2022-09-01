@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Image
+ * Image in the response.
  */
+@ApiModel(description = "Image in the response.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Image {
   public static final String SERIALIZED_NAME_ID = "id";
@@ -59,11 +60,11 @@ public class Image {
   }
 
    /**
-   * Get id
+   * Response image ID.
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Response image ID.")
 
   public Integer getId() {
     return id;
@@ -82,11 +83,11 @@ public class Image {
   }
 
    /**
-   * Get contentType
+   * The original media type of the returned image.
    * @return contentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The original media type of the returned image.")
 
   public String getContentType() {
     return contentType;
@@ -105,11 +106,11 @@ public class Image {
   }
 
    /**
-   * Get createdAt
+   * The returned image creation date.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The returned image creation date.")
 
   public String getCreatedAt() {
     return createdAt;
@@ -128,11 +129,11 @@ public class Image {
   }
 
    /**
-   * Get path
+   * The returned image S3 path.
    * @return path
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The returned image S3 path.")
 
   public String getPath() {
     return path;
@@ -151,11 +152,11 @@ public class Image {
   }
 
    /**
-   * Get url
+   * The returned image URL.
    * @return url
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The returned image URL.")
 
   public String getUrl() {
     return url;

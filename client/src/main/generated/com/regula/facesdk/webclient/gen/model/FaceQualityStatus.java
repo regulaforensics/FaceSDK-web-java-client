@@ -15,7 +15,6 @@ package com.regula.facesdk.webclient.gen.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -25,24 +24,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face photo image source.
+ * Gets or Sets FaceQualityStatus
  */
-@JsonAdapter(ImageSource.Adapter.class)
-public enum ImageSource {
+@JsonAdapter(FaceQualityStatus.Adapter.class)
+public enum FaceQualityStatus {
   
-  DOCUMENT_PRINTED(1),
+  QUALITY_STATUS_FALSE(0),
   
-  DOCUMENT_RFID(2),
+  QUALITY_STATUS_TRUE(1),
   
-  LIVE(3),
-  
-  DOCUMENT_WITH_LIVE(4),
-  
-  EXTERNAL(5);
+  QUALITY_STATUS_UNDETERMINED(2);
 
   private Integer value;
 
-  ImageSource(Integer value) {
+  FaceQualityStatus(Integer value) {
     this.value = value;
   }
 
@@ -55,8 +50,8 @@ public enum ImageSource {
     return String.valueOf(value);
   }
 
-  public static ImageSource fromValue(Integer value) {
-    for (ImageSource b : ImageSource.values()) {
+  public static FaceQualityStatus fromValue(Integer value) {
+    for (FaceQualityStatus b : FaceQualityStatus.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -64,16 +59,16 @@ public enum ImageSource {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ImageSource> {
+  public static class Adapter extends TypeAdapter<FaceQualityStatus> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceQualityStatus enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ImageSource read(final JsonReader jsonReader) throws IOException {
+    public FaceQualityStatus read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return ImageSource.fromValue(value);
+      return FaceQualityStatus.fromValue(value);
     }
   }
 }

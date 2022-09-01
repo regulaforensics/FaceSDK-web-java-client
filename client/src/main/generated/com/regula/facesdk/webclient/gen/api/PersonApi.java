@@ -82,17 +82,17 @@ public class PersonApi {
 
     /**
      * Build call for addImageToPerson
-     * @param personId Person id (required)
-     * @param imageFields Image to add (required)
+     * @param personId Person ID. (required)
+     * @param imageFields Image to add. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return image id </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return image ID. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addImageToPersonCall(Integer personId, ImageFields imageFields, final ApiCallback _callback) throws ApiException {
@@ -164,16 +164,16 @@ public class PersonApi {
     /**
      * Add person image
      * 
-     * @param personId Person id (required)
-     * @param imageFields Image to add (required)
+     * @param personId Person ID. (required)
+     * @param imageFields Image to add. (required)
      * @return Image
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return image id </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return image ID. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public Image addImageToPerson(Integer personId, ImageFields imageFields) throws ApiException {
@@ -184,16 +184,16 @@ public class PersonApi {
     /**
      * Add person image
      * 
-     * @param personId Person id (required)
-     * @param imageFields Image to add (required)
+     * @param personId Person ID. (required)
+     * @param imageFields Image to add. (required)
      * @return ApiResponse&lt;Image&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return image id </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return image ID. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Image> addImageToPersonWithHttpInfo(Integer personId, ImageFields imageFields) throws ApiException {
@@ -205,17 +205,17 @@ public class PersonApi {
     /**
      * Add person image (asynchronously)
      * 
-     * @param personId Person id (required)
-     * @param imageFields Image to add (required)
+     * @param personId Person ID. (required)
+     * @param imageFields Image to add. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return image id </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return image ID. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addImageToPersonAsync(Integer personId, ImageFields imageFields, final ApiCallback<Image> _callback) throws ApiException {
@@ -227,14 +227,14 @@ public class PersonApi {
     }
     /**
      * Build call for createPerson
-     * @param personFields Future person (required)
+     * @param personFields  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -301,13 +301,13 @@ public class PersonApi {
     /**
      * Create person
      * 
-     * @param personFields Future person (required)
+     * @param personFields  (required)
      * @return Person
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -319,13 +319,13 @@ public class PersonApi {
     /**
      * Create person
      * 
-     * @param personFields Future person (required)
+     * @param personFields  (required)
      * @return ApiResponse&lt;Person&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -338,14 +338,14 @@ public class PersonApi {
     /**
      * Create person (asynchronously)
      * 
-     * @param personFields Future person (required)
+     * @param personFields  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -358,17 +358,17 @@ public class PersonApi {
     }
     /**
      * Build call for deleteImageOfPerson
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id or image with image_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteImageOfPersonCall(Integer imageId, Integer personId, final ApiCallback _callback) throws ApiException {
@@ -441,15 +441,15 @@ public class PersonApi {
     /**
      * Delete image of person
      * 
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id or image with image_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public void deleteImageOfPerson(Integer imageId, Integer personId) throws ApiException {
@@ -459,16 +459,16 @@ public class PersonApi {
     /**
      * Delete image of person
      * 
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id or image with image_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deleteImageOfPersonWithHttpInfo(Integer imageId, Integer personId) throws ApiException {
@@ -479,17 +479,17 @@ public class PersonApi {
     /**
      * Delete image of person (asynchronously)
      * 
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id or image with image_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteImageOfPersonAsync(Integer imageId, Integer personId, final ApiCallback<Void> _callback) throws ApiException {
@@ -500,16 +500,16 @@ public class PersonApi {
     }
     /**
      * Build call for deletePerson
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePersonCall(Integer personId, final ApiCallback _callback) throws ApiException {
@@ -576,14 +576,14 @@ public class PersonApi {
     /**
      * Delete person
      * 
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public void deletePerson(Integer personId) throws ApiException {
@@ -593,15 +593,15 @@ public class PersonApi {
     /**
      * Delete person
      * 
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deletePersonWithHttpInfo(Integer personId) throws ApiException {
@@ -612,16 +612,16 @@ public class PersonApi {
     /**
      * Delete person (asynchronously)
      * 
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePersonAsync(Integer personId, final ApiCallback<Void> _callback) throws ApiException {
@@ -632,18 +632,18 @@ public class PersonApi {
     }
     /**
      * Build call for getAllGroupsByPersonId
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAllGroupsByPersonIdCall(Integer page, Integer size, Integer personId, final ApiCallback _callback) throws ApiException {
@@ -728,17 +728,17 @@ public class PersonApi {
     /**
      * Get person groups
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @return GroupPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public GroupPage getAllGroupsByPersonId(Integer page, Integer size, Integer personId) throws ApiException {
@@ -749,17 +749,17 @@ public class PersonApi {
     /**
      * Get person groups
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @return ApiResponse&lt;GroupPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupPage> getAllGroupsByPersonIdWithHttpInfo(Integer page, Integer size, Integer personId) throws ApiException {
@@ -771,18 +771,18 @@ public class PersonApi {
     /**
      * Get person groups (asynchronously)
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all groups </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all groups. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAllGroupsByPersonIdAsync(Integer page, Integer size, Integer personId, final ApiCallback<GroupPage> _callback) throws ApiException {
@@ -794,18 +794,18 @@ public class PersonApi {
     }
     /**
      * Build call for getAllImagesByPersonId
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all person images </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all person images. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAllImagesByPersonIdCall(Integer page, Integer size, Integer personId, final ApiCallback _callback) throws ApiException {
@@ -890,17 +890,17 @@ public class PersonApi {
     /**
      * Get person images
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @return ImagePage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all person images </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all person images. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ImagePage getAllImagesByPersonId(Integer page, Integer size, Integer personId) throws ApiException {
@@ -911,17 +911,17 @@ public class PersonApi {
     /**
      * Get person images
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @return ApiResponse&lt;ImagePage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all person images </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all person images. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ImagePage> getAllImagesByPersonIdWithHttpInfo(Integer page, Integer size, Integer personId) throws ApiException {
@@ -933,18 +933,18 @@ public class PersonApi {
     /**
      * Get person images (asynchronously)
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param personId Person id (required)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
+     * @param personId Person ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return all person images </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return all person images. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAllImagesByPersonIdAsync(Integer page, Integer size, Integer personId, final ApiCallback<ImagePage> _callback) throws ApiException {
@@ -956,20 +956,19 @@ public class PersonApi {
     }
     /**
      * Build call for getAllPersons
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Person name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsCall(Integer page, Integer size, String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1003,10 +1002,6 @@ public class PersonApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
-        if (name != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1028,7 +1023,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllPersonsValidateBeforeCall(Integer page, Integer size, String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllPersonsValidateBeforeCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -1041,7 +1036,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllPersonsCall(page, size, name, _callback);
+        okhttp3.Call localVarCall = getAllPersonsCall(page, size, _callback);
         return localVarCall;
 
     }
@@ -1049,40 +1044,38 @@ public class PersonApi {
     /**
      * Get persons
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Person name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @return PersonsPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public PersonsPage getAllPersons(Integer page, Integer size, String name) throws ApiException {
-        ApiResponse<PersonsPage> localVarResp = getAllPersonsWithHttpInfo(page, size, name);
+    public PersonsPage getAllPersons(Integer page, Integer size) throws ApiException {
+        ApiResponse<PersonsPage> localVarResp = getAllPersonsWithHttpInfo(page, size);
         return localVarResp.getData();
     }
 
     /**
      * Get persons
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Person name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @return ApiResponse&lt;PersonsPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PersonsPage> getAllPersonsWithHttpInfo(Integer page, Integer size, String name) throws ApiException {
-        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, name, null);
+    public ApiResponse<PersonsPage> getAllPersonsWithHttpInfo(Integer page, Integer size) throws ApiException {
+        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, null);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1090,39 +1083,38 @@ public class PersonApi {
     /**
      * Get persons (asynchronously)
      * 
-     * @param page Current page (required)
-     * @param size Page size (required)
-     * @param name Person name keywords (optional)
+     * @param page The page number to get a list of persons or groups. (required)
+     * @param size The page size with a list of persons or groups, items. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return all persons </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return all persons. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsAsync(Integer page, Integer size, String name, final ApiCallback<PersonsPage> _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsAsync(Integer page, Integer size, final ApiCallback<PersonsPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, name, _callback);
+        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, _callback);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getImageOfPerson
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return image </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getImageOfPersonCall(Integer imageId, Integer personId, final ApiCallback _callback) throws ApiException {
@@ -1195,16 +1187,16 @@ public class PersonApi {
     /**
      * Get person image by id
      * 
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return image </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
     public File getImageOfPerson(Integer imageId, Integer personId) throws ApiException {
@@ -1215,16 +1207,16 @@ public class PersonApi {
     /**
      * Get person image by id
      * 
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return image </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<File> getImageOfPersonWithHttpInfo(Integer imageId, Integer personId) throws ApiException {
@@ -1236,17 +1228,17 @@ public class PersonApi {
     /**
      * Get person image by id (asynchronously)
      * 
-     * @param imageId Image id (required)
-     * @param personId Person id (required)
+     * @param imageId Image ID. (required)
+     * @param personId Person ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 200 </td><td> Successful operation, return image </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getImageOfPersonAsync(Integer imageId, Integer personId, final ApiCallback<File> _callback) throws ApiException {
@@ -1258,16 +1250,16 @@ public class PersonApi {
     }
     /**
      * Build call for getPerson
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPersonCall(Integer personId, final ApiCallback _callback) throws ApiException {
@@ -1334,15 +1326,15 @@ public class PersonApi {
     /**
      * Get person
      * 
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @return Person
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public Person getPerson(Integer personId) throws ApiException {
@@ -1353,15 +1345,15 @@ public class PersonApi {
     /**
      * Get person
      * 
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @return ApiResponse&lt;Person&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Person> getPersonWithHttpInfo(Integer personId) throws ApiException {
@@ -1373,16 +1365,16 @@ public class PersonApi {
     /**
      * Get person (asynchronously)
      * 
-     * @param personId Person id (required)
+     * @param personId Person ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return person </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; return person. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPersonAsync(Integer personId, final ApiCallback<Person> _callback) throws ApiException {
@@ -1394,17 +1386,17 @@ public class PersonApi {
     }
     /**
      * Build call for updatePerson
-     * @param personId Person id (required)
-     * @param personFields Metadata (required)
+     * @param personId Person ID. (required)
+     * @param personFields Request body for the Person to update. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePersonCall(Integer personId, PersonFields personFields, final ApiCallback _callback) throws ApiException {
@@ -1476,15 +1468,15 @@ public class PersonApi {
     /**
      * Update person
      * 
-     * @param personId Person id (required)
-     * @param personFields Metadata (required)
+     * @param personId Person ID. (required)
+     * @param personFields Request body for the Person to update. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public void updatePerson(Integer personId, PersonFields personFields) throws ApiException {
@@ -1494,16 +1486,16 @@ public class PersonApi {
     /**
      * Update person
      * 
-     * @param personId Person id (required)
-     * @param personFields Metadata (required)
+     * @param personId Person ID. (required)
+     * @param personFields Request body for the Person to update. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> updatePersonWithHttpInfo(Integer personId, PersonFields personFields) throws ApiException {
@@ -1514,17 +1506,17 @@ public class PersonApi {
     /**
      * Update person (asynchronously)
      * 
-     * @param personId Person id (required)
-     * @param personFields Metadata (required)
+     * @param personId Person ID. (required)
+     * @param personFields Request body for the Person to update. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successful operation, return nothing </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successful operation, return nothing. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Person with person_id not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePersonAsync(Integer personId, PersonFields personFields, final ApiCallback<Void> _callback) throws ApiException {

@@ -51,11 +51,11 @@ public class PersonAllOf {
   }
 
    /**
-   * Get id
+   * Person ID.
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person ID.")
 
   public Integer getId() {
     return id;
@@ -74,11 +74,11 @@ public class PersonAllOf {
   }
 
    /**
-   * Get createdAt
+   * Person creation date.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person creation date.")
 
   public String getCreatedAt() {
     return createdAt;
@@ -97,11 +97,11 @@ public class PersonAllOf {
   }
 
    /**
-   * Get updatedAt
+   * Person update date.
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person update date.")
 
   public String getUpdatedAt() {
     return updatedAt;

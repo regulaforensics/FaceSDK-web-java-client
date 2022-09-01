@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.DetectionQuality;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -34,6 +35,10 @@ import java.util.Map;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Detection {
+  public static final String SERIALIZED_NAME_CROP = "crop";
+  @SerializedName(SERIALIZED_NAME_CROP)
+  private byte[] crop;
+
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
   private Map<String, Object> attributes = null;
@@ -41,6 +46,10 @@ public class Detection {
   public static final String SERIALIZED_NAME_LANDMARKS = "landmarks";
   @SerializedName(SERIALIZED_NAME_LANDMARKS)
   private List<List<BigDecimal>> landmarks = new ArrayList<List<BigDecimal>>();
+
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+  @SerializedName(SERIALIZED_NAME_QUALITY)
+  private DetectionQuality quality;
 
   public static final String SERIALIZED_NAME_ROI = "roi";
   @SerializedName(SERIALIZED_NAME_ROI)
@@ -52,6 +61,29 @@ public class Detection {
 
   public Detection() { 
   }
+
+  public Detection crop(byte[] crop) {
+    
+    this.crop = crop;
+    return this;
+  }
+
+   /**
+   * Base64 encoded image.
+   * @return crop
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Base64 encoded image.")
+
+  public byte[] getCrop() {
+    return crop;
+  }
+
+
+  public void setCrop(byte[] crop) {
+    this.crop = crop;
+  }
+
 
   public Detection attributes(Map<String, Object> attributes) {
     
@@ -96,11 +128,11 @@ public class Detection {
   }
 
    /**
-   * Main coordinates of the detected face (eyes, nose, lips, ears and etc.).
+   * Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.
    * @return landmarks
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "[[\"x\",\"y\"]]", required = true, value = "Main coordinates of the detected face (eyes, nose, lips, ears and etc.).")
+  @ApiModelProperty(example = "[[\"x\",\"y\"]]", required = true, value = "Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.")
 
   public List<List<BigDecimal>> getLandmarks() {
     return landmarks;
@@ -109,6 +141,29 @@ public class Detection {
 
   public void setLandmarks(List<List<BigDecimal>> landmarks) {
     this.landmarks = landmarks;
+  }
+
+
+  public Detection quality(DetectionQuality quality) {
+    
+    this.quality = quality;
+    return this;
+  }
+
+   /**
+   * Get quality
+   * @return quality
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public DetectionQuality getQuality() {
+    return quality;
+  }
+
+
+  public void setQuality(DetectionQuality quality) {
+    this.quality = quality;
   }
 
 
@@ -147,11 +202,11 @@ public class Detection {
   }
 
    /**
-   * Formatted base64 face detection image.
+   * Base64 of the cropped portrait.
    * @return thumbnail
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Formatted base64 face detection image.")
+  @ApiModelProperty(value = "Base64 of the cropped portrait.")
 
   public byte[] getThumbnail() {
     return thumbnail;
@@ -172,23 +227,27 @@ public class Detection {
       return false;
     }
     Detection detection = (Detection) o;
-    return Objects.equals(this.attributes, detection.attributes) &&
+    return Arrays.equals(this.crop, detection.crop) &&
+        Objects.equals(this.attributes, detection.attributes) &&
         Objects.equals(this.landmarks, detection.landmarks) &&
+        Objects.equals(this.quality, detection.quality) &&
         Objects.equals(this.roi, detection.roi) &&
         Arrays.equals(this.thumbnail, detection.thumbnail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attributes, landmarks, roi, Arrays.hashCode(thumbnail));
+    return Objects.hash(Arrays.hashCode(crop), attributes, landmarks, quality, roi, Arrays.hashCode(thumbnail));
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Detection {\n");
+    sb.append("    crop: ").append(toIndentedString(crop)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    landmarks: ").append(toIndentedString(landmarks)).append("\n");
+    sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    roi: ").append(toIndentedString(roi)).append("\n");
     sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
     sb.append("}");

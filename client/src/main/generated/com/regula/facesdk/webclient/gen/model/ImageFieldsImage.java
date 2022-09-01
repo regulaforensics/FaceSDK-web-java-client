@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFieldsImage
+ * The uploaded image.
  */
+@ApiModel(description = "The uploaded image.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ImageFieldsImage {
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "content_type";
@@ -47,11 +48,11 @@ public class ImageFieldsImage {
   }
 
    /**
-   * Get contentType
+   * The original media type of the uploaded image.
    * @return contentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The original media type of the uploaded image.")
 
   public String getContentType() {
     return contentType;
@@ -70,11 +71,11 @@ public class ImageFieldsImage {
   }
 
    /**
-   * Get content
+   * Base64 encoded image.
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Base64 encoded image.")
 
   public byte[] getContent() {
     return content;

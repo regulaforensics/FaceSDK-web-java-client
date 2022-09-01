@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ImagePageAllOf
+ * Image page.
  */
+@ApiModel(description = "Image page.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ImagePageAllOf {
   public static final String SERIALIZED_NAME_ITEMS = "items";

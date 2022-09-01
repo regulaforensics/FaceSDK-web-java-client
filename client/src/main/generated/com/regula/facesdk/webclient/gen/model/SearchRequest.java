@@ -60,11 +60,11 @@ public class SearchRequest {
   }
 
    /**
-   * Get limit
+   * The number of returned Persons limit.
    * @return limit
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The number of returned Persons limit.")
 
   public Integer getLimit() {
     return limit;
@@ -83,11 +83,11 @@ public class SearchRequest {
   }
 
    /**
-   * Get threshold
+   * Similarity threshold.
    * @return threshold
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Similarity threshold.")
 
   public Float getThreshold() {
     return threshold;
@@ -114,11 +114,11 @@ public class SearchRequest {
   }
 
    /**
-   * Get groupIds
+   * The IDs of the groups in which the search is performed.
    * @return groupIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The IDs of the groups in which the search is performed.")
 
   public List<Integer> getGroupIds() {
     return groupIds;

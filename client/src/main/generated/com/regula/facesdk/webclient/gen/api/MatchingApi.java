@@ -84,8 +84,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return detection faces with their coordinates. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the coordinates of the detected faces are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call detectCall(DetectRequest detectRequest, final ApiCallback _callback) throws ApiException {
@@ -157,8 +157,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return detection faces with their coordinates. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the coordinates of the detected faces are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public DetectResponse detect(DetectRequest detectRequest) throws ApiException {
@@ -175,8 +175,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return detection faces with their coordinates. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the coordinates of the detected faces are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DetectResponse> detectWithHttpInfo(DetectRequest detectRequest) throws ApiException {
@@ -195,8 +195,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return detection faces with their coordinates. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the coordinates of the detected faces are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call detectAsync(DetectRequest detectRequest, final ApiCallback<DetectResponse> _callback) throws ApiException {
@@ -215,8 +215,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call matchCall(MatchRequest matchRequest, final ApiCallback _callback) throws ApiException {
@@ -288,8 +288,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public MatchResponse match(MatchRequest matchRequest) throws ApiException {
@@ -306,8 +306,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<MatchResponse> matchWithHttpInfo(MatchRequest matchRequest) throws ApiException {
@@ -326,8 +326,8 @@ public class MatchingApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; return compare results with their score and similarity. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call matchAsync(MatchRequest matchRequest, final ApiCallback<MatchResponse> _callback) throws ApiException {

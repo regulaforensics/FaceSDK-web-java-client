@@ -28,8 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * PersonFields
+ * Person Request body: name and metadata.
  */
+@ApiModel(description = "Person Request body: name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PersonFields {
   public static final String SERIALIZED_NAME_NAME = "name";
@@ -50,11 +51,11 @@ public class PersonFields {
   }
 
    /**
-   * Get name
+   * Person name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person name.")
 
   public String getName() {
     return name;
@@ -81,11 +82,11 @@ public class PersonFields {
   }
 
    /**
-   * Get metadata
+   * A free-form object containing person&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;

@@ -54,11 +54,11 @@ public class GroupPageAllOf {
   }
 
    /**
-   * Get items
+   * The array of Groups that are found during the search.
    * @return items
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The array of Groups that are found during the search.")
 
   public List<Group> getItems() {
     return items;

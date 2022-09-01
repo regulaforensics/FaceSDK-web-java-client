@@ -28,8 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * GroupToCreate
+ * Request body of the group to create data, includes name and metadata.
  */
+@ApiModel(description = "Request body of the group to create data, includes name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GroupToCreate {
   public static final String SERIALIZED_NAME_NAME = "name";
@@ -50,11 +51,11 @@ public class GroupToCreate {
   }
 
    /**
-   * Get name
+   * Group to create name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Group to create name.")
 
   public String getName() {
     return name;
@@ -81,11 +82,11 @@ public class GroupToCreate {
   }
 
    /**
-   * Get metadata
+   * A free-form object containing group&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;

@@ -43,6 +43,7 @@ public class IdentificationExample {
 
         var searchResult = sdk.searchApi.search(
                 new SearchRequest()
+                        .limit(10).threshold(0.8f)
                         .groupIds(Arrays.asList(group.getId()))
                         .image(new ImageFieldsImage().content(face1)));
 

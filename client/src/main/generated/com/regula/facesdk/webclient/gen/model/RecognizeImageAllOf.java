@@ -43,11 +43,11 @@ public class RecognizeImageAllOf {
   }
 
    /**
-   * Get similarity
+   * The similarity score.
    * @return similarity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The similarity score.")
 
   public Float getSimilarity() {
     return similarity;

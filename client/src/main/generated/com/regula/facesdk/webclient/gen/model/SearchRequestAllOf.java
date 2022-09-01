@@ -27,8 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SearchRequestAllOf
+ * Request search data.
  */
+@ApiModel(description = "Request search data.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SearchRequestAllOf {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
@@ -53,11 +54,11 @@ public class SearchRequestAllOf {
   }
 
    /**
-   * Get limit
+   * The number of returned Persons limit.
    * @return limit
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The number of returned Persons limit.")
 
   public Integer getLimit() {
     return limit;
@@ -76,11 +77,11 @@ public class SearchRequestAllOf {
   }
 
    /**
-   * Get threshold
+   * Similarity threshold.
    * @return threshold
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Similarity threshold.")
 
   public Float getThreshold() {
     return threshold;
@@ -107,11 +108,11 @@ public class SearchRequestAllOf {
   }
 
    /**
-   * Get groupIds
+   * The IDs of the groups in which the search is performed.
    * @return groupIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The IDs of the groups in which the search is performed.")
 
   public List<Integer> getGroupIds() {
     return groupIds;

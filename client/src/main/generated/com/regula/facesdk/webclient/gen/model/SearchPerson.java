@@ -70,11 +70,11 @@ public class SearchPerson {
   }
 
    /**
-   * Get name
+   * Person name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person name.")
 
   public String getName() {
     return name;
@@ -101,11 +101,11 @@ public class SearchPerson {
   }
 
    /**
-   * Get metadata
+   * A free-form object containing person&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -124,11 +124,11 @@ public class SearchPerson {
   }
 
    /**
-   * Get id
+   * Person ID.
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person ID.")
 
   public Integer getId() {
     return id;
@@ -147,11 +147,11 @@ public class SearchPerson {
   }
 
    /**
-   * Get createdAt
+   * Person creation date.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person creation date.")
 
   public String getCreatedAt() {
     return createdAt;
@@ -170,11 +170,11 @@ public class SearchPerson {
   }
 
    /**
-   * Get updatedAt
+   * Person update date.
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Person update date.")
 
   public String getUpdatedAt() {
     return updatedAt;

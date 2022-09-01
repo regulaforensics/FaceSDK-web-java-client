@@ -73,11 +73,11 @@ public class MatchImageResult {
   }
 
    /**
-   * Image index used to identify input photos between themselves. If not specified, than input list index is used
+   * Image index used to identify input photos between themselves. If not specified, than input list index is used.
    * @return firstIndex
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Image index used to identify input photos between themselves. If not specified, than input list index is used")
+  @ApiModelProperty(required = true, value = "Image index used to identify input photos between themselves. If not specified, than input list index is used.")
 
   public Integer getFirstIndex() {
     return firstIndex;
@@ -119,11 +119,11 @@ public class MatchImageResult {
   }
 
    /**
-   * Image index used to identify input photos between themselves. If not specified, than input list index is used
+   * Image index used to identify input photos between themselves. If not specified, than input list index is used.
    * @return secondIndex
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Image index used to identify input photos between themselves. If not specified, than input list index is used")
+  @ApiModelProperty(required = true, value = "Image index used to identify input photos between themselves. If not specified, than input list index is used.")
 
   public Integer getSecondIndex() {
     return secondIndex;

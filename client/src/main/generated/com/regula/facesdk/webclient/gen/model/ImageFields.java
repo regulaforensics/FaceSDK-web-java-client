@@ -26,8 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ImageFields
+ * Image in the request data, includes image and content_type.
  */
+@ApiModel(description = "Image in the request data, includes image and content_type.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ImageFields {
   public static final String SERIALIZED_NAME_IMAGE = "image";

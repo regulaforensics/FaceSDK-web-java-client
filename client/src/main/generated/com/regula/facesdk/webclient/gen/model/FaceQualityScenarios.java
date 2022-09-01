@@ -15,7 +15,6 @@ package com.regula.facesdk.webclient.gen.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -25,28 +24,32 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face photo image source.
+ * Gets or Sets FaceQualityScenarios
  */
-@JsonAdapter(ImageSource.Adapter.class)
-public enum ImageSource {
+@JsonAdapter(FaceQualityScenarios.Adapter.class)
+public enum FaceQualityScenarios {
   
-  DOCUMENT_PRINTED(1),
+  QUALITY_FULL("QualityFull"),
   
-  DOCUMENT_RFID(2),
+  QUALITY_ICAO("QualityICAO"),
   
-  LIVE(3),
+  QUALITY_VISA_SCHENGEN("QualityVisaSchengen"),
   
-  DOCUMENT_WITH_LIVE(4),
+  QUALITY_VISA_USA("QualityVisaUSA"),
   
-  EXTERNAL(5);
+  CROP_CENTRAL_FACE("CropCentralFace"),
+  
+  CROP_ALL_FACES("CropAllFaces"),
+  
+  THUMBNAIL("Thumbnail");
 
-  private Integer value;
+  private String value;
 
-  ImageSource(Integer value) {
+  FaceQualityScenarios(String value) {
     this.value = value;
   }
 
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -55,8 +58,8 @@ public enum ImageSource {
     return String.valueOf(value);
   }
 
-  public static ImageSource fromValue(Integer value) {
-    for (ImageSource b : ImageSource.values()) {
+  public static FaceQualityScenarios fromValue(String value) {
+    for (FaceQualityScenarios b : FaceQualityScenarios.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -64,16 +67,16 @@ public enum ImageSource {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ImageSource> {
+  public static class Adapter extends TypeAdapter<FaceQualityScenarios> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceQualityScenarios enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ImageSource read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return ImageSource.fromValue(value);
+    public FaceQualityScenarios read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return FaceQualityScenarios.fromValue(value);
     }
   }
 }

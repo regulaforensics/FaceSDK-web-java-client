@@ -15,7 +15,6 @@ package com.regula.facesdk.webclient.gen.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -25,24 +24,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face photo image source.
+ * Gets or Sets FaceImageQualityGroups
  */
-@JsonAdapter(ImageSource.Adapter.class)
-public enum ImageSource {
+@JsonAdapter(FaceImageQualityGroups.Adapter.class)
+public enum FaceImageQualityGroups {
   
-  DOCUMENT_PRINTED(1),
+  IMAGE_CHARACTERISTICS(1),
   
-  DOCUMENT_RFID(2),
+  HEAD_SIZE_AND_POSITIONS(2),
   
-  LIVE(3),
+  FACE_QUALITY(3),
   
-  DOCUMENT_WITH_LIVE(4),
+  EYES_CHARACTERISTICS(4),
   
-  EXTERNAL(5);
+  SHADOWS_AND_LIGHTNING(5),
+  
+  POSE_AND_EXPRESSION(6),
+  
+  HEAD_OCCLUSION(8);
 
   private Integer value;
 
-  ImageSource(Integer value) {
+  FaceImageQualityGroups(Integer value) {
     this.value = value;
   }
 
@@ -55,8 +58,8 @@ public enum ImageSource {
     return String.valueOf(value);
   }
 
-  public static ImageSource fromValue(Integer value) {
-    for (ImageSource b : ImageSource.values()) {
+  public static FaceImageQualityGroups fromValue(Integer value) {
+    for (FaceImageQualityGroups b : FaceImageQualityGroups.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -64,16 +67,16 @@ public enum ImageSource {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ImageSource> {
+  public static class Adapter extends TypeAdapter<FaceImageQualityGroups> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceImageQualityGroups enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ImageSource read(final JsonReader jsonReader) throws IOException {
+    public FaceImageQualityGroups read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return ImageSource.fromValue(value);
+      return FaceImageQualityGroups.fromValue(value);
     }
   }
 }

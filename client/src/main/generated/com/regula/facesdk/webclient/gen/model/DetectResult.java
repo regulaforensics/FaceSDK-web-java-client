@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.Detection;
+import com.regula.facesdk.webclient.gen.model.FaceQualityScenarios;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -43,6 +44,14 @@ public class DetectResult {
   public static final String SERIALIZED_NAME_LANDMARKS_TYPE = "landmarksType";
   @SerializedName(SERIALIZED_NAME_LANDMARKS_TYPE)
   private Integer landmarksType;
+
+  public static final String SERIALIZED_NAME_SCENARIO = "scenario";
+  @SerializedName(SERIALIZED_NAME_SCENARIO)
+  private FaceQualityScenarios scenario;
+
+  public static final String SERIALIZED_NAME_TIMER = "timer";
+  @SerializedName(SERIALIZED_NAME_TIMER)
+  private Float timer = null;
 
   public DetectResult() { 
   }
@@ -121,6 +130,52 @@ public class DetectResult {
   }
 
 
+  public DetectResult scenario(FaceQualityScenarios scenario) {
+    
+    this.scenario = scenario;
+    return this;
+  }
+
+   /**
+   * Get scenario
+   * @return scenario
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public FaceQualityScenarios getScenario() {
+    return scenario;
+  }
+
+
+  public void setScenario(FaceQualityScenarios scenario) {
+    this.scenario = scenario;
+  }
+
+
+  public DetectResult timer(Float timer) {
+    
+    this.timer = timer;
+    return this;
+  }
+
+   /**
+   * Get timer
+   * @return timer
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "0.8479356", value = "")
+
+  public Float getTimer() {
+    return timer;
+  }
+
+
+  public void setTimer(Float timer) {
+    this.timer = timer;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -132,12 +187,14 @@ public class DetectResult {
     DetectResult detectResult = (DetectResult) o;
     return Objects.equals(this.detections, detectResult.detections) &&
         Objects.equals(this.detectorType, detectResult.detectorType) &&
-        Objects.equals(this.landmarksType, detectResult.landmarksType);
+        Objects.equals(this.landmarksType, detectResult.landmarksType) &&
+        Objects.equals(this.scenario, detectResult.scenario) &&
+        Objects.equals(this.timer, detectResult.timer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(detections, detectorType, landmarksType);
+    return Objects.hash(detections, detectorType, landmarksType, scenario, timer);
   }
 
   @Override
@@ -147,6 +204,8 @@ public class DetectResult {
     sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("    detectorType: ").append(toIndentedString(detectorType)).append("\n");
     sb.append("    landmarksType: ").append(toIndentedString(landmarksType)).append("\n");
+    sb.append("    scenario: ").append(toIndentedString(scenario)).append("\n");
+    sb.append("    timer: ").append(toIndentedString(timer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
