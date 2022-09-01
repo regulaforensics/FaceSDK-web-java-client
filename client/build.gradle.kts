@@ -1,12 +1,11 @@
 plugins {
     java
-    id("com.github.sherter.google-java-format") version "0.9"
     id("maven-publish")
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
     withSourcesJar()
 }
 
@@ -15,14 +14,28 @@ sourceSets.main {
 }
 
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:3.14.7")
-    implementation("com.squareup.okhttp3:logging-interceptor:3.14.7")
-    implementation("com.google.code.gson:gson:2.8.6")
-    implementation("io.gsonfire:gson-fire:1.8.4")
-    implementation("org.threeten:threetenbp:1.4.3")
-    implementation("io.swagger:swagger-annotations:1.5.24")
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    implementation("com.google.code.gson:gson:2.9.0")
+    implementation("io.gsonfire:gson-fire:1.8.5")
+    implementation("org.threeten:threetenbp:1.6.0")
+    implementation("io.swagger:swagger-annotations:1.6.6")
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
+    implementation("com.sun.jersey.contribs:jersey-multipart:1.19.4")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.3")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+    implementation("com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.13.3")
+    implementation ("io.swagger:swagger-annotations:1.6.6")
+    implementation ("com.google.code.findbugs:jsr305:3.0.2")
+    implementation ("com.sun.jersey:jersey-client:1.19.4")
+    implementation ("org.openapitools:jackson-databind-nullable:0.2.3")
+    implementation ("com.fasterxml.jackson.datatype:jackson-datatype-joda:2.13.3")
+    implementation ("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3")
+    implementation ("com.github.joschi.jackson:jackson-datatype-threetenbp:2.12.5")
+    implementation ("com.brsanthu:migbase64:2.2")
+    implementation ("jakarta.annotation:jakarta.annotation-api:2.1.0")
 }
 
 /* ----------- Publishing config ------------------- */
