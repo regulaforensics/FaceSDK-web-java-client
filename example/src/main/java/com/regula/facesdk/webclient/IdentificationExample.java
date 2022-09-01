@@ -44,7 +44,7 @@ public class IdentificationExample {
         var searchResult = sdk.searchApi.search(
                 new SearchRequest()
                         .limit(10).threshold(0.8f)
-                        .groupIds(Arrays.asList(group.getId()))
+                        .groupIds(Arrays.asList())
                         .image(new ImageFieldsImage().content(face1)));
 
         System.out.println(String.format("Person #1 %s %s%n", person1.getId(), person1.getName()));
