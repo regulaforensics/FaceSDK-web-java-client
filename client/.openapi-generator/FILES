@@ -71,5 +71,4 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPersonAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequestAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResult.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResultAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/UpdateGroup.java
