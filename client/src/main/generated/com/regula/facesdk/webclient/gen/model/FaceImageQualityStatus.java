@@ -25,32 +25,24 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face detection scenarios.
+ * The processing status returned for each assessed quality characteristic.
  */
-@JsonAdapter(FaceQualityScenarios.Adapter.class)
-public enum FaceQualityScenarios {
+@JsonAdapter(FaceImageQualityStatus.Adapter.class)
+public enum FaceImageQualityStatus {
   
-  QUALITY_FULL("QualityFull"),
+  QUALITY_STATUS_FALSE(0),
   
-  QUALITY_ICAO("QualityICAO"),
+  QUALITY_STATUS_TRUE(1),
   
-  QUALITY_VISA_SCHENGEN("QualityVisaSchengen"),
-  
-  QUALITY_VISA_USA("QualityVisaUSA"),
-  
-  CROP_CENTRAL_FACE("CropCentralFace"),
-  
-  CROP_ALL_FACES("CropAllFaces"),
-  
-  THUMBNAIL("Thumbnail");
+  QUALITY_STATUS_UNDETERMINED(2);
 
-  private String value;
+  private Integer value;
 
-  FaceQualityScenarios(String value) {
+  FaceImageQualityStatus(Integer value) {
     this.value = value;
   }
 
-  public String getValue() {
+  public Integer getValue() {
     return value;
   }
 
@@ -59,8 +51,8 @@ public enum FaceQualityScenarios {
     return String.valueOf(value);
   }
 
-  public static FaceQualityScenarios fromValue(String value) {
-    for (FaceQualityScenarios b : FaceQualityScenarios.values()) {
+  public static FaceImageQualityStatus fromValue(Integer value) {
+    for (FaceImageQualityStatus b : FaceImageQualityStatus.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -68,16 +60,16 @@ public enum FaceQualityScenarios {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<FaceQualityScenarios> {
+  public static class Adapter extends TypeAdapter<FaceImageQualityStatus> {
     @Override
-    public void write(final JsonWriter jsonWriter, final FaceQualityScenarios enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceImageQualityStatus enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public FaceQualityScenarios read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return FaceQualityScenarios.fromValue(value);
+    public FaceImageQualityStatus read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return FaceImageQualityStatus.fromValue(value);
     }
   }
 }

@@ -27,11 +27,11 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Detection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionFace.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionQuality.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/FaceAlignTypeQuality.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityAlignType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityGroups.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityStatus.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceQualityConfigName.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceQualityScenarios.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/FaceQualityStatus.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResultCode.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Group.java

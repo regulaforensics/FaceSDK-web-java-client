@@ -25,32 +25,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face detection scenarios.
+ * The aspect ratio according to which face alignment is performed during face detection.
  */
-@JsonAdapter(FaceQualityScenarios.Adapter.class)
-public enum FaceQualityScenarios {
+@JsonAdapter(FaceImageQualityAlignType.Adapter.class)
+public enum FaceImageQualityAlignType {
   
-  QUALITY_FULL("QualityFull"),
+  ALIGN_3x4(0),
   
-  QUALITY_ICAO("QualityICAO"),
+  ALIGN_4x5(1),
   
-  QUALITY_VISA_SCHENGEN("QualityVisaSchengen"),
+  ALIGN_2x3(2),
   
-  QUALITY_VISA_USA("QualityVisaUSA"),
+  ALIGN_1x1(3),
   
-  CROP_CENTRAL_FACE("CropCentralFace"),
-  
-  CROP_ALL_FACES("CropAllFaces"),
-  
-  THUMBNAIL("Thumbnail");
+  ALIGN_7x9(4);
 
-  private String value;
+  private Integer value;
 
-  FaceQualityScenarios(String value) {
+  FaceImageQualityAlignType(Integer value) {
     this.value = value;
   }
 
-  public String getValue() {
+  public Integer getValue() {
     return value;
   }
 
@@ -59,8 +55,8 @@ public enum FaceQualityScenarios {
     return String.valueOf(value);
   }
 
-  public static FaceQualityScenarios fromValue(String value) {
-    for (FaceQualityScenarios b : FaceQualityScenarios.values()) {
+  public static FaceImageQualityAlignType fromValue(Integer value) {
+    for (FaceImageQualityAlignType b : FaceImageQualityAlignType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -68,16 +64,16 @@ public enum FaceQualityScenarios {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<FaceQualityScenarios> {
+  public static class Adapter extends TypeAdapter<FaceImageQualityAlignType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final FaceQualityScenarios enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceImageQualityAlignType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public FaceQualityScenarios read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return FaceQualityScenarios.fromValue(value);
+    public FaceImageQualityAlignType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return FaceImageQualityAlignType.fromValue(value);
     }
   }
 }
