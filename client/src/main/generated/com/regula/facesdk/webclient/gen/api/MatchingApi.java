@@ -78,6 +78,7 @@ public class MatchingApi {
     /**
      * Build call for detect
      * @param detectRequest  (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -88,7 +89,7 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detectCall(DetectRequest detectRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detectCall(DetectRequest detectRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -114,6 +115,10 @@ public class MatchingApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -135,7 +140,7 @@ public class MatchingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detectValidateBeforeCall(DetectRequest detectRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detectValidateBeforeCall(DetectRequest detectRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'detectRequest' is set
         if (detectRequest == null) {
@@ -143,7 +148,7 @@ public class MatchingApi {
         }
         
 
-        okhttp3.Call localVarCall = detectCall(detectRequest, _callback);
+        okhttp3.Call localVarCall = detectCall(detectRequest, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -152,6 +157,7 @@ public class MatchingApi {
      * Detect facial coordinates
      * 
      * @param detectRequest  (required)
+     * @param xRequestID  (optional)
      * @return DetectResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -161,8 +167,8 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public DetectResponse detect(DetectRequest detectRequest) throws ApiException {
-        ApiResponse<DetectResponse> localVarResp = detectWithHttpInfo(detectRequest);
+    public DetectResponse detect(DetectRequest detectRequest, String xRequestID) throws ApiException {
+        ApiResponse<DetectResponse> localVarResp = detectWithHttpInfo(detectRequest, xRequestID);
         return localVarResp.getData();
     }
 
@@ -170,6 +176,7 @@ public class MatchingApi {
      * Detect facial coordinates
      * 
      * @param detectRequest  (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;DetectResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -179,8 +186,8 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DetectResponse> detectWithHttpInfo(DetectRequest detectRequest) throws ApiException {
-        okhttp3.Call localVarCall = detectValidateBeforeCall(detectRequest, null);
+    public ApiResponse<DetectResponse> detectWithHttpInfo(DetectRequest detectRequest, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = detectValidateBeforeCall(detectRequest, xRequestID, null);
         Type localVarReturnType = new TypeToken<DetectResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -189,6 +196,7 @@ public class MatchingApi {
      * Detect facial coordinates (asynchronously)
      * 
      * @param detectRequest  (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -199,9 +207,9 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detectAsync(DetectRequest detectRequest, final ApiCallback<DetectResponse> _callback) throws ApiException {
+    public okhttp3.Call detectAsync(DetectRequest detectRequest, String xRequestID, final ApiCallback<DetectResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = detectValidateBeforeCall(detectRequest, _callback);
+        okhttp3.Call localVarCall = detectValidateBeforeCall(detectRequest, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<DetectResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -209,6 +217,7 @@ public class MatchingApi {
     /**
      * Build call for match
      * @param matchRequest  (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -219,7 +228,7 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call matchCall(MatchRequest matchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call matchCall(MatchRequest matchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -245,6 +254,10 @@ public class MatchingApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -266,7 +279,7 @@ public class MatchingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call matchValidateBeforeCall(MatchRequest matchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call matchValidateBeforeCall(MatchRequest matchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'matchRequest' is set
         if (matchRequest == null) {
@@ -274,7 +287,7 @@ public class MatchingApi {
         }
         
 
-        okhttp3.Call localVarCall = matchCall(matchRequest, _callback);
+        okhttp3.Call localVarCall = matchCall(matchRequest, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -283,6 +296,7 @@ public class MatchingApi {
      * Compare provided face images in all combinations and return similarity score for each pair.
      * 
      * @param matchRequest  (required)
+     * @param xRequestID  (optional)
      * @return MatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -292,8 +306,8 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public MatchResponse match(MatchRequest matchRequest) throws ApiException {
-        ApiResponse<MatchResponse> localVarResp = matchWithHttpInfo(matchRequest);
+    public MatchResponse match(MatchRequest matchRequest, String xRequestID) throws ApiException {
+        ApiResponse<MatchResponse> localVarResp = matchWithHttpInfo(matchRequest, xRequestID);
         return localVarResp.getData();
     }
 
@@ -301,6 +315,7 @@ public class MatchingApi {
      * Compare provided face images in all combinations and return similarity score for each pair.
      * 
      * @param matchRequest  (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;MatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -310,8 +325,8 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MatchResponse> matchWithHttpInfo(MatchRequest matchRequest) throws ApiException {
-        okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, null);
+    public ApiResponse<MatchResponse> matchWithHttpInfo(MatchRequest matchRequest, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, xRequestID, null);
         Type localVarReturnType = new TypeToken<MatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -320,6 +335,7 @@ public class MatchingApi {
      * Compare provided face images in all combinations and return similarity score for each pair. (asynchronously)
      * 
      * @param matchRequest  (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -330,9 +346,9 @@ public class MatchingApi {
         <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call matchAsync(MatchRequest matchRequest, final ApiCallback<MatchResponse> _callback) throws ApiException {
+    public okhttp3.Call matchAsync(MatchRequest matchRequest, String xRequestID, final ApiCallback<MatchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, _callback);
+        okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<MatchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
