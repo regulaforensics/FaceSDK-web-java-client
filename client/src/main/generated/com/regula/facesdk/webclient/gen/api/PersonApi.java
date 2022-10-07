@@ -84,6 +84,7 @@ public class PersonApi {
      * Build call for addImageToPerson
      * @param personId Person ID. (required)
      * @param imageFields Image to add. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -95,7 +96,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addImageToPersonCall(Integer personId, ImageFields imageFields, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addImageToPersonCall(Integer personId, ImageFields imageFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -122,6 +123,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -143,7 +148,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addImageToPersonValidateBeforeCall(Integer personId, ImageFields imageFields, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addImageToPersonValidateBeforeCall(Integer personId, ImageFields imageFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'personId' is set
         if (personId == null) {
@@ -156,7 +161,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = addImageToPersonCall(personId, imageFields, _callback);
+        okhttp3.Call localVarCall = addImageToPersonCall(personId, imageFields, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -166,6 +171,7 @@ public class PersonApi {
      * 
      * @param personId Person ID. (required)
      * @param imageFields Image to add. (required)
+     * @param xRequestID  (optional)
      * @return Image
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -176,8 +182,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public Image addImageToPerson(Integer personId, ImageFields imageFields) throws ApiException {
-        ApiResponse<Image> localVarResp = addImageToPersonWithHttpInfo(personId, imageFields);
+    public Image addImageToPerson(Integer personId, ImageFields imageFields, String xRequestID) throws ApiException {
+        ApiResponse<Image> localVarResp = addImageToPersonWithHttpInfo(personId, imageFields, xRequestID);
         return localVarResp.getData();
     }
 
@@ -186,6 +192,7 @@ public class PersonApi {
      * 
      * @param personId Person ID. (required)
      * @param imageFields Image to add. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Image&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -196,8 +203,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Image> addImageToPersonWithHttpInfo(Integer personId, ImageFields imageFields) throws ApiException {
-        okhttp3.Call localVarCall = addImageToPersonValidateBeforeCall(personId, imageFields, null);
+    public ApiResponse<Image> addImageToPersonWithHttpInfo(Integer personId, ImageFields imageFields, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = addImageToPersonValidateBeforeCall(personId, imageFields, xRequestID, null);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -207,6 +214,7 @@ public class PersonApi {
      * 
      * @param personId Person ID. (required)
      * @param imageFields Image to add. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -218,9 +226,9 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addImageToPersonAsync(Integer personId, ImageFields imageFields, final ApiCallback<Image> _callback) throws ApiException {
+    public okhttp3.Call addImageToPersonAsync(Integer personId, ImageFields imageFields, String xRequestID, final ApiCallback<Image> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addImageToPersonValidateBeforeCall(personId, imageFields, _callback);
+        okhttp3.Call localVarCall = addImageToPersonValidateBeforeCall(personId, imageFields, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -228,6 +236,7 @@ public class PersonApi {
     /**
      * Build call for createPerson
      * @param personFields  (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -238,7 +247,7 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPersonCall(PersonFields personFields, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPersonCall(PersonFields personFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -264,6 +273,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -285,7 +298,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPersonValidateBeforeCall(PersonFields personFields, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPersonValidateBeforeCall(PersonFields personFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'personFields' is set
         if (personFields == null) {
@@ -293,7 +306,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = createPersonCall(personFields, _callback);
+        okhttp3.Call localVarCall = createPersonCall(personFields, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -302,6 +315,7 @@ public class PersonApi {
      * Create person
      * 
      * @param personFields  (required)
+     * @param xRequestID  (optional)
      * @return Person
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -311,8 +325,8 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public Person createPerson(PersonFields personFields) throws ApiException {
-        ApiResponse<Person> localVarResp = createPersonWithHttpInfo(personFields);
+    public Person createPerson(PersonFields personFields, String xRequestID) throws ApiException {
+        ApiResponse<Person> localVarResp = createPersonWithHttpInfo(personFields, xRequestID);
         return localVarResp.getData();
     }
 
@@ -320,6 +334,7 @@ public class PersonApi {
      * Create person
      * 
      * @param personFields  (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Person&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -329,8 +344,8 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Person> createPersonWithHttpInfo(PersonFields personFields) throws ApiException {
-        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personFields, null);
+    public ApiResponse<Person> createPersonWithHttpInfo(PersonFields personFields, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personFields, xRequestID, null);
         Type localVarReturnType = new TypeToken<Person>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -339,6 +354,7 @@ public class PersonApi {
      * Create person (asynchronously)
      * 
      * @param personFields  (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -349,9 +365,9 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPersonAsync(PersonFields personFields, final ApiCallback<Person> _callback) throws ApiException {
+    public okhttp3.Call createPersonAsync(PersonFields personFields, String xRequestID, final ApiCallback<Person> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personFields, _callback);
+        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personFields, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<Person>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -360,6 +376,7 @@ public class PersonApi {
      * Build call for deleteImageOfPerson
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -371,7 +388,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteImageOfPersonCall(Integer imageId, Integer personId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteImageOfPersonCall(Integer imageId, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -399,6 +416,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -420,7 +441,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteImageOfPersonValidateBeforeCall(Integer imageId, Integer personId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteImageOfPersonValidateBeforeCall(Integer imageId, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'imageId' is set
         if (imageId == null) {
@@ -433,7 +454,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteImageOfPersonCall(imageId, personId, _callback);
+        okhttp3.Call localVarCall = deleteImageOfPersonCall(imageId, personId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -443,6 +464,7 @@ public class PersonApi {
      * 
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -452,8 +474,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteImageOfPerson(Integer imageId, Integer personId) throws ApiException {
-        deleteImageOfPersonWithHttpInfo(imageId, personId);
+    public void deleteImageOfPerson(Integer imageId, Integer personId, String xRequestID) throws ApiException {
+        deleteImageOfPersonWithHttpInfo(imageId, personId, xRequestID);
     }
 
     /**
@@ -461,6 +483,7 @@ public class PersonApi {
      * 
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -471,8 +494,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteImageOfPersonWithHttpInfo(Integer imageId, Integer personId) throws ApiException {
-        okhttp3.Call localVarCall = deleteImageOfPersonValidateBeforeCall(imageId, personId, null);
+    public ApiResponse<Void> deleteImageOfPersonWithHttpInfo(Integer imageId, Integer personId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = deleteImageOfPersonValidateBeforeCall(imageId, personId, xRequestID, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -481,6 +504,7 @@ public class PersonApi {
      * 
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -492,15 +516,16 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id or image with the image_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteImageOfPersonAsync(Integer imageId, Integer personId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteImageOfPersonAsync(Integer imageId, Integer personId, String xRequestID, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteImageOfPersonValidateBeforeCall(imageId, personId, _callback);
+        okhttp3.Call localVarCall = deleteImageOfPersonValidateBeforeCall(imageId, personId, xRequestID, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deletePerson
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -512,7 +537,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePersonCall(Integer personId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePersonCall(Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -539,6 +564,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -560,7 +589,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePersonValidateBeforeCall(Integer personId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePersonValidateBeforeCall(Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'personId' is set
         if (personId == null) {
@@ -568,7 +597,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = deletePersonCall(personId, _callback);
+        okhttp3.Call localVarCall = deletePersonCall(personId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -577,6 +606,7 @@ public class PersonApi {
      * Delete person
      * 
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -586,14 +616,15 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public void deletePerson(Integer personId) throws ApiException {
-        deletePersonWithHttpInfo(personId);
+    public void deletePerson(Integer personId, String xRequestID) throws ApiException {
+        deletePersonWithHttpInfo(personId, xRequestID);
     }
 
     /**
      * Delete person
      * 
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -604,8 +635,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deletePersonWithHttpInfo(Integer personId) throws ApiException {
-        okhttp3.Call localVarCall = deletePersonValidateBeforeCall(personId, null);
+    public ApiResponse<Void> deletePersonWithHttpInfo(Integer personId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = deletePersonValidateBeforeCall(personId, xRequestID, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -613,6 +644,7 @@ public class PersonApi {
      * Delete person (asynchronously)
      * 
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -624,9 +656,9 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePersonAsync(Integer personId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deletePersonAsync(Integer personId, String xRequestID, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deletePersonValidateBeforeCall(personId, _callback);
+        okhttp3.Call localVarCall = deletePersonValidateBeforeCall(personId, xRequestID, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -635,6 +667,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -646,7 +679,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllGroupsByPersonIdCall(Integer page, Integer size, Integer personId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllGroupsByPersonIdCall(Integer page, Integer size, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -681,6 +714,10 @@ public class PersonApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -702,7 +739,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllGroupsByPersonIdValidateBeforeCall(Integer page, Integer size, Integer personId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllGroupsByPersonIdValidateBeforeCall(Integer page, Integer size, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -720,7 +757,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllGroupsByPersonIdCall(page, size, personId, _callback);
+        okhttp3.Call localVarCall = getAllGroupsByPersonIdCall(page, size, personId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -731,6 +768,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return GroupPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -741,8 +779,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public GroupPage getAllGroupsByPersonId(Integer page, Integer size, Integer personId) throws ApiException {
-        ApiResponse<GroupPage> localVarResp = getAllGroupsByPersonIdWithHttpInfo(page, size, personId);
+    public GroupPage getAllGroupsByPersonId(Integer page, Integer size, Integer personId, String xRequestID) throws ApiException {
+        ApiResponse<GroupPage> localVarResp = getAllGroupsByPersonIdWithHttpInfo(page, size, personId, xRequestID);
         return localVarResp.getData();
     }
 
@@ -752,6 +790,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;GroupPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -762,8 +801,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GroupPage> getAllGroupsByPersonIdWithHttpInfo(Integer page, Integer size, Integer personId) throws ApiException {
-        okhttp3.Call localVarCall = getAllGroupsByPersonIdValidateBeforeCall(page, size, personId, null);
+    public ApiResponse<GroupPage> getAllGroupsByPersonIdWithHttpInfo(Integer page, Integer size, Integer personId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getAllGroupsByPersonIdValidateBeforeCall(page, size, personId, xRequestID, null);
         Type localVarReturnType = new TypeToken<GroupPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -774,6 +813,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -785,9 +825,9 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllGroupsByPersonIdAsync(Integer page, Integer size, Integer personId, final ApiCallback<GroupPage> _callback) throws ApiException {
+    public okhttp3.Call getAllGroupsByPersonIdAsync(Integer page, Integer size, Integer personId, String xRequestID, final ApiCallback<GroupPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllGroupsByPersonIdValidateBeforeCall(page, size, personId, _callback);
+        okhttp3.Call localVarCall = getAllGroupsByPersonIdValidateBeforeCall(page, size, personId, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<GroupPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -797,6 +837,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -808,7 +849,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllImagesByPersonIdCall(Integer page, Integer size, Integer personId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllImagesByPersonIdCall(Integer page, Integer size, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -843,6 +884,10 @@ public class PersonApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -864,7 +909,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllImagesByPersonIdValidateBeforeCall(Integer page, Integer size, Integer personId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllImagesByPersonIdValidateBeforeCall(Integer page, Integer size, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -882,7 +927,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllImagesByPersonIdCall(page, size, personId, _callback);
+        okhttp3.Call localVarCall = getAllImagesByPersonIdCall(page, size, personId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -893,6 +938,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ImagePage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -903,8 +949,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ImagePage getAllImagesByPersonId(Integer page, Integer size, Integer personId) throws ApiException {
-        ApiResponse<ImagePage> localVarResp = getAllImagesByPersonIdWithHttpInfo(page, size, personId);
+    public ImagePage getAllImagesByPersonId(Integer page, Integer size, Integer personId, String xRequestID) throws ApiException {
+        ApiResponse<ImagePage> localVarResp = getAllImagesByPersonIdWithHttpInfo(page, size, personId, xRequestID);
         return localVarResp.getData();
     }
 
@@ -914,6 +960,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;ImagePage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -924,8 +971,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ImagePage> getAllImagesByPersonIdWithHttpInfo(Integer page, Integer size, Integer personId) throws ApiException {
-        okhttp3.Call localVarCall = getAllImagesByPersonIdValidateBeforeCall(page, size, personId, null);
+    public ApiResponse<ImagePage> getAllImagesByPersonIdWithHttpInfo(Integer page, Integer size, Integer personId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getAllImagesByPersonIdValidateBeforeCall(page, size, personId, xRequestID, null);
         Type localVarReturnType = new TypeToken<ImagePage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -936,6 +983,7 @@ public class PersonApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -947,9 +995,9 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllImagesByPersonIdAsync(Integer page, Integer size, Integer personId, final ApiCallback<ImagePage> _callback) throws ApiException {
+    public okhttp3.Call getAllImagesByPersonIdAsync(Integer page, Integer size, Integer personId, String xRequestID, final ApiCallback<ImagePage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllImagesByPersonIdValidateBeforeCall(page, size, personId, _callback);
+        okhttp3.Call localVarCall = getAllImagesByPersonIdValidateBeforeCall(page, size, personId, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<ImagePage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -958,6 +1006,7 @@ public class PersonApi {
      * Build call for getAllPersons
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -968,7 +1017,7 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsCall(Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1002,6 +1051,10 @@ public class PersonApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1023,7 +1076,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllPersonsValidateBeforeCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllPersonsValidateBeforeCall(Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -1036,7 +1089,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllPersonsCall(page, size, _callback);
+        okhttp3.Call localVarCall = getAllPersonsCall(page, size, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -1046,6 +1099,7 @@ public class PersonApi {
      * 
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @return PersonsPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1055,8 +1109,8 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public PersonsPage getAllPersons(Integer page, Integer size) throws ApiException {
-        ApiResponse<PersonsPage> localVarResp = getAllPersonsWithHttpInfo(page, size);
+    public PersonsPage getAllPersons(Integer page, Integer size, String xRequestID) throws ApiException {
+        ApiResponse<PersonsPage> localVarResp = getAllPersonsWithHttpInfo(page, size, xRequestID);
         return localVarResp.getData();
     }
 
@@ -1065,6 +1119,7 @@ public class PersonApi {
      * 
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;PersonsPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1074,8 +1129,8 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PersonsPage> getAllPersonsWithHttpInfo(Integer page, Integer size) throws ApiException {
-        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, null);
+    public ApiResponse<PersonsPage> getAllPersonsWithHttpInfo(Integer page, Integer size, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, xRequestID, null);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1085,6 +1140,7 @@ public class PersonApi {
      * 
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1095,9 +1151,9 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsAsync(Integer page, Integer size, final ApiCallback<PersonsPage> _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsAsync(Integer page, Integer size, String xRequestID, final ApiCallback<PersonsPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, _callback);
+        okhttp3.Call localVarCall = getAllPersonsValidateBeforeCall(page, size, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1106,6 +1162,7 @@ public class PersonApi {
      * Build call for getImageOfPerson
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1117,7 +1174,7 @@ public class PersonApi {
         <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImageOfPersonCall(Integer imageId, Integer personId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getImageOfPersonCall(Integer imageId, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1145,6 +1202,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json", "image/_*"
         };
@@ -1166,7 +1227,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getImageOfPersonValidateBeforeCall(Integer imageId, Integer personId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getImageOfPersonValidateBeforeCall(Integer imageId, Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'imageId' is set
         if (imageId == null) {
@@ -1179,7 +1240,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = getImageOfPersonCall(imageId, personId, _callback);
+        okhttp3.Call localVarCall = getImageOfPersonCall(imageId, personId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -1189,6 +1250,7 @@ public class PersonApi {
      * 
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1199,8 +1261,8 @@ public class PersonApi {
         <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
-    public File getImageOfPerson(Integer imageId, Integer personId) throws ApiException {
-        ApiResponse<File> localVarResp = getImageOfPersonWithHttpInfo(imageId, personId);
+    public File getImageOfPerson(Integer imageId, Integer personId, String xRequestID) throws ApiException {
+        ApiResponse<File> localVarResp = getImageOfPersonWithHttpInfo(imageId, personId, xRequestID);
         return localVarResp.getData();
     }
 
@@ -1209,6 +1271,7 @@ public class PersonApi {
      * 
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1219,8 +1282,8 @@ public class PersonApi {
         <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> getImageOfPersonWithHttpInfo(Integer imageId, Integer personId) throws ApiException {
-        okhttp3.Call localVarCall = getImageOfPersonValidateBeforeCall(imageId, personId, null);
+    public ApiResponse<File> getImageOfPersonWithHttpInfo(Integer imageId, Integer personId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getImageOfPersonValidateBeforeCall(imageId, personId, xRequestID, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1230,6 +1293,7 @@ public class PersonApi {
      * 
      * @param imageId Image ID. (required)
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1241,9 +1305,9 @@ public class PersonApi {
         <tr><td> 200 </td><td> Successful operation, return image. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImageOfPersonAsync(Integer imageId, Integer personId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call getImageOfPersonAsync(Integer imageId, Integer personId, String xRequestID, final ApiCallback<File> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getImageOfPersonValidateBeforeCall(imageId, personId, _callback);
+        okhttp3.Call localVarCall = getImageOfPersonValidateBeforeCall(imageId, personId, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1251,6 +1315,7 @@ public class PersonApi {
     /**
      * Build call for getPerson
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1262,7 +1327,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPersonCall(Integer personId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPersonCall(Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1289,6 +1354,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1310,7 +1379,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPersonValidateBeforeCall(Integer personId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPersonValidateBeforeCall(Integer personId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'personId' is set
         if (personId == null) {
@@ -1318,7 +1387,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = getPersonCall(personId, _callback);
+        okhttp3.Call localVarCall = getPersonCall(personId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -1327,6 +1396,7 @@ public class PersonApi {
      * Get person
      * 
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return Person
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1337,8 +1407,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public Person getPerson(Integer personId) throws ApiException {
-        ApiResponse<Person> localVarResp = getPersonWithHttpInfo(personId);
+    public Person getPerson(Integer personId, String xRequestID) throws ApiException {
+        ApiResponse<Person> localVarResp = getPersonWithHttpInfo(personId, xRequestID);
         return localVarResp.getData();
     }
 
@@ -1346,6 +1416,7 @@ public class PersonApi {
      * Get person
      * 
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Person&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1356,8 +1427,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Person> getPersonWithHttpInfo(Integer personId) throws ApiException {
-        okhttp3.Call localVarCall = getPersonValidateBeforeCall(personId, null);
+    public ApiResponse<Person> getPersonWithHttpInfo(Integer personId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getPersonValidateBeforeCall(personId, xRequestID, null);
         Type localVarReturnType = new TypeToken<Person>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1366,6 +1437,7 @@ public class PersonApi {
      * Get person (asynchronously)
      * 
      * @param personId Person ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1377,9 +1449,9 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPersonAsync(Integer personId, final ApiCallback<Person> _callback) throws ApiException {
+    public okhttp3.Call getPersonAsync(Integer personId, String xRequestID, final ApiCallback<Person> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPersonValidateBeforeCall(personId, _callback);
+        okhttp3.Call localVarCall = getPersonValidateBeforeCall(personId, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<Person>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1388,6 +1460,7 @@ public class PersonApi {
      * Build call for updatePerson
      * @param personId Person ID. (required)
      * @param personFields Request body for the Person to update. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1399,7 +1472,7 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePersonCall(Integer personId, PersonFields personFields, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePersonCall(Integer personId, PersonFields personFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1426,6 +1499,10 @@ public class PersonApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1447,7 +1524,7 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePersonValidateBeforeCall(Integer personId, PersonFields personFields, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePersonValidateBeforeCall(Integer personId, PersonFields personFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'personId' is set
         if (personId == null) {
@@ -1460,7 +1537,7 @@ public class PersonApi {
         }
         
 
-        okhttp3.Call localVarCall = updatePersonCall(personId, personFields, _callback);
+        okhttp3.Call localVarCall = updatePersonCall(personId, personFields, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -1470,6 +1547,7 @@ public class PersonApi {
      * 
      * @param personId Person ID. (required)
      * @param personFields Request body for the Person to update. (required)
+     * @param xRequestID  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1479,8 +1557,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public void updatePerson(Integer personId, PersonFields personFields) throws ApiException {
-        updatePersonWithHttpInfo(personId, personFields);
+    public void updatePerson(Integer personId, PersonFields personFields, String xRequestID) throws ApiException {
+        updatePersonWithHttpInfo(personId, personFields, xRequestID);
     }
 
     /**
@@ -1488,6 +1566,7 @@ public class PersonApi {
      * 
      * @param personId Person ID. (required)
      * @param personFields Request body for the Person to update. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1498,8 +1577,8 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updatePersonWithHttpInfo(Integer personId, PersonFields personFields) throws ApiException {
-        okhttp3.Call localVarCall = updatePersonValidateBeforeCall(personId, personFields, null);
+    public ApiResponse<Void> updatePersonWithHttpInfo(Integer personId, PersonFields personFields, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = updatePersonValidateBeforeCall(personId, personFields, xRequestID, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1508,6 +1587,7 @@ public class PersonApi {
      * 
      * @param personId Person ID. (required)
      * @param personFields Request body for the Person to update. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1519,9 +1599,9 @@ public class PersonApi {
         <tr><td> 404 </td><td> Person with the person_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePersonAsync(Integer personId, PersonFields personFields, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updatePersonAsync(Integer personId, PersonFields personFields, String xRequestID, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePersonValidateBeforeCall(personId, personFields, _callback);
+        okhttp3.Call localVarCall = updatePersonValidateBeforeCall(personId, personFields, xRequestID, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

@@ -80,6 +80,7 @@ public class GroupApi {
     /**
      * Build call for createGroup
      * @param groupToCreate Request body for the group to create. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,7 +91,7 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createGroupCall(GroupToCreate groupToCreate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createGroupCall(GroupToCreate groupToCreate, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -116,6 +117,10 @@ public class GroupApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -137,7 +142,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createGroupValidateBeforeCall(GroupToCreate groupToCreate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createGroupValidateBeforeCall(GroupToCreate groupToCreate, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'groupToCreate' is set
         if (groupToCreate == null) {
@@ -145,7 +150,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = createGroupCall(groupToCreate, _callback);
+        okhttp3.Call localVarCall = createGroupCall(groupToCreate, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -154,6 +159,7 @@ public class GroupApi {
      * Create group
      * 
      * @param groupToCreate Request body for the group to create. (required)
+     * @param xRequestID  (optional)
      * @return Group
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -163,8 +169,8 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public Group createGroup(GroupToCreate groupToCreate) throws ApiException {
-        ApiResponse<Group> localVarResp = createGroupWithHttpInfo(groupToCreate);
+    public Group createGroup(GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+        ApiResponse<Group> localVarResp = createGroupWithHttpInfo(groupToCreate, xRequestID);
         return localVarResp.getData();
     }
 
@@ -172,6 +178,7 @@ public class GroupApi {
      * Create group
      * 
      * @param groupToCreate Request body for the group to create. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Group&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -181,8 +188,8 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Group> createGroupWithHttpInfo(GroupToCreate groupToCreate) throws ApiException {
-        okhttp3.Call localVarCall = createGroupValidateBeforeCall(groupToCreate, null);
+    public ApiResponse<Group> createGroupWithHttpInfo(GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = createGroupValidateBeforeCall(groupToCreate, xRequestID, null);
         Type localVarReturnType = new TypeToken<Group>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -191,6 +198,7 @@ public class GroupApi {
      * Create group (asynchronously)
      * 
      * @param groupToCreate Request body for the group to create. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -201,9 +209,9 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createGroupAsync(GroupToCreate groupToCreate, final ApiCallback<Group> _callback) throws ApiException {
+    public okhttp3.Call createGroupAsync(GroupToCreate groupToCreate, String xRequestID, final ApiCallback<Group> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createGroupValidateBeforeCall(groupToCreate, _callback);
+        okhttp3.Call localVarCall = createGroupValidateBeforeCall(groupToCreate, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<Group>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -211,6 +219,7 @@ public class GroupApi {
     /**
      * Build call for deleteGroup
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -221,7 +230,7 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteGroupCall(Integer groupId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteGroupCall(Integer groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -248,6 +257,10 @@ public class GroupApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -269,7 +282,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteGroupValidateBeforeCall(Integer groupId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteGroupValidateBeforeCall(Integer groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
@@ -277,7 +290,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteGroupCall(groupId, _callback);
+        okhttp3.Call localVarCall = deleteGroupCall(groupId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -286,6 +299,7 @@ public class GroupApi {
      * Delete group
      * 
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -294,14 +308,15 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteGroup(Integer groupId) throws ApiException {
-        deleteGroupWithHttpInfo(groupId);
+    public void deleteGroup(Integer groupId, String xRequestID) throws ApiException {
+        deleteGroupWithHttpInfo(groupId, xRequestID);
     }
 
     /**
      * Delete group
      * 
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -311,8 +326,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteGroupWithHttpInfo(Integer groupId) throws ApiException {
-        okhttp3.Call localVarCall = deleteGroupValidateBeforeCall(groupId, null);
+    public ApiResponse<Void> deleteGroupWithHttpInfo(Integer groupId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = deleteGroupValidateBeforeCall(groupId, xRequestID, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -320,6 +335,7 @@ public class GroupApi {
      * Delete group (asynchronously)
      * 
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -330,9 +346,9 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteGroupAsync(Integer groupId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteGroupAsync(Integer groupId, String xRequestID, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteGroupValidateBeforeCall(groupId, _callback);
+        okhttp3.Call localVarCall = deleteGroupValidateBeforeCall(groupId, xRequestID, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -340,6 +356,7 @@ public class GroupApi {
      * Build call for getAllGroups
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -350,7 +367,7 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllGroupsCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllGroupsCall(Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -384,6 +401,10 @@ public class GroupApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -405,7 +426,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllGroupsValidateBeforeCall(Integer page, Integer size, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllGroupsValidateBeforeCall(Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -418,7 +439,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllGroupsCall(page, size, _callback);
+        okhttp3.Call localVarCall = getAllGroupsCall(page, size, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -428,6 +449,7 @@ public class GroupApi {
      * 
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @return GroupPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -437,8 +459,8 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public GroupPage getAllGroups(Integer page, Integer size) throws ApiException {
-        ApiResponse<GroupPage> localVarResp = getAllGroupsWithHttpInfo(page, size);
+    public GroupPage getAllGroups(Integer page, Integer size, String xRequestID) throws ApiException {
+        ApiResponse<GroupPage> localVarResp = getAllGroupsWithHttpInfo(page, size, xRequestID);
         return localVarResp.getData();
     }
 
@@ -447,6 +469,7 @@ public class GroupApi {
      * 
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;GroupPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -456,8 +479,8 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GroupPage> getAllGroupsWithHttpInfo(Integer page, Integer size) throws ApiException {
-        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, null);
+    public ApiResponse<GroupPage> getAllGroupsWithHttpInfo(Integer page, Integer size, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, xRequestID, null);
         Type localVarReturnType = new TypeToken<GroupPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -467,6 +490,7 @@ public class GroupApi {
      * 
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -477,9 +501,9 @@ public class GroupApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllGroupsAsync(Integer page, Integer size, final ApiCallback<GroupPage> _callback) throws ApiException {
+    public okhttp3.Call getAllGroupsAsync(Integer page, Integer size, String xRequestID, final ApiCallback<GroupPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, _callback);
+        okhttp3.Call localVarCall = getAllGroupsValidateBeforeCall(page, size, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<GroupPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -489,6 +513,7 @@ public class GroupApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -500,7 +525,7 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsByGroupIdCall(Integer page, Integer size, Integer groupId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsByGroupIdCall(Integer page, Integer size, Integer groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -535,6 +560,10 @@ public class GroupApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
         }
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -556,7 +585,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllPersonsByGroupIdValidateBeforeCall(Integer page, Integer size, Integer groupId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllPersonsByGroupIdValidateBeforeCall(Integer page, Integer size, Integer groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'page' is set
         if (page == null) {
@@ -574,7 +603,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllPersonsByGroupIdCall(page, size, groupId, _callback);
+        okhttp3.Call localVarCall = getAllPersonsByGroupIdCall(page, size, groupId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -585,6 +614,7 @@ public class GroupApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @return PersonsPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -595,8 +625,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, Integer groupId) throws ApiException {
-        ApiResponse<PersonsPage> localVarResp = getAllPersonsByGroupIdWithHttpInfo(page, size, groupId);
+    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, Integer groupId, String xRequestID) throws ApiException {
+        ApiResponse<PersonsPage> localVarResp = getAllPersonsByGroupIdWithHttpInfo(page, size, groupId, xRequestID);
         return localVarResp.getData();
     }
 
@@ -606,6 +636,7 @@ public class GroupApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;PersonsPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -616,8 +647,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PersonsPage> getAllPersonsByGroupIdWithHttpInfo(Integer page, Integer size, Integer groupId) throws ApiException {
-        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(page, size, groupId, null);
+    public ApiResponse<PersonsPage> getAllPersonsByGroupIdWithHttpInfo(Integer page, Integer size, Integer groupId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(page, size, groupId, xRequestID, null);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -628,6 +659,7 @@ public class GroupApi {
      * @param page The page number to get a list of persons or groups. (required)
      * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -639,9 +671,9 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id or persons with the person_ids are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsByGroupIdAsync(Integer page, Integer size, Integer groupId, final ApiCallback<PersonsPage> _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsByGroupIdAsync(Integer page, Integer size, Integer groupId, String xRequestID, final ApiCallback<PersonsPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(page, size, groupId, _callback);
+        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(page, size, groupId, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -649,6 +681,7 @@ public class GroupApi {
     /**
      * Build call for getGroup
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -660,7 +693,7 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupCall(Integer groupId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getGroupCall(Integer groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -687,6 +720,10 @@ public class GroupApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -708,7 +745,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getGroupValidateBeforeCall(Integer groupId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getGroupValidateBeforeCall(Integer groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
@@ -716,7 +753,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = getGroupCall(groupId, _callback);
+        okhttp3.Call localVarCall = getGroupCall(groupId, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -725,6 +762,7 @@ public class GroupApi {
      * Get group
      * 
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @return Group
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -735,8 +773,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public Group getGroup(Integer groupId) throws ApiException {
-        ApiResponse<Group> localVarResp = getGroupWithHttpInfo(groupId);
+    public Group getGroup(Integer groupId, String xRequestID) throws ApiException {
+        ApiResponse<Group> localVarResp = getGroupWithHttpInfo(groupId, xRequestID);
         return localVarResp.getData();
     }
 
@@ -744,6 +782,7 @@ public class GroupApi {
      * Get group
      * 
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Group&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -754,8 +793,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Group> getGroupWithHttpInfo(Integer groupId) throws ApiException {
-        okhttp3.Call localVarCall = getGroupValidateBeforeCall(groupId, null);
+    public ApiResponse<Group> getGroupWithHttpInfo(Integer groupId, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getGroupValidateBeforeCall(groupId, xRequestID, null);
         Type localVarReturnType = new TypeToken<Group>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -764,6 +803,7 @@ public class GroupApi {
      * Get group (asynchronously)
      * 
      * @param groupId Group ID. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -775,9 +815,9 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupAsync(Integer groupId, final ApiCallback<Group> _callback) throws ApiException {
+    public okhttp3.Call getGroupAsync(Integer groupId, String xRequestID, final ApiCallback<Group> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getGroupValidateBeforeCall(groupId, _callback);
+        okhttp3.Call localVarCall = getGroupValidateBeforeCall(groupId, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<Group>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -786,6 +826,7 @@ public class GroupApi {
      * Build call for updateGroup
      * @param groupId Group ID. (required)
      * @param groupToCreate Request body for the group to update. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -797,7 +838,7 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGroupCall(Integer groupId, GroupToCreate groupToCreate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateGroupCall(Integer groupId, GroupToCreate groupToCreate, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -824,6 +865,10 @@ public class GroupApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -845,7 +890,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateGroupValidateBeforeCall(Integer groupId, GroupToCreate groupToCreate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateGroupValidateBeforeCall(Integer groupId, GroupToCreate groupToCreate, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
@@ -858,7 +903,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = updateGroupCall(groupId, groupToCreate, _callback);
+        okhttp3.Call localVarCall = updateGroupCall(groupId, groupToCreate, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -868,6 +913,7 @@ public class GroupApi {
      * 
      * @param groupId Group ID. (required)
      * @param groupToCreate Request body for the group to update. (required)
+     * @param xRequestID  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -877,8 +923,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public void updateGroup(Integer groupId, GroupToCreate groupToCreate) throws ApiException {
-        updateGroupWithHttpInfo(groupId, groupToCreate);
+    public void updateGroup(Integer groupId, GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+        updateGroupWithHttpInfo(groupId, groupToCreate, xRequestID);
     }
 
     /**
@@ -886,6 +932,7 @@ public class GroupApi {
      * 
      * @param groupId Group ID. (required)
      * @param groupToCreate Request body for the group to update. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -896,8 +943,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updateGroupWithHttpInfo(Integer groupId, GroupToCreate groupToCreate) throws ApiException {
-        okhttp3.Call localVarCall = updateGroupValidateBeforeCall(groupId, groupToCreate, null);
+    public ApiResponse<Void> updateGroupWithHttpInfo(Integer groupId, GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = updateGroupValidateBeforeCall(groupId, groupToCreate, xRequestID, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -906,6 +953,7 @@ public class GroupApi {
      * 
      * @param groupId Group ID. (required)
      * @param groupToCreate Request body for the group to update. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -917,9 +965,9 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGroupAsync(Integer groupId, GroupToCreate groupToCreate, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateGroupAsync(Integer groupId, GroupToCreate groupToCreate, String xRequestID, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateGroupValidateBeforeCall(groupId, groupToCreate, _callback);
+        okhttp3.Call localVarCall = updateGroupValidateBeforeCall(groupId, groupToCreate, xRequestID, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -927,6 +975,7 @@ public class GroupApi {
      * Build call for updatePersonsInGroup
      * @param groupId Group ID. (required)
      * @param updateGroup Request body for person IDs to add or remove. (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -938,7 +987,7 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePersonsInGroupCall(Integer groupId, UpdateGroup updateGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePersonsInGroupCall(Integer groupId, UpdateGroup updateGroup, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -965,6 +1014,10 @@ public class GroupApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -986,7 +1039,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePersonsInGroupValidateBeforeCall(Integer groupId, UpdateGroup updateGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePersonsInGroupValidateBeforeCall(Integer groupId, UpdateGroup updateGroup, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
@@ -999,7 +1052,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = updatePersonsInGroupCall(groupId, updateGroup, _callback);
+        okhttp3.Call localVarCall = updatePersonsInGroupCall(groupId, updateGroup, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -1009,6 +1062,7 @@ public class GroupApi {
      * 
      * @param groupId Group ID. (required)
      * @param updateGroup Request body for person IDs to add or remove. (required)
+     * @param xRequestID  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1018,8 +1072,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public void updatePersonsInGroup(Integer groupId, UpdateGroup updateGroup) throws ApiException {
-        updatePersonsInGroupWithHttpInfo(groupId, updateGroup);
+    public void updatePersonsInGroup(Integer groupId, UpdateGroup updateGroup, String xRequestID) throws ApiException {
+        updatePersonsInGroupWithHttpInfo(groupId, updateGroup, xRequestID);
     }
 
     /**
@@ -1027,6 +1081,7 @@ public class GroupApi {
      * 
      * @param groupId Group ID. (required)
      * @param updateGroup Request body for person IDs to add or remove. (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1037,8 +1092,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updatePersonsInGroupWithHttpInfo(Integer groupId, UpdateGroup updateGroup) throws ApiException {
-        okhttp3.Call localVarCall = updatePersonsInGroupValidateBeforeCall(groupId, updateGroup, null);
+    public ApiResponse<Void> updatePersonsInGroupWithHttpInfo(Integer groupId, UpdateGroup updateGroup, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = updatePersonsInGroupValidateBeforeCall(groupId, updateGroup, xRequestID, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1047,6 +1102,7 @@ public class GroupApi {
      * 
      * @param groupId Group ID. (required)
      * @param updateGroup Request body for person IDs to add or remove. (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1058,9 +1114,9 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the group_id is not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePersonsInGroupAsync(Integer groupId, UpdateGroup updateGroup, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updatePersonsInGroupAsync(Integer groupId, UpdateGroup updateGroup, String xRequestID, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePersonsInGroupValidateBeforeCall(groupId, updateGroup, _callback);
+        okhttp3.Call localVarCall = updatePersonsInGroupValidateBeforeCall(groupId, updateGroup, xRequestID, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

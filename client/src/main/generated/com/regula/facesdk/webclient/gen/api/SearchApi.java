@@ -77,6 +77,7 @@ public class SearchApi {
     /**
      * Build call for search
      * @param searchRequest  (required)
+     * @param xRequestID  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -87,7 +88,7 @@ public class SearchApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCall(SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchCall(SearchRequest searchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -113,6 +114,10 @@ public class SearchApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -134,7 +139,7 @@ public class SearchApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchValidateBeforeCall(SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchValidateBeforeCall(SearchRequest searchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'searchRequest' is set
         if (searchRequest == null) {
@@ -142,7 +147,7 @@ public class SearchApi {
         }
         
 
-        okhttp3.Call localVarCall = searchCall(searchRequest, _callback);
+        okhttp3.Call localVarCall = searchCall(searchRequest, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -151,6 +156,7 @@ public class SearchApi {
      * Find person by image in groups.
      * 
      * @param searchRequest  (required)
+     * @param xRequestID  (optional)
      * @return SearchResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -160,8 +166,8 @@ public class SearchApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public SearchResult search(SearchRequest searchRequest) throws ApiException {
-        ApiResponse<SearchResult> localVarResp = searchWithHttpInfo(searchRequest);
+    public SearchResult search(SearchRequest searchRequest, String xRequestID) throws ApiException {
+        ApiResponse<SearchResult> localVarResp = searchWithHttpInfo(searchRequest, xRequestID);
         return localVarResp.getData();
     }
 
@@ -169,6 +175,7 @@ public class SearchApi {
      * Find person by image in groups.
      * 
      * @param searchRequest  (required)
+     * @param xRequestID  (optional)
      * @return ApiResponse&lt;SearchResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -178,8 +185,8 @@ public class SearchApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SearchResult> searchWithHttpInfo(SearchRequest searchRequest) throws ApiException {
-        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, null);
+    public ApiResponse<SearchResult> searchWithHttpInfo(SearchRequest searchRequest, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, xRequestID, null);
         Type localVarReturnType = new TypeToken<SearchResult>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -188,6 +195,7 @@ public class SearchApi {
      * Find person by image in groups. (asynchronously)
      * 
      * @param searchRequest  (required)
+     * @param xRequestID  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -198,9 +206,9 @@ public class SearchApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchAsync(SearchRequest searchRequest, final ApiCallback<SearchResult> _callback) throws ApiException {
+    public okhttp3.Call searchAsync(SearchRequest searchRequest, String xRequestID, final ApiCallback<SearchResult> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, _callback);
+        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<SearchResult>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
