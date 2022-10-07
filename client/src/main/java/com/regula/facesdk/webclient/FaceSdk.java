@@ -1,8 +1,8 @@
 package com.regula.facesdk.webclient;
 
 import com.regula.facesdk.webclient.api.MatchingApi;
+import com.regula.facesdk.webclient.api.PersonApi;
 import com.regula.facesdk.webclient.gen.api.GroupApi;
-import com.regula.facesdk.webclient.gen.api.PersonApi;
 import com.regula.facesdk.webclient.gen.api.SearchApi;
 
 public class FaceSdk {
