@@ -29,6 +29,8 @@ import java.io.IOException;
 
 import com.regula.facesdk.webclient.gen.model.DetectRequest;
 import com.regula.facesdk.webclient.gen.model.DetectResponse;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequest;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchResponse;
 import com.regula.facesdk.webclient.gen.model.MatchRequest;
 import com.regula.facesdk.webclient.gen.model.MatchResponse;
 
@@ -293,7 +295,7 @@ public class MatchingApi {
     }
 
     /**
-     * Compare provided face images in all combinations and return similarity score for each pair.
+     * Compare provided face images in all combinations and return the similarity score for each pair.
      * 
      * @param matchRequest  (required)
      * @param xRequestID  (optional)
@@ -312,7 +314,7 @@ public class MatchingApi {
     }
 
     /**
-     * Compare provided face images in all combinations and return similarity score for each pair.
+     * Compare provided face images in all combinations and return the similarity score for each pair.
      * 
      * @param matchRequest  (required)
      * @param xRequestID  (optional)
@@ -332,7 +334,7 @@ public class MatchingApi {
     }
 
     /**
-     * Compare provided face images in all combinations and return similarity score for each pair. (asynchronously)
+     * Compare provided face images in all combinations and return the similarity score for each pair. (asynchronously)
      * 
      * @param matchRequest  (required)
      * @param xRequestID  (optional)
@@ -350,6 +352,145 @@ public class MatchingApi {
 
         okhttp3.Call localVarCall = matchValidateBeforeCall(matchRequest, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<MatchResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for matchAndSearch
+     * @param matchAndSearchRequest  (required)
+     * @param xRequestID  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call matchAndSearchCall(MatchAndSearchRequest matchAndSearchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = matchAndSearchRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/match_and_search";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (xRequestID != null) {
+            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call matchAndSearchValidateBeforeCall(MatchAndSearchRequest matchAndSearchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'matchAndSearchRequest' is set
+        if (matchAndSearchRequest == null) {
+            throw new ApiException("Missing the required parameter 'matchAndSearchRequest' when calling matchAndSearch(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = matchAndSearchCall(matchAndSearchRequest, xRequestID, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Match and Search in one request
+     * 
+     * @param matchAndSearchRequest  (required)
+     * @param xRequestID  (optional)
+     * @return MatchAndSearchResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
+     </table>
+     */
+    public MatchAndSearchResponse matchAndSearch(MatchAndSearchRequest matchAndSearchRequest, String xRequestID) throws ApiException {
+        ApiResponse<MatchAndSearchResponse> localVarResp = matchAndSearchWithHttpInfo(matchAndSearchRequest, xRequestID);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Match and Search in one request
+     * 
+     * @param matchAndSearchRequest  (required)
+     * @param xRequestID  (optional)
+     * @return ApiResponse&lt;MatchAndSearchResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<MatchAndSearchResponse> matchAndSearchWithHttpInfo(MatchAndSearchRequest matchAndSearchRequest, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = matchAndSearchValidateBeforeCall(matchAndSearchRequest, xRequestID, null);
+        Type localVarReturnType = new TypeToken<MatchAndSearchResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Match and Search in one request (asynchronously)
+     * 
+     * @param matchAndSearchRequest  (required)
+     * @param xRequestID  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation; the compare results are returned. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Bad license. Either the server or request does not contain a valid license. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call matchAndSearchAsync(MatchAndSearchRequest matchAndSearchRequest, String xRequestID, final ApiCallback<MatchAndSearchResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = matchAndSearchValidateBeforeCall(matchAndSearchRequest, xRequestID, _callback);
+        Type localVarReturnType = new TypeToken<MatchAndSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

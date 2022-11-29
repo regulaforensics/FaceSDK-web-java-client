@@ -20,69 +20,53 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.RecognizeImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * RecognizeImageAllOf
+ * PersonWithImagesAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class RecognizeImageAllOf {
-  public static final String SERIALIZED_NAME_SIMILARITY = "similarity";
-  @SerializedName(SERIALIZED_NAME_SIMILARITY)
-  private Float similarity;
+public class PersonWithImagesAllOf {
+  public static final String SERIALIZED_NAME_IMAGES = "images";
+  @SerializedName(SERIALIZED_NAME_IMAGES)
+  private List<RecognizeImage> images = null;
 
-  public static final String SERIALIZED_NAME_DISTANCE = "distance";
-  @SerializedName(SERIALIZED_NAME_DISTANCE)
-  private Float distance;
-
-  public RecognizeImageAllOf() { 
+  public PersonWithImagesAllOf() { 
   }
 
-  public RecognizeImageAllOf similarity(Float similarity) {
+  public PersonWithImagesAllOf images(List<RecognizeImage> images) {
     
-    this.similarity = similarity;
+    this.images = images;
+    return this;
+  }
+
+  public PersonWithImagesAllOf addImagesItem(RecognizeImage imagesItem) {
+    if (this.images == null) {
+      this.images = new ArrayList<RecognizeImage>();
+    }
+    this.images.add(imagesItem);
     return this;
   }
 
    /**
-   * The similarity score.
-   * @return similarity
+   * Get images
+   * @return images
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The similarity score.")
+  @ApiModelProperty(value = "")
 
-  public Float getSimilarity() {
-    return similarity;
+  public List<RecognizeImage> getImages() {
+    return images;
   }
 
 
-  public void setSimilarity(Float similarity) {
-    this.similarity = similarity;
-  }
-
-
-  public RecognizeImageAllOf distance(Float distance) {
-    
-    this.distance = distance;
-    return this;
-  }
-
-   /**
-   * The similarity distance score: the lower the distance, the higher the face&#39;s similarity.
-   * @return distance
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "The similarity distance score: the lower the distance, the higher the face's similarity.")
-
-  public Float getDistance() {
-    return distance;
-  }
-
-
-  public void setDistance(Float distance) {
-    this.distance = distance;
+  public void setImages(List<RecognizeImage> images) {
+    this.images = images;
   }
 
 
@@ -94,22 +78,20 @@ public class RecognizeImageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RecognizeImageAllOf recognizeImageAllOf = (RecognizeImageAllOf) o;
-    return Objects.equals(this.similarity, recognizeImageAllOf.similarity) &&
-        Objects.equals(this.distance, recognizeImageAllOf.distance);
+    PersonWithImagesAllOf personWithImagesAllOf = (PersonWithImagesAllOf) o;
+    return Objects.equals(this.images, personWithImagesAllOf.images);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(similarity, distance);
+    return Objects.hash(images);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RecognizeImageAllOf {\n");
-    sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
-    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
+    sb.append("class PersonWithImagesAllOf {\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");
     return sb.toString();
   }

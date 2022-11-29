@@ -120,11 +120,11 @@ public class Crop {
   }
 
    /**
-   * The resize value in case type matches this value. It it doesn&#39;t, no resize is done.
+   * The resize value in case type matches this value. If it doesn&#39;t, no resize is done.
    * @return size
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[300,400]", value = "The resize value in case type matches this value. It it doesn't, no resize is done.")
+  @ApiModelProperty(example = "[300,400]", value = "The resize value in case type matches this value. If it doesn't, no resize is done.")
 
   public List<Integer> getSize() {
     return size;

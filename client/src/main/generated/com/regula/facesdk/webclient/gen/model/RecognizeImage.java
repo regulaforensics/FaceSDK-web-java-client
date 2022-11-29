@@ -25,6 +25,9 @@ import com.regula.facesdk.webclient.gen.model.RecognizeImageAllOf;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * RecognizeImage
@@ -43,6 +46,10 @@ public class RecognizeImage {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private String createdAt;
 
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private String updatedAt;
+
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
   private String path;
@@ -51,9 +58,17 @@ public class RecognizeImage {
   @SerializedName(SERIALIZED_NAME_URL)
   private String url;
 
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private Map<String, Object> metadata = null;
+
   public static final String SERIALIZED_NAME_SIMILARITY = "similarity";
   @SerializedName(SERIALIZED_NAME_SIMILARITY)
   private Float similarity;
+
+  public static final String SERIALIZED_NAME_DISTANCE = "distance";
+  @SerializedName(SERIALIZED_NAME_DISTANCE)
+  private Float distance;
 
   public RecognizeImage() { 
   }
@@ -127,6 +142,29 @@ public class RecognizeImage {
   }
 
 
+  public RecognizeImage updatedAt(String updatedAt) {
+    
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * The returned image update date.
+   * @return updatedAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The returned image update date.")
+
+  public String getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
   public RecognizeImage path(String path) {
     
     this.path = path;
@@ -173,6 +211,37 @@ public class RecognizeImage {
   }
 
 
+  public RecognizeImage metadata(Map<String, Object> metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+  public RecognizeImage putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, Object>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * A free-form object containing person&#39;s extended attributes.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   public RecognizeImage similarity(Float similarity) {
     
     this.similarity = similarity;
@@ -196,6 +265,29 @@ public class RecognizeImage {
   }
 
 
+  public RecognizeImage distance(Float distance) {
+    
+    this.distance = distance;
+    return this;
+  }
+
+   /**
+   * The similarity distance score: the lower the distance, the higher the face&#39;s similarity.
+   * @return distance
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The similarity distance score: the lower the distance, the higher the face's similarity.")
+
+  public Float getDistance() {
+    return distance;
+  }
+
+
+  public void setDistance(Float distance) {
+    this.distance = distance;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -208,14 +300,17 @@ public class RecognizeImage {
     return Objects.equals(this.id, recognizeImage.id) &&
         Objects.equals(this.contentType, recognizeImage.contentType) &&
         Objects.equals(this.createdAt, recognizeImage.createdAt) &&
+        Objects.equals(this.updatedAt, recognizeImage.updatedAt) &&
         Objects.equals(this.path, recognizeImage.path) &&
         Objects.equals(this.url, recognizeImage.url) &&
-        Objects.equals(this.similarity, recognizeImage.similarity);
+        Objects.equals(this.metadata, recognizeImage.metadata) &&
+        Objects.equals(this.similarity, recognizeImage.similarity) &&
+        Objects.equals(this.distance, recognizeImage.distance);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contentType, createdAt, path, url, similarity);
+    return Objects.hash(id, contentType, createdAt, updatedAt, path, url, metadata, similarity, distance);
   }
 
   @Override
@@ -225,9 +320,12 @@ public class RecognizeImage {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
+    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
     sb.append("}");
     return sb.toString();
   }

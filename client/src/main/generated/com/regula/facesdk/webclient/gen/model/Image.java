@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Image in the response.
@@ -42,6 +45,10 @@ public class Image {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private String createdAt;
 
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private String updatedAt;
+
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
   private String path;
@@ -49,6 +56,10 @@ public class Image {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   private String url;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private Map<String, Object> metadata = null;
 
   public Image() { 
   }
@@ -122,6 +133,29 @@ public class Image {
   }
 
 
+  public Image updatedAt(String updatedAt) {
+    
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * The returned image update date.
+   * @return updatedAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The returned image update date.")
+
+  public String getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
   public Image path(String path) {
     
     this.path = path;
@@ -168,6 +202,37 @@ public class Image {
   }
 
 
+  public Image metadata(Map<String, Object> metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+  public Image putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, Object>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * A free-form object containing person&#39;s extended attributes.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -180,13 +245,15 @@ public class Image {
     return Objects.equals(this.id, image.id) &&
         Objects.equals(this.contentType, image.contentType) &&
         Objects.equals(this.createdAt, image.createdAt) &&
+        Objects.equals(this.updatedAt, image.updatedAt) &&
         Objects.equals(this.path, image.path) &&
-        Objects.equals(this.url, image.url);
+        Objects.equals(this.url, image.url) &&
+        Objects.equals(this.metadata, image.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contentType, createdAt, path, url);
+    return Objects.hash(id, contentType, createdAt, updatedAt, path, url, metadata);
   }
 
   @Override
@@ -196,8 +263,10 @@ public class Image {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
