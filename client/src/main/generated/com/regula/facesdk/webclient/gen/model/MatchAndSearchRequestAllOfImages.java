@@ -20,69 +20,70 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.ImageSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * RecognizeImageAllOf
+ * MatchAndSearchRequestAllOfImages
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class RecognizeImageAllOf {
-  public static final String SERIALIZED_NAME_SIMILARITY = "similarity";
-  @SerializedName(SERIALIZED_NAME_SIMILARITY)
-  private Float similarity;
+public class MatchAndSearchRequestAllOfImages {
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  private byte[] content;
 
-  public static final String SERIALIZED_NAME_DISTANCE = "distance";
-  @SerializedName(SERIALIZED_NAME_DISTANCE)
-  private Float distance;
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private ImageSource type;
 
-  public RecognizeImageAllOf() { 
+  public MatchAndSearchRequestAllOfImages() { 
   }
 
-  public RecognizeImageAllOf similarity(Float similarity) {
+  public MatchAndSearchRequestAllOfImages content(byte[] content) {
     
-    this.similarity = similarity;
+    this.content = content;
     return this;
   }
 
    /**
-   * The similarity score.
-   * @return similarity
+   * Base64 encoded image.
+   * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The similarity score.")
+  @ApiModelProperty(value = "Base64 encoded image.")
 
-  public Float getSimilarity() {
-    return similarity;
+  public byte[] getContent() {
+    return content;
   }
 
 
-  public void setSimilarity(Float similarity) {
-    this.similarity = similarity;
+  public void setContent(byte[] content) {
+    this.content = content;
   }
 
 
-  public RecognizeImageAllOf distance(Float distance) {
+  public MatchAndSearchRequestAllOfImages type(ImageSource type) {
     
-    this.distance = distance;
+    this.type = type;
     return this;
   }
 
    /**
-   * The similarity distance score: the lower the distance, the higher the face&#39;s similarity.
-   * @return distance
+   * Get type
+   * @return type
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The similarity distance score: the lower the distance, the higher the face's similarity.")
+  @ApiModelProperty(value = "")
 
-  public Float getDistance() {
-    return distance;
+  public ImageSource getType() {
+    return type;
   }
 
 
-  public void setDistance(Float distance) {
-    this.distance = distance;
+  public void setType(ImageSource type) {
+    this.type = type;
   }
 
 
@@ -94,22 +95,22 @@ public class RecognizeImageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RecognizeImageAllOf recognizeImageAllOf = (RecognizeImageAllOf) o;
-    return Objects.equals(this.similarity, recognizeImageAllOf.similarity) &&
-        Objects.equals(this.distance, recognizeImageAllOf.distance);
+    MatchAndSearchRequestAllOfImages matchAndSearchRequestAllOfImages = (MatchAndSearchRequestAllOfImages) o;
+    return Arrays.equals(this.content, matchAndSearchRequestAllOfImages.content) &&
+        Objects.equals(this.type, matchAndSearchRequestAllOfImages.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(similarity, distance);
+    return Objects.hash(Arrays.hashCode(content), type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RecognizeImageAllOf {\n");
-    sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
-    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
+    sb.append("class MatchAndSearchRequestAllOfImages {\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

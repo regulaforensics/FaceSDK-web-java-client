@@ -20,8 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFields;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOf;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOfImages;
 import com.regula.facesdk.webclient.gen.model.SearchParameters;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,10 +30,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SearchRequest
+ * MatchAndSearchRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SearchRequest {
+public class MatchAndSearchRequest {
+  public static final String SERIALIZED_NAME_IMAGES = "images";
+  @SerializedName(SERIALIZED_NAME_IMAGES)
+  private List<MatchAndSearchRequestAllOfImages> images = null;
+
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit = 100;
@@ -46,14 +50,41 @@ public class SearchRequest {
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   private List<Integer> groupIds = null;
 
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
-
-  public SearchRequest() { 
+  public MatchAndSearchRequest() { 
   }
 
-  public SearchRequest limit(Integer limit) {
+  public MatchAndSearchRequest images(List<MatchAndSearchRequestAllOfImages> images) {
+    
+    this.images = images;
+    return this;
+  }
+
+  public MatchAndSearchRequest addImagesItem(MatchAndSearchRequestAllOfImages imagesItem) {
+    if (this.images == null) {
+      this.images = new ArrayList<MatchAndSearchRequestAllOfImages>();
+    }
+    this.images.add(imagesItem);
+    return this;
+  }
+
+   /**
+   * Get images
+   * @return images
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<MatchAndSearchRequestAllOfImages> getImages() {
+    return images;
+  }
+
+
+  public void setImages(List<MatchAndSearchRequestAllOfImages> images) {
+    this.images = images;
+  }
+
+
+  public MatchAndSearchRequest limit(Integer limit) {
     
     this.limit = limit;
     return this;
@@ -76,7 +107,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest threshold(Float threshold) {
+  public MatchAndSearchRequest threshold(Float threshold) {
     
     this.threshold = threshold;
     return this;
@@ -99,13 +130,13 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest groupIds(List<Integer> groupIds) {
+  public MatchAndSearchRequest groupIds(List<Integer> groupIds) {
     
     this.groupIds = groupIds;
     return this;
   }
 
-  public SearchRequest addGroupIdsItem(Integer groupIdsItem) {
+  public MatchAndSearchRequest addGroupIdsItem(Integer groupIdsItem) {
     if (this.groupIds == null) {
       this.groupIds = new ArrayList<Integer>();
     }
@@ -130,29 +161,6 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest image(ImageFieldsImage image) {
-    
-    this.image = image;
-    return this;
-  }
-
-   /**
-   * Get image
-   * @return image
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ImageFieldsImage getImage() {
-    return image;
-  }
-
-
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -161,26 +169,26 @@ public class SearchRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchRequest searchRequest = (SearchRequest) o;
-    return Objects.equals(this.limit, searchRequest.limit) &&
-        Objects.equals(this.threshold, searchRequest.threshold) &&
-        Objects.equals(this.groupIds, searchRequest.groupIds) &&
-        Objects.equals(this.image, searchRequest.image);
+    MatchAndSearchRequest matchAndSearchRequest = (MatchAndSearchRequest) o;
+    return Objects.equals(this.images, matchAndSearchRequest.images) &&
+        Objects.equals(this.limit, matchAndSearchRequest.limit) &&
+        Objects.equals(this.threshold, matchAndSearchRequest.threshold) &&
+        Objects.equals(this.groupIds, matchAndSearchRequest.groupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(limit, threshold, groupIds, image);
+    return Objects.hash(images, limit, threshold, groupIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchRequest {\n");
+    sb.append("class MatchAndSearchRequest {\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();
   }

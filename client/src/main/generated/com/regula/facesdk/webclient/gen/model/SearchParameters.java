@@ -20,9 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.ImageFields;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
-import com.regula.facesdk.webclient.gen.model.SearchParameters;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -30,10 +27,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SearchRequest
+ * Request search data.
  */
+@ApiModel(description = "Request search data.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SearchRequest {
+public class SearchParameters {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit = 100;
@@ -46,14 +44,10 @@ public class SearchRequest {
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   private List<Integer> groupIds = null;
 
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
-
-  public SearchRequest() { 
+  public SearchParameters() { 
   }
 
-  public SearchRequest limit(Integer limit) {
+  public SearchParameters limit(Integer limit) {
     
     this.limit = limit;
     return this;
@@ -76,7 +70,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest threshold(Float threshold) {
+  public SearchParameters threshold(Float threshold) {
     
     this.threshold = threshold;
     return this;
@@ -99,13 +93,13 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest groupIds(List<Integer> groupIds) {
+  public SearchParameters groupIds(List<Integer> groupIds) {
     
     this.groupIds = groupIds;
     return this;
   }
 
-  public SearchRequest addGroupIdsItem(Integer groupIdsItem) {
+  public SearchParameters addGroupIdsItem(Integer groupIdsItem) {
     if (this.groupIds == null) {
       this.groupIds = new ArrayList<Integer>();
     }
@@ -130,29 +124,6 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest image(ImageFieldsImage image) {
-    
-    this.image = image;
-    return this;
-  }
-
-   /**
-   * Get image
-   * @return image
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ImageFieldsImage getImage() {
-    return image;
-  }
-
-
-  public void setImage(ImageFieldsImage image) {
-    this.image = image;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -161,26 +132,24 @@ public class SearchRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchRequest searchRequest = (SearchRequest) o;
-    return Objects.equals(this.limit, searchRequest.limit) &&
-        Objects.equals(this.threshold, searchRequest.threshold) &&
-        Objects.equals(this.groupIds, searchRequest.groupIds) &&
-        Objects.equals(this.image, searchRequest.image);
+    SearchParameters searchParameters = (SearchParameters) o;
+    return Objects.equals(this.limit, searchParameters.limit) &&
+        Objects.equals(this.threshold, searchParameters.threshold) &&
+        Objects.equals(this.groupIds, searchParameters.groupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(limit, threshold, groupIds, image);
+    return Objects.hash(limit, threshold, groupIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchRequest {\n");
+    sb.append("class SearchParameters {\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();
   }

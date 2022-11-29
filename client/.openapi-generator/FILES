@@ -45,6 +45,12 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/ImageFieldsImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImageSource.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequest.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOf.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOfImages.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchResponse.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchResponseAllOf.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchResponseAllOfDetections.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageDetection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageResult.java
@@ -57,6 +63,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/Page.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Person.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonFields.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/PersonWithImages.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/PersonWithImagesAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonsPage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonsPageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ProcessParam.java
@@ -66,9 +74,9 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/QualityDetailsGroups.j
 src/main/generated/com/regula/facesdk/webclient/gen/model/QualityRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/RecognizeImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/RecognizeImageAllOf.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/SearchParameters.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPerson.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPersonAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequest.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequestAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/UpdateGroup.java
