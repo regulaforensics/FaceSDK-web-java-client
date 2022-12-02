@@ -20,9 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.DetectionFace;
 import com.regula.facesdk.webclient.gen.model.FaceSDKResultCode;
-import com.regula.facesdk.webclient.gen.model.PersonWithImages;
+import com.regula.facesdk.webclient.gen.model.FacesResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -36,7 +35,7 @@ import java.util.List;
 public class MatchAndSearchResponseAllOfDetections {
   public static final String SERIALIZED_NAME_FACES = "faces";
   @SerializedName(SERIALIZED_NAME_FACES)
-  private List<DetectionFace> faces = null;
+  private List<FacesResponse> faces = null;
 
   public static final String SERIALIZED_NAME_IMAGE_INDEX = "imageIndex";
   @SerializedName(SERIALIZED_NAME_IMAGE_INDEX)
@@ -49,15 +48,15 @@ public class MatchAndSearchResponseAllOfDetections {
   public MatchAndSearchResponseAllOfDetections() { 
   }
 
-  public MatchAndSearchResponseAllOfDetections faces(List<DetectionFace> faces) {
+  public MatchAndSearchResponseAllOfDetections faces(List<FacesResponse> faces) {
     
     this.faces = faces;
     return this;
   }
 
-  public MatchAndSearchResponseAllOfDetections addFacesItem(DetectionFace facesItem) {
+  public MatchAndSearchResponseAllOfDetections addFacesItem(FacesResponse facesItem) {
     if (this.faces == null) {
-      this.faces = new ArrayList<DetectionFace>();
+      this.faces = new ArrayList<FacesResponse>();
     }
     this.faces.add(facesItem);
     return this;
@@ -70,12 +69,12 @@ public class MatchAndSearchResponseAllOfDetections {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<DetectionFace> getFaces() {
+  public List<FacesResponse> getFaces() {
     return faces;
   }
 
 
-  public void setFaces(List<DetectionFace> faces) {
+  public void setFaces(List<FacesResponse> faces) {
     this.faces = faces;
   }
 

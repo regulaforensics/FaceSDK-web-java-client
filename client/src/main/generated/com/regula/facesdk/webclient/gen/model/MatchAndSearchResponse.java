@@ -42,13 +42,9 @@ public class MatchAndSearchResponse {
   @SerializedName(SERIALIZED_NAME_CODE)
   private FaceSDKResultCode code;
 
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchAndSearchResponseAllOfDetections> detections = null;
-
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private MatchImageResult results;
+  private List<MatchImageResult> results = null;
 
   public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
   @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
@@ -57,6 +53,10 @@ public class MatchAndSearchResponse {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
+
+  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
+  @SerializedName(SERIALIZED_NAME_DETECTIONS)
+  private List<MatchAndSearchResponseAllOfDetections> detections = null;
 
   public MatchAndSearchResponse() { 
   }
@@ -84,40 +84,17 @@ public class MatchAndSearchResponse {
   }
 
 
-  public MatchAndSearchResponse detections(List<MatchAndSearchResponseAllOfDetections> detections) {
-    
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchAndSearchResponse addDetectionsItem(MatchAndSearchResponseAllOfDetections detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchAndSearchResponseAllOfDetections>();
-    }
-    this.detections.add(detectionsItem);
-    return this;
-  }
-
-   /**
-   * Get detections
-   * @return detections
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<MatchAndSearchResponseAllOfDetections> getDetections() {
-    return detections;
-  }
-
-
-  public void setDetections(List<MatchAndSearchResponseAllOfDetections> detections) {
-    this.detections = detections;
-  }
-
-
-  public MatchAndSearchResponse results(MatchImageResult results) {
+  public MatchAndSearchResponse results(List<MatchImageResult> results) {
     
     this.results = results;
+    return this;
+  }
+
+  public MatchAndSearchResponse addResultsItem(MatchImageResult resultsItem) {
+    if (this.results == null) {
+      this.results = new ArrayList<MatchImageResult>();
+    }
+    this.results.add(resultsItem);
     return this;
   }
 
@@ -128,12 +105,12 @@ public class MatchAndSearchResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public MatchImageResult getResults() {
+  public List<MatchImageResult> getResults() {
     return results;
   }
 
 
-  public void setResults(MatchImageResult results) {
+  public void setResults(List<MatchImageResult> results) {
     this.results = results;
   }
 
@@ -192,6 +169,37 @@ public class MatchAndSearchResponse {
   }
 
 
+  public MatchAndSearchResponse detections(List<MatchAndSearchResponseAllOfDetections> detections) {
+    
+    this.detections = detections;
+    return this;
+  }
+
+  public MatchAndSearchResponse addDetectionsItem(MatchAndSearchResponseAllOfDetections detectionsItem) {
+    if (this.detections == null) {
+      this.detections = new ArrayList<MatchAndSearchResponseAllOfDetections>();
+    }
+    this.detections.add(detectionsItem);
+    return this;
+  }
+
+   /**
+   * Get detections
+   * @return detections
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<MatchAndSearchResponseAllOfDetections> getDetections() {
+    return detections;
+  }
+
+
+  public void setDetections(List<MatchAndSearchResponseAllOfDetections> detections) {
+    this.detections = detections;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -202,15 +210,15 @@ public class MatchAndSearchResponse {
     }
     MatchAndSearchResponse matchAndSearchResponse = (MatchAndSearchResponse) o;
     return Objects.equals(this.code, matchAndSearchResponse.code) &&
-        Objects.equals(this.detections, matchAndSearchResponse.detections) &&
         Objects.equals(this.results, matchAndSearchResponse.results) &&
         Objects.equals(this.elapsedTime, matchAndSearchResponse.elapsedTime) &&
-        Objects.equals(this.metadata, matchAndSearchResponse.metadata);
+        Objects.equals(this.metadata, matchAndSearchResponse.metadata) &&
+        Objects.equals(this.detections, matchAndSearchResponse.detections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, detections, results, elapsedTime, metadata);
+    return Objects.hash(code, results, elapsedTime, metadata, detections);
   }
 
   @Override
@@ -218,10 +226,10 @@ public class MatchAndSearchResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class MatchAndSearchResponse {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    elapsedTime: ").append(toIndentedString(elapsedTime)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("}");
     return sb.toString();
   }
