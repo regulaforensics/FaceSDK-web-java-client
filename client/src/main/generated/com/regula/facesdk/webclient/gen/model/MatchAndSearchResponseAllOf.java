@@ -35,13 +35,9 @@ import java.util.Map;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MatchAndSearchResponseAllOf {
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchAndSearchResponseAllOfDetections> detections = null;
-
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private MatchImageResult results;
+  private List<MatchImageResult> results = null;
 
   public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
   @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
@@ -51,43 +47,24 @@ public class MatchAndSearchResponseAllOf {
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
+  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
+  @SerializedName(SERIALIZED_NAME_DETECTIONS)
+  private List<MatchAndSearchResponseAllOfDetections> detections = null;
+
   public MatchAndSearchResponseAllOf() { 
   }
 
-  public MatchAndSearchResponseAllOf detections(List<MatchAndSearchResponseAllOfDetections> detections) {
-    
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchAndSearchResponseAllOf addDetectionsItem(MatchAndSearchResponseAllOfDetections detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchAndSearchResponseAllOfDetections>();
-    }
-    this.detections.add(detectionsItem);
-    return this;
-  }
-
-   /**
-   * Get detections
-   * @return detections
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<MatchAndSearchResponseAllOfDetections> getDetections() {
-    return detections;
-  }
-
-
-  public void setDetections(List<MatchAndSearchResponseAllOfDetections> detections) {
-    this.detections = detections;
-  }
-
-
-  public MatchAndSearchResponseAllOf results(MatchImageResult results) {
+  public MatchAndSearchResponseAllOf results(List<MatchImageResult> results) {
     
     this.results = results;
+    return this;
+  }
+
+  public MatchAndSearchResponseAllOf addResultsItem(MatchImageResult resultsItem) {
+    if (this.results == null) {
+      this.results = new ArrayList<MatchImageResult>();
+    }
+    this.results.add(resultsItem);
     return this;
   }
 
@@ -98,12 +75,12 @@ public class MatchAndSearchResponseAllOf {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public MatchImageResult getResults() {
+  public List<MatchImageResult> getResults() {
     return results;
   }
 
 
-  public void setResults(MatchImageResult results) {
+  public void setResults(List<MatchImageResult> results) {
     this.results = results;
   }
 
@@ -162,6 +139,37 @@ public class MatchAndSearchResponseAllOf {
   }
 
 
+  public MatchAndSearchResponseAllOf detections(List<MatchAndSearchResponseAllOfDetections> detections) {
+    
+    this.detections = detections;
+    return this;
+  }
+
+  public MatchAndSearchResponseAllOf addDetectionsItem(MatchAndSearchResponseAllOfDetections detectionsItem) {
+    if (this.detections == null) {
+      this.detections = new ArrayList<MatchAndSearchResponseAllOfDetections>();
+    }
+    this.detections.add(detectionsItem);
+    return this;
+  }
+
+   /**
+   * Get detections
+   * @return detections
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<MatchAndSearchResponseAllOfDetections> getDetections() {
+    return detections;
+  }
+
+
+  public void setDetections(List<MatchAndSearchResponseAllOfDetections> detections) {
+    this.detections = detections;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -171,25 +179,25 @@ public class MatchAndSearchResponseAllOf {
       return false;
     }
     MatchAndSearchResponseAllOf matchAndSearchResponseAllOf = (MatchAndSearchResponseAllOf) o;
-    return Objects.equals(this.detections, matchAndSearchResponseAllOf.detections) &&
-        Objects.equals(this.results, matchAndSearchResponseAllOf.results) &&
+    return Objects.equals(this.results, matchAndSearchResponseAllOf.results) &&
         Objects.equals(this.elapsedTime, matchAndSearchResponseAllOf.elapsedTime) &&
-        Objects.equals(this.metadata, matchAndSearchResponseAllOf.metadata);
+        Objects.equals(this.metadata, matchAndSearchResponseAllOf.metadata) &&
+        Objects.equals(this.detections, matchAndSearchResponseAllOf.detections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(detections, results, elapsedTime, metadata);
+    return Objects.hash(results, elapsedTime, metadata, detections);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MatchAndSearchResponseAllOf {\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    elapsedTime: ").append(toIndentedString(elapsedTime)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("}");
     return sb.toString();
   }

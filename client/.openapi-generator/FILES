@@ -34,6 +34,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/FaceQualityConfigName.
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceQualityScenarios.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResultCode.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FacesResponse.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FacesResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Group.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/GroupAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/GroupPage.java
