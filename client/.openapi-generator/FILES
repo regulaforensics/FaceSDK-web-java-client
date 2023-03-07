@@ -16,7 +16,7 @@ src/main/generated/com/regula/facesdk/webclient/auth/Authentication.java
 src/main/generated/com/regula/facesdk/webclient/auth/HttpBasicAuth.java
 src/main/generated/com/regula/facesdk/webclient/auth/HttpBearerAuth.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/GroupApi.java
-src/main/generated/com/regula/facesdk/webclient/gen/api/LivenessApi.java
+src/main/generated/com/regula/facesdk/webclient/gen/api/Liveness20Api.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/MatchingApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/PersonApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/SearchApi.java
@@ -82,4 +82,5 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPerson.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPersonAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResult.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/TransactionInfo.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/UpdateGroup.java

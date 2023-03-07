@@ -27,9 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.regula.facesdk.webclient.gen.model.OperationLog;
-import com.regula.facesdk.webclient.gen.model.SearchRequest;
-import com.regula.facesdk.webclient.gen.model.SearchResult;
+import com.regula.facesdk.webclient.gen.model.TransactionInfo;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -37,16 +35,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SearchApi {
+public class Liveness20Api {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public SearchApi() {
+    public Liveness20Api() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public SearchApi(ApiClient apiClient) {
+    public Liveness20Api(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -75,20 +73,18 @@ public class SearchApi {
     }
 
     /**
-     * Build call for search
-     * @param searchRequest  (required)
-     * @param xRequestID  (optional)
+     * Build call for getLivenessTransactionInfo
+     * @param transactionId ID of the current liveness transaction. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; search result returned. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCall(SearchRequest searchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLivenessTransactionInfoCall(Integer transactionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -103,10 +99,10 @@ public class SearchApi {
             basePath = null;
         }
 
-        Object localVarPostBody = searchRequest;
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/search";
+        String localVarPath = "/api/v2/liveness";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -114,8 +110,8 @@ public class SearchApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (xRequestID != null) {
-            localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+        if (transactionId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("transactionId", transactionId));
         }
 
         final String[] localVarAccepts = {
@@ -127,7 +123,7 @@ public class SearchApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -135,81 +131,75 @@ public class SearchApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchValidateBeforeCall(SearchRequest searchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLivenessTransactionInfoValidateBeforeCall(Integer transactionId, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'searchRequest' is set
-        if (searchRequest == null) {
-            throw new ApiException("Missing the required parameter 'searchRequest' when calling search(Async)");
+        // verify the required parameter 'transactionId' is set
+        if (transactionId == null) {
+            throw new ApiException("Missing the required parameter 'transactionId' when calling getLivenessTransactionInfo(Async)");
         }
         
 
-        okhttp3.Call localVarCall = searchCall(searchRequest, xRequestID, _callback);
+        okhttp3.Call localVarCall = getLivenessTransactionInfoCall(transactionId, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Find person by image in groups.
+     * liveness
      * 
-     * @param searchRequest  (required)
-     * @param xRequestID  (optional)
-     * @return SearchResult
+     * @param transactionId ID of the current liveness transaction. (required)
+     * @return TransactionInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; search result returned. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public SearchResult search(SearchRequest searchRequest, String xRequestID) throws ApiException {
-        ApiResponse<SearchResult> localVarResp = searchWithHttpInfo(searchRequest, xRequestID);
+    public TransactionInfo getLivenessTransactionInfo(Integer transactionId) throws ApiException {
+        ApiResponse<TransactionInfo> localVarResp = getLivenessTransactionInfoWithHttpInfo(transactionId);
         return localVarResp.getData();
     }
 
     /**
-     * Find person by image in groups.
+     * liveness
      * 
-     * @param searchRequest  (required)
-     * @param xRequestID  (optional)
-     * @return ApiResponse&lt;SearchResult&gt;
+     * @param transactionId ID of the current liveness transaction. (required)
+     * @return ApiResponse&lt;TransactionInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; search result returned. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SearchResult> searchWithHttpInfo(SearchRequest searchRequest, String xRequestID) throws ApiException {
-        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, xRequestID, null);
-        Type localVarReturnType = new TypeToken<SearchResult>(){}.getType();
+    public ApiResponse<TransactionInfo> getLivenessTransactionInfoWithHttpInfo(Integer transactionId) throws ApiException {
+        okhttp3.Call localVarCall = getLivenessTransactionInfoValidateBeforeCall(transactionId, null);
+        Type localVarReturnType = new TypeToken<TransactionInfo>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Find person by image in groups. (asynchronously)
+     * liveness (asynchronously)
      * 
-     * @param searchRequest  (required)
-     * @param xRequestID  (optional)
+     * @param transactionId ID of the current liveness transaction. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; search result returned. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchAsync(SearchRequest searchRequest, String xRequestID, final ApiCallback<SearchResult> _callback) throws ApiException {
+    public okhttp3.Call getLivenessTransactionInfoAsync(Integer transactionId, final ApiCallback<TransactionInfo> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, xRequestID, _callback);
-        Type localVarReturnType = new TypeToken<SearchResult>(){}.getType();
+        okhttp3.Call localVarCall = getLivenessTransactionInfoValidateBeforeCall(transactionId, _callback);
+        Type localVarReturnType = new TypeToken<TransactionInfo>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
