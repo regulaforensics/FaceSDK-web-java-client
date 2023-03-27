@@ -30,6 +30,8 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(FaceQualityScenarios.Adapter.class)
 public enum FaceQualityScenarios {
   
+  OLD_MODE("OldMode"),
+  
   QUALITY_FULL("QualityFull"),
   
   QUALITY_ICAO("QualityICAO"),
