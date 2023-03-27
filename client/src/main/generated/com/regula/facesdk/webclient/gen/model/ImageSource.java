@@ -38,7 +38,9 @@ public enum ImageSource {
   
   DOCUMENT_WITH_LIVE(4),
   
-  EXTERNAL(5);
+  EXTERNAL(5),
+  
+  GHOST(6);
 
   private Integer value;
 
