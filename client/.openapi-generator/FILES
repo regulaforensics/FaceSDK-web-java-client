@@ -48,7 +48,6 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/ImageFieldsImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImageSource.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/LivenessTransaction.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOfImages.java
@@ -83,4 +82,5 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPerson.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPersonAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResult.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/TransactionInfo.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/UpdateGroup.java
