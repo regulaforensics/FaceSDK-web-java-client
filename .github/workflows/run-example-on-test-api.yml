@@ -1,9 +1,6 @@
 name: run example on test api
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
