@@ -5,6 +5,7 @@ import com.regula.facesdk.webclient.gen.model.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class IdentificationExample {
     public static final String API_BASE_PATH = "API_BASE_PATH";
@@ -20,10 +21,10 @@ public class IdentificationExample {
 
         var sdk = new FaceSdk(apiBasePath);
 
-        Integer person1Id = sdk.personApi.createPerson(
+        UUID person1Id = sdk.personApi.createPerson(
                 new PersonFields().name("person1").metadata(new HashMap<String, Object>())
         ).getId();
-        Integer person2Id = sdk.personApi.createPerson(
+        UUID person2Id = sdk.personApi.createPerson(
                 new PersonFields().name("person2").metadata(new HashMap<String, Object>())
         ).getId();
 

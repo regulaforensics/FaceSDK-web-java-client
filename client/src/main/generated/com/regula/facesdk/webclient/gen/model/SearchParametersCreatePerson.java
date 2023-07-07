@@ -28,15 +28,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Request body of the group to create data, includes name and metadata.
+ * If a person is not found, a new person entry is created using the descriptor calculated while searching.
  */
-@ApiModel(description = "Request body of the group to create data, includes name and metadata.")
+@ApiModel(description = "If a person is not found, a new person entry is created using the descriptor calculated while searching.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupToCreate {
-  public static final String SERIALIZED_NAME_TAG = "tag";
-  @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
-
+public class SearchParametersCreatePerson {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -45,44 +41,21 @@ public class GroupToCreate {
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
-  public GroupToCreate() { 
+  public SearchParametersCreatePerson() { 
   }
 
-  public GroupToCreate tag(String tag) {
-    
-    this.tag = tag;
-    return this;
-  }
-
-   /**
-   * Session identificator.
-   * @return tag
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Session identificator.")
-
-  public String getTag() {
-    return tag;
-  }
-
-
-  public void setTag(String tag) {
-    this.tag = tag;
-  }
-
-
-  public GroupToCreate name(String name) {
+  public SearchParametersCreatePerson name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * Group to create name.
+   * Person&#39;s name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group to create name.")
+  @ApiModelProperty(value = "Person's name.")
 
   public String getName() {
     return name;
@@ -94,13 +67,13 @@ public class GroupToCreate {
   }
 
 
-  public GroupToCreate metadata(Map<String, Object> metadata) {
+  public SearchParametersCreatePerson metadata(Map<String, Object> metadata) {
     
     this.metadata = metadata;
     return this;
   }
 
-  public GroupToCreate putMetadataItem(String key, Object metadataItem) {
+  public SearchParametersCreatePerson putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -109,11 +82,11 @@ public class GroupToCreate {
   }
 
    /**
-   * A free-form object containing group&#39;s extended attributes.
+   * A free-form object containing person&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -133,22 +106,20 @@ public class GroupToCreate {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupToCreate groupToCreate = (GroupToCreate) o;
-    return Objects.equals(this.tag, groupToCreate.tag) &&
-        Objects.equals(this.name, groupToCreate.name) &&
-        Objects.equals(this.metadata, groupToCreate.metadata);
+    SearchParametersCreatePerson searchParametersCreatePerson = (SearchParametersCreatePerson) o;
+    return Objects.equals(this.name, searchParametersCreatePerson.name) &&
+        Objects.equals(this.metadata, searchParametersCreatePerson.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, name, metadata);
+    return Objects.hash(name, metadata);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupToCreate {\n");
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("class SearchParametersCreatePerson {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");

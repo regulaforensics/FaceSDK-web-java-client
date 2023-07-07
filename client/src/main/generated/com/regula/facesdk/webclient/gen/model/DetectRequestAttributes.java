@@ -20,69 +20,54 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.QualityConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * RecognizeImageAllOf
+ * Whether to evaluate attributes, such as age and emotions.
  */
+@ApiModel(description = "Whether to evaluate attributes, such as age and emotions.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class RecognizeImageAllOf {
-  public static final String SERIALIZED_NAME_SIMILARITY = "similarity";
-  @SerializedName(SERIALIZED_NAME_SIMILARITY)
-  private Float similarity;
+public class DetectRequestAttributes {
+  public static final String SERIALIZED_NAME_CONFIG = "config";
+  @SerializedName(SERIALIZED_NAME_CONFIG)
+  private List<QualityConfig> config = null;
 
-  public static final String SERIALIZED_NAME_DISTANCE = "distance";
-  @SerializedName(SERIALIZED_NAME_DISTANCE)
-  private Float distance;
-
-  public RecognizeImageAllOf() { 
+  public DetectRequestAttributes() { 
   }
 
-  public RecognizeImageAllOf similarity(Float similarity) {
+  public DetectRequestAttributes config(List<QualityConfig> config) {
     
-    this.similarity = similarity;
+    this.config = config;
+    return this;
+  }
+
+  public DetectRequestAttributes addConfigItem(QualityConfig configItem) {
+    if (this.config == null) {
+      this.config = new ArrayList<QualityConfig>();
+    }
+    this.config.add(configItem);
     return this;
   }
 
    /**
-   * Similarity score.
-   * @return similarity
+   * Get config
+   * @return config
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Similarity score.")
+  @ApiModelProperty(value = "")
 
-  public Float getSimilarity() {
-    return similarity;
+  public List<QualityConfig> getConfig() {
+    return config;
   }
 
 
-  public void setSimilarity(Float similarity) {
-    this.similarity = similarity;
-  }
-
-
-  public RecognizeImageAllOf distance(Float distance) {
-    
-    this.distance = distance;
-    return this;
-  }
-
-   /**
-   * Similarity distance score: the lower the distance, the higher the face&#39;s similarity.
-   * @return distance
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Similarity distance score: the lower the distance, the higher the face's similarity.")
-
-  public Float getDistance() {
-    return distance;
-  }
-
-
-  public void setDistance(Float distance) {
-    this.distance = distance;
+  public void setConfig(List<QualityConfig> config) {
+    this.config = config;
   }
 
 
@@ -94,22 +79,20 @@ public class RecognizeImageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RecognizeImageAllOf recognizeImageAllOf = (RecognizeImageAllOf) o;
-    return Objects.equals(this.similarity, recognizeImageAllOf.similarity) &&
-        Objects.equals(this.distance, recognizeImageAllOf.distance);
+    DetectRequestAttributes detectRequestAttributes = (DetectRequestAttributes) o;
+    return Objects.equals(this.config, detectRequestAttributes.config);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(similarity, distance);
+    return Objects.hash(config);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RecognizeImageAllOf {\n");
-    sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
-    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
+    sb.append("class DetectRequestAttributes {\n");
+    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("}");
     return sb.toString();
   }

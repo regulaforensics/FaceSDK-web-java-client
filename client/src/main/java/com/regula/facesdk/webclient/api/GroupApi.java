@@ -4,6 +4,8 @@ import com.regula.facesdk.webclient.ApiClient;
 import com.regula.facesdk.webclient.ApiException;
 import com.regula.facesdk.webclient.gen.model.*;
 
+import java.util.UUID;
+
 public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
     public GroupApi(ApiClient apiClient) {
         super(apiClient);
@@ -19,10 +21,10 @@ public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
         return this.createGroup(groupToCreate, "");
     }
 
-    public void deleteGroup(Integer groupId, String xRequestID) throws ApiException {
+    public void deleteGroup(UUID groupId, String xRequestID) throws ApiException {
         super.deleteGroup(groupId, xRequestID);
     }
-    public void deleteGroup(Integer groupId) throws ApiException {
+    public void deleteGroup(UUID groupId) throws ApiException {
         super.deleteGroup(groupId, "");
     }
 
@@ -33,31 +35,31 @@ public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
         return this.getAllGroups(page, size, "");
     }
 
-    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, Integer groupId, String xRequestID) throws ApiException {
+    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, UUID groupId, String xRequestID) throws ApiException {
         return super.getAllPersonsByGroupId(page, size, groupId, xRequestID);
     }
-    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, Integer groupId) throws ApiException {
+    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, UUID groupId) throws ApiException {
         return super.getAllPersonsByGroupId(page, size, groupId, "");
     }
 
-    public Group getGroup(Integer groupId, String xRequestID) throws ApiException {
+    public Group getGroup(UUID groupId, String xRequestID) throws ApiException {
         return super.getGroup(groupId, xRequestID);
     }
-    public Group getGroup(Integer groupId) throws ApiException {
+    public Group getGroup(UUID groupId) throws ApiException {
         return super.getGroup(groupId, "");
     }
 
-    public void updateGroup(Integer groupId, GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+    public void updateGroup(UUID groupId, GroupToCreate groupToCreate, String xRequestID) throws ApiException {
         super.updateGroup(groupId, groupToCreate, xRequestID);
     }
     public void updateGroup(Integer groupId, GroupToCreate groupToCreate) throws ApiException {
         this.updateGroup(groupId, groupToCreate);
     }
 
-    public void updatePersonsInGroup(Integer groupId, UpdateGroup updateGroup, String xRequestID) throws ApiException {
+    public void updatePersonsInGroup(UUID groupId, UpdateGroup updateGroup, String xRequestID) throws ApiException {
         super.updatePersonsInGroup(groupId, updateGroup, xRequestID);
     }
-    public void updatePersonsInGroup(Integer groupId, UpdateGroup updateGroup) throws ApiException {
+    public void updatePersonsInGroup(UUID groupId, UpdateGroup updateGroup) throws ApiException {
         super.updatePersonsInGroup(groupId, updateGroup, "");
     }
 

@@ -25,13 +25,15 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * SearchResult
+ * PersonCreatedResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SearchResult {
+public class PersonCreatedResponse {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
@@ -40,21 +42,25 @@ public class SearchResult {
   @SerializedName(SERIALIZED_NAME_PERSONS)
   private List<SearchPerson> persons = null;
 
-  public SearchResult() { 
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private Map<String, Object> metadata = null;
+
+  public PersonCreatedResponse() { 
   }
 
-  public SearchResult code(Integer code) {
+  public PersonCreatedResponse code(Integer code) {
     
     this.code = code;
     return this;
   }
 
    /**
-   * Search result code.
+   * Result code.
    * @return code
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Search result code.")
+  @ApiModelProperty(value = "Result code.")
 
   public Integer getCode() {
     return code;
@@ -66,13 +72,13 @@ public class SearchResult {
   }
 
 
-  public SearchResult persons(List<SearchPerson> persons) {
+  public PersonCreatedResponse persons(List<SearchPerson> persons) {
     
     this.persons = persons;
     return this;
   }
 
-  public SearchResult addPersonsItem(SearchPerson personsItem) {
+  public PersonCreatedResponse addPersonsItem(SearchPerson personsItem) {
     if (this.persons == null) {
       this.persons = new ArrayList<SearchPerson>();
     }
@@ -81,11 +87,11 @@ public class SearchResult {
   }
 
    /**
-   * Person data.
+   * Array of Person images.
    * @return persons
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person data.")
+  @ApiModelProperty(value = "Array of Person images.")
 
   public List<SearchPerson> getPersons() {
     return persons;
@@ -97,6 +103,37 @@ public class SearchResult {
   }
 
 
+  public PersonCreatedResponse metadata(Map<String, Object> metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+  public PersonCreatedResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, Object>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * A free-form object containing person&#39;s extended attributes.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -105,22 +142,24 @@ public class SearchResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchResult searchResult = (SearchResult) o;
-    return Objects.equals(this.code, searchResult.code) &&
-        Objects.equals(this.persons, searchResult.persons);
+    PersonCreatedResponse personCreatedResponse = (PersonCreatedResponse) o;
+    return Objects.equals(this.code, personCreatedResponse.code) &&
+        Objects.equals(this.persons, personCreatedResponse.persons) &&
+        Objects.equals(this.metadata, personCreatedResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, persons);
+    return Objects.hash(code, persons, metadata);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchResult {\n");
+    sb.append("class PersonCreatedResponse {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    persons: ").append(toIndentedString(persons)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
