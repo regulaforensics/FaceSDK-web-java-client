@@ -25,34 +25,44 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Face image quality group types for face image quality assessment.
+ * Face attributes.
  */
-@JsonAdapter(FaceImageQualityGroups.Adapter.class)
-public enum FaceImageQualityGroups {
+@JsonAdapter(FaceAttribute.Adapter.class)
+public enum FaceAttribute {
   
-  IMAGE_CHARACTERISTICS(1),
+  AGE("Age"),
   
-  HEAD_SIZE_AND_POSITIONS(2),
+  EMOTION("Emotion"),
   
-  FACE_QUALITY(3),
+  EYE_LEFT("EyeLeft"),
   
-  EYES_CHARACTERISTICS(4),
+  EYE_RIGHT("EyeRight"),
   
-  SHADOWS_AND_LIGHTNING(5),
+  SMILE("Smile"),
   
-  POSE_AND_EXPRESSION(6),
+  GLASSES("Glasses"),
   
-  HEAD_OCCLUSION(7),
+  HEAD_COVERING("HeadCovering"),
   
-  BACKGROUND(8);
+  FOREHEAD_COVERING("ForeheadCovering"),
+  
+  MOUTH("Mouth"),
+  
+  MEDICAL_MASK("MedicalMask"),
+  
+  OCCLUSION("Occlusion"),
+  
+  STRONG_MAKEUP("StrongMakeup"),
+  
+  HEADPHONES("Headphones");
 
-  private Integer value;
+  private String value;
 
-  FaceImageQualityGroups(Integer value) {
+  FaceAttribute(String value) {
     this.value = value;
   }
 
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -61,8 +71,8 @@ public enum FaceImageQualityGroups {
     return String.valueOf(value);
   }
 
-  public static FaceImageQualityGroups fromValue(Integer value) {
-    for (FaceImageQualityGroups b : FaceImageQualityGroups.values()) {
+  public static FaceAttribute fromValue(String value) {
+    for (FaceAttribute b : FaceAttribute.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -70,16 +80,16 @@ public enum FaceImageQualityGroups {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<FaceImageQualityGroups> {
+  public static class Adapter extends TypeAdapter<FaceAttribute> {
     @Override
-    public void write(final JsonWriter jsonWriter, final FaceImageQualityGroups enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FaceAttribute enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public FaceImageQualityGroups read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return FaceImageQualityGroups.fromValue(value);
+    public FaceAttribute read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return FaceAttribute.fromValue(value);
     }
   }
 }

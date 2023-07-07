@@ -25,91 +25,92 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * OperationLog
+ * Set to resize the original image.
  */
+@ApiModel(description = "Set to resize the original image.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class OperationLog {
-  public static final String SERIALIZED_NAME_STATUS_CODE = "statusCode";
-  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
-  private Integer statusCode;
+public class ResizeOptions {
+  public static final String SERIALIZED_NAME_WIDTH = "width";
+  @SerializedName(SERIALIZED_NAME_WIDTH)
+  private Integer width;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
+  public static final String SERIALIZED_NAME_HEIGHT = "height";
+  @SerializedName(SERIALIZED_NAME_HEIGHT)
+  private Integer height;
 
-  public static final String SERIALIZED_NAME_MSG = "msg";
-  @SerializedName(SERIALIZED_NAME_MSG)
-  private String msg;
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+  @SerializedName(SERIALIZED_NAME_QUALITY)
+  private Integer quality = 100;
 
-  public OperationLog() { 
+  public ResizeOptions() { 
   }
 
-  public OperationLog statusCode(Integer statusCode) {
+  public ResizeOptions width(Integer width) {
     
-    this.statusCode = statusCode;
+    this.width = width;
     return this;
   }
 
    /**
-   * Status code.
-   * @return statusCode
+   * Resized image width, px.
+   * @return width
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status code.")
+  @ApiModelProperty(value = "Resized image width, px.")
 
-  public Integer getStatusCode() {
-    return statusCode;
+  public Integer getWidth() {
+    return width;
   }
 
 
-  public void setStatusCode(Integer statusCode) {
-    this.statusCode = statusCode;
+  public void setWidth(Integer width) {
+    this.width = width;
   }
 
 
-  public OperationLog type(String type) {
+  public ResizeOptions height(Integer height) {
     
-    this.type = type;
+    this.height = height;
     return this;
   }
 
    /**
-   * Error type.
-   * @return type
+   * Resized image height, px.
+   * @return height
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Error type.")
+  @ApiModelProperty(value = "Resized image height, px.")
 
-  public String getType() {
-    return type;
+  public Integer getHeight() {
+    return height;
   }
 
 
-  public void setType(String type) {
-    this.type = type;
+  public void setHeight(Integer height) {
+    this.height = height;
   }
 
 
-  public OperationLog msg(String msg) {
+  public ResizeOptions quality(Integer quality) {
     
-    this.msg = msg;
+    this.quality = quality;
     return this;
   }
 
    /**
-   * Error message.
-   * @return msg
+   * Resized image quality, percent.
+   * @return quality
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Error message.")
+  @ApiModelProperty(value = "Resized image quality, percent.")
 
-  public String getMsg() {
-    return msg;
+  public Integer getQuality() {
+    return quality;
   }
 
 
-  public void setMsg(String msg) {
-    this.msg = msg;
+  public void setQuality(Integer quality) {
+    this.quality = quality;
   }
 
 
@@ -121,24 +122,24 @@ public class OperationLog {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OperationLog operationLog = (OperationLog) o;
-    return Objects.equals(this.statusCode, operationLog.statusCode) &&
-        Objects.equals(this.type, operationLog.type) &&
-        Objects.equals(this.msg, operationLog.msg);
+    ResizeOptions resizeOptions = (ResizeOptions) o;
+    return Objects.equals(this.width, resizeOptions.width) &&
+        Objects.equals(this.height, resizeOptions.height) &&
+        Objects.equals(this.quality, resizeOptions.quality);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(statusCode, type, msg);
+    return Objects.hash(width, height, quality);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OperationLog {\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+    sb.append("class ResizeOptions {\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("}");
     return sb.toString();
   }

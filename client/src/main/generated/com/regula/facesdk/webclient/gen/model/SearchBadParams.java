@@ -25,64 +25,91 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * RecognizeImageAllOf
+ * SearchBadParams
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class RecognizeImageAllOf {
-  public static final String SERIALIZED_NAME_SIMILARITY = "similarity";
-  @SerializedName(SERIALIZED_NAME_SIMILARITY)
-  private Float similarity;
+public class SearchBadParams {
+  public static final String SERIALIZED_NAME_MSG = "msg";
+  @SerializedName(SERIALIZED_NAME_MSG)
+  private String msg = "Descriptor already calculated";
 
-  public static final String SERIALIZED_NAME_DISTANCE = "distance";
-  @SerializedName(SERIALIZED_NAME_DISTANCE)
-  private Float distance;
+  public static final String SERIALIZED_NAME_STATUS_CODE = "statusCode";
+  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
+  private Integer statusCode = 400;
 
-  public RecognizeImageAllOf() { 
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private String type = "BadParamsException";
+
+  public SearchBadParams() { 
   }
 
-  public RecognizeImageAllOf similarity(Float similarity) {
+  public SearchBadParams msg(String msg) {
     
-    this.similarity = similarity;
+    this.msg = msg;
     return this;
   }
 
    /**
-   * Similarity score.
-   * @return similarity
+   * Get msg
+   * @return msg
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Similarity score.")
+  @ApiModelProperty(value = "")
 
-  public Float getSimilarity() {
-    return similarity;
+  public String getMsg() {
+    return msg;
   }
 
 
-  public void setSimilarity(Float similarity) {
-    this.similarity = similarity;
+  public void setMsg(String msg) {
+    this.msg = msg;
   }
 
 
-  public RecognizeImageAllOf distance(Float distance) {
+  public SearchBadParams statusCode(Integer statusCode) {
     
-    this.distance = distance;
+    this.statusCode = statusCode;
     return this;
   }
 
    /**
-   * Similarity distance score: the lower the distance, the higher the face&#39;s similarity.
-   * @return distance
+   * Get statusCode
+   * @return statusCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Similarity distance score: the lower the distance, the higher the face's similarity.")
+  @ApiModelProperty(value = "")
 
-  public Float getDistance() {
-    return distance;
+  public Integer getStatusCode() {
+    return statusCode;
   }
 
 
-  public void setDistance(Float distance) {
-    this.distance = distance;
+  public void setStatusCode(Integer statusCode) {
+    this.statusCode = statusCode;
+  }
+
+
+  public SearchBadParams type(String type) {
+    
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getType() {
+    return type;
+  }
+
+
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -94,22 +121,24 @@ public class RecognizeImageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RecognizeImageAllOf recognizeImageAllOf = (RecognizeImageAllOf) o;
-    return Objects.equals(this.similarity, recognizeImageAllOf.similarity) &&
-        Objects.equals(this.distance, recognizeImageAllOf.distance);
+    SearchBadParams searchBadParams = (SearchBadParams) o;
+    return Objects.equals(this.msg, searchBadParams.msg) &&
+        Objects.equals(this.statusCode, searchBadParams.statusCode) &&
+        Objects.equals(this.type, searchBadParams.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(similarity, distance);
+    return Objects.hash(msg, statusCode, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RecognizeImageAllOf {\n");
-    sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
-    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
+    sb.append("class SearchBadParams {\n");
+    sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

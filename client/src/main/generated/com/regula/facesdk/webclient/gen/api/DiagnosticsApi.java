@@ -27,10 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.regula.facesdk.webclient.gen.model.PersonCreatedResponse;
-import com.regula.facesdk.webclient.gen.model.SearchBadParams;
-import com.regula.facesdk.webclient.gen.model.SearchRequest;
-import com.regula.facesdk.webclient.gen.model.SearchResult;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -38,16 +34,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SearchApi {
+public class DiagnosticsApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public SearchApi() {
+    public DiagnosticsApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public SearchApi(ApiClient apiClient) {
+    public DiagnosticsApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -76,8 +72,7 @@ public class SearchApi {
     }
 
     /**
-     * Build call for search
-     * @param searchRequest  (required)
+     * Build call for readiness
      * @param xRequestID Request header label. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -85,12 +80,11 @@ public class SearchApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; the search result is returned. </td><td>  -  </td></tr>
-        <tr><td> 201 </td><td> New person created with the search photo and the data specified. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> License is OK. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad license: deactivated, expired, etc. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCall(SearchRequest searchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call readinessCall(String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -105,10 +99,10 @@ public class SearchApi {
             basePath = null;
         }
 
-        Object localVarPostBody = searchRequest;
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/search";
+        String localVarPath = "/api/readiness";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -129,7 +123,7 @@ public class SearchApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -137,68 +131,58 @@ public class SearchApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchValidateBeforeCall(SearchRequest searchRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'searchRequest' is set
-        if (searchRequest == null) {
-            throw new ApiException("Missing the required parameter 'searchRequest' when calling search(Async)");
-        }
+    private okhttp3.Call readinessValidateBeforeCall(String xRequestID, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = searchCall(searchRequest, xRequestID, _callback);
+        okhttp3.Call localVarCall = readinessCall(xRequestID, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Find person by image in groups
+     * Checking the license status
      * 
-     * @param searchRequest  (required)
      * @param xRequestID Request header label. (optional)
-     * @return SearchResult
+     * @return Map&lt;String, Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; the search result is returned. </td><td>  -  </td></tr>
-        <tr><td> 201 </td><td> New person created with the search photo and the data specified. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> License is OK. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad license: deactivated, expired, etc. </td><td>  -  </td></tr>
      </table>
      */
-    public SearchResult search(SearchRequest searchRequest, String xRequestID) throws ApiException {
-        ApiResponse<SearchResult> localVarResp = searchWithHttpInfo(searchRequest, xRequestID);
+    public Map<String, Object> readiness(String xRequestID) throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = readinessWithHttpInfo(xRequestID);
         return localVarResp.getData();
     }
 
     /**
-     * Find person by image in groups
+     * Checking the license status
      * 
-     * @param searchRequest  (required)
      * @param xRequestID Request header label. (optional)
-     * @return ApiResponse&lt;SearchResult&gt;
+     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; the search result is returned. </td><td>  -  </td></tr>
-        <tr><td> 201 </td><td> New person created with the search photo and the data specified. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> License is OK. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad license: deactivated, expired, etc. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SearchResult> searchWithHttpInfo(SearchRequest searchRequest, String xRequestID) throws ApiException {
-        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, xRequestID, null);
-        Type localVarReturnType = new TypeToken<SearchResult>(){}.getType();
+    public ApiResponse<Map<String, Object>> readinessWithHttpInfo(String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = readinessValidateBeforeCall(xRequestID, null);
+        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Find person by image in groups (asynchronously)
+     * Checking the license status (asynchronously)
      * 
-     * @param searchRequest  (required)
      * @param xRequestID Request header label. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -206,15 +190,14 @@ public class SearchApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation; the search result is returned. </td><td>  -  </td></tr>
-        <tr><td> 201 </td><td> New person created with the search photo and the data specified. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> License is OK. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad license: deactivated, expired, etc. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchAsync(SearchRequest searchRequest, String xRequestID, final ApiCallback<SearchResult> _callback) throws ApiException {
+    public okhttp3.Call readinessAsync(String xRequestID, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = searchValidateBeforeCall(searchRequest, xRequestID, _callback);
-        Type localVarReturnType = new TypeToken<SearchResult>(){}.getType();
+        okhttp3.Call localVarCall = readinessValidateBeforeCall(xRequestID, _callback);
+        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
