@@ -172,11 +172,11 @@ public class RecognizeImage {
   }
 
    /**
-   * Returned image S3 path.
+   * Returned image path.
    * @return path
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Returned image S3 path.")
+  @ApiModelProperty(value = "Returned image path.")
 
   public String getPath() {
     return path;
