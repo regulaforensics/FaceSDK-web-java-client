@@ -103,11 +103,11 @@ public class ImageFieldsImage {
   }
 
    /**
-   * Image URL, can be a link to Amazon S3, Google Storage, File System, or HTTP(S).
+   * Image URL.
    * @return imageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Image URL, can be a link to Amazon S3, Google Storage, File System, or HTTP(S).")
+  @ApiModelProperty(value = "Image URL.")
 
   public String getImageUrl() {
     return imageUrl;

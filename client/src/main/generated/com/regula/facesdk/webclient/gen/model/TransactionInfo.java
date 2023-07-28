@@ -171,11 +171,11 @@ public class TransactionInfo {
   }
 
    /**
-   * An S3 link to the session video.
+   * Link to the session video.
    * @return video
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "An S3 link to the session video.")
+  @ApiModelProperty(value = "Link to the session video.")
 
   public String getVideo() {
     return video;
@@ -248,11 +248,11 @@ public class TransactionInfo {
   }
 
    /**
-   * S3 link to the portrait.
+   * Link to the portrait.
    * @return portrait
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "S3 link to the portrait.")
+  @ApiModelProperty(value = "Link to the portrait.")
 
   public String getPortrait() {
     return portrait;
