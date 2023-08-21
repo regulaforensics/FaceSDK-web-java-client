@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.FaceImageQualityGroups;
+import com.regula.facesdk.webclient.gen.model.FaceImageQualityGroupsStrings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class QualityDetailsGroups {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private FaceImageQualityGroups name;
+  private FaceImageQualityGroupsStrings name;
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
@@ -72,7 +73,7 @@ public class QualityDetailsGroups {
   }
 
 
-  public QualityDetailsGroups name(FaceImageQualityGroups name) {
+  public QualityDetailsGroups name(FaceImageQualityGroupsStrings name) {
     
     this.name = name;
     return this;
@@ -85,12 +86,12 @@ public class QualityDetailsGroups {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public FaceImageQualityGroups getName() {
+  public FaceImageQualityGroupsStrings getName() {
     return name;
   }
 
 
-  public void setName(FaceImageQualityGroups name) {
+  public void setName(FaceImageQualityGroupsStrings name) {
     this.name = name;
   }
 
