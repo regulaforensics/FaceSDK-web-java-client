@@ -42,7 +42,7 @@ public class DetectionFace {
 
   public static final String SERIALIZED_NAME_ROTATION_ANGLE = "rotationAngle";
   @SerializedName(SERIALIZED_NAME_ROTATION_ANGLE)
-  private Float rotationAngle = null;
+  private BigDecimal rotationAngle;
 
   public static final String SERIALIZED_NAME_ROI = "roi";
   @SerializedName(SERIALIZED_NAME_ROI)
@@ -51,6 +51,10 @@ public class DetectionFace {
   public static final String SERIALIZED_NAME_THUMBNAIL = "thumbnail";
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
   private byte[] thumbnail;
+
+  public static final String SERIALIZED_NAME_CROP = "crop";
+  @SerializedName(SERIALIZED_NAME_CROP)
+  private byte[] crop;
 
   public DetectionFace() { 
   }
@@ -109,7 +113,7 @@ public class DetectionFace {
   }
 
 
-  public DetectionFace rotationAngle(Float rotationAngle) {
+  public DetectionFace rotationAngle(BigDecimal rotationAngle) {
     
     this.rotationAngle = rotationAngle;
     return this;
@@ -122,12 +126,12 @@ public class DetectionFace {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Angle of rotation of the face from the vertical axis, degrees.")
 
-  public Float getRotationAngle() {
+  public BigDecimal getRotationAngle() {
     return rotationAngle;
   }
 
 
-  public void setRotationAngle(Float rotationAngle) {
+  public void setRotationAngle(BigDecimal rotationAngle) {
     this.rotationAngle = rotationAngle;
   }
 
@@ -186,6 +190,29 @@ public class DetectionFace {
   }
 
 
+  public DetectionFace crop(byte[] crop) {
+    
+    this.crop = crop;
+    return this;
+  }
+
+   /**
+   * Get crop
+   * @return crop
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public byte[] getCrop() {
+    return crop;
+  }
+
+
+  public void setCrop(byte[] crop) {
+    this.crop = crop;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,12 +226,13 @@ public class DetectionFace {
         Objects.equals(this.landmarks, detectionFace.landmarks) &&
         Objects.equals(this.rotationAngle, detectionFace.rotationAngle) &&
         Objects.equals(this.roi, detectionFace.roi) &&
-        Arrays.equals(this.thumbnail, detectionFace.thumbnail);
+        Arrays.equals(this.thumbnail, detectionFace.thumbnail) &&
+        Arrays.equals(this.crop, detectionFace.crop);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(faceIndex, landmarks, rotationAngle, roi, Arrays.hashCode(thumbnail));
+    return Objects.hash(faceIndex, landmarks, rotationAngle, roi, Arrays.hashCode(thumbnail), Arrays.hashCode(crop));
   }
 
   @Override
@@ -216,6 +244,7 @@ public class DetectionFace {
     sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("    roi: ").append(toIndentedString(roi)).append("\n");
     sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
+    sb.append("    crop: ").append(toIndentedString(crop)).append("\n");
     sb.append("}");
     return sb.toString();
   }
