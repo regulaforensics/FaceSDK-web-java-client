@@ -42,7 +42,7 @@ public class DetectionFace {
 
   public static final String SERIALIZED_NAME_ROTATION_ANGLE = "rotationAngle";
   @SerializedName(SERIALIZED_NAME_ROTATION_ANGLE)
-  private Float rotationAngle = null;
+  private BigDecimal rotationAngle;
 
   public static final String SERIALIZED_NAME_ROI = "roi";
   @SerializedName(SERIALIZED_NAME_ROI)
@@ -109,7 +109,7 @@ public class DetectionFace {
   }
 
 
-  public DetectionFace rotationAngle(Float rotationAngle) {
+  public DetectionFace rotationAngle(BigDecimal rotationAngle) {
     
     this.rotationAngle = rotationAngle;
     return this;
@@ -122,12 +122,12 @@ public class DetectionFace {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Angle of rotation of the face from the vertical axis, degrees.")
 
-  public Float getRotationAngle() {
+  public BigDecimal getRotationAngle() {
     return rotationAngle;
   }
 
 
-  public void setRotationAngle(Float rotationAngle) {
+  public void setRotationAngle(BigDecimal rotationAngle) {
     this.rotationAngle = rotationAngle;
   }
 
