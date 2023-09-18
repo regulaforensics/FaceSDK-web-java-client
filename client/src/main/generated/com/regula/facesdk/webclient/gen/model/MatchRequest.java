@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.MatchImage;
+import com.regula.facesdk.webclient.gen.model.MatchRequestOutputImageParams;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -43,6 +44,10 @@ public class MatchRequest {
   public static final String SERIALIZED_NAME_IMAGES = "images";
   @SerializedName(SERIALIZED_NAME_IMAGES)
   private List<MatchImage> images = new ArrayList<MatchImage>();
+
+  public static final String SERIALIZED_NAME_OUTPUT_IMAGE_PARAMS = "outputImageParams";
+  @SerializedName(SERIALIZED_NAME_OUTPUT_IMAGE_PARAMS)
+  private MatchRequestOutputImageParams outputImageParams;
 
   public MatchRequest() { 
   }
@@ -121,6 +126,29 @@ public class MatchRequest {
   }
 
 
+  public MatchRequest outputImageParams(MatchRequestOutputImageParams outputImageParams) {
+    
+    this.outputImageParams = outputImageParams;
+    return this;
+  }
+
+   /**
+   * Get outputImageParams
+   * @return outputImageParams
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public MatchRequestOutputImageParams getOutputImageParams() {
+    return outputImageParams;
+  }
+
+
+  public void setOutputImageParams(MatchRequestOutputImageParams outputImageParams) {
+    this.outputImageParams = outputImageParams;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -132,12 +160,13 @@ public class MatchRequest {
     MatchRequest matchRequest = (MatchRequest) o;
     return Objects.equals(this.tag, matchRequest.tag) &&
         Objects.equals(this.thumbnails, matchRequest.thumbnails) &&
-        Objects.equals(this.images, matchRequest.images);
+        Objects.equals(this.images, matchRequest.images) &&
+        Objects.equals(this.outputImageParams, matchRequest.outputImageParams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, thumbnails, images);
+    return Objects.hash(tag, thumbnails, images, outputImageParams);
   }
 
   @Override
@@ -147,6 +176,7 @@ public class MatchRequest {
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
+    sb.append("    outputImageParams: ").append(toIndentedString(outputImageParams)).append("\n");
     sb.append("}");
     return sb.toString();
   }
