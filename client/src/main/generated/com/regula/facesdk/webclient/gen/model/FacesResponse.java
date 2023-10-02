@@ -55,10 +55,6 @@ public class FacesResponse {
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
   private byte[] thumbnail;
 
-  public static final String SERIALIZED_NAME_CROP = "crop";
-  @SerializedName(SERIALIZED_NAME_CROP)
-  private byte[] crop;
-
   public static final String SERIALIZED_NAME_PERSONS = "persons";
   @SerializedName(SERIALIZED_NAME_PERSONS)
   private List<PersonWithImages> persons = null;
@@ -197,29 +193,6 @@ public class FacesResponse {
   }
 
 
-  public FacesResponse crop(byte[] crop) {
-    
-    this.crop = crop;
-    return this;
-  }
-
-   /**
-   * Get crop
-   * @return crop
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public byte[] getCrop() {
-    return crop;
-  }
-
-
-  public void setCrop(byte[] crop) {
-    this.crop = crop;
-  }
-
-
   public FacesResponse persons(List<PersonWithImages> persons) {
     
     this.persons = persons;
@@ -265,13 +238,12 @@ public class FacesResponse {
         Objects.equals(this.rotationAngle, facesResponse.rotationAngle) &&
         Objects.equals(this.roi, facesResponse.roi) &&
         Arrays.equals(this.thumbnail, facesResponse.thumbnail) &&
-        Arrays.equals(this.crop, facesResponse.crop) &&
         Objects.equals(this.persons, facesResponse.persons);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(faceIndex, landmarks, rotationAngle, roi, Arrays.hashCode(thumbnail), Arrays.hashCode(crop), persons);
+    return Objects.hash(faceIndex, landmarks, rotationAngle, roi, Arrays.hashCode(thumbnail), persons);
   }
 
   @Override
@@ -283,7 +255,6 @@ public class FacesResponse {
     sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("    roi: ").append(toIndentedString(roi)).append("\n");
     sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
-    sb.append("    crop: ").append(toIndentedString(crop)).append("\n");
     sb.append("    persons: ").append(toIndentedString(persons)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -36,7 +36,7 @@ import java.util.Map;
 public class RecognizeImage {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private String id;
 
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "contentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
@@ -73,7 +73,7 @@ public class RecognizeImage {
   public RecognizeImage() { 
   }
 
-  public RecognizeImage id(Integer id) {
+  public RecognizeImage id(String id) {
     
     this.id = id;
     return this;
@@ -86,12 +86,12 @@ public class RecognizeImage {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Response image ID. The list is sorted by decreasing ID value.")
 
-  public Integer getId() {
+  public String getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(String id) {
     this.id = id;
   }
 
