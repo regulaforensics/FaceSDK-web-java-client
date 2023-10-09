@@ -88,7 +88,7 @@ public class GroupApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
+        <tr><td> 208 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -166,7 +166,7 @@ public class GroupApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
+        <tr><td> 208 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -185,7 +185,7 @@ public class GroupApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
+        <tr><td> 208 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
@@ -206,7 +206,7 @@ public class GroupApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
+        <tr><td> 208 </td><td> Successful operation; return group. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
