@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.regula.facesdk.webclient.gen.model.TransactionInfo;
+import java.util.UUID;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -84,7 +85,7 @@ public class Liveness20Api {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLivenessTransactionInfoCall(Integer transactionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLivenessTransactionInfoCall(UUID transactionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -135,7 +136,7 @@ public class Liveness20Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLivenessTransactionInfoValidateBeforeCall(Integer transactionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLivenessTransactionInfoValidateBeforeCall(UUID transactionId, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'transactionId' is set
         if (transactionId == null) {
@@ -160,7 +161,7 @@ public class Liveness20Api {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public TransactionInfo getLivenessTransactionInfo(Integer transactionId) throws ApiException {
+    public TransactionInfo getLivenessTransactionInfo(UUID transactionId) throws ApiException {
         ApiResponse<TransactionInfo> localVarResp = getLivenessTransactionInfoWithHttpInfo(transactionId);
         return localVarResp.getData();
     }
@@ -177,7 +178,7 @@ public class Liveness20Api {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TransactionInfo> getLivenessTransactionInfoWithHttpInfo(Integer transactionId) throws ApiException {
+    public ApiResponse<TransactionInfo> getLivenessTransactionInfoWithHttpInfo(UUID transactionId) throws ApiException {
         okhttp3.Call localVarCall = getLivenessTransactionInfoValidateBeforeCall(transactionId, null);
         Type localVarReturnType = new TypeToken<TransactionInfo>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -196,7 +197,7 @@ public class Liveness20Api {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLivenessTransactionInfoAsync(Integer transactionId, final ApiCallback<TransactionInfo> _callback) throws ApiException {
+    public okhttp3.Call getLivenessTransactionInfoAsync(UUID transactionId, final ApiCallback<TransactionInfo> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getLivenessTransactionInfoValidateBeforeCall(transactionId, _callback);
         Type localVarReturnType = new TypeToken<TransactionInfo>(){}.getType();
