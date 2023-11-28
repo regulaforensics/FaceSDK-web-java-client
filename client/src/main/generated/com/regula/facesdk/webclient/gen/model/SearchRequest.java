@@ -30,6 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * SearchRequest
@@ -42,7 +43,7 @@ public class SearchRequest {
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  private List<Integer> groupIds = null;
+  private List<UUID> groupIds = null;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
@@ -94,15 +95,15 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest groupIds(List<Integer> groupIds) {
+  public SearchRequest groupIds(List<UUID> groupIds) {
     
     this.groupIds = groupIds;
     return this;
   }
 
-  public SearchRequest addGroupIdsItem(Integer groupIdsItem) {
+  public SearchRequest addGroupIdsItem(UUID groupIdsItem) {
     if (this.groupIds == null) {
-      this.groupIds = new ArrayList<Integer>();
+      this.groupIds = new ArrayList<UUID>();
     }
     this.groupIds.add(groupIdsItem);
     return this;
@@ -115,12 +116,12 @@ public class SearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "IDs of the groups in which the search is performed.")
 
-  public List<Integer> getGroupIds() {
+  public List<UUID> getGroupIds() {
     return groupIds;
   }
 
 
-  public void setGroupIds(List<Integer> groupIds) {
+  public void setGroupIds(List<UUID> groupIds) {
     this.groupIds = groupIds;
   }
 
