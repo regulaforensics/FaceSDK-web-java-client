@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.FaceQualityScenarios;
 import com.regula.facesdk.webclient.gen.model.OutputImageParams;
+import com.regula.facesdk.webclient.gen.model.ProcessParamAttributes;
 import com.regula.facesdk.webclient.gen.model.QualityRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -51,7 +52,7 @@ public class ProcessParam {
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  private Boolean attributes = false;
+  private ProcessParamAttributes attributes;
 
   public ProcessParam() { 
   }
@@ -148,25 +149,25 @@ public class ProcessParam {
   }
 
 
-  public ProcessParam attributes(Boolean attributes) {
+  public ProcessParam attributes(ProcessParamAttributes attributes) {
     
     this.attributes = attributes;
     return this;
   }
 
    /**
-   * Whether to evaluate attributes, such as age and emotions.
+   * Get attributes
    * @return attributes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Whether to evaluate attributes, such as age and emotions.")
+  @ApiModelProperty(value = "")
 
-  public Boolean getAttributes() {
+  public ProcessParamAttributes getAttributes() {
     return attributes;
   }
 
 
-  public void setAttributes(Boolean attributes) {
+  public void setAttributes(ProcessParamAttributes attributes) {
     this.attributes = attributes;
   }
 

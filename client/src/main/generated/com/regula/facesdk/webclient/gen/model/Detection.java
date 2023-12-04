@@ -20,15 +20,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.DetectionAttributes;
 import com.regula.facesdk.webclient.gen.model.DetectionQuality;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Detection
@@ -41,7 +40,7 @@ public class Detection {
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  private Map<String, Object> attributes = null;
+  private DetectionAttributes attributes;
 
   public static final String SERIALIZED_NAME_LANDMARKS = "landmarks";
   @SerializedName(SERIALIZED_NAME_LANDMARKS)
@@ -85,17 +84,9 @@ public class Detection {
   }
 
 
-  public Detection attributes(Map<String, Object> attributes) {
+  public Detection attributes(DetectionAttributes attributes) {
     
     this.attributes = attributes;
-    return this;
-  }
-
-  public Detection putAttributesItem(String key, Object attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new HashMap<String, Object>();
-    }
-    this.attributes.put(key, attributesItem);
     return this;
   }
 
@@ -104,14 +95,14 @@ public class Detection {
    * @return attributes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "{\"age\":\"adult\",\"emotion\":\"smile\"}", value = "")
+  @ApiModelProperty(value = "")
 
-  public Map<String, Object> getAttributes() {
+  public DetectionAttributes getAttributes() {
     return attributes;
   }
 
 
-  public void setAttributes(Map<String, Object> attributes) {
+  public void setAttributes(DetectionAttributes attributes) {
     this.attributes = attributes;
   }
 
