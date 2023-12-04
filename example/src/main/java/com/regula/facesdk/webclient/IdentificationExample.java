@@ -14,7 +14,7 @@ public class IdentificationExample {
     public static void main(String[] args) throws IOException {
         var apiBasePath = System.getenv(API_BASE_PATH);
         if (apiBasePath == null) {
-            apiBasePath = "http://127.0.0.0:41101";
+            apiBasePath = "http://127.0.0.1:41101";
         }
         byte[] face1 = readFile("face_1.jpg");
         byte[] face2 = readFile("face_2.jpg");
