@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.DetectRequestAttributes;
 import com.regula.facesdk.webclient.gen.model.ProcessParam;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -46,10 +45,6 @@ public class DetectRequest {
   public static final String SERIALIZED_NAME_THUMBNAILS = "thumbnails";
   @SerializedName(SERIALIZED_NAME_THUMBNAILS)
   private Boolean thumbnails = false;
-
-  public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
-  @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  private DetectRequestAttributes attributes;
 
   public DetectRequest() { 
   }
@@ -146,29 +141,6 @@ public class DetectRequest {
   }
 
 
-  public DetectRequest attributes(DetectRequestAttributes attributes) {
-    
-    this.attributes = attributes;
-    return this;
-  }
-
-   /**
-   * Get attributes
-   * @return attributes
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public DetectRequestAttributes getAttributes() {
-    return attributes;
-  }
-
-
-  public void setAttributes(DetectRequestAttributes attributes) {
-    this.attributes = attributes;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -181,13 +153,12 @@ public class DetectRequest {
     return Objects.equals(this.tag, detectRequest.tag) &&
         Objects.equals(this.processParam, detectRequest.processParam) &&
         Arrays.equals(this.image, detectRequest.image) &&
-        Objects.equals(this.thumbnails, detectRequest.thumbnails) &&
-        Objects.equals(this.attributes, detectRequest.attributes);
+        Objects.equals(this.thumbnails, detectRequest.thumbnails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, processParam, Arrays.hashCode(image), thumbnails, attributes);
+    return Objects.hash(tag, processParam, Arrays.hashCode(image), thumbnails);
   }
 
   @Override
@@ -198,7 +169,6 @@ public class DetectRequest {
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
-    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -20,82 +20,81 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.SearchParametersCreatePerson;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+import java.util.Map;
 
 /**
- * Request search data.
+ * DetectionAttributes
  */
-@ApiModel(description = "Request search data.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SearchParameters {
-  public static final String SERIALIZED_NAME_CREATE_PERSON = "createPerson";
-  @SerializedName(SERIALIZED_NAME_CREATE_PERSON)
-  private SearchParametersCreatePerson createPerson;
+public class DetectionAttributes {
+  public static final String SERIALIZED_NAME_DETAILS = "details";
+  @SerializedName(SERIALIZED_NAME_DETAILS)
+  private List<Map<String, Object>> details = null;
 
-  public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
-  @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  private List<UUID> groupIds = null;
+  public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
+  @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
+  private BigDecimal elapsedTime;
 
-  public SearchParameters() { 
+  public DetectionAttributes() { 
   }
 
-  public SearchParameters createPerson(SearchParametersCreatePerson createPerson) {
+  public DetectionAttributes details(List<Map<String, Object>> details) {
     
-    this.createPerson = createPerson;
+    this.details = details;
+    return this;
+  }
+
+  public DetectionAttributes addDetailsItem(Map<String, Object> detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<Map<String, Object>>();
+    }
+    this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * Get createPerson
-   * @return createPerson
+   * Get details
+   * @return details
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public SearchParametersCreatePerson getCreatePerson() {
-    return createPerson;
+  public List<Map<String, Object>> getDetails() {
+    return details;
   }
 
 
-  public void setCreatePerson(SearchParametersCreatePerson createPerson) {
-    this.createPerson = createPerson;
+  public void setDetails(List<Map<String, Object>> details) {
+    this.details = details;
   }
 
 
-  public SearchParameters groupIds(List<UUID> groupIds) {
+  public DetectionAttributes elapsedTime(BigDecimal elapsedTime) {
     
-    this.groupIds = groupIds;
-    return this;
-  }
-
-  public SearchParameters addGroupIdsItem(UUID groupIdsItem) {
-    if (this.groupIds == null) {
-      this.groupIds = new ArrayList<UUID>();
-    }
-    this.groupIds.add(groupIdsItem);
+    this.elapsedTime = elapsedTime;
     return this;
   }
 
    /**
-   * IDs of the groups in which the search is performed.
-   * @return groupIds
+   * The elapsed time for attribute detection.
+   * @return elapsedTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "IDs of the groups in which the search is performed.")
+  @ApiModelProperty(value = "The elapsed time for attribute detection.")
 
-  public List<UUID> getGroupIds() {
-    return groupIds;
+  public BigDecimal getElapsedTime() {
+    return elapsedTime;
   }
 
 
-  public void setGroupIds(List<UUID> groupIds) {
-    this.groupIds = groupIds;
+  public void setElapsedTime(BigDecimal elapsedTime) {
+    this.elapsedTime = elapsedTime;
   }
 
 
@@ -107,22 +106,22 @@ public class SearchParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchParameters searchParameters = (SearchParameters) o;
-    return Objects.equals(this.createPerson, searchParameters.createPerson) &&
-        Objects.equals(this.groupIds, searchParameters.groupIds);
+    DetectionAttributes detectionAttributes = (DetectionAttributes) o;
+    return Objects.equals(this.details, detectionAttributes.details) &&
+        Objects.equals(this.elapsedTime, detectionAttributes.elapsedTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createPerson, groupIds);
+    return Objects.hash(details, elapsedTime);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchParameters {\n");
-    sb.append("    createPerson: ").append(toIndentedString(createPerson)).append("\n");
-    sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("class DetectionAttributes {\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    elapsedTime: ").append(toIndentedString(elapsedTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
