@@ -5,6 +5,7 @@ import com.regula.facesdk.webclient.ApiException;
 import com.regula.facesdk.webclient.gen.model.*;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
@@ -16,10 +17,12 @@ public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
     }
 
     public Person createPerson(PersonFields personFields, String xRequestID) throws ApiException {
+        if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
         return super.createPerson(personFields, xRequestID);
     }
 
     public Person createPerson(PersonFields personFields) throws ApiException {
+        if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
         return this.createPerson(personFields, "");
     }
 
@@ -74,9 +77,11 @@ public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
     }
 
     public void updatePerson(UUID personId, PersonFields personFields, String xRequestID) throws ApiException {
+        if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
         super.updatePerson(personId, personFields, xRequestID);
     }
     public void updatePerson(UUID personId, PersonFields personFields) throws ApiException {
+        if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
         super.updatePerson(personId, personFields, "");
     }
 }
