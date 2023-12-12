@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,13 +52,9 @@ public class TransactionInfo {
   @SerializedName(SERIALIZED_NAME_VIDEO)
   private String video;
 
-  public static final String SERIALIZED_NAME_IMAGES = "images";
-  @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<String> images = null;
-
-  public static final String SERIALIZED_NAME_ESTIMATED_AGE = "estimatedAge";
-  @SerializedName(SERIALIZED_NAME_ESTIMATED_AGE)
-  private Integer estimatedAge;
+  public static final String SERIALIZED_NAME_AGE = "age";
+  @SerializedName(SERIALIZED_NAME_AGE)
+  private Integer age;
 
   public static final String SERIALIZED_NAME_PORTRAIT = "portrait";
   @SerializedName(SERIALIZED_NAME_PORTRAIT)
@@ -187,57 +182,26 @@ public class TransactionInfo {
   }
 
 
-  public TransactionInfo images(List<String> images) {
+  public TransactionInfo age(Integer age) {
     
-    this.images = images;
-    return this;
-  }
-
-  public TransactionInfo addImagesItem(String imagesItem) {
-    if (this.images == null) {
-      this.images = new ArrayList<String>();
-    }
-    this.images.add(imagesItem);
-    return this;
-  }
-
-   /**
-   * List of base64 images
-   * @return images
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "List of base64 images")
-
-  public List<String> getImages() {
-    return images;
-  }
-
-
-  public void setImages(List<String> images) {
-    this.images = images;
-  }
-
-
-  public TransactionInfo estimatedAge(Integer estimatedAge) {
-    
-    this.estimatedAge = estimatedAge;
+    this.age = age;
     return this;
   }
 
    /**
    * Approximate age with an accuracy of +/-3 years.
-   * @return estimatedAge
+   * @return age
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Approximate age with an accuracy of +/-3 years.")
 
-  public Integer getEstimatedAge() {
-    return estimatedAge;
+  public Integer getAge() {
+    return age;
   }
 
 
-  public void setEstimatedAge(Integer estimatedAge) {
-    this.estimatedAge = estimatedAge;
+  public void setAge(Integer age) {
+    this.age = age;
   }
 
 
@@ -309,15 +273,14 @@ public class TransactionInfo {
         Objects.equals(this.tag, transactionInfo.tag) &&
         Objects.equals(this.transactionId, transactionInfo.transactionId) &&
         Objects.equals(this.video, transactionInfo.video) &&
-        Objects.equals(this.images, transactionInfo.images) &&
-        Objects.equals(this.estimatedAge, transactionInfo.estimatedAge) &&
+        Objects.equals(this.age, transactionInfo.age) &&
         Objects.equals(this.portrait, transactionInfo.portrait) &&
         Objects.equals(this.metadata, transactionInfo.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, status, tag, transactionId, video, images, estimatedAge, portrait, metadata);
+    return Objects.hash(code, status, tag, transactionId, video, age, portrait, metadata);
   }
 
   @Override
@@ -329,8 +292,7 @@ public class TransactionInfo {
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
-    sb.append("    images: ").append(toIndentedString(images)).append("\n");
-    sb.append("    estimatedAge: ").append(toIndentedString(estimatedAge)).append("\n");
+    sb.append("    age: ").append(toIndentedString(age)).append("\n");
     sb.append("    portrait: ").append(toIndentedString(portrait)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
