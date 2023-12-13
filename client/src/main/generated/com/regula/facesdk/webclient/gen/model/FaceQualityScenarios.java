@@ -44,7 +44,9 @@ public enum FaceQualityScenarios {
   
   CROP_ALL_FACES("CropAllFaces"),
   
-  THUMBNAIL("Thumbnail");
+  THUMBNAIL("Thumbnail"),
+  
+  EMPTY("");
 
   private String value;
 
