@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.FaceAttribute;
+import com.regula.facesdk.webclient.gen.model.FaceQualityConfigName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -35,7 +35,7 @@ import java.util.List;
 public class QualityConfig {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private FaceAttribute name;
+  private FaceQualityConfigName name;
 
   public static final String SERIALIZED_NAME_RANGE = "range";
   @SerializedName(SERIALIZED_NAME_RANGE)
@@ -44,7 +44,7 @@ public class QualityConfig {
   public QualityConfig() { 
   }
 
-  public QualityConfig name(FaceAttribute name) {
+  public QualityConfig name(FaceQualityConfigName name) {
     
     this.name = name;
     return this;
@@ -57,12 +57,12 @@ public class QualityConfig {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public FaceAttribute getName() {
+  public FaceQualityConfigName getName() {
     return name;
   }
 
 
-  public void setName(FaceAttribute name) {
+  public void setName(FaceQualityConfigName name) {
     this.name = name;
   }
 
