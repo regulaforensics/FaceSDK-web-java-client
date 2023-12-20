@@ -61,6 +61,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageDetection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequest.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParams.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParamsCrop.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/OperationLog.java
