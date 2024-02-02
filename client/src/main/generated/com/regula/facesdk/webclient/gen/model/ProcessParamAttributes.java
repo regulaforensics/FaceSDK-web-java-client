@@ -1,6 +1,6 @@
 /*
  * Regula FaceSDK Web API
- * Regula FaceSDK Web API # Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.QualityConfig;
+import com.regula.facesdk.webclient.gen.model.AttributeConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -35,20 +35,20 @@ import java.util.List;
 public class ProcessParamAttributes {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private List<QualityConfig> config = null;
+  private List<AttributeConfig> config = null;
 
   public ProcessParamAttributes() { 
   }
 
-  public ProcessParamAttributes config(List<QualityConfig> config) {
+  public ProcessParamAttributes config(List<AttributeConfig> config) {
     
     this.config = config;
     return this;
   }
 
-  public ProcessParamAttributes addConfigItem(QualityConfig configItem) {
+  public ProcessParamAttributes addConfigItem(AttributeConfig configItem) {
     if (this.config == null) {
-      this.config = new ArrayList<QualityConfig>();
+      this.config = new ArrayList<AttributeConfig>();
     }
     this.config.add(configItem);
     return this;
@@ -61,12 +61,12 @@ public class ProcessParamAttributes {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<QualityConfig> getConfig() {
+  public List<AttributeConfig> getConfig() {
     return config;
   }
 
 
-  public void setConfig(List<QualityConfig> config) {
+  public void setConfig(List<AttributeConfig> config) {
     this.config = config;
   }
 

@@ -21,6 +21,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/api/Liveness20Api.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/MatchingApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/PersonApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/SearchApi.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/AttributeConfig.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Crop.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResponse.java
@@ -30,6 +31,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/Detection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionAttributes.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionFace.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionQuality.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FaceAttribute.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityAlignType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityGroups.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityGroupsStrings.java
