@@ -1,6 +1,6 @@
 /*
  * Regula FaceSDK Web API
- * Regula FaceSDK Web API # Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -38,10 +38,6 @@ import java.util.UUID;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SearchPerson {
-  public static final String SERIALIZED_NAME_TAG = "tag";
-  @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -76,29 +72,6 @@ public class SearchPerson {
 
   public SearchPerson() { 
   }
-
-  public SearchPerson tag(String tag) {
-    
-    this.tag = tag;
-    return this;
-  }
-
-   /**
-   * Session identificator.
-   * @return tag
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Session identificator.")
-
-  public String getTag() {
-    return tag;
-  }
-
-
-  public void setTag(String tag) {
-    this.tag = tag;
-  }
-
 
   public SearchPerson name(String name) {
     
@@ -317,8 +290,7 @@ public class SearchPerson {
       return false;
     }
     SearchPerson searchPerson = (SearchPerson) o;
-    return Objects.equals(this.tag, searchPerson.tag) &&
-        Objects.equals(this.name, searchPerson.name) &&
+    return Objects.equals(this.name, searchPerson.name) &&
         Objects.equals(this.metadata, searchPerson.metadata) &&
         Objects.equals(this.groups, searchPerson.groups) &&
         Objects.equals(this.id, searchPerson.id) &&
@@ -330,14 +302,13 @@ public class SearchPerson {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, name, metadata, groups, id, createdAt, updatedAt, detection, images);
+    return Objects.hash(name, metadata, groups, id, createdAt, updatedAt, detection, images);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SearchPerson {\n");
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
