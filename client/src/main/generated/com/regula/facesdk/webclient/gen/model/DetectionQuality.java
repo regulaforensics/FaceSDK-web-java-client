@@ -49,11 +49,11 @@ public class DetectionQuality {
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
-  private Float score = null;
+  private Float score;
 
   public static final String SERIALIZED_NAME_TIMER = "timer";
   @SerializedName(SERIALIZED_NAME_TIMER)
-  private Float timer = null;
+  private Float timer;
 
   public DetectionQuality() { 
   }

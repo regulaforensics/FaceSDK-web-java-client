@@ -52,7 +52,7 @@ public class QualityDetail {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Float value = null;
+  private Float value;
 
   public QualityDetail() { 
   }
