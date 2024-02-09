@@ -20,53 +20,81 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.Group;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
- * GroupPageAllOf
+ * DetectionAttributes
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupPageAllOf {
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<Group> items = null;
+public class DetectionAttributes {
+  public static final String SERIALIZED_NAME_DETAILS = "details";
+  @SerializedName(SERIALIZED_NAME_DETAILS)
+  private List<Map<String, Object>> details = null;
 
-  public GroupPageAllOf() { 
+  public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
+  @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
+  private BigDecimal elapsedTime;
+
+  public DetectionAttributes() { 
   }
 
-  public GroupPageAllOf items(List<Group> items) {
+  public DetectionAttributes details(List<Map<String, Object>> details) {
     
-    this.items = items;
+    this.details = details;
     return this;
   }
 
-  public GroupPageAllOf addItemsItem(Group itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<Group>();
+  public DetectionAttributes addDetailsItem(Map<String, Object> detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<Map<String, Object>>();
     }
-    this.items.add(itemsItem);
+    this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * Array of Groups that are found during the search.
-   * @return items
+   * Get details
+   * @return details
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Array of Groups that are found during the search.")
+  @ApiModelProperty(value = "")
 
-  public List<Group> getItems() {
-    return items;
+  public List<Map<String, Object>> getDetails() {
+    return details;
   }
 
 
-  public void setItems(List<Group> items) {
-    this.items = items;
+  public void setDetails(List<Map<String, Object>> details) {
+    this.details = details;
+  }
+
+
+  public DetectionAttributes elapsedTime(BigDecimal elapsedTime) {
+    
+    this.elapsedTime = elapsedTime;
+    return this;
+  }
+
+   /**
+   * The elapsed time for attribute detection.
+   * @return elapsedTime
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The elapsed time for attribute detection.")
+
+  public BigDecimal getElapsedTime() {
+    return elapsedTime;
+  }
+
+
+  public void setElapsedTime(BigDecimal elapsedTime) {
+    this.elapsedTime = elapsedTime;
   }
 
 
@@ -78,20 +106,22 @@ public class GroupPageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupPageAllOf groupPageAllOf = (GroupPageAllOf) o;
-    return Objects.equals(this.items, groupPageAllOf.items);
+    DetectionAttributes detectionAttributes = (DetectionAttributes) o;
+    return Objects.equals(this.details, detectionAttributes.details) &&
+        Objects.equals(this.elapsedTime, detectionAttributes.elapsedTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items);
+    return Objects.hash(details, elapsedTime);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupPageAllOf {\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
+    sb.append("class DetectionAttributes {\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    elapsedTime: ").append(toIndentedString(elapsedTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

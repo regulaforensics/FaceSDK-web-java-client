@@ -4,6 +4,7 @@ import com.regula.facesdk.webclient.ApiClient;
 import com.regula.facesdk.webclient.ApiException;
 import com.regula.facesdk.webclient.gen.model.*;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
@@ -15,9 +16,11 @@ public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
     }
 
     public Group createGroup(GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+        if (groupToCreate.getMetadata() == null) groupToCreate.setMetadata(new HashMap<String, Object>());
         return super.createGroup(groupToCreate, xRequestID);
     }
     public Group createGroup(GroupToCreate groupToCreate) throws ApiException {
+        if (groupToCreate.getMetadata() == null) groupToCreate.setMetadata(new HashMap<String, Object>());
         return this.createGroup(groupToCreate, "");
     }
 
@@ -50,10 +53,12 @@ public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
     }
 
     public void updateGroup(UUID groupId, GroupToCreate groupToCreate, String xRequestID) throws ApiException {
+        if (groupToCreate.getMetadata() == null) groupToCreate.setMetadata(new HashMap<String, Object>());
         super.updateGroup(groupId, groupToCreate, xRequestID);
     }
-    public void updateGroup(Integer groupId, GroupToCreate groupToCreate) throws ApiException {
-        this.updateGroup(groupId, groupToCreate);
+    public void updateGroup(UUID groupId, GroupToCreate groupToCreate) throws ApiException {
+        if (groupToCreate.getMetadata() == null) groupToCreate.setMetadata(new HashMap<String, Object>());
+        this.updateGroup(groupId, groupToCreate, "");
     }
 
     public void updatePersonsInGroup(UUID groupId, UpdateGroup updateGroup, String xRequestID) throws ApiException {

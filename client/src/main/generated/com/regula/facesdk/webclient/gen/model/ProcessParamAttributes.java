@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.Group;
+import com.regula.facesdk.webclient.gen.model.AttributeConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,45 +28,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * GroupPageAllOf
+ * If set, the selected attributes, such as age or emotions, are evaluated.
  */
+@ApiModel(description = "If set, the selected attributes, such as age or emotions, are evaluated.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupPageAllOf {
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<Group> items = null;
+public class ProcessParamAttributes {
+  public static final String SERIALIZED_NAME_CONFIG = "config";
+  @SerializedName(SERIALIZED_NAME_CONFIG)
+  private List<AttributeConfig> config = null;
 
-  public GroupPageAllOf() { 
+  public ProcessParamAttributes() { 
   }
 
-  public GroupPageAllOf items(List<Group> items) {
+  public ProcessParamAttributes config(List<AttributeConfig> config) {
     
-    this.items = items;
+    this.config = config;
     return this;
   }
 
-  public GroupPageAllOf addItemsItem(Group itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<Group>();
+  public ProcessParamAttributes addConfigItem(AttributeConfig configItem) {
+    if (this.config == null) {
+      this.config = new ArrayList<AttributeConfig>();
     }
-    this.items.add(itemsItem);
+    this.config.add(configItem);
     return this;
   }
 
    /**
-   * Array of Groups that are found during the search.
-   * @return items
+   * Get config
+   * @return config
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Array of Groups that are found during the search.")
+  @ApiModelProperty(value = "")
 
-  public List<Group> getItems() {
-    return items;
+  public List<AttributeConfig> getConfig() {
+    return config;
   }
 
 
-  public void setItems(List<Group> items) {
-    this.items = items;
+  public void setConfig(List<AttributeConfig> config) {
+    this.config = config;
   }
 
 
@@ -78,20 +79,20 @@ public class GroupPageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupPageAllOf groupPageAllOf = (GroupPageAllOf) o;
-    return Objects.equals(this.items, groupPageAllOf.items);
+    ProcessParamAttributes processParamAttributes = (ProcessParamAttributes) o;
+    return Objects.equals(this.config, processParamAttributes.config);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items);
+    return Objects.hash(config);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupPageAllOf {\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
+    sb.append("class ProcessParamAttributes {\n");
+    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("}");
     return sb.toString();
   }

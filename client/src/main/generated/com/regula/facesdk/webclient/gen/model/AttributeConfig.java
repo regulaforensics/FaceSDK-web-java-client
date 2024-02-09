@@ -20,53 +20,44 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.Group;
+import com.regula.facesdk.webclient.gen.model.FaceAttribute;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * GroupPageAllOf
+ * The configuration that defines the list of returned attribute check characteristics.
  */
+@ApiModel(description = "The configuration that defines the list of returned attribute check characteristics.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupPageAllOf {
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<Group> items = null;
+public class AttributeConfig {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private FaceAttribute name;
 
-  public GroupPageAllOf() { 
+  public AttributeConfig() { 
   }
 
-  public GroupPageAllOf items(List<Group> items) {
+  public AttributeConfig name(FaceAttribute name) {
     
-    this.items = items;
-    return this;
-  }
-
-  public GroupPageAllOf addItemsItem(Group itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<Group>();
-    }
-    this.items.add(itemsItem);
+    this.name = name;
     return this;
   }
 
    /**
-   * Array of Groups that are found during the search.
-   * @return items
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Array of Groups that are found during the search.")
+  @ApiModelProperty(value = "")
 
-  public List<Group> getItems() {
-    return items;
+  public FaceAttribute getName() {
+    return name;
   }
 
 
-  public void setItems(List<Group> items) {
-    this.items = items;
+  public void setName(FaceAttribute name) {
+    this.name = name;
   }
 
 
@@ -78,20 +69,20 @@ public class GroupPageAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupPageAllOf groupPageAllOf = (GroupPageAllOf) o;
-    return Objects.equals(this.items, groupPageAllOf.items);
+    AttributeConfig attributeConfig = (AttributeConfig) o;
+    return Objects.equals(this.name, attributeConfig.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items);
+    return Objects.hash(name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupPageAllOf {\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
+    sb.append("class AttributeConfig {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

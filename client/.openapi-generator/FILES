@@ -21,13 +21,14 @@ src/main/generated/com/regula/facesdk/webclient/gen/api/Liveness20Api.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/MatchingApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/PersonApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/SearchApi.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/AttributeConfig.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Crop.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectRequest.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/DetectRequestAttributes.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Detection.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionAttributes.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionFace.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionQuality.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceAttribute.java
@@ -62,6 +63,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageDetection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequest.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParams.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParamsCrop.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/OperationLog.java
@@ -76,6 +79,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/PersonWithImagesAllOf.
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonsPage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonsPageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ProcessParam.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/ProcessParamAttributes.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/QualityConfig.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/QualityDetail.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/QualityDetailsGroups.java
