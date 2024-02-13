@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.regula.facesdk.webclient.gen.model.PersonCreatedResponse;
 import com.regula.facesdk.webclient.gen.model.SearchBadParams;
 import com.regula.facesdk.webclient.gen.model.SearchRequest;
 import com.regula.facesdk.webclient.gen.model.SearchResult;

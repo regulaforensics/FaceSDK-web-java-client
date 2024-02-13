@@ -51,7 +51,7 @@ public class DetectResult {
 
   public static final String SERIALIZED_NAME_TIMER = "timer";
   @SerializedName(SERIALIZED_NAME_TIMER)
-  private Float timer = null;
+  private Float timer;
 
   public DetectResult() { 
   }
