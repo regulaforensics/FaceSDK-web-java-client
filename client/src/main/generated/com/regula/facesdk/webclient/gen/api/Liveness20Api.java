@@ -82,7 +82,7 @@ public class Liveness20Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get liveness transaction info </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getLivenessTransactionInfoCall(UUID transactionId, final ApiCallback _callback) throws ApiException {
@@ -158,7 +158,7 @@ public class Liveness20Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get liveness transaction info </td><td>  -  </td></tr>
      </table>
      */
     public TransactionInfo getLivenessTransactionInfo(UUID transactionId) throws ApiException {
@@ -175,7 +175,7 @@ public class Liveness20Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get liveness transaction info </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<TransactionInfo> getLivenessTransactionInfoWithHttpInfo(UUID transactionId) throws ApiException {
@@ -194,7 +194,7 @@ public class Liveness20Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get liveness transaction info </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getLivenessTransactionInfoAsync(UUID transactionId, final ApiCallback<TransactionInfo> _callback) throws ApiException {

@@ -38,7 +38,7 @@ public class FacesResponseAllOf {
 
   public static final String SERIALIZED_NAME_ROTATION_ANGLE = "rotationAngle";
   @SerializedName(SERIALIZED_NAME_ROTATION_ANGLE)
-  private Float rotationAngle = null;
+  private Float rotationAngle;
 
   public FacesResponseAllOf() { 
   }

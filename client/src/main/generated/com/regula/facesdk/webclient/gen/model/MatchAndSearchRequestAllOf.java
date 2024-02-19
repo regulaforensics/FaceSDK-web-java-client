@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * MatchAndSearchRequestAllOf
@@ -39,6 +40,10 @@ public class MatchAndSearchRequestAllOf {
   public static final String SERIALIZED_NAME_IMAGES = "images";
   @SerializedName(SERIALIZED_NAME_IMAGES)
   private List<MatchAndSearchRequestAllOfImages> images = null;
+
+  public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
+  @SerializedName(SERIALIZED_NAME_GROUP_IDS)
+  private List<UUID> groupIds = null;
 
   public MatchAndSearchRequestAllOf() { 
   }
@@ -97,6 +102,37 @@ public class MatchAndSearchRequestAllOf {
   }
 
 
+  public MatchAndSearchRequestAllOf groupIds(List<UUID> groupIds) {
+    
+    this.groupIds = groupIds;
+    return this;
+  }
+
+  public MatchAndSearchRequestAllOf addGroupIdsItem(UUID groupIdsItem) {
+    if (this.groupIds == null) {
+      this.groupIds = new ArrayList<UUID>();
+    }
+    this.groupIds.add(groupIdsItem);
+    return this;
+  }
+
+   /**
+   * IDs of the groups in which the search is performed.
+   * @return groupIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "IDs of the groups in which the search is performed.")
+
+  public List<UUID> getGroupIds() {
+    return groupIds;
+  }
+
+
+  public void setGroupIds(List<UUID> groupIds) {
+    this.groupIds = groupIds;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -107,12 +143,13 @@ public class MatchAndSearchRequestAllOf {
     }
     MatchAndSearchRequestAllOf matchAndSearchRequestAllOf = (MatchAndSearchRequestAllOf) o;
     return Objects.equals(this.tag, matchAndSearchRequestAllOf.tag) &&
-        Objects.equals(this.images, matchAndSearchRequestAllOf.images);
+        Objects.equals(this.images, matchAndSearchRequestAllOf.images) &&
+        Objects.equals(this.groupIds, matchAndSearchRequestAllOf.groupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, images);
+    return Objects.hash(tag, images, groupIds);
   }
 
   @Override
@@ -121,6 +158,7 @@ public class MatchAndSearchRequestAllOf {
     sb.append("class MatchAndSearchRequestAllOf {\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
+    sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
