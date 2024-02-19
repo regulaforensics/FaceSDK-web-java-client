@@ -22,8 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOf;
 import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOfImages;
-import com.regula.facesdk.webclient.gen.model.SearchParameters;
-import com.regula.facesdk.webclient.gen.model.SearchParametersCreatePerson;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -43,10 +41,6 @@ public class MatchAndSearchRequest {
   public static final String SERIALIZED_NAME_IMAGES = "images";
   @SerializedName(SERIALIZED_NAME_IMAGES)
   private List<MatchAndSearchRequestAllOfImages> images = null;
-
-  public static final String SERIALIZED_NAME_CREATE_PERSON = "createPerson";
-  @SerializedName(SERIALIZED_NAME_CREATE_PERSON)
-  private SearchParametersCreatePerson createPerson;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
@@ -109,29 +103,6 @@ public class MatchAndSearchRequest {
   }
 
 
-  public MatchAndSearchRequest createPerson(SearchParametersCreatePerson createPerson) {
-    
-    this.createPerson = createPerson;
-    return this;
-  }
-
-   /**
-   * Get createPerson
-   * @return createPerson
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SearchParametersCreatePerson getCreatePerson() {
-    return createPerson;
-  }
-
-
-  public void setCreatePerson(SearchParametersCreatePerson createPerson) {
-    this.createPerson = createPerson;
-  }
-
-
   public MatchAndSearchRequest groupIds(List<UUID> groupIds) {
     
     this.groupIds = groupIds;
@@ -174,13 +145,12 @@ public class MatchAndSearchRequest {
     MatchAndSearchRequest matchAndSearchRequest = (MatchAndSearchRequest) o;
     return Objects.equals(this.tag, matchAndSearchRequest.tag) &&
         Objects.equals(this.images, matchAndSearchRequest.images) &&
-        Objects.equals(this.createPerson, matchAndSearchRequest.createPerson) &&
         Objects.equals(this.groupIds, matchAndSearchRequest.groupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, images, createPerson, groupIds);
+    return Objects.hash(tag, images, groupIds);
   }
 
   @Override
@@ -189,7 +159,6 @@ public class MatchAndSearchRequest {
     sb.append("class MatchAndSearchRequest {\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
-    sb.append("    createPerson: ").append(toIndentedString(createPerson)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
     sb.append("}");
     return sb.toString();

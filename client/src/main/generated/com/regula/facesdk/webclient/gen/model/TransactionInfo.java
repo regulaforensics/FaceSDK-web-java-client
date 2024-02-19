@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +55,7 @@ public class TransactionInfo {
 
   public static final String SERIALIZED_NAME_AGE = "age";
   @SerializedName(SERIALIZED_NAME_AGE)
-  private Integer age;
+  private List<Map<String, Object>> age = null;
 
   public static final String SERIALIZED_NAME_PORTRAIT = "portrait";
   @SerializedName(SERIALIZED_NAME_PORTRAIT)
@@ -182,9 +183,17 @@ public class TransactionInfo {
   }
 
 
-  public TransactionInfo age(Integer age) {
+  public TransactionInfo age(List<Map<String, Object>> age) {
     
     this.age = age;
+    return this;
+  }
+
+  public TransactionInfo addAgeItem(Map<String, Object> ageItem) {
+    if (this.age == null) {
+      this.age = new ArrayList<Map<String, Object>>();
+    }
+    this.age.add(ageItem);
     return this;
   }
 
@@ -195,12 +204,12 @@ public class TransactionInfo {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Approximate age with an accuracy of +/-3 years.")
 
-  public Integer getAge() {
+  public List<Map<String, Object>> getAge() {
     return age;
   }
 
 
-  public void setAge(Integer age) {
+  public void setAge(List<Map<String, Object>> age) {
     this.age = age;
   }
 

@@ -41,7 +41,7 @@ public class MatchAndSearchResponseAllOf {
 
   public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
   @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
-  private Float elapsedTime = null;
+  private Float elapsedTime;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)

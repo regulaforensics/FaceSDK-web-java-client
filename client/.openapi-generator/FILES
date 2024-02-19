@@ -72,7 +72,6 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/OutputImageParams.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Page.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Person.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonAllOf.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/PersonCreatedResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonFields.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonWithImages.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/PersonWithImagesAllOf.java
