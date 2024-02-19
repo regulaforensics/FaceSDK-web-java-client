@@ -1,6 +1,9 @@
 package com.regula.facesdk.webclient;
 
+import com.regula.facesdk.webclient.api.DiagnosticsApi;
 import com.regula.facesdk.webclient.api.GroupApi;
+import com.regula.facesdk.webclient.api.Liveness20Api;
+import com.regula.facesdk.webclient.api.LivenessApi;
 import com.regula.facesdk.webclient.api.MatchingApi;
 import com.regula.facesdk.webclient.api.PersonApi;
 import com.regula.facesdk.webclient.api.SearchApi;
@@ -10,6 +13,9 @@ public class FaceSdk {
     public final GroupApi groupApi;
     public final PersonApi personApi;
     public final SearchApi searchApi;
+    public final LivenessApi livenessApi;
+    public final Liveness20Api liveness20Api;
+    public final DiagnosticsApi diagnosticsApi;
     private ApiClient apiClient;
 
     public FaceSdk() {
@@ -38,6 +44,9 @@ public class FaceSdk {
         this.groupApi = new GroupApi(apiClient);
         this.personApi = new PersonApi(apiClient);
         this.searchApi = new SearchApi(apiClient);
+        this.livenessApi = new LivenessApi(apiClient);
+        this.liveness20Api = new Liveness20Api(apiClient);
+        this.diagnosticsApi = new DiagnosticsApi(apiClient);
     }
 
     public ApiClient getApiClient() {
