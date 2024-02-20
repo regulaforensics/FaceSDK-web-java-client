@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.AddImageToPersonRequestImage;
-import com.regula.facesdk.webclient.gen.model.OutputImageParams;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -31,7 +30,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "Image in the request data, includes image and contentType.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ImageFields {
+public class AddImageToPersonRequest {
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
@@ -39,14 +38,6 @@ public class ImageFields {
   public static final String SERIALIZED_NAME_IMAGE = "image";
   @SerializedName(SERIALIZED_NAME_IMAGE)
   private AddImageToPersonRequestImage image;
-
-  public static final String SERIALIZED_NAME_OUTPUT_IMAGE_PARAMS = "outputImageParams";
-  @SerializedName(SERIALIZED_NAME_OUTPUT_IMAGE_PARAMS)
-  private OutputImageParams outputImageParams;
-
-  public static final String SERIALIZED_NAME_DETECT_ALL = "detectAll";
-  @SerializedName(SERIALIZED_NAME_DETECT_ALL)
-  private Boolean detectAll = false;
 
   public static final String SERIALIZED_NAME_THRESHOLD = "threshold";
   @SerializedName(SERIALIZED_NAME_THRESHOLD)
@@ -56,10 +47,10 @@ public class ImageFields {
   @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit;
 
-  public ImageFields() { 
+  public AddImageToPersonRequest() { 
   }
 
-  public ImageFields tag(String tag) {
+  public AddImageToPersonRequest tag(String tag) {
     
     this.tag = tag;
     return this;
@@ -82,7 +73,7 @@ public class ImageFields {
   }
 
 
-  public ImageFields image(AddImageToPersonRequestImage image) {
+  public AddImageToPersonRequest image(AddImageToPersonRequestImage image) {
     
     this.image = image;
     return this;
@@ -92,8 +83,8 @@ public class ImageFields {
    * Get image
    * @return image
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public AddImageToPersonRequestImage getImage() {
     return image;
@@ -105,53 +96,7 @@ public class ImageFields {
   }
 
 
-  public ImageFields outputImageParams(OutputImageParams outputImageParams) {
-    
-    this.outputImageParams = outputImageParams;
-    return this;
-  }
-
-   /**
-   * Get outputImageParams
-   * @return outputImageParams
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public OutputImageParams getOutputImageParams() {
-    return outputImageParams;
-  }
-
-
-  public void setOutputImageParams(OutputImageParams outputImageParams) {
-    this.outputImageParams = outputImageParams;
-  }
-
-
-  public ImageFields detectAll(Boolean detectAll) {
-    
-    this.detectAll = detectAll;
-    return this;
-  }
-
-   /**
-   * Whether to detect all faces in the image. If set to false, only the most central face is detected.
-   * @return detectAll
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Whether to detect all faces in the image. If set to false, only the most central face is detected.")
-
-  public Boolean getDetectAll() {
-    return detectAll;
-  }
-
-
-  public void setDetectAll(Boolean detectAll) {
-    this.detectAll = detectAll;
-  }
-
-
-  public ImageFields threshold(Float threshold) {
+  public AddImageToPersonRequest threshold(Float threshold) {
     
     this.threshold = threshold;
     return this;
@@ -174,7 +119,7 @@ public class ImageFields {
   }
 
 
-  public ImageFields limit(Integer limit) {
+  public AddImageToPersonRequest limit(Integer limit) {
     
     this.limit = limit;
     return this;
@@ -205,28 +150,24 @@ public class ImageFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageFields imageFields = (ImageFields) o;
-    return Objects.equals(this.tag, imageFields.tag) &&
-        Objects.equals(this.image, imageFields.image) &&
-        Objects.equals(this.outputImageParams, imageFields.outputImageParams) &&
-        Objects.equals(this.detectAll, imageFields.detectAll) &&
-        Objects.equals(this.threshold, imageFields.threshold) &&
-        Objects.equals(this.limit, imageFields.limit);
+    AddImageToPersonRequest addImageToPersonRequest = (AddImageToPersonRequest) o;
+    return Objects.equals(this.tag, addImageToPersonRequest.tag) &&
+        Objects.equals(this.image, addImageToPersonRequest.image) &&
+        Objects.equals(this.threshold, addImageToPersonRequest.threshold) &&
+        Objects.equals(this.limit, addImageToPersonRequest.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, image, outputImageParams, detectAll, threshold, limit);
+    return Objects.hash(tag, image, threshold, limit);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageFields {\n");
+    sb.append("class AddImageToPersonRequest {\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    outputImageParams: ").append(toIndentedString(outputImageParams)).append("\n");
-    sb.append("    detectAll: ").append(toIndentedString(detectAll)).append("\n");
     sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");

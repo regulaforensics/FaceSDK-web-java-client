@@ -20,21 +20,21 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.GroupAllOf;
-import com.regula.facesdk.webclient.gen.model.GroupResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 /**
- * Group
+ * Person Request body: name and metadata.
  */
+@ApiModel(description = "Person Request body: name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class Group {
+public class PersonToUpdateFields {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -43,29 +43,25 @@ public class Group {
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private UUID id;
+  public static final String SERIALIZED_NAME_GROUPS = "groups";
+  @SerializedName(SERIALIZED_NAME_GROUPS)
+  private List<UUID> groups = null;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private String createdAt;
-
-  public Group() { 
+  public PersonToUpdateFields() { 
   }
 
-  public Group name(String name) {
+  public PersonToUpdateFields name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * Group to create name.
+   * Person name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group to create name.")
+  @ApiModelProperty(value = "Person name.")
 
   public String getName() {
     return name;
@@ -77,13 +73,13 @@ public class Group {
   }
 
 
-  public Group metadata(Map<String, Object> metadata) {
+  public PersonToUpdateFields metadata(Map<String, Object> metadata) {
     
     this.metadata = metadata;
     return this;
   }
 
-  public Group putMetadataItem(String key, Object metadataItem) {
+  public PersonToUpdateFields putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -92,11 +88,11 @@ public class Group {
   }
 
    /**
-   * A free-form object containing group&#39;s extended attributes.
+   * A free-form object containing person&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -108,49 +104,34 @@ public class Group {
   }
 
 
-  public Group id(UUID id) {
+  public PersonToUpdateFields groups(List<UUID> groups) {
     
-    this.id = id;
+    this.groups = groups;
+    return this;
+  }
+
+  public PersonToUpdateFields addGroupsItem(UUID groupsItem) {
+    if (this.groups == null) {
+      this.groups = new ArrayList<UUID>();
+    }
+    this.groups.add(groupsItem);
     return this;
   }
 
    /**
-   * Group ID.
-   * @return id
+   * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
+   * @return groups
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group ID.")
+  @ApiModelProperty(value = "Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.")
 
-  public UUID getId() {
-    return id;
+  public List<UUID> getGroups() {
+    return groups;
   }
 
 
-  public void setId(UUID id) {
-    this.id = id;
-  }
-
-
-  public Group createdAt(String createdAt) {
-    
-    this.createdAt = createdAt;
-    return this;
-  }
-
-   /**
-   * Group creation date.
-   * @return createdAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group creation date.")
-
-  public String getCreatedAt() {
-    return createdAt;
-  }
-
-
-  public void setCreatedAt(String createdAt) {
-    this.createdAt = createdAt;
+  public void setGroups(List<UUID> groups) {
+    this.groups = groups;
   }
 
 
@@ -162,26 +143,24 @@ public class Group {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Group group = (Group) o;
-    return Objects.equals(this.name, group.name) &&
-        Objects.equals(this.metadata, group.metadata) &&
-        Objects.equals(this.id, group.id) &&
-        Objects.equals(this.createdAt, group.createdAt);
+    PersonToUpdateFields personToUpdateFields = (PersonToUpdateFields) o;
+    return Objects.equals(this.name, personToUpdateFields.name) &&
+        Objects.equals(this.metadata, personToUpdateFields.metadata) &&
+        Objects.equals(this.groups, personToUpdateFields.groups);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, metadata, id, createdAt);
+    return Objects.hash(name, metadata, groups);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Group {\n");
+    sb.append("class PersonToUpdateFields {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();
   }

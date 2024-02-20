@@ -28,8 +28,8 @@ public class IdentificationExample {
                 new PersonFields().name("person2").metadata(new HashMap<String, Object>())
         ).getId();
 
-        sdk.personApi.addImageToPerson(person1Id, new ImageFields().image(new ImageFieldsImage().content(face1)));
-        sdk.personApi.addImageToPerson(person2Id, new ImageFields().image(new ImageFieldsImage().content(face2)));
+        sdk.personApi.addImageToPerson(person1Id, new AddImageToPersonRequest().image(new AddImageToPersonRequestImage().content(face1)));
+        sdk.personApi.addImageToPerson(person2Id, new AddImageToPersonRequest().image(new AddImageToPersonRequestImage().content(face2)));
 
         Person person1 = sdk.personApi.getPerson(person1Id);
         Person person2 = sdk.personApi.getPerson(person2Id);
@@ -46,7 +46,7 @@ public class IdentificationExample {
                 new SearchRequest()
                         .limit(10).threshold(0.8f)
                         .groupIds(Arrays.asList())
-                        .image(new ImageFieldsImage().content(face1)));
+                        .image(new AddImageToPersonRequestImage().content(face1)));
 
         System.out.println(String.format("Person #1 %s %s%n", person1.getId(), person1.getName()));
         System.out.println(String.format("Person #2 %s %s%n", person2.getId(), person2.getName()));

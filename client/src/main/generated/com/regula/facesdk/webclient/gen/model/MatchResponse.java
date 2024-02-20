@@ -29,7 +29,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * MatchResponse
@@ -47,6 +49,10 @@ public class MatchResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
   private List<MatchImageResult> results = null;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private Map<String, Object> metadata = null;
 
   public MatchResponse() { 
   }
@@ -136,6 +142,37 @@ public class MatchResponse {
   }
 
 
+  public MatchResponse metadata(Map<String, Object> metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+  public MatchResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, Object>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * A free-form object containing person&#39;s extended attributes.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -147,12 +184,13 @@ public class MatchResponse {
     MatchResponse matchResponse = (MatchResponse) o;
     return Objects.equals(this.code, matchResponse.code) &&
         Objects.equals(this.detections, matchResponse.detections) &&
-        Objects.equals(this.results, matchResponse.results);
+        Objects.equals(this.results, matchResponse.results) &&
+        Objects.equals(this.metadata, matchResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, detections, results);
+    return Objects.hash(code, detections, results, metadata);
   }
 
   @Override
@@ -162,6 +200,7 @@ public class MatchResponse {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

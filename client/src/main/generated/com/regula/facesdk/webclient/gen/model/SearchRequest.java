@@ -20,8 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.AddImageToPersonRequestImage;
 import com.regula.facesdk.webclient.gen.model.ImageFields;
-import com.regula.facesdk.webclient.gen.model.ImageFieldsImage;
 import com.regula.facesdk.webclient.gen.model.OutputImageParams;
 import com.regula.facesdk.webclient.gen.model.SearchParameters;
 import com.regula.facesdk.webclient.gen.model.SearchParametersCreatePerson;
@@ -51,7 +51,7 @@ public class SearchRequest {
 
   public static final String SERIALIZED_NAME_IMAGE = "image";
   @SerializedName(SERIALIZED_NAME_IMAGE)
-  private ImageFieldsImage image;
+  private AddImageToPersonRequestImage image;
 
   public static final String SERIALIZED_NAME_OUTPUT_IMAGE_PARAMS = "outputImageParams";
   @SerializedName(SERIALIZED_NAME_OUTPUT_IMAGE_PARAMS)
@@ -149,7 +149,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest image(ImageFieldsImage image) {
+  public SearchRequest image(AddImageToPersonRequestImage image) {
     
     this.image = image;
     return this;
@@ -162,12 +162,12 @@ public class SearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ImageFieldsImage getImage() {
+  public AddImageToPersonRequestImage getImage() {
     return image;
   }
 
 
-  public void setImage(ImageFieldsImage image) {
+  public void setImage(AddImageToPersonRequestImage image) {
     this.image = image;
   }
 
