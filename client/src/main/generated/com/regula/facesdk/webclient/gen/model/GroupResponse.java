@@ -20,105 +20,60 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchImageDetection;
-import com.regula.facesdk.webclient.gen.model.MatchImageResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * MatchResponseAllOf
+ * Response group create data, includes name and metadata.
  */
+@ApiModel(description = "Response group create data, includes name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchResponseAllOf {
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchImageDetection> detections = null;
-
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<MatchImageResult> results = null;
+public class GroupResponse {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
-  public MatchResponseAllOf() { 
+  public GroupResponse() { 
   }
 
-  public MatchResponseAllOf detections(List<MatchImageDetection> detections) {
+  public GroupResponse name(String name) {
     
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchResponseAllOf addDetectionsItem(MatchImageDetection detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchImageDetection>();
-    }
-    this.detections.add(detectionsItem);
+    this.name = name;
     return this;
   }
 
    /**
-   * The array of detected faces.
-   * @return detections
+   * Group to create name.
+   * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The array of detected faces.")
+  @ApiModelProperty(value = "Group to create name.")
 
-  public List<MatchImageDetection> getDetections() {
-    return detections;
+  public String getName() {
+    return name;
   }
 
 
-  public void setDetections(List<MatchImageDetection> detections) {
-    this.detections = detections;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public MatchResponseAllOf results(List<MatchImageResult> results) {
-    
-    this.results = results;
-    return this;
-  }
-
-  public MatchResponseAllOf addResultsItem(MatchImageResult resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<MatchImageResult>();
-    }
-    this.results.add(resultsItem);
-    return this;
-  }
-
-   /**
-   * The array of matching results.
-   * @return results
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "The array of matching results.")
-
-  public List<MatchImageResult> getResults() {
-    return results;
-  }
-
-
-  public void setResults(List<MatchImageResult> results) {
-    this.results = results;
-  }
-
-
-  public MatchResponseAllOf metadata(Map<String, Object> metadata) {
+  public GroupResponse metadata(Map<String, Object> metadata) {
     
     this.metadata = metadata;
     return this;
   }
 
-  public MatchResponseAllOf putMetadataItem(String key, Object metadataItem) {
+  public GroupResponse putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -127,11 +82,11 @@ public class MatchResponseAllOf {
   }
 
    /**
-   * A free-form object containing person&#39;s extended attributes.
+   * A free-form object containing group&#39;s extended attributes.
    * @return metadata
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
+  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -151,23 +106,21 @@ public class MatchResponseAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchResponseAllOf matchResponseAllOf = (MatchResponseAllOf) o;
-    return Objects.equals(this.detections, matchResponseAllOf.detections) &&
-        Objects.equals(this.results, matchResponseAllOf.results) &&
-        Objects.equals(this.metadata, matchResponseAllOf.metadata);
+    GroupResponse groupResponse = (GroupResponse) o;
+    return Objects.equals(this.name, groupResponse.name) &&
+        Objects.equals(this.metadata, groupResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(detections, results, metadata);
+    return Objects.hash(name, metadata);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchResponseAllOf {\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("class GroupResponse {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

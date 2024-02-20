@@ -60,8 +60,8 @@ public class PersonFields {
    * Person name.
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person name.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Person name.")
 
   public String getName() {
     return name;

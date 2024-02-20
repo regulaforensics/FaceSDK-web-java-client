@@ -355,8 +355,8 @@ public class GroupApi {
     }
     /**
      * Build call for getAllGroups
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -429,16 +429,6 @@ public class GroupApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getAllGroupsValidateBeforeCall(Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'page' is set
-        if (page == null) {
-            throw new ApiException("Missing the required parameter 'page' when calling getAllGroups(Async)");
-        }
-        
-        // verify the required parameter 'size' is set
-        if (size == null) {
-            throw new ApiException("Missing the required parameter 'size' when calling getAllGroups(Async)");
-        }
-        
 
         okhttp3.Call localVarCall = getAllGroupsCall(page, size, xRequestID, _callback);
         return localVarCall;
@@ -448,8 +438,8 @@ public class GroupApi {
     /**
      * Get groups
      * 
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @return GroupPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -468,8 +458,8 @@ public class GroupApi {
     /**
      * Get groups
      * 
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @return ApiResponse&lt;GroupPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -489,8 +479,8 @@ public class GroupApi {
     /**
      * Get groups (asynchronously)
      * 
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -511,9 +501,9 @@ public class GroupApi {
     }
     /**
      * Build call for getAllPersonsByGroupId
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -526,7 +516,7 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the groupId or persons with the personIds are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsByGroupIdCall(Integer page, Integer size, UUID groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsByGroupIdCall(UUID groupId, Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -586,17 +576,7 @@ public class GroupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllPersonsByGroupIdValidateBeforeCall(Integer page, Integer size, UUID groupId, String xRequestID, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'page' is set
-        if (page == null) {
-            throw new ApiException("Missing the required parameter 'page' when calling getAllPersonsByGroupId(Async)");
-        }
-        
-        // verify the required parameter 'size' is set
-        if (size == null) {
-            throw new ApiException("Missing the required parameter 'size' when calling getAllPersonsByGroupId(Async)");
-        }
+    private okhttp3.Call getAllPersonsByGroupIdValidateBeforeCall(UUID groupId, Integer page, Integer size, String xRequestID, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
@@ -604,7 +584,7 @@ public class GroupApi {
         }
         
 
-        okhttp3.Call localVarCall = getAllPersonsByGroupIdCall(page, size, groupId, xRequestID, _callback);
+        okhttp3.Call localVarCall = getAllPersonsByGroupIdCall(groupId, page, size, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -612,9 +592,9 @@ public class GroupApi {
     /**
      * Get group persons
      * 
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @return PersonsPage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -626,17 +606,17 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the groupId or persons with the personIds are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, UUID groupId, String xRequestID) throws ApiException {
-        ApiResponse<PersonsPage> localVarResp = getAllPersonsByGroupIdWithHttpInfo(page, size, groupId, xRequestID);
+    public PersonsPage getAllPersonsByGroupId(UUID groupId, Integer page, Integer size, String xRequestID) throws ApiException {
+        ApiResponse<PersonsPage> localVarResp = getAllPersonsByGroupIdWithHttpInfo(groupId, page, size, xRequestID);
         return localVarResp.getData();
     }
 
     /**
      * Get group persons
      * 
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @return ApiResponse&lt;PersonsPage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -648,8 +628,8 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the groupId or persons with the personIds are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PersonsPage> getAllPersonsByGroupIdWithHttpInfo(Integer page, Integer size, UUID groupId, String xRequestID) throws ApiException {
-        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(page, size, groupId, xRequestID, null);
+    public ApiResponse<PersonsPage> getAllPersonsByGroupIdWithHttpInfo(UUID groupId, Integer page, Integer size, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(groupId, page, size, xRequestID, null);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -657,9 +637,9 @@ public class GroupApi {
     /**
      * Get group persons (asynchronously)
      * 
-     * @param page The page number to get a list of persons or groups. (required)
-     * @param size The page size with a list of persons or groups, items. (required)
      * @param groupId Group ID. (required)
+     * @param page The page number to get a list of persons or groups. (optional, default to 1)
+     * @param size The page size with a list of persons or groups, items. (optional, default to 1000)
      * @param xRequestID Request header label. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -672,9 +652,9 @@ public class GroupApi {
         <tr><td> 404 </td><td> Group with the groupId or persons with the personIds are not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllPersonsByGroupIdAsync(Integer page, Integer size, UUID groupId, String xRequestID, final ApiCallback<PersonsPage> _callback) throws ApiException {
+    public okhttp3.Call getAllPersonsByGroupIdAsync(UUID groupId, Integer page, Integer size, String xRequestID, final ApiCallback<PersonsPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(page, size, groupId, xRequestID, _callback);
+        okhttp3.Call localVarCall = getAllPersonsByGroupIdValidateBeforeCall(groupId, page, size, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<PersonsPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

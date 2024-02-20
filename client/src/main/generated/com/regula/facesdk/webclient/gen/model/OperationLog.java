@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * OperationLog
@@ -40,6 +43,10 @@ public class OperationLog {
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
   private String msg;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private Map<String, Object> metadata = null;
 
   public OperationLog() { 
   }
@@ -113,6 +120,37 @@ public class OperationLog {
   }
 
 
+  public OperationLog metadata(Map<String, Object> metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+  public OperationLog putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, Object>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * A free-form object containing group&#39;s extended attributes.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -124,12 +162,13 @@ public class OperationLog {
     OperationLog operationLog = (OperationLog) o;
     return Objects.equals(this.statusCode, operationLog.statusCode) &&
         Objects.equals(this.type, operationLog.type) &&
-        Objects.equals(this.msg, operationLog.msg);
+        Objects.equals(this.msg, operationLog.msg) &&
+        Objects.equals(this.metadata, operationLog.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(statusCode, type, msg);
+    return Objects.hash(statusCode, type, msg, metadata);
   }
 
   @Override
@@ -139,6 +178,7 @@ public class OperationLog {
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

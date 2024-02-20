@@ -43,7 +43,7 @@ public class GroupToCreate {
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private Map<String, Object> metadata = null;
+  private Map<String, Object> metadata = new HashMap<String, Object>();
 
   public GroupToCreate() { 
   }
@@ -81,8 +81,8 @@ public class GroupToCreate {
    * Group to create name.
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group to create name.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Group to create name.")
 
   public String getName() {
     return name;
@@ -101,9 +101,6 @@ public class GroupToCreate {
   }
 
   public GroupToCreate putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<String, Object>();
-    }
     this.metadata.put(key, metadataItem);
     return this;
   }
@@ -112,8 +109,8 @@ public class GroupToCreate {
    * A free-form object containing group&#39;s extended attributes.
    * @return metadata
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "A free-form object containing group's extended attributes.")
 
   public Map<String, Object> getMetadata() {
     return metadata;
