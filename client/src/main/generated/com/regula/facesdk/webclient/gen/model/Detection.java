@@ -1,6 +1,6 @@
 /*
- * Regula FaceSDK Web API
- * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * Regula Face SDK Web API
+ * <a href=\"https://regulaforensics.com/products/face-recognition-sdk/  \" target=\"_blank\">Regula Face SDK</a> is a cross-platform biometric verification solution for a digital identity verification process. The SDK enables convenient and reliable face capture on the client side (mobile, web, and desktop) and further processing on the client or server side.  The Face SDK includes the following features:  * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-detection\" target=\"_blank\">Face Detection</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-comparison-11\" target=\"_blank\">Face Match (1:1)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-identification-1n\" target=\"_blank\">Face Search (1:N)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-assessment\" target=\"_blank\">Liveness Assessment</a>  Here is the <a href=\"https://github.com/regulaforensics/FaceSDK-web-openapi  \" target=\"_blank\">OpenAPI specification on GitHub</a>.   ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
  * Detection
@@ -56,7 +57,7 @@ public class Detection {
 
   public static final String SERIALIZED_NAME_THUMBNAIL = "thumbnail";
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
-  private byte[] thumbnail;
+  private Object thumbnail = null;
 
   public Detection() { 
   }
@@ -68,11 +69,11 @@ public class Detection {
   }
 
    /**
-   * Base64 encoded image.
+   * Base64-encoded image.
    * @return crop
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Base64 encoded image.")
+  @ApiModelProperty(value = "Base64-encoded image.")
 
   public byte[] getCrop() {
     return crop;
@@ -186,25 +187,27 @@ public class Detection {
   }
 
 
-  public Detection thumbnail(byte[] thumbnail) {
+  public Detection thumbnail(Object thumbnail) {
     
     this.thumbnail = thumbnail;
     return this;
   }
 
    /**
-   * Base64 of the cropped portrait.
+   * See &#x60;crop&#x60; instead.
    * @return thumbnail
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Base64 of the cropped portrait.")
+  @ApiModelProperty(value = "See `crop` instead.")
 
-  public byte[] getThumbnail() {
+  public Object getThumbnail() {
     return thumbnail;
   }
 
 
-  public void setThumbnail(byte[] thumbnail) {
+  public void setThumbnail(Object thumbnail) {
     this.thumbnail = thumbnail;
   }
 
@@ -223,12 +226,23 @@ public class Detection {
         Objects.equals(this.landmarks, detection.landmarks) &&
         Objects.equals(this.quality, detection.quality) &&
         Objects.equals(this.roi, detection.roi) &&
-        Arrays.equals(this.thumbnail, detection.thumbnail);
+        Objects.equals(this.thumbnail, detection.thumbnail);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(Arrays.hashCode(crop), attributes, landmarks, quality, roi, Arrays.hashCode(thumbnail));
+    return Objects.hash(Arrays.hashCode(crop), attributes, landmarks, quality, roi, thumbnail);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

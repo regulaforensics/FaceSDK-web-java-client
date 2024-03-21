@@ -1,6 +1,6 @@
 /*
- * Regula FaceSDK Web API
- * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * Regula Face SDK Web API
+ * <a href=\"https://regulaforensics.com/products/face-recognition-sdk/  \" target=\"_blank\">Regula Face SDK</a> is a cross-platform biometric verification solution for a digital identity verification process. The SDK enables convenient and reliable face capture on the client side (mobile, web, and desktop) and further processing on the client or server side.  The Face SDK includes the following features:  * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-detection\" target=\"_blank\">Face Detection</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-comparison-11\" target=\"_blank\">Face Match (1:1)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-identification-1n\" target=\"_blank\">Face Search (1:N)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-assessment\" target=\"_blank\">Liveness Assessment</a>  Here is the <a href=\"https://github.com/regulaforensics/FaceSDK-web-openapi  \" target=\"_blank\">OpenAPI specification on GitHub</a>.   ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
  * FacesResponse
@@ -53,7 +54,7 @@ public class FacesResponse {
 
   public static final String SERIALIZED_NAME_THUMBNAIL = "thumbnail";
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
-  private byte[] thumbnail;
+  private Object thumbnail = null;
 
   public static final String SERIALIZED_NAME_CROP = "crop";
   @SerializedName(SERIALIZED_NAME_CROP)
@@ -174,25 +175,27 @@ public class FacesResponse {
   }
 
 
-  public FacesResponse thumbnail(byte[] thumbnail) {
+  public FacesResponse thumbnail(Object thumbnail) {
     
     this.thumbnail = thumbnail;
     return this;
   }
 
    /**
-   * Base64 of the cropped portrait.
+   * See &#x60;crop&#x60; instead.
    * @return thumbnail
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Base64 of the cropped portrait.")
+  @ApiModelProperty(value = "See `crop` instead.")
 
-  public byte[] getThumbnail() {
+  public Object getThumbnail() {
     return thumbnail;
   }
 
 
-  public void setThumbnail(byte[] thumbnail) {
+  public void setThumbnail(Object thumbnail) {
     this.thumbnail = thumbnail;
   }
 
@@ -204,11 +207,11 @@ public class FacesResponse {
   }
 
    /**
-   * Base64 of the cropped portrait.
+   * Base64-encoded aligned and cropped portrait.
    * @return crop
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Base64 of the cropped portrait.")
+  @ApiModelProperty(value = "Base64-encoded aligned and cropped portrait.")
 
   public byte[] getCrop() {
     return crop;
@@ -235,11 +238,11 @@ public class FacesResponse {
   }
 
    /**
-   * Get persons
+   * Detected Persons.
    * @return persons
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Detected Persons.")
 
   public List<PersonWithImages> getPersons() {
     return persons;
@@ -264,14 +267,25 @@ public class FacesResponse {
         Objects.equals(this.landmarks, facesResponse.landmarks) &&
         Objects.equals(this.rotationAngle, facesResponse.rotationAngle) &&
         Objects.equals(this.roi, facesResponse.roi) &&
-        Arrays.equals(this.thumbnail, facesResponse.thumbnail) &&
+        Objects.equals(this.thumbnail, facesResponse.thumbnail) &&
         Arrays.equals(this.crop, facesResponse.crop) &&
         Objects.equals(this.persons, facesResponse.persons);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(faceIndex, landmarks, rotationAngle, roi, Arrays.hashCode(thumbnail), Arrays.hashCode(crop), persons);
+    return Objects.hash(faceIndex, landmarks, rotationAngle, roi, thumbnail, Arrays.hashCode(crop), persons);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
