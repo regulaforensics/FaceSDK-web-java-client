@@ -16,10 +16,10 @@ src/main/generated/com/regula/facesdk/webclient/auth/Authentication.java
 src/main/generated/com/regula/facesdk/webclient/auth/HttpBasicAuth.java
 src/main/generated/com/regula/facesdk/webclient/auth/HttpBearerAuth.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/DiagnosticsApi.java
+src/main/generated/com/regula/facesdk/webclient/gen/api/FaceIdentificationApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/GroupApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/Liveness20Api.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/MatchingApi.java
-src/main/generated/com/regula/facesdk/webclient/gen/api/PersonApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/SearchApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/AddImageToPersonRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/AddImageToPersonRequestImage.java
