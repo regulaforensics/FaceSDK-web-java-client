@@ -11,66 +11,64 @@
  */
 
 
-package com.regula.facesdk.webclient;
+package com.regula.facesdk.webclient.gen.model;
 
-import java.util.List;
-import java.util.Map;
+import java.util.Objects;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
- * API response returned by API call.
+ * Liveness detection can be performed in two modes: active &#x60;0&#x60; and passive &#x60;1&#x60;. [Learn more](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/liveness/#active-and-passive-modes)
  */
-public class ApiResponse<T> {
-    final private int statusCode;
-    final private Map<String, List<String>> headers;
-    final private T data;
+@JsonAdapter(LivenessType.Adapter.class)
+public enum LivenessType {
+  
+  ACTIVE(0),
+  
+  PASSIVE(1);
 
-    /**
-     * <p>Constructor for ApiResponse.</p>
-     *
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
-     */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers) {
-        this(statusCode, headers, null);
+  private Integer value;
+
+  LivenessType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static LivenessType fromValue(Integer value) {
+    for (LivenessType b : LivenessType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<LivenessType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final LivenessType enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
     }
 
-    /**
-     * <p>Constructor for ApiResponse.</p>
-     *
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
-     * @param data The object deserialized from response bod
-     */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers, T data) {
-        this.statusCode = statusCode;
-        this.headers = headers;
-        this.data = data;
+    @Override
+    public LivenessType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return LivenessType.fromValue(value);
     }
-
-    /**
-     * <p>Get the <code>status code</code>.</p>
-     *
-     * @return the status code
-     */
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    /**
-     * <p>Get the <code>headers</code>.</p>
-     *
-     * @return a {@link java.util.Map} of headers 
-     */
-    public Map<String, List<String>> getHeaders() {
-        return headers;
-    }
-
-    /**
-     * <p>Get the <code>data</code>.</p>
-     *
-     * @return the data
-     */
-    public T getData() {
-        return data;
-    }
+  }
 }
+

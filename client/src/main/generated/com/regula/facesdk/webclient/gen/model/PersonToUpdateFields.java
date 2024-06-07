@@ -1,6 +1,6 @@
 /*
- * Regula FaceSDK Web API
- * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * Regula Face SDK Web API
+ * <a href=\"https://regulaforensics.com/products/face-recognition-sdk/  \" target=\"_blank\">Regula Face SDK</a> is a cross-platform biometric verification solution for a digital identity verification process and image quality assurance. The SDK enables convenient and reliable face capture on the client side (mobile, web, and desktop) and further processing on the client or server side.   The Face SDK includes the following features:  * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-detection\" target=\"_blank\">Face detection and image quality assessment</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-comparison-11\" target=\"_blank\">Face match (1:1)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-identification-1n\" target=\"_blank\">Face search (1:N)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-assessment\" target=\"_blank\">Liveness detection</a>  Here is the <a href=\"https://github.com/regulaforensics/FaceSDK-web-openapi  \" target=\"_blank\">OpenAPI specification on GitHub</a>.   ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -35,6 +35,10 @@ import java.util.UUID;
 @ApiModel(description = "Person Request body: name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PersonToUpdateFields {
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "externalId";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  private String externalId;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -50,6 +54,29 @@ public class PersonToUpdateFields {
   public PersonToUpdateFields() { 
   }
 
+  public PersonToUpdateFields externalId(String externalId) {
+    
+    this.externalId = externalId;
+    return this;
+  }
+
+   /**
+   * Person&#39;s ID, used for linking search results to an ID in an external system. Can be set when creating a Person, stored in the database, and included in the search to return only Persons with the specified ID. Optional.
+   * @return externalId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Person's ID, used for linking search results to an ID in an external system. Can be set when creating a Person, stored in the database, and included in the search to return only Persons with the specified ID. Optional.")
+
+  public String getExternalId() {
+    return externalId;
+  }
+
+
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
   public PersonToUpdateFields name(String name) {
     
     this.name = name;
@@ -57,11 +84,11 @@ public class PersonToUpdateFields {
   }
 
    /**
-   * Person name.
+   * Person&#39;s name.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person name.")
+  @ApiModelProperty(value = "Person's name.")
 
   public String getName() {
     return name;
@@ -144,20 +171,22 @@ public class PersonToUpdateFields {
       return false;
     }
     PersonToUpdateFields personToUpdateFields = (PersonToUpdateFields) o;
-    return Objects.equals(this.name, personToUpdateFields.name) &&
+    return Objects.equals(this.externalId, personToUpdateFields.externalId) &&
+        Objects.equals(this.name, personToUpdateFields.name) &&
         Objects.equals(this.metadata, personToUpdateFields.metadata) &&
         Objects.equals(this.groups, personToUpdateFields.groups);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, metadata, groups);
+    return Objects.hash(externalId, name, metadata, groups);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PersonToUpdateFields {\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");

@@ -20,81 +20,108 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.facesdk.webclient.gen.model.FilterOp;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
- * DetectionAttributes
+ * Allows to filter the search results based on the Person&#39;s &#x60;name&#x60;. If enabled, only the search results that meet the filter condition will be returned.
  */
+@ApiModel(description = "Allows to filter the search results based on the Person's `name`. If enabled, only the search results that meet the filter condition will be returned.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class DetectionAttributes {
-  public static final String SERIALIZED_NAME_DETAILS = "details";
-  @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<Map<String, Object>> details = null;
+public class FilterSearchRequest {
+  public static final String SERIALIZED_NAME_OP = "op";
+  @SerializedName(SERIALIZED_NAME_OP)
+  private FilterOp op;
 
-  public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
-  @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
-  private BigDecimal elapsedTime;
+  public static final String SERIALIZED_NAME_FIELD = "field";
+  @SerializedName(SERIALIZED_NAME_FIELD)
+  private String field;
 
-  public DetectionAttributes() { 
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private List<String> value = null;
+
+  public FilterSearchRequest() { 
   }
 
-  public DetectionAttributes details(List<Map<String, Object>> details) {
+  public FilterSearchRequest op(FilterOp op) {
     
-    this.details = details;
-    return this;
-  }
-
-  public DetectionAttributes addDetailsItem(Map<String, Object> detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<Map<String, Object>>();
-    }
-    this.details.add(detailsItem);
+    this.op = op;
     return this;
   }
 
    /**
-   * Get details
-   * @return details
+   * Get op
+   * @return op
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Map<String, Object>> getDetails() {
-    return details;
+  public FilterOp getOp() {
+    return op;
   }
 
 
-  public void setDetails(List<Map<String, Object>> details) {
-    this.details = details;
+  public void setOp(FilterOp op) {
+    this.op = op;
   }
 
 
-  public DetectionAttributes elapsedTime(BigDecimal elapsedTime) {
+  public FilterSearchRequest field(String field) {
     
-    this.elapsedTime = elapsedTime;
+    this.field = field;
     return this;
   }
 
    /**
-   * The elapsed time for attribute detection.
-   * @return elapsedTime
+   * &#x60;name&#x60; of the Person.
+   * @return field
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The elapsed time for attribute detection.")
+  @ApiModelProperty(value = "`name` of the Person.")
 
-  public BigDecimal getElapsedTime() {
-    return elapsedTime;
+  public String getField() {
+    return field;
   }
 
 
-  public void setElapsedTime(BigDecimal elapsedTime) {
-    this.elapsedTime = elapsedTime;
+  public void setField(String field) {
+    this.field = field;
+  }
+
+
+  public FilterSearchRequest value(List<String> value) {
+    
+    this.value = value;
+    return this;
+  }
+
+  public FilterSearchRequest addValueItem(String valueItem) {
+    if (this.value == null) {
+      this.value = new ArrayList<String>();
+    }
+    this.value.add(valueItem);
+    return this;
+  }
+
+   /**
+   * The list of &#x60;name&#x60; values against which the &#x60;field&#x60; is compared.
+   * @return value
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The list of `name` values against which the `field` is compared.")
+
+  public List<String> getValue() {
+    return value;
+  }
+
+
+  public void setValue(List<String> value) {
+    this.value = value;
   }
 
 
@@ -106,22 +133,24 @@ public class DetectionAttributes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DetectionAttributes detectionAttributes = (DetectionAttributes) o;
-    return Objects.equals(this.details, detectionAttributes.details) &&
-        Objects.equals(this.elapsedTime, detectionAttributes.elapsedTime);
+    FilterSearchRequest filterSearchRequest = (FilterSearchRequest) o;
+    return Objects.equals(this.op, filterSearchRequest.op) &&
+        Objects.equals(this.field, filterSearchRequest.field) &&
+        Objects.equals(this.value, filterSearchRequest.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(details, elapsedTime);
+    return Objects.hash(op, field, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DetectionAttributes {\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    elapsedTime: ").append(toIndentedString(elapsedTime)).append("\n");
+    sb.append("class FilterSearchRequest {\n");
+    sb.append("    op: ").append(toIndentedString(op)).append("\n");
+    sb.append("    field: ").append(toIndentedString(field)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

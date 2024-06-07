@@ -11,66 +11,64 @@
  */
 
 
-package com.regula.facesdk.webclient;
+package com.regula.facesdk.webclient.gen.model;
 
-import java.util.List;
-import java.util.Map;
+import java.util.Objects;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
- * API response returned by API call.
+ * The filter condition, determines the type of comparison to be performed on the &#x60;name&#x60; values of the Person entity. &lt;br&gt;&lt;br&gt;When set to &#x60;in&#x60;, the &#x60;name&#x60; values of the Person should match any of the values specified in the &#x60;value&#x60; list. &lt;br&gt;&lt;br&gt;When set to &#x60;nin&#x60;, the &#x60;name&#x60; values of the Person should not match any of the values specified in the &#x60;value&#x60; list.
  */
-public class ApiResponse<T> {
-    final private int statusCode;
-    final private Map<String, List<String>> headers;
-    final private T data;
+@JsonAdapter(FilterOp.Adapter.class)
+public enum FilterOp {
+  
+  IN("in"),
+  
+  NOT_IN("nin");
 
-    /**
-     * <p>Constructor for ApiResponse.</p>
-     *
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
-     */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers) {
-        this(statusCode, headers, null);
+  private String value;
+
+  FilterOp(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static FilterOp fromValue(String value) {
+    for (FilterOp b : FilterOp.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<FilterOp> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final FilterOp enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
     }
 
-    /**
-     * <p>Constructor for ApiResponse.</p>
-     *
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
-     * @param data The object deserialized from response bod
-     */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers, T data) {
-        this.statusCode = statusCode;
-        this.headers = headers;
-        this.data = data;
+    @Override
+    public FilterOp read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return FilterOp.fromValue(value);
     }
-
-    /**
-     * <p>Get the <code>status code</code>.</p>
-     *
-     * @return the status code
-     */
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    /**
-     * <p>Get the <code>headers</code>.</p>
-     *
-     * @return a {@link java.util.Map} of headers 
-     */
-    public Map<String, List<String>> getHeaders() {
-        return headers;
-    }
-
-    /**
-     * <p>Get the <code>data</code>.</p>
-     *
-     * @return the data
-     */
-    public T getData() {
-        return data;
-    }
+  }
 }
+

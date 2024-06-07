@@ -1,6 +1,6 @@
 /*
- * Regula FaceSDK Web API
- * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * Regula Face SDK Web API
+ * <a href=\"https://regulaforensics.com/products/face-recognition-sdk/  \" target=\"_blank\">Regula Face SDK</a> is a cross-platform biometric verification solution for a digital identity verification process and image quality assurance. The SDK enables convenient and reliable face capture on the client side (mobile, web, and desktop) and further processing on the client or server side.   The Face SDK includes the following features:  * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-detection\" target=\"_blank\">Face detection and image quality assessment</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-comparison-11\" target=\"_blank\">Face match (1:1)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-identification-1n\" target=\"_blank\">Face search (1:N)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-assessment\" target=\"_blank\">Liveness detection</a>  Here is the <a href=\"https://github.com/regulaforensics/FaceSDK-web-openapi  \" target=\"_blank\">OpenAPI specification on GitHub</a>.   ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.gen.model.AddImageToPersonRequestImage;
+import com.regula.facesdk.webclient.gen.model.FilterSearchRequest;
 import com.regula.facesdk.webclient.gen.model.ImageFields;
 import com.regula.facesdk.webclient.gen.model.OutputImageParams;
 import com.regula.facesdk.webclient.gen.model.SearchParameters;
@@ -44,6 +45,10 @@ public class SearchRequest {
   public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   private List<UUID> groupIds = null;
+
+  public static final String SERIALIZED_NAME_FILTER = "filter";
+  @SerializedName(SERIALIZED_NAME_FILTER)
+  private FilterSearchRequest filter;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
@@ -126,6 +131,29 @@ public class SearchRequest {
   }
 
 
+  public SearchRequest filter(FilterSearchRequest filter) {
+    
+    this.filter = filter;
+    return this;
+  }
+
+   /**
+   * Get filter
+   * @return filter
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public FilterSearchRequest getFilter() {
+    return filter;
+  }
+
+
+  public void setFilter(FilterSearchRequest filter) {
+    this.filter = filter;
+  }
+
+
   public SearchRequest tag(String tag) {
     
     this.tag = tag;
@@ -133,11 +161,11 @@ public class SearchRequest {
   }
 
    /**
-   * Session identificator.
+   * Session identificator, should be unique for each session.
    * @return tag
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Session identificator.")
+  @ApiModelProperty(value = "Session identificator, should be unique for each session.")
 
   public String getTag() {
     return tag;
@@ -202,11 +230,11 @@ public class SearchRequest {
   }
 
    /**
-   * Whether to detect all faces in the image. If set to false, only the most central face is detected.
+   * Whether to detect all faces in the image. If set to &#x60;false&#x60;, only the most central face is detected.
    * @return detectAll
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Whether to detect all faces in the image. If set to false, only the most central face is detected.")
+  @ApiModelProperty(value = "Whether to detect all faces in the image. If set to `false`, only the most central face is detected.")
 
   public Boolean getDetectAll() {
     return detectAll;
@@ -275,6 +303,7 @@ public class SearchRequest {
     SearchRequest searchRequest = (SearchRequest) o;
     return Objects.equals(this.createPerson, searchRequest.createPerson) &&
         Objects.equals(this.groupIds, searchRequest.groupIds) &&
+        Objects.equals(this.filter, searchRequest.filter) &&
         Objects.equals(this.tag, searchRequest.tag) &&
         Objects.equals(this.image, searchRequest.image) &&
         Objects.equals(this.outputImageParams, searchRequest.outputImageParams) &&
@@ -285,7 +314,7 @@ public class SearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createPerson, groupIds, tag, image, outputImageParams, detectAll, threshold, limit);
+    return Objects.hash(createPerson, groupIds, filter, tag, image, outputImageParams, detectAll, threshold, limit);
   }
 
   @Override
@@ -294,6 +323,7 @@ public class SearchRequest {
     sb.append("class SearchRequest {\n");
     sb.append("    createPerson: ").append(toIndentedString(createPerson)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    outputImageParams: ").append(toIndentedString(outputImageParams)).append("\n");
