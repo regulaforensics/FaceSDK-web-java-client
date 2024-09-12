@@ -45,6 +45,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResultCode.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FacesResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FacesResponseAllOf.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FilterOp.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FilterSearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Group.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/GroupAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/GroupPage.java
@@ -56,6 +58,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/ImageFields.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImageSource.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/LivenessType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOfImages.java
@@ -66,8 +69,6 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageDetection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequest.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParams.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParamsCrop.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/OperationLog.java
