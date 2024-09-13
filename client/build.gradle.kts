@@ -53,6 +53,8 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
     val regulaforensicsMavenPassword: String by project
     val regulaforensicsMavenUser: String by project
 
+    println("Variable value: $regulaforensicsMavenPassword")
+
     publishing {
         publications {
             create<MavenPublication>("client") {
