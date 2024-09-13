@@ -38,6 +38,10 @@ dependencies {
     implementation ("jakarta.annotation:jakarta.annotation-api:2.1.0")
 }
 
+tasks.withType<Jar> {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
 /* ----------- Publishing config ------------------- */
 // supressed for local development
 // if you need to publish from local machine, create `gradle.properties` file in a project root and add 3 vairables:
