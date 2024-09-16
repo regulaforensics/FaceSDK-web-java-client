@@ -1,6 +1,9 @@
 package com.regula.facesdk.webclient;
 
-import com.regula.facesdk.webclient.gen.model.*;
+import com.regula.facesdk.webclient.gen.model.DetectRequest;
+import com.regula.facesdk.webclient.gen.model.ImageSource;
+import com.regula.facesdk.webclient.gen.model.MatchImage;
+import com.regula.facesdk.webclient.gen.model.MatchRequest;
 
 import java.io.IOException;
 import java.util.List;
@@ -33,11 +36,13 @@ public class Main {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                         Matching Results                         ");
         System.out.println("-----------------------------------------------------------------");
-        for (var comparison : matchResponse.getResults()) {
-            System.out.format(
-                    "pair(%d, %d) similarity: %f%n",
-                    comparison.getFirstIndex(), comparison.getSecondIndex(), comparison.getSimilarity()
-            );
+        if (matchResponse != null && matchResponse.getResults() != null) {
+            for (var comparison : matchResponse.getResults()) {
+                System.out.format(
+                        "pair(%d, %d) similarity: %f%n",
+                        comparison.getFirstIndex(), comparison.getSecondIndex(), comparison.getSimilarity()
+                );
+            }
         }
 
         var detectRequest = new DetectRequest().image(face2).tag("1");
@@ -47,12 +52,15 @@ public class Main {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                         Detect Results                          ");
         System.out.println("-----------------------------------------------------------------");
-        System.out.format("detectorType: %d%n", detectResults.getDetectorType());
-        System.out.format("landmarkType: %d%n", detectResults.getLandmarksType());
-        for (var detection : detectResults.getDetections()) {
-            System.out.format("landmarks: %s%n", detection.getLandmarks());
-            System.out.format("roi: %s%n", detection.getRoi());
-            System.out.format("attributes: %s%n", detection.getAttributes());
+
+        if(detectResults != null) {
+            System.out.format("detectorType: %d%n", detectResults.getDetectorType());
+            System.out.format("landmarkType: %d%n", detectResults.getLandmarksType());
+            for (var detection : detectResults.getDetections()) {
+                System.out.format("landmarks: %s%n", detection.getLandmarks());
+                System.out.format("roi: %s%n", detection.getRoi());
+                System.out.format("attributes: %s%n", detection.getAttributes());
+            }
         }
         System.out.println("-----------------------------------------------------------------");
         System.exit(0);
