@@ -29,8 +29,7 @@ public class Main {
         var matchImages = List.of(matchImage1, matchImage2, matchImage3);
 
         var matchRequest = new MatchRequest()
-                .images(matchImages)
-                .tag("1");
+                .images(matchImages);
 
         var matchResponse = sdk.matchingApi.match(matchRequest);
 
