@@ -20,47 +20,48 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOf;
-import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOfImages;
+import com.regula.facesdk.webclient.gen.model.AddImageToPersonRequestImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 /**
- * MatchAndSearchRequest
+ * Image in the request data, includes image and contentType.
  */
+@ApiModel(description = "Image in the request data, includes image and contentType.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchAndSearchRequest {
+public class AddImageToPersonRequest {
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
 
-  public static final String SERIALIZED_NAME_IMAGES = "images";
-  @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<MatchAndSearchRequestAllOfImages> images = null;
+  public static final String SERIALIZED_NAME_IMAGE = "image";
+  @SerializedName(SERIALIZED_NAME_IMAGE)
+  private AddImageToPersonRequestImage image;
 
-  public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
-  @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  private List<UUID> groupIds = null;
+  public static final String SERIALIZED_NAME_THRESHOLD = "threshold";
+  @SerializedName(SERIALIZED_NAME_THRESHOLD)
+  private Float threshold;
 
-  public MatchAndSearchRequest() { 
+  public static final String SERIALIZED_NAME_LIMIT = "limit";
+  @SerializedName(SERIALIZED_NAME_LIMIT)
+  private Integer limit;
+
+  public AddImageToPersonRequest() { 
   }
 
-  public MatchAndSearchRequest tag(String tag) {
+  public AddImageToPersonRequest tag(String tag) {
     
     this.tag = tag;
     return this;
   }
 
    /**
-   * Session identificator, should be unique for each session.
+   * Session identificator.
    * @return tag
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Session identificator, should be unique for each session.")
+  @ApiModelProperty(value = "Session identificator.")
 
   public String getTag() {
     return tag;
@@ -72,65 +73,72 @@ public class MatchAndSearchRequest {
   }
 
 
-  public MatchAndSearchRequest images(List<MatchAndSearchRequestAllOfImages> images) {
+  public AddImageToPersonRequest image(AddImageToPersonRequestImage image) {
     
-    this.images = images;
-    return this;
-  }
-
-  public MatchAndSearchRequest addImagesItem(MatchAndSearchRequestAllOfImages imagesItem) {
-    if (this.images == null) {
-      this.images = new ArrayList<MatchAndSearchRequestAllOfImages>();
-    }
-    this.images.add(imagesItem);
+    this.image = image;
     return this;
   }
 
    /**
-   * Person&#39;s images.
-   * @return images
+   * Get image
+   * @return image
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person's images.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public List<MatchAndSearchRequestAllOfImages> getImages() {
-    return images;
+  public AddImageToPersonRequestImage getImage() {
+    return image;
   }
 
 
-  public void setImages(List<MatchAndSearchRequestAllOfImages> images) {
-    this.images = images;
+  public void setImage(AddImageToPersonRequestImage image) {
+    this.image = image;
   }
 
 
-  public MatchAndSearchRequest groupIds(List<UUID> groupIds) {
+  public AddImageToPersonRequest threshold(Float threshold) {
     
-    this.groupIds = groupIds;
-    return this;
-  }
-
-  public MatchAndSearchRequest addGroupIdsItem(UUID groupIdsItem) {
-    if (this.groupIds == null) {
-      this.groupIds = new ArrayList<UUID>();
-    }
-    this.groupIds.add(groupIdsItem);
+    this.threshold = threshold;
     return this;
   }
 
    /**
-   * IDs of the groups in which the search is performed.
-   * @return groupIds
+   * The similarity threshold.
+   * @return threshold
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "IDs of the groups in which the search is performed.")
+  @ApiModelProperty(value = "The similarity threshold.")
 
-  public List<UUID> getGroupIds() {
-    return groupIds;
+  public Float getThreshold() {
+    return threshold;
   }
 
 
-  public void setGroupIds(List<UUID> groupIds) {
-    this.groupIds = groupIds;
+  public void setThreshold(Float threshold) {
+    this.threshold = threshold;
+  }
+
+
+  public AddImageToPersonRequest limit(Integer limit) {
+    
+    this.limit = limit;
+    return this;
+  }
+
+   /**
+   * The maximum number of results to be returned.
+   * @return limit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The maximum number of results to be returned.")
+
+  public Integer getLimit() {
+    return limit;
+  }
+
+
+  public void setLimit(Integer limit) {
+    this.limit = limit;
   }
 
 
@@ -142,24 +150,26 @@ public class MatchAndSearchRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchAndSearchRequest matchAndSearchRequest = (MatchAndSearchRequest) o;
-    return Objects.equals(this.tag, matchAndSearchRequest.tag) &&
-        Objects.equals(this.images, matchAndSearchRequest.images) &&
-        Objects.equals(this.groupIds, matchAndSearchRequest.groupIds);
+    AddImageToPersonRequest addImageToPersonRequest = (AddImageToPersonRequest) o;
+    return Objects.equals(this.tag, addImageToPersonRequest.tag) &&
+        Objects.equals(this.image, addImageToPersonRequest.image) &&
+        Objects.equals(this.threshold, addImageToPersonRequest.threshold) &&
+        Objects.equals(this.limit, addImageToPersonRequest.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, images, groupIds);
+    return Objects.hash(tag, image, threshold, limit);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchAndSearchRequest {\n");
+    sb.append("class AddImageToPersonRequest {\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-    sb.append("    images: ").append(toIndentedString(images)).append("\n");
-    sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

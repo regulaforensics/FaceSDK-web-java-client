@@ -20,117 +20,125 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOf;
-import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOfImages;
+import com.regula.facesdk.webclient.gen.model.ResizeOptions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 /**
- * MatchAndSearchRequest
+ * Uploaded image.
  */
+@ApiModel(description = "Uploaded image.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchAndSearchRequest {
-  public static final String SERIALIZED_NAME_TAG = "tag";
-  @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
+public class AddImageToPersonRequestImage {
+  public static final String SERIALIZED_NAME_CONTENT_TYPE = "contentType";
+  @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  private String contentType;
 
-  public static final String SERIALIZED_NAME_IMAGES = "images";
-  @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<MatchAndSearchRequestAllOfImages> images = null;
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  private byte[] content;
 
-  public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
-  @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  private List<UUID> groupIds = null;
+  public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  private String imageUrl;
 
-  public MatchAndSearchRequest() { 
+  public static final String SERIALIZED_NAME_RESIZE_OPTIONS = "resizeOptions";
+  @SerializedName(SERIALIZED_NAME_RESIZE_OPTIONS)
+  private ResizeOptions resizeOptions;
+
+  public AddImageToPersonRequestImage() { 
   }
 
-  public MatchAndSearchRequest tag(String tag) {
+  public AddImageToPersonRequestImage contentType(String contentType) {
     
-    this.tag = tag;
+    this.contentType = contentType;
     return this;
   }
 
    /**
-   * Session identificator, should be unique for each session.
-   * @return tag
+   * Original media type of the uploaded image.
+   * @return contentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Session identificator, should be unique for each session.")
+  @ApiModelProperty(value = "Original media type of the uploaded image.")
 
-  public String getTag() {
-    return tag;
+  public String getContentType() {
+    return contentType;
   }
 
 
-  public void setTag(String tag) {
-    this.tag = tag;
+  public void setContentType(String contentType) {
+    this.contentType = contentType;
   }
 
 
-  public MatchAndSearchRequest images(List<MatchAndSearchRequestAllOfImages> images) {
+  public AddImageToPersonRequestImage content(byte[] content) {
     
-    this.images = images;
-    return this;
-  }
-
-  public MatchAndSearchRequest addImagesItem(MatchAndSearchRequestAllOfImages imagesItem) {
-    if (this.images == null) {
-      this.images = new ArrayList<MatchAndSearchRequestAllOfImages>();
-    }
-    this.images.add(imagesItem);
+    this.content = content;
     return this;
   }
 
    /**
-   * Person&#39;s images.
-   * @return images
+   * Base64-encoded image.
+   * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person's images.")
+  @ApiModelProperty(value = "Base64-encoded image.")
 
-  public List<MatchAndSearchRequestAllOfImages> getImages() {
-    return images;
+  public byte[] getContent() {
+    return content;
   }
 
 
-  public void setImages(List<MatchAndSearchRequestAllOfImages> images) {
-    this.images = images;
+  public void setContent(byte[] content) {
+    this.content = content;
   }
 
 
-  public MatchAndSearchRequest groupIds(List<UUID> groupIds) {
+  public AddImageToPersonRequestImage imageUrl(String imageUrl) {
     
-    this.groupIds = groupIds;
-    return this;
-  }
-
-  public MatchAndSearchRequest addGroupIdsItem(UUID groupIdsItem) {
-    if (this.groupIds == null) {
-      this.groupIds = new ArrayList<UUID>();
-    }
-    this.groupIds.add(groupIdsItem);
+    this.imageUrl = imageUrl;
     return this;
   }
 
    /**
-   * IDs of the groups in which the search is performed.
-   * @return groupIds
+   * Image URL.
+   * @return imageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "IDs of the groups in which the search is performed.")
+  @ApiModelProperty(value = "Image URL.")
 
-  public List<UUID> getGroupIds() {
-    return groupIds;
+  public String getImageUrl() {
+    return imageUrl;
   }
 
 
-  public void setGroupIds(List<UUID> groupIds) {
-    this.groupIds = groupIds;
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+
+  public AddImageToPersonRequestImage resizeOptions(ResizeOptions resizeOptions) {
+    
+    this.resizeOptions = resizeOptions;
+    return this;
+  }
+
+   /**
+   * Get resizeOptions
+   * @return resizeOptions
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ResizeOptions getResizeOptions() {
+    return resizeOptions;
+  }
+
+
+  public void setResizeOptions(ResizeOptions resizeOptions) {
+    this.resizeOptions = resizeOptions;
   }
 
 
@@ -142,24 +150,26 @@ public class MatchAndSearchRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchAndSearchRequest matchAndSearchRequest = (MatchAndSearchRequest) o;
-    return Objects.equals(this.tag, matchAndSearchRequest.tag) &&
-        Objects.equals(this.images, matchAndSearchRequest.images) &&
-        Objects.equals(this.groupIds, matchAndSearchRequest.groupIds);
+    AddImageToPersonRequestImage addImageToPersonRequestImage = (AddImageToPersonRequestImage) o;
+    return Objects.equals(this.contentType, addImageToPersonRequestImage.contentType) &&
+        Arrays.equals(this.content, addImageToPersonRequestImage.content) &&
+        Objects.equals(this.imageUrl, addImageToPersonRequestImage.imageUrl) &&
+        Objects.equals(this.resizeOptions, addImageToPersonRequestImage.resizeOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, images, groupIds);
+    return Objects.hash(contentType, Arrays.hashCode(content), imageUrl, resizeOptions);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchAndSearchRequest {\n");
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-    sb.append("    images: ").append(toIndentedString(images)).append("\n");
-    sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("class AddImageToPersonRequestImage {\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    resizeOptions: ").append(toIndentedString(resizeOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

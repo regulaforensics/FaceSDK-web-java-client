@@ -20,8 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchImageDetection;
-import com.regula.facesdk.webclient.gen.model.MatchImageResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -29,96 +27,86 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
- * MatchResponseAllOf
+ * Person Request body: name and metadata.
  */
+@ApiModel(description = "Person Request body: name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchResponseAllOf {
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchImageDetection> detections = null;
+public class PersonToUpdateFields {
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "externalId";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  private String externalId;
 
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<MatchImageResult> results = null;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
-  public MatchResponseAllOf() { 
+  public static final String SERIALIZED_NAME_GROUPS = "groups";
+  @SerializedName(SERIALIZED_NAME_GROUPS)
+  private List<UUID> groups = null;
+
+  public PersonToUpdateFields() { 
   }
 
-  public MatchResponseAllOf detections(List<MatchImageDetection> detections) {
+  public PersonToUpdateFields externalId(String externalId) {
     
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchResponseAllOf addDetectionsItem(MatchImageDetection detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchImageDetection>();
-    }
-    this.detections.add(detectionsItem);
+    this.externalId = externalId;
     return this;
   }
 
    /**
-   * The detection results.
-   * @return detections
+   * Person&#39;s ID, used for linking search results to an ID in an external system. Can be set when creating a Person, stored in the database, and included in the search to return only Persons with the specified ID. Optional.
+   * @return externalId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The detection results.")
+  @ApiModelProperty(value = "Person's ID, used for linking search results to an ID in an external system. Can be set when creating a Person, stored in the database, and included in the search to return only Persons with the specified ID. Optional.")
 
-  public List<MatchImageDetection> getDetections() {
-    return detections;
+  public String getExternalId() {
+    return externalId;
   }
 
 
-  public void setDetections(List<MatchImageDetection> detections) {
-    this.detections = detections;
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
   }
 
 
-  public MatchResponseAllOf results(List<MatchImageResult> results) {
+  public PersonToUpdateFields name(String name) {
     
-    this.results = results;
-    return this;
-  }
-
-  public MatchResponseAllOf addResultsItem(MatchImageResult resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<MatchImageResult>();
-    }
-    this.results.add(resultsItem);
+    this.name = name;
     return this;
   }
 
    /**
-   * The comparison results.
-   * @return results
+   * Person&#39;s name.
+   * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The comparison results.")
+  @ApiModelProperty(value = "Person's name.")
 
-  public List<MatchImageResult> getResults() {
-    return results;
+  public String getName() {
+    return name;
   }
 
 
-  public void setResults(List<MatchImageResult> results) {
-    this.results = results;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public MatchResponseAllOf metadata(Map<String, Object> metadata) {
+  public PersonToUpdateFields metadata(Map<String, Object> metadata) {
     
     this.metadata = metadata;
     return this;
   }
 
-  public MatchResponseAllOf putMetadataItem(String key, Object metadataItem) {
+  public PersonToUpdateFields putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -143,6 +131,37 @@ public class MatchResponseAllOf {
   }
 
 
+  public PersonToUpdateFields groups(List<UUID> groups) {
+    
+    this.groups = groups;
+    return this;
+  }
+
+  public PersonToUpdateFields addGroupsItem(UUID groupsItem) {
+    if (this.groups == null) {
+      this.groups = new ArrayList<UUID>();
+    }
+    this.groups.add(groupsItem);
+    return this;
+  }
+
+   /**
+   * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
+   * @return groups
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.")
+
+  public List<UUID> getGroups() {
+    return groups;
+  }
+
+
+  public void setGroups(List<UUID> groups) {
+    this.groups = groups;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -151,24 +170,26 @@ public class MatchResponseAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchResponseAllOf matchResponseAllOf = (MatchResponseAllOf) o;
-    return Objects.equals(this.detections, matchResponseAllOf.detections) &&
-        Objects.equals(this.results, matchResponseAllOf.results) &&
-        Objects.equals(this.metadata, matchResponseAllOf.metadata);
+    PersonToUpdateFields personToUpdateFields = (PersonToUpdateFields) o;
+    return Objects.equals(this.externalId, personToUpdateFields.externalId) &&
+        Objects.equals(this.name, personToUpdateFields.name) &&
+        Objects.equals(this.metadata, personToUpdateFields.metadata) &&
+        Objects.equals(this.groups, personToUpdateFields.groups);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(detections, results, metadata);
+    return Objects.hash(externalId, name, metadata, groups);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchResponseAllOf {\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("class PersonToUpdateFields {\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();
   }

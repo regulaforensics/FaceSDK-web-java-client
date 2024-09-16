@@ -39,10 +39,10 @@ public class GroupApi extends com.regula.facesdk.webclient.gen.api.GroupApi {
     }
 
     public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, UUID groupId, String xRequestID) throws ApiException {
-        return super.getAllPersonsByGroupId(page, size, groupId, xRequestID);
+        return super.getAllPersonsByGroupId(groupId=groupId, page=page, size=size, xRequestID=xRequestID);
     }
     public PersonsPage getAllPersonsByGroupId(Integer page, Integer size, UUID groupId) throws ApiException {
-        return super.getAllPersonsByGroupId(page, size, groupId, "");
+        return super.getAllPersonsByGroupId(groupId=groupId, page=page, size=size, "");
     }
 
     public Group getGroup(UUID groupId, String xRequestID) throws ApiException {

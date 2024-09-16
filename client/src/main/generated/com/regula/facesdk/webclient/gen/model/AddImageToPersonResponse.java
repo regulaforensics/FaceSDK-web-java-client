@@ -20,105 +20,168 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchImageDetection;
-import com.regula.facesdk.webclient.gen.model.MatchImageResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * MatchResponseAllOf
+ * Image in the response.
  */
+@ApiModel(description = "Image in the response.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchResponseAllOf {
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchImageDetection> detections = null;
+public class AddImageToPersonResponse {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
 
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<MatchImageResult> results = null;
+  public static final String SERIALIZED_NAME_CONTENT_TYPE = "contentType";
+  @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  private String contentType;
+
+  public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private String createdAt;
+
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  private String path;
+
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
+  private String url;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
-  public MatchResponseAllOf() { 
+  public AddImageToPersonResponse() { 
   }
 
-  public MatchResponseAllOf detections(List<MatchImageDetection> detections) {
+  public AddImageToPersonResponse id(String id) {
     
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchResponseAllOf addDetectionsItem(MatchImageDetection detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchImageDetection>();
-    }
-    this.detections.add(detectionsItem);
+    this.id = id;
     return this;
   }
 
    /**
-   * The detection results.
-   * @return detections
+   * Response image ID. The list is sorted by decreasing ID value.
+   * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The detection results.")
+  @ApiModelProperty(value = "Response image ID. The list is sorted by decreasing ID value.")
 
-  public List<MatchImageDetection> getDetections() {
-    return detections;
+  public String getId() {
+    return id;
   }
 
 
-  public void setDetections(List<MatchImageDetection> detections) {
-    this.detections = detections;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
-  public MatchResponseAllOf results(List<MatchImageResult> results) {
+  public AddImageToPersonResponse contentType(String contentType) {
     
-    this.results = results;
-    return this;
-  }
-
-  public MatchResponseAllOf addResultsItem(MatchImageResult resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<MatchImageResult>();
-    }
-    this.results.add(resultsItem);
+    this.contentType = contentType;
     return this;
   }
 
    /**
-   * The comparison results.
-   * @return results
+   * Original media type of the returned image.
+   * @return contentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The comparison results.")
+  @ApiModelProperty(value = "Original media type of the returned image.")
 
-  public List<MatchImageResult> getResults() {
-    return results;
+  public String getContentType() {
+    return contentType;
   }
 
 
-  public void setResults(List<MatchImageResult> results) {
-    this.results = results;
+  public void setContentType(String contentType) {
+    this.contentType = contentType;
   }
 
 
-  public MatchResponseAllOf metadata(Map<String, Object> metadata) {
+  public AddImageToPersonResponse createdAt(String createdAt) {
+    
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * Returned image creation date.
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Returned image creation date.")
+
+  public String getCreatedAt() {
+    return createdAt;
+  }
+
+
+  public void setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public AddImageToPersonResponse path(String path) {
+    
+    this.path = path;
+    return this;
+  }
+
+   /**
+   * Returned image path.
+   * @return path
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Returned image path.")
+
+  public String getPath() {
+    return path;
+  }
+
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+
+  public AddImageToPersonResponse url(String url) {
+    
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * Returned image URL.
+   * @return url
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Returned image URL.")
+
+  public String getUrl() {
+    return url;
+  }
+
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+
+  public AddImageToPersonResponse metadata(Map<String, Object> metadata) {
     
     this.metadata = metadata;
     return this;
   }
 
-  public MatchResponseAllOf putMetadataItem(String key, Object metadataItem) {
+  public AddImageToPersonResponse putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -151,23 +214,29 @@ public class MatchResponseAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchResponseAllOf matchResponseAllOf = (MatchResponseAllOf) o;
-    return Objects.equals(this.detections, matchResponseAllOf.detections) &&
-        Objects.equals(this.results, matchResponseAllOf.results) &&
-        Objects.equals(this.metadata, matchResponseAllOf.metadata);
+    AddImageToPersonResponse addImageToPersonResponse = (AddImageToPersonResponse) o;
+    return Objects.equals(this.id, addImageToPersonResponse.id) &&
+        Objects.equals(this.contentType, addImageToPersonResponse.contentType) &&
+        Objects.equals(this.createdAt, addImageToPersonResponse.createdAt) &&
+        Objects.equals(this.path, addImageToPersonResponse.path) &&
+        Objects.equals(this.url, addImageToPersonResponse.url) &&
+        Objects.equals(this.metadata, addImageToPersonResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(detections, results, metadata);
+    return Objects.hash(id, contentType, createdAt, path, url, metadata);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchResponseAllOf {\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("class AddImageToPersonResponse {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

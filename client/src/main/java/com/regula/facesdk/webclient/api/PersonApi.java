@@ -26,10 +26,10 @@ public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
         return this.createPerson(personFields, "");
     }
 
-    public Image addImageToPerson(UUID personId, ImageFields imageFields, String xRequestID) throws ApiException {
+    public AddImageToPersonResponse addImageToPerson(UUID personId, AddImageToPersonRequest imageFields, String xRequestID) throws ApiException {
         return super.addImageToPerson(personId, imageFields, xRequestID);
     }
-    public Image addImageToPerson(UUID personId, ImageFields imageFields) throws ApiException {
+    public AddImageToPersonResponse addImageToPerson(UUID personId, AddImageToPersonRequest imageFields) throws ApiException {
         return addImageToPerson(personId, imageFields, "");
     }
 
@@ -49,14 +49,14 @@ public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
     }
 
     public GroupPage getAllGroupsByPersonId(Integer page, Integer size, UUID personId, String xRequestID) throws ApiException {
-        return super.getAllGroupsByPersonId(page,size, personId, xRequestID);
+        return super.getAllGroupsByPersonId(personId=personId, page=page, size=size, xRequestID=xRequestID);
     }
     public GroupPage getAllGroupsByPersonId(Integer page, Integer size, UUID personId) throws ApiException {
         return this.getAllGroupsByPersonId(page,size, personId, "");
     }
 
     public ImagePage getAllImagesByPersonId(Integer page, Integer size, UUID personId, String xRequestID) throws ApiException {
-        return super.getAllImagesByPersonId(page, size, personId, xRequestID);
+        return super.getAllImagesByPersonId(personId=personId, page=page, size=size, xRequestID=xRequestID);
     }
     public ImagePage getAllImagesByPersonId(Integer page, Integer size, UUID personId) throws ApiException {
         return this.getAllImagesByPersonId(page, size, personId, "");
@@ -76,11 +76,11 @@ public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
         return this.getPerson(personId, "");
     }
 
-    public void updatePerson(UUID personId, PersonFields personFields, String xRequestID) throws ApiException {
+    public void updatePerson(UUID personId, PersonToUpdateFields personFields, String xRequestID) throws ApiException {
         if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
         super.updatePerson(personId, personFields, xRequestID);
     }
-    public void updatePerson(UUID personId, PersonFields personFields) throws ApiException {
+    public void updatePerson(UUID personId, PersonToUpdateFields personFields) throws ApiException {
         if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
         super.updatePerson(personId, personFields, "");
     }
