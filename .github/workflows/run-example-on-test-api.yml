@@ -20,7 +20,7 @@ jobs:
           java-version: 11
           java-package: jdk
 
-      - name: Run Smokte Test
+      - name: Run Smoke Test
         run: ./gradlew clean :example:run
         env:
           API_BASE_PATH: "https://faceapi.regulaforensics.com"
