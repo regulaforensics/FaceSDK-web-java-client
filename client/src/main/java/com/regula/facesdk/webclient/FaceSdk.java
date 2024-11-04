@@ -4,12 +4,12 @@ import com.regula.facesdk.webclient.api.DiagnosticsApi;
 import com.regula.facesdk.webclient.api.GroupApi;
 import com.regula.facesdk.webclient.api.Liveness20Api;
 import com.regula.facesdk.webclient.api.LivenessApi;
-import com.regula.facesdk.webclient.api.MatchingApi;
+import com.regula.facesdk.webclient.api.MatchApi;
 import com.regula.facesdk.webclient.api.PersonApi;
 import com.regula.facesdk.webclient.api.SearchApi;
 
 public class FaceSdk {
-    public final MatchingApi matchingApi;
+    public final MatchApi MatchApi;
     public final GroupApi groupApi;
     public final PersonApi personApi;
     public final SearchApi searchApi;
@@ -40,7 +40,7 @@ public class FaceSdk {
 
     public FaceSdk(ApiClient apiClient) {
         this.apiClient = apiClient;
-        this.matchingApi = new MatchingApi(apiClient);
+        this.MatchApi = new MatchApi(apiClient);
         this.groupApi = new GroupApi(apiClient);
         this.personApi = new PersonApi(apiClient);
         this.searchApi = new SearchApi(apiClient);
