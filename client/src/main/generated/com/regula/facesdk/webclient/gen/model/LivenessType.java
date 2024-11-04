@@ -25,28 +25,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * The type of the image, defines the way the comparison is performed, see the [ImageSource enum](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/enums/image-source/).
+ * Liveness detection can be performed in two modes: active &#x60;0&#x60; and passive &#x60;1&#x60;. [Learn more](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/liveness/#active-and-passive-modes)
  */
-@JsonAdapter(ImageSource.Adapter.class)
-public enum ImageSource {
+@JsonAdapter(LivenessType.Adapter.class)
+public enum LivenessType {
   
-  DOCUMENT_PRINTED(1),
+  ACTIVE(0),
   
-  DOCUMENT_RFID(2),
-  
-  LIVE(3),
-  
-  DOCUMENT_WITH_LIVE(4),
-  
-  EXTERNAL(5),
-  
-  GHOST(6),
-  
-  BARCODE(7);
+  PASSIVE(1);
 
   private Integer value;
 
-  ImageSource(Integer value) {
+  LivenessType(Integer value) {
     this.value = value;
   }
 
@@ -59,8 +49,8 @@ public enum ImageSource {
     return String.valueOf(value);
   }
 
-  public static ImageSource fromValue(Integer value) {
-    for (ImageSource b : ImageSource.values()) {
+  public static LivenessType fromValue(Integer value) {
+    for (LivenessType b : LivenessType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -68,16 +58,16 @@ public enum ImageSource {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ImageSource> {
+  public static class Adapter extends TypeAdapter<LivenessType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final LivenessType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ImageSource read(final JsonReader jsonReader) throws IOException {
+    public LivenessType read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return ImageSource.fromValue(value);
+      return LivenessType.fromValue(value);
     }
   }
 }
