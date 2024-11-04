@@ -15,10 +15,10 @@ src/main/generated/com/regula/facesdk/webclient/auth/ApiKeyAuth.java
 src/main/generated/com/regula/facesdk/webclient/auth/Authentication.java
 src/main/generated/com/regula/facesdk/webclient/auth/HttpBasicAuth.java
 src/main/generated/com/regula/facesdk/webclient/auth/HttpBearerAuth.java
-src/main/generated/com/regula/facesdk/webclient/gen/api/DiagnosticsApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/GroupApi.java
+src/main/generated/com/regula/facesdk/webclient/gen/api/HealthcheckApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/Liveness20Api.java
-src/main/generated/com/regula/facesdk/webclient/gen/api/MatchingApi.java
+src/main/generated/com/regula/facesdk/webclient/gen/api/MatchApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/PersonApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/api/SearchApi.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/AddImageToPersonRequest.java
@@ -34,6 +34,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/Detection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionAttributes.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionFace.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionQuality.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/DeviceInfo.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceAttribute.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityAlignType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityGroups.java
@@ -45,6 +46,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceSDKResultCode.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FacesResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FacesResponseAllOf.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FilterOp.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/FilterSearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Group.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/GroupAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/GroupPage.java
@@ -56,6 +59,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/ImageFields.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImageSource.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/LivenessType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOfImages.java
@@ -66,8 +70,6 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImage.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageDetection.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchImageResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequest.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParams.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/MatchRequestOutputImageParamsCrop.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/OperationLog.java
