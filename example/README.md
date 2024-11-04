@@ -33,7 +33,7 @@ This sample generates next text output:
 
 ```text
 -----------------------------------------------------------------
-                         Matching Results                         
+                          Match Results                          
 -----------------------------------------------------------------
 pair(0, 1) similarity: 0.999585
 pair(0, 3) similarity: 0.008510
