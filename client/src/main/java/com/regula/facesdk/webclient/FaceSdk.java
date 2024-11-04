@@ -9,7 +9,7 @@ import com.regula.facesdk.webclient.api.PersonApi;
 import com.regula.facesdk.webclient.api.SearchApi;
 
 public class FaceSdk {
-    public final MatchApi MatchApi;
+    public final MatchApi matchApi;
     public final GroupApi groupApi;
     public final PersonApi personApi;
     public final SearchApi searchApi;
@@ -40,7 +40,7 @@ public class FaceSdk {
 
     public FaceSdk(ApiClient apiClient) {
         this.apiClient = apiClient;
-        this.MatchApi = new MatchApi(apiClient);
+        this.matchApi = new MatchApi(apiClient);
         this.groupApi = new GroupApi(apiClient);
         this.personApi = new PersonApi(apiClient);
         this.searchApi = new SearchApi(apiClient);
