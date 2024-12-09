@@ -8,12 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
         with:
+          distribution: 'zulu'
           java-version: 11
           java-package: jdk
-      - run: ./gradlew clean :client:publishClientPublicationToRegulaforensicsRepository
+
+      - name: Publish
+        run: ./gradlew clean :client:publishClientPublicationToRegulaforensicsRepository
         env:
           ORG_GRADLE_PROJECT_version: ${{ github.event.release.name }}
           ORG_GRADLE_PROJECT_regulaforensicsMavenUser: ${{secrets.MAVEN_PUBLISH_USER}}
