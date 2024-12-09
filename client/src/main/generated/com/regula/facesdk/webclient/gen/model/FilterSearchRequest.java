@@ -20,126 +20,108 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchImageDetection;
-import com.regula.facesdk.webclient.gen.model.MatchImageResult;
+import com.regula.facesdk.webclient.gen.model.FilterOp;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
- * MatchResponseAllOf
+ * Allows to filter the search results based on the Person&#39;s &#x60;name&#x60;. If enabled, only the search results that meet the filter condition will be returned.
  */
+@ApiModel(description = "Allows to filter the search results based on the Person's `name`. If enabled, only the search results that meet the filter condition will be returned.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MatchResponseAllOf {
-  public static final String SERIALIZED_NAME_DETECTIONS = "detections";
-  @SerializedName(SERIALIZED_NAME_DETECTIONS)
-  private List<MatchImageDetection> detections = null;
+public class FilterSearchRequest {
+  public static final String SERIALIZED_NAME_OP = "op";
+  @SerializedName(SERIALIZED_NAME_OP)
+  private FilterOp op;
 
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<MatchImageResult> results = null;
+  public static final String SERIALIZED_NAME_FIELD = "field";
+  @SerializedName(SERIALIZED_NAME_FIELD)
+  private String field;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  private Map<String, Object> metadata = null;
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private List<String> value = null;
 
-  public MatchResponseAllOf() { 
+  public FilterSearchRequest() { 
   }
 
-  public MatchResponseAllOf detections(List<MatchImageDetection> detections) {
+  public FilterSearchRequest op(FilterOp op) {
     
-    this.detections = detections;
-    return this;
-  }
-
-  public MatchResponseAllOf addDetectionsItem(MatchImageDetection detectionsItem) {
-    if (this.detections == null) {
-      this.detections = new ArrayList<MatchImageDetection>();
-    }
-    this.detections.add(detectionsItem);
+    this.op = op;
     return this;
   }
 
    /**
-   * The detection results.
-   * @return detections
+   * Get op
+   * @return op
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The detection results.")
+  @ApiModelProperty(value = "")
 
-  public List<MatchImageDetection> getDetections() {
-    return detections;
+  public FilterOp getOp() {
+    return op;
   }
 
 
-  public void setDetections(List<MatchImageDetection> detections) {
-    this.detections = detections;
+  public void setOp(FilterOp op) {
+    this.op = op;
   }
 
 
-  public MatchResponseAllOf results(List<MatchImageResult> results) {
+  public FilterSearchRequest field(String field) {
     
-    this.results = results;
-    return this;
-  }
-
-  public MatchResponseAllOf addResultsItem(MatchImageResult resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<MatchImageResult>();
-    }
-    this.results.add(resultsItem);
+    this.field = field;
     return this;
   }
 
    /**
-   * The comparison results.
-   * @return results
+   * &#x60;name&#x60; of the Person.
+   * @return field
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The comparison results.")
+  @ApiModelProperty(value = "`name` of the Person.")
 
-  public List<MatchImageResult> getResults() {
-    return results;
+  public String getField() {
+    return field;
   }
 
 
-  public void setResults(List<MatchImageResult> results) {
-    this.results = results;
+  public void setField(String field) {
+    this.field = field;
   }
 
 
-  public MatchResponseAllOf metadata(Map<String, Object> metadata) {
+  public FilterSearchRequest value(List<String> value) {
     
-    this.metadata = metadata;
+    this.value = value;
     return this;
   }
 
-  public MatchResponseAllOf putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<String, Object>();
+  public FilterSearchRequest addValueItem(String valueItem) {
+    if (this.value == null) {
+      this.value = new ArrayList<String>();
     }
-    this.metadata.put(key, metadataItem);
+    this.value.add(valueItem);
     return this;
   }
 
    /**
-   * A free-form object containing person&#39;s extended attributes.
-   * @return metadata
+   * The list of &#x60;name&#x60; values against which the &#x60;field&#x60; is compared.
+   * @return value
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing person's extended attributes.")
+  @ApiModelProperty(value = "The list of `name` values against which the `field` is compared.")
 
-  public Map<String, Object> getMetadata() {
-    return metadata;
+  public List<String> getValue() {
+    return value;
   }
 
 
-  public void setMetadata(Map<String, Object> metadata) {
-    this.metadata = metadata;
+  public void setValue(List<String> value) {
+    this.value = value;
   }
 
 
@@ -151,24 +133,24 @@ public class MatchResponseAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MatchResponseAllOf matchResponseAllOf = (MatchResponseAllOf) o;
-    return Objects.equals(this.detections, matchResponseAllOf.detections) &&
-        Objects.equals(this.results, matchResponseAllOf.results) &&
-        Objects.equals(this.metadata, matchResponseAllOf.metadata);
+    FilterSearchRequest filterSearchRequest = (FilterSearchRequest) o;
+    return Objects.equals(this.op, filterSearchRequest.op) &&
+        Objects.equals(this.field, filterSearchRequest.field) &&
+        Objects.equals(this.value, filterSearchRequest.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(detections, results, metadata);
+    return Objects.hash(op, field, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MatchResponseAllOf {\n");
-    sb.append("    detections: ").append(toIndentedString(detections)).append("\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("class FilterSearchRequest {\n");
+    sb.append("    op: ").append(toIndentedString(op)).append("\n");
+    sb.append("    field: ").append(toIndentedString(field)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }
