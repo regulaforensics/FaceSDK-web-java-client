@@ -25,32 +25,22 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * The type of the image, defines the way the comparison is performed, see the [ImageSource enum](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/enums/image-source/).
+ * The filter condition, determines the type of comparison to be performed on the &#x60;name&#x60; values of the Person entity. &lt;br&gt;&lt;br&gt;When set to &#x60;in&#x60;, the &#x60;name&#x60; values of the Person should match any of the values specified in the &#x60;value&#x60; list. &lt;br&gt;&lt;br&gt;When set to &#x60;nin&#x60;, the &#x60;name&#x60; values of the Person should not match any of the values specified in the &#x60;value&#x60; list.
  */
-@JsonAdapter(ImageSource.Adapter.class)
-public enum ImageSource {
+@JsonAdapter(FilterOp.Adapter.class)
+public enum FilterOp {
   
-  DOCUMENT_PRINTED(1),
+  IN("in"),
   
-  DOCUMENT_RFID(2),
-  
-  LIVE(3),
-  
-  DOCUMENT_WITH_LIVE(4),
-  
-  EXTERNAL(5),
-  
-  GHOST(6),
-  
-  BARCODE(7);
+  NOT_IN("nin");
 
-  private Integer value;
+  private String value;
 
-  ImageSource(Integer value) {
+  FilterOp(String value) {
     this.value = value;
   }
 
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -59,8 +49,8 @@ public enum ImageSource {
     return String.valueOf(value);
   }
 
-  public static ImageSource fromValue(Integer value) {
-    for (ImageSource b : ImageSource.values()) {
+  public static FilterOp fromValue(String value) {
+    for (FilterOp b : FilterOp.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -68,16 +58,16 @@ public enum ImageSource {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ImageSource> {
+  public static class Adapter extends TypeAdapter<FilterOp> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ImageSource enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final FilterOp enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ImageSource read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return ImageSource.fromValue(value);
+    public FilterOp read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return FilterOp.fromValue(value);
     }
   }
 }

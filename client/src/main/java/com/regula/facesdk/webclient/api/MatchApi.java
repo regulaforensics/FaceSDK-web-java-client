@@ -10,12 +10,12 @@ import com.regula.facesdk.webclient.gen.model.MatchResponse;
 
 import java.util.Optional;
 
-public class MatchingApi extends com.regula.facesdk.webclient.gen.api.MatchingApi {
-    public MatchingApi() {
+public class MatchApi extends com.regula.facesdk.webclient.gen.api.MatchApi {
+    public MatchApi() {
         super();
     }
 
-    public MatchingApi(ApiClient apiClient) {
+    public MatchApi(ApiClient apiClient) {
         super(apiClient);
     }
 
