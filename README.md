@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.regula.facesdk:webclient:1.3.0")
+    implementation("com.regula.facesdk:webclient:5.2.3")
 }
 ```
 
