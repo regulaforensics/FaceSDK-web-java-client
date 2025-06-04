@@ -16,7 +16,7 @@ and declare client as regular dependency.
 ```gradle
 repositories {
     maven {
-        url = uri("https://maven.regulaforensics.com/RegulaFaceSDKWebClient")
+        url = uri("https://maven.regulaforensics.com/FaceSDKWebClient")
     }
 }
 
@@ -33,9 +33,9 @@ var sdk = new FaceSdk(apiBasePath);
 byte[] face1 = readFile("face_1.jpg");
 byte[] face2 = readFile("face_2.jpg");
 
-var compareImage1 = new CompareImage().index(0).data(face1).type(ImageSource.LIVE);
-var compareImage2 = new CompareImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
-var compareImage3 = new CompareImage().index(3).data(face2).type(ImageSource.LIVE);
+var compareImage1 = new MatchImage().index(0).data(face1).type(ImageSource.LIVE);
+var compareImage2 = new MatchImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
+var compareImage3 = new MatchImage().index(3).data(face2).type(ImageSource.LIVE);
 
 var compareRequest = new CompareRequest().images(List.of(compareImage1, compareImage2, compareImage3));
 var compareResponse = sdk.matchingApi.compare(compareRequest);
