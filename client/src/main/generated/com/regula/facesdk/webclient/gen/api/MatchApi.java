@@ -40,16 +40,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MatchingApi {
+public class MatchApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public MatchingApi() {
+    public MatchApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public MatchingApi(ApiClient apiClient) {
+    public MatchApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -435,7 +435,7 @@ public class MatchingApi {
 
     /**
      * match and search (1:1 + 1:N)
-     * To compare several images from a document and look up a person in the database in one request, use POST &#x60;/api/match_and_search&#x60;. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+     * To compare several images from a document and look up a person in the database in one request, use POST &#x60;/api/match_and_search&#x60;. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
      * @param matchAndSearchRequest  (required)
      * @param xRequestID Request header label. (optional)
      * @return MatchAndSearchResponse
@@ -454,7 +454,7 @@ public class MatchingApi {
 
     /**
      * match and search (1:1 + 1:N)
-     * To compare several images from a document and look up a person in the database in one request, use POST &#x60;/api/match_and_search&#x60;. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+     * To compare several images from a document and look up a person in the database in one request, use POST &#x60;/api/match_and_search&#x60;. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
      * @param matchAndSearchRequest  (required)
      * @param xRequestID Request header label. (optional)
      * @return ApiResponse&lt;MatchAndSearchResponse&gt;
@@ -474,7 +474,7 @@ public class MatchingApi {
 
     /**
      * match and search (1:1 + 1:N) (asynchronously)
-     * To compare several images from a document and look up a person in the database in one request, use POST &#x60;/api/match_and_search&#x60;. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+     * To compare several images from a document and look up a person in the database in one request, use POST &#x60;/api/match_and_search&#x60;. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
      * @param matchAndSearchRequest  (required)
      * @param xRequestID Request header label. (optional)
      * @param _callback The callback to be executed when the API call finishes

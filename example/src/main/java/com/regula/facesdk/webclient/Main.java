@@ -31,10 +31,10 @@ public class Main {
         var matchRequest = new MatchRequest()
                 .images(matchImages);
 
-        var matchResponse = sdk.matchingApi.match(matchRequest);
+        var matchResponse = sdk.matchApi.match(matchRequest);
 
         System.out.println("-----------------------------------------------------------------");
-        System.out.println("                         Matching Results                         ");
+        System.out.println("                          Match Results                          ");
         System.out.println("-----------------------------------------------------------------");
         if (matchResponse != null && matchResponse.getResults() != null) {
             for (var comparison : matchResponse.getResults()) {
@@ -46,7 +46,7 @@ public class Main {
         }
 
         var detectRequest = new DetectRequest().image(face2).tag("1");
-        var detectResponse = sdk.matchingApi.detect(detectRequest);
+        var detectResponse = sdk.matchApi.detect(detectRequest);
         var detectResults = detectResponse.getResults();
 
         System.out.println("-----------------------------------------------------------------");
