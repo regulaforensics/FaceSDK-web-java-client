@@ -23,39 +23,37 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Response group create data, includes name and metadata.
+ * DetectAttributesDetails
  */
-@ApiModel(description = "Response group create data, includes name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupResponse {
+public class DetectAttributesDetails {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  private Map<String, Object> metadata = null;
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private List<Integer> value = null;
 
-  public GroupResponse() { 
+  public DetectAttributesDetails() { 
   }
 
-  public GroupResponse name(String name) {
+  public DetectAttributesDetails name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * Group to create name.
+   * The name of the attribute.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group to create name.")
+  @ApiModelProperty(value = "The name of the attribute.")
 
   public String getName() {
     return name;
@@ -67,34 +65,34 @@ public class GroupResponse {
   }
 
 
-  public GroupResponse metadata(Map<String, Object> metadata) {
+  public DetectAttributesDetails value(List<Integer> value) {
     
-    this.metadata = metadata;
+    this.value = value;
     return this;
   }
 
-  public GroupResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<String, Object>();
+  public DetectAttributesDetails addValueItem(Integer valueItem) {
+    if (this.value == null) {
+      this.value = new ArrayList<Integer>();
     }
-    this.metadata.put(key, metadataItem);
+    this.value.add(valueItem);
     return this;
   }
 
    /**
-   * A free-form object containing group&#39;s extended attributes.
-   * @return metadata
+   * The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).
+   * @return value
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
+  @ApiModelProperty(value = "The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).")
 
-  public Map<String, Object> getMetadata() {
-    return metadata;
+  public List<Integer> getValue() {
+    return value;
   }
 
 
-  public void setMetadata(Map<String, Object> metadata) {
-    this.metadata = metadata;
+  public void setValue(List<Integer> value) {
+    this.value = value;
   }
 
 
@@ -106,22 +104,22 @@ public class GroupResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupResponse groupResponse = (GroupResponse) o;
-    return Objects.equals(this.name, groupResponse.name) &&
-        Objects.equals(this.metadata, groupResponse.metadata);
+    DetectAttributesDetails detectAttributesDetails = (DetectAttributesDetails) o;
+    return Objects.equals(this.name, detectAttributesDetails.name) &&
+        Objects.equals(this.value, detectAttributesDetails.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, metadata);
+    return Objects.hash(name, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupResponse {\n");
+    sb.append("class DetectAttributesDetails {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

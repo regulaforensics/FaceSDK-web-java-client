@@ -23,78 +23,66 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
- * Response group create data, includes name and metadata.
+ * PersonsRequestAllOf
  */
-@ApiModel(description = "Response group create data, includes name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupResponse {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class PersonsRequestAllOf {
+  public static final String SERIALIZED_NAME_TENANT = "tenant";
+  @SerializedName(SERIALIZED_NAME_TENANT)
+  private String tenant;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  private Map<String, Object> metadata = null;
+  public static final String SERIALIZED_NAME_ENV = "env";
+  @SerializedName(SERIALIZED_NAME_ENV)
+  private String env;
 
-  public GroupResponse() { 
+  public PersonsRequestAllOf() { 
   }
 
-  public GroupResponse name(String name) {
+  public PersonsRequestAllOf tenant(String tenant) {
     
-    this.name = name;
+    this.tenant = tenant;
     return this;
   }
 
    /**
-   * Group to create name.
-   * @return name
+   * Customer name
+   * @return tenant
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group to create name.")
+  @ApiModelProperty(value = "Customer name")
 
-  public String getName() {
-    return name;
+  public String getTenant() {
+    return tenant;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setTenant(String tenant) {
+    this.tenant = tenant;
   }
 
 
-  public GroupResponse metadata(Map<String, Object> metadata) {
+  public PersonsRequestAllOf env(String env) {
     
-    this.metadata = metadata;
-    return this;
-  }
-
-  public GroupResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<String, Object>();
-    }
-    this.metadata.put(key, metadataItem);
+    this.env = env;
     return this;
   }
 
    /**
-   * A free-form object containing group&#39;s extended attributes.
-   * @return metadata
+   * Environment type
+   * @return env
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
+  @ApiModelProperty(value = "Environment type")
 
-  public Map<String, Object> getMetadata() {
-    return metadata;
+  public String getEnv() {
+    return env;
   }
 
 
-  public void setMetadata(Map<String, Object> metadata) {
-    this.metadata = metadata;
+  public void setEnv(String env) {
+    this.env = env;
   }
 
 
@@ -106,22 +94,22 @@ public class GroupResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupResponse groupResponse = (GroupResponse) o;
-    return Objects.equals(this.name, groupResponse.name) &&
-        Objects.equals(this.metadata, groupResponse.metadata);
+    PersonsRequestAllOf personsRequestAllOf = (PersonsRequestAllOf) o;
+    return Objects.equals(this.tenant, personsRequestAllOf.tenant) &&
+        Objects.equals(this.env, personsRequestAllOf.env);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, metadata);
+    return Objects.hash(tenant, env);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupResponse {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("class PersonsRequestAllOf {\n");
+    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -23,39 +23,85 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
- * Response group create data, includes name and metadata.
+ * DetectDetailsMeta
  */
-@ApiModel(description = "Response group create data, includes name and metadata.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupResponse {
+public class DetectDetailsMeta {
+  public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
+  @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  private Float confidence;
+
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private String value;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  private Map<String, Object> metadata = null;
-
-  public GroupResponse() { 
+  public DetectDetailsMeta() { 
   }
 
-  public GroupResponse name(String name) {
+  public DetectDetailsMeta confidence(Float confidence) {
+    
+    this.confidence = confidence;
+    return this;
+  }
+
+   /**
+   * The confidence in the estimated value, &#x60;1.0&#x60; is for 100% confidence.
+   * @return confidence
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The confidence in the estimated value, `1.0` is for 100% confidence.")
+
+  public Float getConfidence() {
+    return confidence;
+  }
+
+
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
+  }
+
+
+  public DetectDetailsMeta value(String value) {
+    
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).
+   * @return value
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).")
+
+  public String getValue() {
+    return value;
+  }
+
+
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+
+  public DetectDetailsMeta name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * Group to create name.
+   * The name of the attribute.
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Group to create name.")
+  @ApiModelProperty(value = "The name of the attribute.")
 
   public String getName() {
     return name;
@@ -67,37 +113,6 @@ public class GroupResponse {
   }
 
 
-  public GroupResponse metadata(Map<String, Object> metadata) {
-    
-    this.metadata = metadata;
-    return this;
-  }
-
-  public GroupResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<String, Object>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
-   /**
-   * A free-form object containing group&#39;s extended attributes.
-   * @return metadata
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "A free-form object containing group's extended attributes.")
-
-  public Map<String, Object> getMetadata() {
-    return metadata;
-  }
-
-
-  public void setMetadata(Map<String, Object> metadata) {
-    this.metadata = metadata;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -106,22 +121,24 @@ public class GroupResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupResponse groupResponse = (GroupResponse) o;
-    return Objects.equals(this.name, groupResponse.name) &&
-        Objects.equals(this.metadata, groupResponse.metadata);
+    DetectDetailsMeta detectDetailsMeta = (DetectDetailsMeta) o;
+    return Objects.equals(this.confidence, detectDetailsMeta.confidence) &&
+        Objects.equals(this.value, detectDetailsMeta.value) &&
+        Objects.equals(this.name, detectDetailsMeta.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, metadata);
+    return Objects.hash(confidence, value, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupResponse {\n");
+    sb.append("class DetectDetailsMeta {\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
