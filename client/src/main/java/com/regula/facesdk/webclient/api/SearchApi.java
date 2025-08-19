@@ -13,11 +13,11 @@ public class SearchApi extends com.regula.facesdk.webclient.gen.api.SearchApi {
         super();
     }
 
-    public SearchResult search(SearchRequest searchRequest, String xRequestID) throws ApiException {
-        return super.search(searchRequest, xRequestID);
+    public SearchResult search(SearchRequest searchRequest, String xRequestID, Boolean withImages) throws ApiException {
+        return super.search(searchRequest, xRequestID, withImages);
     }
 
     public SearchResult search(SearchRequest searchRequest) throws ApiException {
-        return super.search(searchRequest, "");
+        return super.search(searchRequest, "", false);
     }
 }

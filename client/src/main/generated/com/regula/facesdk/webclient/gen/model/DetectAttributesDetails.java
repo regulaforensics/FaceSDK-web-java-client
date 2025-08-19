@@ -20,43 +20,79 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.FaceSDKResultCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * FaceSDKResult
+ * DetectAttributesDetails
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FaceSDKResult {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private FaceSDKResultCode code;
+public class DetectAttributesDetails {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-  public FaceSDKResult() { 
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private List<Integer> value = null;
+
+  public DetectAttributesDetails() { 
   }
 
-  public FaceSDKResult code(FaceSDKResultCode code) {
+  public DetectAttributesDetails name(String name) {
     
-    this.code = code;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * The name of the attribute.
+   * @return name
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The name of the attribute.")
 
-  public FaceSDKResultCode getCode() {
-    return code;
+  public String getName() {
+    return name;
   }
 
 
-  public void setCode(FaceSDKResultCode code) {
-    this.code = code;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  public DetectAttributesDetails value(List<Integer> value) {
+    
+    this.value = value;
+    return this;
+  }
+
+  public DetectAttributesDetails addValueItem(Integer valueItem) {
+    if (this.value == null) {
+      this.value = new ArrayList<Integer>();
+    }
+    this.value.add(valueItem);
+    return this;
+  }
+
+   /**
+   * The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).
+   * @return value
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).")
+
+  public List<Integer> getValue() {
+    return value;
+  }
+
+
+  public void setValue(List<Integer> value) {
+    this.value = value;
   }
 
 
@@ -68,20 +104,22 @@ public class FaceSDKResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FaceSDKResult faceSDKResult = (FaceSDKResult) o;
-    return Objects.equals(this.code, faceSDKResult.code);
+    DetectAttributesDetails detectAttributesDetails = (DetectAttributesDetails) o;
+    return Objects.equals(this.name, detectAttributesDetails.name) &&
+        Objects.equals(this.value, detectAttributesDetails.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(name, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FaceSDKResult {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("class DetectAttributesDetails {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,10 +22,10 @@ public class IdentificationExample {
         var sdk = new FaceSdk(apiBasePath);
 
         UUID person1Id = sdk.personApi.createPerson(
-                new PersonFields().name("person1").metadata(new HashMap<String, Object>())
+                new PersonsRequest().name("person1").metadata(new HashMap<String, Object>())
         ).getId();
         UUID person2Id = sdk.personApi.createPerson(
-                new PersonFields().name("person2").metadata(new HashMap<String, Object>())
+                new PersonsRequest().name("person2").metadata(new HashMap<String, Object>())
         ).getId();
 
         sdk.personApi.addImageToPerson(person1Id, new AddImageToPersonRequest().image(new AddImageToPersonRequestImage().content(face1)));

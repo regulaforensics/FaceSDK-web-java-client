@@ -20,43 +20,96 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.FaceSDKResultCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * FaceSDKResult
+ * DetectDetailsMeta
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FaceSDKResult {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private FaceSDKResultCode code;
+public class DetectDetailsMeta {
+  public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
+  @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  private Float confidence;
 
-  public FaceSDKResult() { 
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private String value;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
+  public DetectDetailsMeta() { 
   }
 
-  public FaceSDKResult code(FaceSDKResultCode code) {
+  public DetectDetailsMeta confidence(Float confidence) {
     
-    this.code = code;
+    this.confidence = confidence;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * The confidence in the estimated value, &#x60;1.0&#x60; is for 100% confidence.
+   * @return confidence
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The confidence in the estimated value, `1.0` is for 100% confidence.")
 
-  public FaceSDKResultCode getCode() {
-    return code;
+  public Float getConfidence() {
+    return confidence;
   }
 
 
-  public void setCode(FaceSDKResultCode code) {
-    this.code = code;
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
+  }
+
+
+  public DetectDetailsMeta value(String value) {
+    
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).
+   * @return value
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).")
+
+  public String getValue() {
+    return value;
+  }
+
+
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+
+  public DetectDetailsMeta name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * The name of the attribute.
+   * @return name
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The name of the attribute.")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -68,20 +121,24 @@ public class FaceSDKResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FaceSDKResult faceSDKResult = (FaceSDKResult) o;
-    return Objects.equals(this.code, faceSDKResult.code);
+    DetectDetailsMeta detectDetailsMeta = (DetectDetailsMeta) o;
+    return Objects.equals(this.confidence, detectDetailsMeta.confidence) &&
+        Objects.equals(this.value, detectDetailsMeta.value) &&
+        Objects.equals(this.name, detectDetailsMeta.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(confidence, value, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FaceSDKResult {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("class DetectDetailsMeta {\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
