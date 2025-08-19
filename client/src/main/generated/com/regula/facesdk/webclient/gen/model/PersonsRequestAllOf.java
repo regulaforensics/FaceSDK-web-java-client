@@ -20,43 +20,69 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.FaceSDKResultCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * FaceSDKResult
+ * PersonsRequestAllOf
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FaceSDKResult {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private FaceSDKResultCode code;
+public class PersonsRequestAllOf {
+  public static final String SERIALIZED_NAME_TENANT = "tenant";
+  @SerializedName(SERIALIZED_NAME_TENANT)
+  private String tenant;
 
-  public FaceSDKResult() { 
+  public static final String SERIALIZED_NAME_ENV = "env";
+  @SerializedName(SERIALIZED_NAME_ENV)
+  private String env;
+
+  public PersonsRequestAllOf() { 
   }
 
-  public FaceSDKResult code(FaceSDKResultCode code) {
+  public PersonsRequestAllOf tenant(String tenant) {
     
-    this.code = code;
+    this.tenant = tenant;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * A label used to group transactions by customers, applications, or other criteria.
+   * @return tenant
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A label used to group transactions by customers, applications, or other criteria.")
 
-  public FaceSDKResultCode getCode() {
-    return code;
+  public String getTenant() {
+    return tenant;
   }
 
 
-  public void setCode(FaceSDKResultCode code) {
-    this.code = code;
+  public void setTenant(String tenant) {
+    this.tenant = tenant;
+  }
+
+
+  public PersonsRequestAllOf env(String env) {
+    
+    this.env = env;
+    return this;
+  }
+
+   /**
+   * A label used to differentiate transactions by development stages.
+   * @return env
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A label used to differentiate transactions by development stages.")
+
+  public String getEnv() {
+    return env;
+  }
+
+
+  public void setEnv(String env) {
+    this.env = env;
   }
 
 
@@ -68,20 +94,22 @@ public class FaceSDKResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FaceSDKResult faceSDKResult = (FaceSDKResult) o;
-    return Objects.equals(this.code, faceSDKResult.code);
+    PersonsRequestAllOf personsRequestAllOf = (PersonsRequestAllOf) o;
+    return Objects.equals(this.tenant, personsRequestAllOf.tenant) &&
+        Objects.equals(this.env, personsRequestAllOf.env);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(tenant, env);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FaceSDKResult {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("class PersonsRequestAllOf {\n");
+    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("}");
     return sb.toString();
   }

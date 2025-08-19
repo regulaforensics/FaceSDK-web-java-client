@@ -20,9 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.Person;
-import com.regula.facesdk.webclient.gen.model.PersonWithImagesAllOf;
-import com.regula.facesdk.webclient.gen.model.RecognizeImage;
+import com.regula.facesdk.webclient.gen.model.PersonFields;
+import com.regula.facesdk.webclient.gen.model.PersonsRequestAllOf;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -33,14 +32,10 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * PersonWithImages
+ * PersonsRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class PersonWithImages {
-  public static final String SERIALIZED_NAME_IMAGES = "images";
-  @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<RecognizeImage> images = null;
-
+public class PersonsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -61,53 +56,18 @@ public class PersonWithImages {
   @SerializedName(SERIALIZED_NAME_EXPIRE_AT)
   private String expireAt;
 
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private UUID id;
+  public static final String SERIALIZED_NAME_TENANT = "tenant";
+  @SerializedName(SERIALIZED_NAME_TENANT)
+  private String tenant;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private String createdAt;
+  public static final String SERIALIZED_NAME_ENV = "env";
+  @SerializedName(SERIALIZED_NAME_ENV)
+  private String env;
 
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private String updatedAt;
-
-  public PersonWithImages() { 
+  public PersonsRequest() { 
   }
 
-  public PersonWithImages images(List<RecognizeImage> images) {
-    
-    this.images = images;
-    return this;
-  }
-
-  public PersonWithImages addImagesItem(RecognizeImage imagesItem) {
-    if (this.images == null) {
-      this.images = new ArrayList<RecognizeImage>();
-    }
-    this.images.add(imagesItem);
-    return this;
-  }
-
-   /**
-   * Detected Persons.
-   * @return images
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Detected Persons.")
-
-  public List<RecognizeImage> getImages() {
-    return images;
-  }
-
-
-  public void setImages(List<RecognizeImage> images) {
-    this.images = images;
-  }
-
-
-  public PersonWithImages name(String name) {
+  public PersonsRequest name(String name) {
     
     this.name = name;
     return this;
@@ -130,7 +90,7 @@ public class PersonWithImages {
   }
 
 
-  public PersonWithImages externalId(String externalId) {
+  public PersonsRequest externalId(String externalId) {
     
     this.externalId = externalId;
     return this;
@@ -153,13 +113,13 @@ public class PersonWithImages {
   }
 
 
-  public PersonWithImages metadata(Map<String, Object> metadata) {
+  public PersonsRequest metadata(Map<String, Object> metadata) {
     
     this.metadata = metadata;
     return this;
   }
 
-  public PersonWithImages putMetadataItem(String key, Object metadataItem) {
+  public PersonsRequest putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -184,13 +144,13 @@ public class PersonWithImages {
   }
 
 
-  public PersonWithImages groups(List<UUID> groups) {
+  public PersonsRequest groups(List<UUID> groups) {
     
     this.groups = groups;
     return this;
   }
 
-  public PersonWithImages addGroupsItem(UUID groupsItem) {
+  public PersonsRequest addGroupsItem(UUID groupsItem) {
     if (this.groups == null) {
       this.groups = new ArrayList<UUID>();
     }
@@ -199,11 +159,11 @@ public class PersonWithImages {
   }
 
    /**
-   * List of groups this person belongs to.
+   * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
    * @return groups
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "List of groups this person belongs to.")
+  @ApiModelProperty(value = "Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.")
 
   public List<UUID> getGroups() {
     return groups;
@@ -215,7 +175,7 @@ public class PersonWithImages {
   }
 
 
-  public PersonWithImages expireAt(String expireAt) {
+  public PersonsRequest expireAt(String expireAt) {
     
     this.expireAt = expireAt;
     return this;
@@ -238,72 +198,49 @@ public class PersonWithImages {
   }
 
 
-  public PersonWithImages id(UUID id) {
+  public PersonsRequest tenant(String tenant) {
     
-    this.id = id;
+    this.tenant = tenant;
     return this;
   }
 
    /**
-   * Person ID. The list of persons is sorted by decreasing ID value.
-   * @return id
+   * A label used to group transactions by customers, applications, or other criteria.
+   * @return tenant
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person ID. The list of persons is sorted by decreasing ID value.")
+  @ApiModelProperty(value = "A label used to group transactions by customers, applications, or other criteria.")
 
-  public UUID getId() {
-    return id;
+  public String getTenant() {
+    return tenant;
   }
 
 
-  public void setId(UUID id) {
-    this.id = id;
+  public void setTenant(String tenant) {
+    this.tenant = tenant;
   }
 
 
-  public PersonWithImages createdAt(String createdAt) {
+  public PersonsRequest env(String env) {
     
-    this.createdAt = createdAt;
+    this.env = env;
     return this;
   }
 
    /**
-   * Person creation date.
-   * @return createdAt
+   * A label used to differentiate transactions by development stages.
+   * @return env
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person creation date.")
+  @ApiModelProperty(value = "A label used to differentiate transactions by development stages.")
 
-  public String getCreatedAt() {
-    return createdAt;
+  public String getEnv() {
+    return env;
   }
 
 
-  public void setCreatedAt(String createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public PersonWithImages updatedAt(String updatedAt) {
-    
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-   /**
-   * Person update date.
-   * @return updatedAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person update date.")
-
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
-
-
-  public void setUpdatedAt(String updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setEnv(String env) {
+    this.env = env;
   }
 
 
@@ -315,36 +252,32 @@ public class PersonWithImages {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PersonWithImages personWithImages = (PersonWithImages) o;
-    return Objects.equals(this.images, personWithImages.images) &&
-        Objects.equals(this.name, personWithImages.name) &&
-        Objects.equals(this.externalId, personWithImages.externalId) &&
-        Objects.equals(this.metadata, personWithImages.metadata) &&
-        Objects.equals(this.groups, personWithImages.groups) &&
-        Objects.equals(this.expireAt, personWithImages.expireAt) &&
-        Objects.equals(this.id, personWithImages.id) &&
-        Objects.equals(this.createdAt, personWithImages.createdAt) &&
-        Objects.equals(this.updatedAt, personWithImages.updatedAt);
+    PersonsRequest personsRequest = (PersonsRequest) o;
+    return Objects.equals(this.name, personsRequest.name) &&
+        Objects.equals(this.externalId, personsRequest.externalId) &&
+        Objects.equals(this.metadata, personsRequest.metadata) &&
+        Objects.equals(this.groups, personsRequest.groups) &&
+        Objects.equals(this.expireAt, personsRequest.expireAt) &&
+        Objects.equals(this.tenant, personsRequest.tenant) &&
+        Objects.equals(this.env, personsRequest.env);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(images, name, externalId, metadata, groups, expireAt, id, createdAt, updatedAt);
+    return Objects.hash(name, externalId, metadata, groups, expireAt, tenant, env);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PersonWithImages {\n");
-    sb.append("    images: ").append(toIndentedString(images)).append("\n");
+    sb.append("class PersonsRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    expireAt: ").append(toIndentedString(expireAt)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("}");
     return sb.toString();
   }
