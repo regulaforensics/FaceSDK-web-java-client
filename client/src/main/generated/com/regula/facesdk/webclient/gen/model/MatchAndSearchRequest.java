@@ -20,11 +20,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOf;
-import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestAllOfImages;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestImages;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -40,11 +40,19 @@ public class MatchAndSearchRequest {
 
   public static final String SERIALIZED_NAME_IMAGES = "images";
   @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<MatchAndSearchRequestAllOfImages> images = null;
+  private List<MatchAndSearchRequestImages> images = null;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "groupIds";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   private List<UUID> groupIds = null;
+
+  public static final String SERIALIZED_NAME_THRESHOLD = "threshold";
+  @SerializedName(SERIALIZED_NAME_THRESHOLD)
+  private BigDecimal threshold;
+
+  public static final String SERIALIZED_NAME_LIMIT = "limit";
+  @SerializedName(SERIALIZED_NAME_LIMIT)
+  private Integer limit;
 
   public static final String SERIALIZED_NAME_TENANT = "tenant";
   @SerializedName(SERIALIZED_NAME_TENANT)
@@ -80,15 +88,15 @@ public class MatchAndSearchRequest {
   }
 
 
-  public MatchAndSearchRequest images(List<MatchAndSearchRequestAllOfImages> images) {
+  public MatchAndSearchRequest images(List<MatchAndSearchRequestImages> images) {
     
     this.images = images;
     return this;
   }
 
-  public MatchAndSearchRequest addImagesItem(MatchAndSearchRequestAllOfImages imagesItem) {
+  public MatchAndSearchRequest addImagesItem(MatchAndSearchRequestImages imagesItem) {
     if (this.images == null) {
-      this.images = new ArrayList<MatchAndSearchRequestAllOfImages>();
+      this.images = new ArrayList<MatchAndSearchRequestImages>();
     }
     this.images.add(imagesItem);
     return this;
@@ -101,12 +109,12 @@ public class MatchAndSearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Person's images.")
 
-  public List<MatchAndSearchRequestAllOfImages> getImages() {
+  public List<MatchAndSearchRequestImages> getImages() {
     return images;
   }
 
 
-  public void setImages(List<MatchAndSearchRequestAllOfImages> images) {
+  public void setImages(List<MatchAndSearchRequestImages> images) {
     this.images = images;
   }
 
@@ -139,6 +147,52 @@ public class MatchAndSearchRequest {
 
   public void setGroupIds(List<UUID> groupIds) {
     this.groupIds = groupIds;
+  }
+
+
+  public MatchAndSearchRequest threshold(BigDecimal threshold) {
+    
+    this.threshold = threshold;
+    return this;
+  }
+
+   /**
+   * The similarity threshold.
+   * @return threshold
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The similarity threshold.")
+
+  public BigDecimal getThreshold() {
+    return threshold;
+  }
+
+
+  public void setThreshold(BigDecimal threshold) {
+    this.threshold = threshold;
+  }
+
+
+  public MatchAndSearchRequest limit(Integer limit) {
+    
+    this.limit = limit;
+    return this;
+  }
+
+   /**
+   * The maximum number of results to be returned.
+   * @return limit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The maximum number of results to be returned.")
+
+  public Integer getLimit() {
+    return limit;
+  }
+
+
+  public void setLimit(Integer limit) {
+    this.limit = limit;
   }
 
 
@@ -200,13 +254,15 @@ public class MatchAndSearchRequest {
     return Objects.equals(this.tag, matchAndSearchRequest.tag) &&
         Objects.equals(this.images, matchAndSearchRequest.images) &&
         Objects.equals(this.groupIds, matchAndSearchRequest.groupIds) &&
+        Objects.equals(this.threshold, matchAndSearchRequest.threshold) &&
+        Objects.equals(this.limit, matchAndSearchRequest.limit) &&
         Objects.equals(this.tenant, matchAndSearchRequest.tenant) &&
         Objects.equals(this.env, matchAndSearchRequest.env);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, images, groupIds, tenant, env);
+    return Objects.hash(tag, images, groupIds, threshold, limit, tenant, env);
   }
 
   @Override
@@ -216,6 +272,8 @@ public class MatchAndSearchRequest {
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
     sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("}");
