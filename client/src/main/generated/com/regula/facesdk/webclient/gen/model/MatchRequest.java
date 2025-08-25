@@ -91,11 +91,11 @@ public class MatchRequest {
   }
 
    /**
-   * All images included in the comparison.
+   * An array of images to be processed. At least two images must be provided.
    * @return images
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "All images included in the comparison.")
+  @ApiModelProperty(required = true, value = "An array of images to be processed. At least two images must be provided.")
 
   public List<MatchImage> getImages() {
     return images;
