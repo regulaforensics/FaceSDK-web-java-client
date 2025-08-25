@@ -103,11 +103,11 @@ public class MatchAndSearchRequest {
   }
 
    /**
-   * Person&#39;s images.
+   * An array of images to be processed. At least two images must be provided.
    * @return images
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Person's images.")
+  @ApiModelProperty(value = "An array of images to be processed. At least two images must be provided.")
 
   public List<MatchAndSearchRequestImages> getImages() {
     return images;
