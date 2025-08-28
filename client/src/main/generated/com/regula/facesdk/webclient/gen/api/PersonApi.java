@@ -34,8 +34,8 @@ import com.regula.facesdk.webclient.gen.model.GroupPage;
 import com.regula.facesdk.webclient.gen.model.ImagePage;
 import com.regula.facesdk.webclient.gen.model.OperationLog;
 import com.regula.facesdk.webclient.gen.model.Person;
+import com.regula.facesdk.webclient.gen.model.PersonFields;
 import com.regula.facesdk.webclient.gen.model.PersonToUpdateFields;
-import com.regula.facesdk.webclient.gen.model.PersonsRequest;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -236,7 +236,7 @@ public class PersonApi {
     }
     /**
      * Build call for createPerson
-     * @param personsRequest  (required)
+     * @param personFields  (required)
      * @param xRequestID Request header label. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -248,7 +248,7 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPersonCall(PersonsRequest personsRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPersonCall(PersonFields personFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -263,7 +263,7 @@ public class PersonApi {
             basePath = null;
         }
 
-        Object localVarPostBody = personsRequest;
+        Object localVarPostBody = personFields;
 
         // create path and map variables
         String localVarPath = "/api/persons";
@@ -299,15 +299,15 @@ public class PersonApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPersonValidateBeforeCall(PersonsRequest personsRequest, String xRequestID, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPersonValidateBeforeCall(PersonFields personFields, String xRequestID, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'personsRequest' is set
-        if (personsRequest == null) {
-            throw new ApiException("Missing the required parameter 'personsRequest' when calling createPerson(Async)");
+        // verify the required parameter 'personFields' is set
+        if (personFields == null) {
+            throw new ApiException("Missing the required parameter 'personFields' when calling createPerson(Async)");
         }
         
 
-        okhttp3.Call localVarCall = createPersonCall(personsRequest, xRequestID, _callback);
+        okhttp3.Call localVarCall = createPersonCall(personFields, xRequestID, _callback);
         return localVarCall;
 
     }
@@ -315,7 +315,7 @@ public class PersonApi {
     /**
      * Create person
      * 
-     * @param personsRequest  (required)
+     * @param personFields  (required)
      * @param xRequestID Request header label. (optional)
      * @return Person
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -326,15 +326,15 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public Person createPerson(PersonsRequest personsRequest, String xRequestID) throws ApiException {
-        ApiResponse<Person> localVarResp = createPersonWithHttpInfo(personsRequest, xRequestID);
+    public Person createPerson(PersonFields personFields, String xRequestID) throws ApiException {
+        ApiResponse<Person> localVarResp = createPersonWithHttpInfo(personFields, xRequestID);
         return localVarResp.getData();
     }
 
     /**
      * Create person
      * 
-     * @param personsRequest  (required)
+     * @param personFields  (required)
      * @param xRequestID Request header label. (optional)
      * @return ApiResponse&lt;Person&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -345,8 +345,8 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Person> createPersonWithHttpInfo(PersonsRequest personsRequest, String xRequestID) throws ApiException {
-        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personsRequest, xRequestID, null);
+    public ApiResponse<Person> createPersonWithHttpInfo(PersonFields personFields, String xRequestID) throws ApiException {
+        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personFields, xRequestID, null);
         Type localVarReturnType = new TypeToken<Person>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -354,7 +354,7 @@ public class PersonApi {
     /**
      * Create person (asynchronously)
      * 
-     * @param personsRequest  (required)
+     * @param personFields  (required)
      * @param xRequestID Request header label. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -366,9 +366,9 @@ public class PersonApi {
         <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPersonAsync(PersonsRequest personsRequest, String xRequestID, final ApiCallback<Person> _callback) throws ApiException {
+    public okhttp3.Call createPersonAsync(PersonFields personFields, String xRequestID, final ApiCallback<Person> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personsRequest, xRequestID, _callback);
+        okhttp3.Call localVarCall = createPersonValidateBeforeCall(personFields, xRequestID, _callback);
         Type localVarReturnType = new TypeToken<Person>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

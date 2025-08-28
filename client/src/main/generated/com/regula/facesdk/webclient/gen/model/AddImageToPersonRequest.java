@@ -47,6 +47,14 @@ public class AddImageToPersonRequest {
   @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit;
 
+  public static final String SERIALIZED_NAME_TENANT = "tenant";
+  @SerializedName(SERIALIZED_NAME_TENANT)
+  private String tenant;
+
+  public static final String SERIALIZED_NAME_ENV = "env";
+  @SerializedName(SERIALIZED_NAME_ENV)
+  private String env;
+
   public AddImageToPersonRequest() { 
   }
 
@@ -142,6 +150,52 @@ public class AddImageToPersonRequest {
   }
 
 
+  public AddImageToPersonRequest tenant(String tenant) {
+    
+    this.tenant = tenant;
+    return this;
+  }
+
+   /**
+   * A label used to group transactions by customers, applications, or other criteria.
+   * @return tenant
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A label used to group transactions by customers, applications, or other criteria.")
+
+  public String getTenant() {
+    return tenant;
+  }
+
+
+  public void setTenant(String tenant) {
+    this.tenant = tenant;
+  }
+
+
+  public AddImageToPersonRequest env(String env) {
+    
+    this.env = env;
+    return this;
+  }
+
+   /**
+   * A label used to differentiate transactions by development stages.
+   * @return env
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A label used to differentiate transactions by development stages.")
+
+  public String getEnv() {
+    return env;
+  }
+
+
+  public void setEnv(String env) {
+    this.env = env;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -154,12 +208,14 @@ public class AddImageToPersonRequest {
     return Objects.equals(this.tag, addImageToPersonRequest.tag) &&
         Objects.equals(this.image, addImageToPersonRequest.image) &&
         Objects.equals(this.threshold, addImageToPersonRequest.threshold) &&
-        Objects.equals(this.limit, addImageToPersonRequest.limit);
+        Objects.equals(this.limit, addImageToPersonRequest.limit) &&
+        Objects.equals(this.tenant, addImageToPersonRequest.tenant) &&
+        Objects.equals(this.env, addImageToPersonRequest.env);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, image, threshold, limit);
+    return Objects.hash(tag, image, threshold, limit, tenant, env);
   }
 
   @Override
@@ -170,6 +226,8 @@ public class AddImageToPersonRequest {
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("}");
     return sb.toString();
   }
