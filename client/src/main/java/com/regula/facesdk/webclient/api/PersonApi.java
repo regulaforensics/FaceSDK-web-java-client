@@ -16,14 +16,14 @@ public class PersonApi extends com.regula.facesdk.webclient.gen.api.PersonApi {
         super();
     }
 
-    public Person createPerson(PersonsRequest personsRequest, String xRequestID) throws ApiException {
-        if (personsRequest.getMetadata() == null) personsRequest.setMetadata(new HashMap<String, Object>());
-        return super.createPerson(personsRequest, xRequestID);
+    public Person createPerson(PersonFields personFields, String xRequestID) throws ApiException {
+        if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
+        return super.createPerson(personFields, xRequestID);
     }
 
-    public Person createPerson(PersonsRequest personsRequest) throws ApiException {
-        if (personsRequest.getMetadata() == null) personsRequest.setMetadata(new HashMap<String, Object>());
-        return this.createPerson(personsRequest, "");
+    public Person createPerson(PersonFields personFields) throws ApiException {
+        if (personFields.getMetadata() == null) personFields.setMetadata(new HashMap<String, Object>());
+        return this.createPerson(personFields, "");
     }
 
     public AddImageToPersonResponse addImageToPerson(UUID personId, AddImageToPersonRequest imageFields, String xRequestID) throws ApiException {
