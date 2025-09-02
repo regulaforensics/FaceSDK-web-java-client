@@ -20,43 +20,97 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.regula.facesdk.webclient.gen.model.FaceSDKResultCode;
+import com.regula.facesdk.webclient.gen.model.ImageSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * FaceSDKResult
+ * MatchAndSearchRequestImages
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FaceSDKResult {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private FaceSDKResultCode code;
+public class MatchAndSearchRequestImages {
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  private byte[] content;
 
-  public FaceSDKResult() { 
+  public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  private String imageUrl;
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private ImageSource type;
+
+  public MatchAndSearchRequestImages() { 
   }
 
-  public FaceSDKResult code(FaceSDKResultCode code) {
+  public MatchAndSearchRequestImages content(byte[] content) {
     
-    this.code = code;
+    this.content = content;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Base64-encoded image.
+   * @return content
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Base64-encoded image.")
 
-  public FaceSDKResultCode getCode() {
-    return code;
+  public byte[] getContent() {
+    return content;
   }
 
 
-  public void setCode(FaceSDKResultCode code) {
-    this.code = code;
+  public void setContent(byte[] content) {
+    this.content = content;
+  }
+
+
+  public MatchAndSearchRequestImages imageUrl(String imageUrl) {
+    
+    this.imageUrl = imageUrl;
+    return this;
+  }
+
+   /**
+   * Image URL.
+   * @return imageUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Image URL.")
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+
+  public MatchAndSearchRequestImages type(ImageSource type) {
+    
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ImageSource getType() {
+    return type;
+  }
+
+
+  public void setType(ImageSource type) {
+    this.type = type;
   }
 
 
@@ -68,20 +122,24 @@ public class FaceSDKResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FaceSDKResult faceSDKResult = (FaceSDKResult) o;
-    return Objects.equals(this.code, faceSDKResult.code);
+    MatchAndSearchRequestImages matchAndSearchRequestImages = (MatchAndSearchRequestImages) o;
+    return Arrays.equals(this.content, matchAndSearchRequestImages.content) &&
+        Objects.equals(this.imageUrl, matchAndSearchRequestImages.imageUrl) &&
+        Objects.equals(this.type, matchAndSearchRequestImages.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(Arrays.hashCode(content), imageUrl, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FaceSDKResult {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("class MatchAndSearchRequestImages {\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

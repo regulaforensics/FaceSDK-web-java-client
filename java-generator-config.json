@@ -8,5 +8,11 @@
   "invokerPackage": "com.regula.facesdk.webclient",
   "modelPackage": "com.regula.facesdk.webclient.gen.model",
   "apiPackage": "com.regula.facesdk.webclient.gen.api",
-  "sourceFolder": "src/main/generated"
+  "sourceFolder": "src/main/generated",
+  "typeMappings" : {
+    "AnyOfDetectAttributesDetailsDetectDetailsMeta": "Map<String, Object>"
+  },
+  "importMappings": {
+    "AnyOfDetectAttributesDetailsDetectDetailsMeta": "java.util.Map"
+  }
 }

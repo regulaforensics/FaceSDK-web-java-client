@@ -26,6 +26,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/AddImageToPersonReques
 src/main/generated/com/regula/facesdk/webclient/gen/model/AddImageToPersonResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/AttributeConfig.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/Crop.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/DetectAttributesDetails.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/DetectDetailsMeta.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectRequest.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectResponseAllOf.java
@@ -61,8 +63,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/ImagePageAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/ImageSource.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/LivenessType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequest.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOf.java
-src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestAllOfImages.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchRequestImages.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchResponse.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchResponseAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/MatchAndSearchResponseAllOfDetections.java
@@ -99,6 +100,7 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/SearchParametersCreate
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPerson.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchPersonAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequest.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/SearchRequestAllOf.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/TransactionInfo.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/UpdateGroup.java
