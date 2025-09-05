@@ -38,10 +38,6 @@ dependencies {
     implementation ("jakarta.annotation:jakarta.annotation-api:2.1.0")
 }
 
-tasks.withType<Jar> {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-}
-
 /* ----------- Publishing config ------------------- */
 // supressed for local development
 // if you need to publish from local machine, create `gradle.properties` file in a project root and add 3 vairables:
@@ -63,17 +59,12 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
         repositories {
             maven {
 
-                val releasesRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceSDKWebClient")
-                val betaRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceSDKWebClient/Beta")
-                val rcRepoUrl = uri("sftp://maven.regulaforensics.com:22/FaceSDKWebClient/RC")
-                val nightlyRepoUrl = uri("sftp://ftp.regula.local:22/FaceSDKWebClient")
+                val releasesRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient")
+                val betaRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient/Stable")
 
                 name = "regulaforensics"
-                url = if (version.toString().contains("beta")) betaRepoUrl
-                else if(version.toString().contains("nightly")) nightlyRepoUrl
-                else if(version.toString().contains("rc")) rcRepoUrl
-                else releasesRepoUrl
                 version = version.toString().split('-')[0]
+                url = if (version.toString().contains("rc")) betaRepoUrl else releasesRepoUrl
                 credentials {
                     username = regulaforensicsMavenUser
                     password = regulaforensicsMavenPassword
