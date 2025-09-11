@@ -64,11 +64,18 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
             maven {
 
                 val releasesRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient")
-                val betaRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient/Stable")
+                val rcRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient/RC")
+                val nightlyRepoUrl = uri("sftp://ftp.regula.local:22/FaceSDKWebClient")
+
+                val resultRepoUrl = if(version.toString().contains("nightly")) nightlyRepoUrl
+                    else if(version.toString().contains("rc")) rcRepoUrl
+                    else releasesRepoUrl
+
+                println("Version: $version repoUrl: $resultRepoUrl")
 
                 name = "regulaforensics"
                 version = version.toString().split('-')[0]
-                url = if (version.toString().contains("rc")) betaRepoUrl else releasesRepoUrl
+                url  = resultRepoUrl
                 credentials {
                     username = regulaforensicsMavenUser
                     password = regulaforensicsMavenPassword
