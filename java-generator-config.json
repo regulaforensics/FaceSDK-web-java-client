@@ -1,6 +1,5 @@
 {
   "artifactId": "webclient",
-  "artifactVersion": "1.3.0",
   "groupId": "com.regula.facesdk",
   "library": "okhttp-gson",
   "useRuntimeException": true,
@@ -9,10 +8,9 @@
   "modelPackage": "com.regula.facesdk.webclient.gen.model",
   "apiPackage": "com.regula.facesdk.webclient.gen.api",
   "sourceFolder": "src/main/generated",
+  "containerDefaultToNull": true,
+  "legacyDiscriminatorBehavior": false,
   "typeMappings" : {
-    "AnyOfDetectAttributesDetailsDetectDetailsMeta": "Map<String, Object>"
-  },
-  "importMappings": {
-    "AnyOfDetectAttributesDetailsDetectDetailsMeta": "java.util.Map"
+    "DetectionAttributesDetailsInner": "DetailItem"
   }
 }
