@@ -168,7 +168,8 @@ public class PersonWithImages extends PersonWithImagesData {
   }
 
   /**
-   * List of groups this person belongs to.
+   * Groups a person should be placed to. If no group is specified in request, a Default group is
+   * created and the person is placed to it.
    *
    * @return groups
    */

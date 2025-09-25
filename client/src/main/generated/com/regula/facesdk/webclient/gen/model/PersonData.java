@@ -23,10 +23,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.JSON;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -52,12 +50,6 @@ public class PersonData {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
   private String updatedAt;
-
-  public static final String SERIALIZED_NAME_GROUPS = "groups";
-
-  @SerializedName(SERIALIZED_NAME_GROUPS)
-  @javax.annotation.Nullable
-  private List<UUID> groups;
 
   public PersonData() {}
 
@@ -118,33 +110,6 @@ public class PersonData {
     this.updatedAt = updatedAt;
   }
 
-  public PersonData groups(@javax.annotation.Nullable List<UUID> groups) {
-    this.groups = groups;
-    return this;
-  }
-
-  public PersonData addGroupsItem(UUID groupsItem) {
-    if (this.groups == null) {
-      this.groups = new ArrayList<>();
-    }
-    this.groups.add(groupsItem);
-    return this;
-  }
-
-  /**
-   * List of groups this person belongs to.
-   *
-   * @return groups
-   */
-  @javax.annotation.Nullable
-  public List<UUID> getGroups() {
-    return groups;
-  }
-
-  public void setGroups(@javax.annotation.Nullable List<UUID> groups) {
-    this.groups = groups;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -156,13 +121,12 @@ public class PersonData {
     PersonData personData = (PersonData) o;
     return Objects.equals(this.id, personData.id)
         && Objects.equals(this.createdAt, personData.createdAt)
-        && Objects.equals(this.updatedAt, personData.updatedAt)
-        && Objects.equals(this.groups, personData.groups);
+        && Objects.equals(this.updatedAt, personData.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, groups);
+    return Objects.hash(id, createdAt, updatedAt);
   }
 
   @Override
@@ -172,7 +136,6 @@ public class PersonData {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -192,7 +155,7 @@ public class PersonData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "createdAt", "updatedAt", "groups"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "createdAt", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -236,15 +199,6 @@ public class PersonData {
           String.format(
               "Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("updatedAt").toString()));
-    }
-    // ensure the optional json data is an array if present
-    if (jsonObj.get("groups") != null
-        && !jsonObj.get("groups").isJsonNull()
-        && !jsonObj.get("groups").isJsonArray()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `groups` to be an array in the JSON string but got `%s`",
-              jsonObj.get("groups").toString()));
     }
   }
 

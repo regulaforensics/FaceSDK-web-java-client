@@ -24,7 +24,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.JSON;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -41,12 +40,6 @@ public class FacesResponseData {
   @SerializedName(SERIALIZED_NAME_PERSONS)
   @javax.annotation.Nullable
   private List<PersonWithImages> persons;
-
-  public static final String SERIALIZED_NAME_ROTATION_ANGLE = "rotationAngle";
-
-  @SerializedName(SERIALIZED_NAME_ROTATION_ANGLE)
-  @javax.annotation.Nullable
-  private BigDecimal rotationAngle;
 
   public FacesResponseData() {}
 
@@ -77,25 +70,6 @@ public class FacesResponseData {
     this.persons = persons;
   }
 
-  public FacesResponseData rotationAngle(@javax.annotation.Nullable BigDecimal rotationAngle) {
-    this.rotationAngle = rotationAngle;
-    return this;
-  }
-
-  /**
-   * Get rotationAngle
-   *
-   * @return rotationAngle
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getRotationAngle() {
-    return rotationAngle;
-  }
-
-  public void setRotationAngle(@javax.annotation.Nullable BigDecimal rotationAngle) {
-    this.rotationAngle = rotationAngle;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -105,13 +79,12 @@ public class FacesResponseData {
       return false;
     }
     FacesResponseData facesResponseData = (FacesResponseData) o;
-    return Objects.equals(this.persons, facesResponseData.persons)
-        && Objects.equals(this.rotationAngle, facesResponseData.rotationAngle);
+    return Objects.equals(this.persons, facesResponseData.persons);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(persons, rotationAngle);
+    return Objects.hash(persons);
   }
 
   @Override
@@ -119,7 +92,6 @@ public class FacesResponseData {
     StringBuilder sb = new StringBuilder();
     sb.append("class FacesResponseData {\n");
     sb.append("    persons: ").append(toIndentedString(persons)).append("\n");
-    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -139,7 +111,7 @@ public class FacesResponseData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("persons", "rotationAngle"));
+    openapiFields = new HashSet<String>(Arrays.asList("persons"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

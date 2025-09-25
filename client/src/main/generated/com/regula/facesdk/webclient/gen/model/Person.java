@@ -17,10 +17,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 import com.regula.facesdk.webclient.JSON;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -46,12 +44,6 @@ public class Person extends PersonFields {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
   private String updatedAt;
-
-  public static final String SERIALIZED_NAME_GROUPS = "groups";
-
-  @SerializedName(SERIALIZED_NAME_GROUPS)
-  @javax.annotation.Nullable
-  private List<UUID> groups;
 
   public Person() {}
 
@@ -112,33 +104,6 @@ public class Person extends PersonFields {
     this.updatedAt = updatedAt;
   }
 
-  public Person groups(@javax.annotation.Nullable List<UUID> groups) {
-    this.groups = groups;
-    return this;
-  }
-
-  public Person addGroupsItem(UUID groupsItem) {
-    if (this.groups == null) {
-      this.groups = new ArrayList<>();
-    }
-    this.groups.add(groupsItem);
-    return this;
-  }
-
-  /**
-   * List of groups this person belongs to.
-   *
-   * @return groups
-   */
-  @javax.annotation.Nullable
-  public List<UUID> getGroups() {
-    return groups;
-  }
-
-  public void setGroups(@javax.annotation.Nullable List<UUID> groups) {
-    this.groups = groups;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -151,13 +116,12 @@ public class Person extends PersonFields {
     return Objects.equals(this.id, person.id)
         && Objects.equals(this.createdAt, person.createdAt)
         && Objects.equals(this.updatedAt, person.updatedAt)
-        && Objects.equals(this.groups, person.groups)
         && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, groups, super.hashCode());
+    return Objects.hash(id, createdAt, updatedAt, super.hashCode());
   }
 
   @Override
@@ -168,7 +132,6 @@ public class Person extends PersonFields {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,15 +203,6 @@ public class Person extends PersonFields {
           String.format(
               "Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("updatedAt").toString()));
-    }
-    // ensure the optional json data is an array if present
-    if (jsonObj.get("groups") != null
-        && !jsonObj.get("groups").isJsonNull()
-        && !jsonObj.get("groups").isJsonArray()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `groups` to be an array in the JSON string but got `%s`",
-              jsonObj.get("groups").toString()));
     }
   }
 

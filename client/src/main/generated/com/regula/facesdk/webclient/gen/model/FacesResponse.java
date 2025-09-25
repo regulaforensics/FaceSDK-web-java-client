@@ -24,7 +24,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.facesdk.webclient.JSON;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -41,12 +40,6 @@ public class FacesResponse extends DetectionFace {
   @SerializedName(SERIALIZED_NAME_PERSONS)
   @javax.annotation.Nullable
   private List<PersonWithImages> persons;
-
-  public static final String SERIALIZED_NAME_ROTATION_ANGLE = "rotationAngle";
-
-  @SerializedName(SERIALIZED_NAME_ROTATION_ANGLE)
-  @javax.annotation.Nullable
-  private BigDecimal rotationAngle;
 
   public FacesResponse() {}
 
@@ -77,25 +70,6 @@ public class FacesResponse extends DetectionFace {
     this.persons = persons;
   }
 
-  public FacesResponse rotationAngle(@javax.annotation.Nullable BigDecimal rotationAngle) {
-    this.rotationAngle = rotationAngle;
-    return this;
-  }
-
-  /**
-   * Get rotationAngle
-   *
-   * @return rotationAngle
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getRotationAngle() {
-    return rotationAngle;
-  }
-
-  public void setRotationAngle(@javax.annotation.Nullable BigDecimal rotationAngle) {
-    this.rotationAngle = rotationAngle;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -105,14 +79,12 @@ public class FacesResponse extends DetectionFace {
       return false;
     }
     FacesResponse facesResponse = (FacesResponse) o;
-    return Objects.equals(this.persons, facesResponse.persons)
-        && Objects.equals(this.rotationAngle, facesResponse.rotationAngle)
-        && super.equals(o);
+    return Objects.equals(this.persons, facesResponse.persons) && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(persons, rotationAngle, super.hashCode());
+    return Objects.hash(persons, super.hashCode());
   }
 
   @Override
@@ -121,7 +93,6 @@ public class FacesResponse extends DetectionFace {
     sb.append("class FacesResponse {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    persons: ").append(toIndentedString(persons)).append("\n");
-    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("}");
     return sb.toString();
   }
