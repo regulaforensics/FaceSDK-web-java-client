@@ -1,5 +1,6 @@
 plugins {
     java
+    id("com.github.sherter.google-java-format") version "0.9"
     id("maven-publish")
 }
 
@@ -14,32 +15,27 @@ sourceSets.main {
 }
 
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
-    implementation("com.google.code.gson:gson:2.9.0")
-    implementation("io.gsonfire:gson-fire:1.8.5")
-    implementation("org.threeten:threetenbp:1.6.0")
-    implementation("io.swagger:swagger-annotations:1.6.6")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.14.7")
+    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("io.gsonfire:gson-fire:1.8.4")
+    implementation("org.threeten:threetenbp:1.7.0")
+    implementation("io.swagger:swagger-annotations:1.5.24")
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
-    implementation("com.sun.jersey.contribs:jersey-multipart:1.19.4")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.3")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
-    implementation("com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.13.3")
-    implementation ("io.swagger:swagger-annotations:1.6.6")
-    implementation ("com.google.code.findbugs:jsr305:3.0.2")
-    implementation ("com.sun.jersey:jersey-client:1.19.4")
-    implementation ("org.openapitools:jackson-databind-nullable:0.2.3")
-    implementation ("com.fasterxml.jackson.datatype:jackson-datatype-joda:2.13.3")
-    implementation ("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3")
-    implementation ("com.github.joschi.jackson:jackson-datatype-threetenbp:2.12.5")
-    implementation ("com.brsanthu:migbase64:2.2")
-    implementation ("jakarta.annotation:jakarta.annotation-api:2.1.0")
+    implementation("org.springframework:spring-beans:5.3.20")
+    implementation("org.openapitools:jackson-databind-nullable:0.2.6")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
 }
 
 tasks.withType<Jar> {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
 /* ----------- Publishing config ------------------- */

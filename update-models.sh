@@ -1,6 +1,21 @@
 #!/bin/sh
 
-docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "${PWD}/../FaceSDK-web-openapi:/definitions" \
-openapitools/openapi-generator-cli:v5.4.0 generate \
--i /definitions/index.yml -g java -o /client/client \
--c /client/java-generator-config.json -t /client/client/generator-templates/ || exit 1
+MODE="$1"
+FACE_DEFINITION_FOLDER="${PWD}/../FaceSDK-web-openapi"
+TEMPLATE_PATH="/client/client/generator-templates/lenient"
+
+if [ "$MODE" = "strict" ]; then
+    TEMPLATE_PATH="/client/client/generator-templates/strict"
+fi
+
+docker run --user "$(id -u):$(id -g)" --rm \
+-v "${PWD}:/client" \
+-v "${FACE_DEFINITION_FOLDER}:/definitions" \
+openapitools/openapi-generator-cli:v7.15.0 generate \
+-g java \
+-i /definitions/index.yml \
+-o /client/client --openapi-normalizer REF_AS_PARENT_IN_ALLOF=true \
+-t $TEMPLATE_PATH \
+-c /client/java-generator-config.json || exit 1
+
+./gradlew -p ./ goJF || exit 0
