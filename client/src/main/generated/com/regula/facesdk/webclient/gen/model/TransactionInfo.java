@@ -88,7 +88,7 @@ public class TransactionInfo {
 
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private LivenessType type = LivenessType.ACTIVE;
+  private LivenessType type;
 
   public TransactionInfo() {}
 
