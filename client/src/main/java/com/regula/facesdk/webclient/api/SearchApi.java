@@ -6,18 +6,20 @@ import com.regula.facesdk.webclient.gen.model.SearchRequest;
 import com.regula.facesdk.webclient.gen.model.SearchResult;
 
 public class SearchApi extends com.regula.facesdk.webclient.gen.api.SearchApi {
-    public SearchApi(ApiClient apiClient) {
-        super(apiClient);
-    }
-    public SearchApi() {
-        super();
-    }
+  public SearchApi(ApiClient apiClient) {
+    super(apiClient);
+  }
 
-    public SearchResult search(SearchRequest searchRequest, String xRequestID, Boolean withImages) throws ApiException {
-        return super.search(searchRequest, xRequestID, withImages);
-    }
+  public SearchApi() {
+    super();
+  }
 
-    public SearchResult search(SearchRequest searchRequest) throws ApiException {
-        return super.search(searchRequest, "", false);
-    }
+  public SearchResult search(SearchRequest searchRequest, String xRequestID, Boolean withImages)
+      throws ApiException {
+    return super.search(searchRequest, xRequestID, withImages);
+  }
+
+  public SearchResult search(SearchRequest searchRequest) throws ApiException {
+    return super.search(searchRequest, "", false);
+  }
 }
