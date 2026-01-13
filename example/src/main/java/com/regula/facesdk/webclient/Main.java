@@ -4,6 +4,8 @@ import com.regula.facesdk.webclient.gen.model.DetectRequest;
 import com.regula.facesdk.webclient.gen.model.ImageSource;
 import com.regula.facesdk.webclient.gen.model.MatchImage;
 import com.regula.facesdk.webclient.gen.model.MatchRequest;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequestImagesItem;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequest;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,8 +30,7 @@ public class Main {
 
         var matchImages = List.of(matchImage1, matchImage2, matchImage3);
 
-        var matchRequest = new MatchRequest()
-                .images(matchImages);
+        var matchRequest = new MatchRequest().images(matchImages);
 
         var matchResponse = sdk.matchApi.match(matchRequest);
 
@@ -42,6 +43,34 @@ public class Main {
                         "pair(%d, %d) similarity: %f%n",
                         comparison.getFirstIndex(), comparison.getSecondIndex(), comparison.getSimilarity()
                 );
+            }
+        }
+
+        var matchAndSearchImage1 = new MatchAndSearchRequestImagesItem().content(face1).type(ImageSource.LIVE);
+        var matchAndSearchImage2 = new MatchAndSearchRequestImagesItem().content(face2).type(ImageSource.DOCUMENT_RFID);
+
+        var matchAndSearchImages = List.of(matchAndSearchImage1, matchAndSearchImage2);
+
+        var matchAndSearchRequest = new MatchAndSearchRequest().images(matchAndSearchImages);
+
+        var matchAndSearchResponse = sdk.matchApi.matchAndSearch(matchAndSearchRequest);
+
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("                  Match and Search Results                       ");
+        System.out.println("-----------------------------------------------------------------");
+        if (matchAndSearchResponse != null && matchAndSearchResponse.getDetections() != null) {
+            for (var detection : matchAndSearchResponse.getDetections()) {
+                System.out.format("image index: %d%n", detection.getImageIndex());
+                System.out.format("status: %s%n", detection.getStatus());
+                System.out.format("faces: %n");
+                if (detection.getFaces() != null) {
+                    for (var face : detection.getFaces()) {
+                        System.out.format("   index: %s%n", face.getFaceIndex());
+                        System.out.format("   landmarks: %s%n", face.getLandmarks());
+                        System.out.format("   roi: %s%n", face.getRoi());
+                    }
+                }
+                System.out.println();
             }
         }
 
