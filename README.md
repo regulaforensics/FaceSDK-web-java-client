@@ -21,24 +21,44 @@ repositories {
 }
 
 dependencies {
-    implementation("com.regula.facesdk:webclient:5.2.3")
+    implementation("com.regula.facesdk:webclient:7.2.145")
 }
 ```
 
 ## Example
-Performing request:
+Performing match request:
 ```java
 var sdk = new FaceSdk(apiBasePath);
 
 byte[] face1 = readFile("face_1.jpg");
 byte[] face2 = readFile("face_2.jpg");
 
-var compareImage1 = new MatchImage().index(0).data(face1).type(ImageSource.LIVE);
-var compareImage2 = new MatchImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
-var compareImage3 = new MatchImage().index(3).data(face2).type(ImageSource.LIVE);
+var matchImage1 = new MatchImage().index(0).data(face1).type(ImageSource.LIVE);
+var matchImage2 = new MatchImage().index(1).data(face1).type(ImageSource.DOCUMENT_RFID);
+var matchImage3 = new MatchImage().index(3).data(face2).type(ImageSource.LIVE);
 
-var compareRequest = new CompareRequest().images(List.of(compareImage1, compareImage2, compareImage3));
-var compareResponse = sdk.matchingApi.compare(compareRequest);
+var matchImages = List.of(matchImage1, matchImage2, matchImage3);
+
+var matchRequest = new MatchRequest().images(matchImages);
+
+var matchResponse = sdk.matchApi.match(matchRequest);
+```
+
+Performing match and search request:
+```java
+var sdk = new FaceSdk(apiBasePath);
+
+byte[] face1 = readFile("face_1.jpg");
+byte[] face2 = readFile("face_2.jpg");
+
+var matchAndSearchImage1 = new MatchAndSearchRequestImagesItem().content(face1).type(ImageSource.LIVE);
+var matchAndSearchImage2 = new MatchAndSearchRequestImagesItem().content(face2).type(ImageSource.DOCUMENT_RFID);
+
+var matchAndSearchImages = List.of(matchAndSearchImage1, matchAndSearchImage2);
+
+var matchAndSearchRequest = new MatchAndSearchRequest().images(matchAndSearchImages);
+
+var matchAndSearchResponse = sdk.matchApi.matchAndSearch(matchAndSearchRequest);
 ```
 
 You can find a more detailed example in  [example](./example) folder.
