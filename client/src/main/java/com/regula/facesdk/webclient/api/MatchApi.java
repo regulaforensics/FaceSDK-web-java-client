@@ -7,6 +7,8 @@ import com.regula.facesdk.webclient.gen.model.DetectRequest;
 import com.regula.facesdk.webclient.gen.model.DetectResponse;
 import com.regula.facesdk.webclient.gen.model.MatchRequest;
 import com.regula.facesdk.webclient.gen.model.MatchResponse;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequest;
+import com.regula.facesdk.webclient.gen.model.MatchAndSearchResponse;
 
 public class MatchApi extends com.regula.facesdk.webclient.gen.api.MatchApi {
   public MatchApi() {
@@ -33,5 +35,13 @@ public class MatchApi extends com.regula.facesdk.webclient.gen.api.MatchApi {
   public DetectResponse detect(DetectRequest detectRequest) throws ApiException {
     ApiResponse<DetectResponse> localVarResp = detectWithHttpInfo(detectRequest, "");
     return localVarResp.getData();
+  }
+
+  public MatchAndSearchResponse matchAndSearch(MatchAndSearchRequest matchAndSearchRequest, String xRequestID) throws ApiException {
+    return super.matchAndSearch(matchAndSearchRequest, xRequestID);
+  }
+
+  public MatchAndSearchResponse matchAndSearch(MatchAndSearchRequest matchAndSearchRequest) throws ApiException {
+    return super.matchAndSearch(matchAndSearchRequest, "");
   }
 }
