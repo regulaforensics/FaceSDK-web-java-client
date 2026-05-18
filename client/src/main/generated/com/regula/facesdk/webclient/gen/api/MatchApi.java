@@ -386,14 +386,16 @@ public class MatchApi {
    * compare faces (1:1) To perform a comparison of faces in the same image or in two different
    * images, use POST &#x60;/api/match&#x60;. It&#39;s possible to compare faces in the same image
    * or in two different images, this is defined by the &#x60;images.type&#x60; parameter.
-   * &lt;br&gt;&lt;br&gt; The face detection result is displayed in the &#x60;detections&#x60;
-   * field. Each face is identified by two parameters: &#x60;faceIndex&#x60; (the index number of
-   * the face) and &#x60;imageIndex&#x60; (the index number of the image on which the face is
-   * detected). So, if there are two images each of which has two faces in them, the parameters will
-   * be the following: - First face in the first image: &#x60;faceIndex: 0&#x60;, &#x60;imageIndex:
-   * 0&#x60; - Second face in the first image: &#x60;faceIndex: 1&#x60;, &#x60;imageIndex: 0&#x60; -
-   * First face of the second image: &#x60;faceIndex: 0&#x60;, &#x60;imageIndex: 1&#x60; - Second
-   * face in the second image: &#x60;faceIndex: 1&#x60;, &#x60;imageIndex: 1&#x60;
+   * &lt;br&gt;&lt;br&gt; Note that no more than two images of the same &#x60;type&#x60; are allowed
+   * for comparison.&lt;br&gt;&lt;br&gt; The face detection result is displayed in the
+   * &#x60;detections&#x60; field. Each face is identified by two parameters: &#x60;faceIndex&#x60;
+   * (the index number of the face) and &#x60;imageIndex&#x60; (the index number of the image on
+   * which the face is detected). So, if there are two images each of which has two faces in them,
+   * the parameters will be the following: - First face in the first image: &#x60;faceIndex:
+   * 0&#x60;, &#x60;imageIndex: 0&#x60; - Second face in the first image: &#x60;faceIndex: 1&#x60;,
+   * &#x60;imageIndex: 0&#x60; - First face of the second image: &#x60;faceIndex: 0&#x60;,
+   * &#x60;imageIndex: 1&#x60; - Second face in the second image: &#x60;faceIndex: 1&#x60;,
+   * &#x60;imageIndex: 1&#x60;
    *
    * @param matchRequest (required)
    * @param xRequestID Request header label. (optional)
@@ -420,14 +422,16 @@ public class MatchApi {
    * compare faces (1:1) To perform a comparison of faces in the same image or in two different
    * images, use POST &#x60;/api/match&#x60;. It&#39;s possible to compare faces in the same image
    * or in two different images, this is defined by the &#x60;images.type&#x60; parameter.
-   * &lt;br&gt;&lt;br&gt; The face detection result is displayed in the &#x60;detections&#x60;
-   * field. Each face is identified by two parameters: &#x60;faceIndex&#x60; (the index number of
-   * the face) and &#x60;imageIndex&#x60; (the index number of the image on which the face is
-   * detected). So, if there are two images each of which has two faces in them, the parameters will
-   * be the following: - First face in the first image: &#x60;faceIndex: 0&#x60;, &#x60;imageIndex:
-   * 0&#x60; - Second face in the first image: &#x60;faceIndex: 1&#x60;, &#x60;imageIndex: 0&#x60; -
-   * First face of the second image: &#x60;faceIndex: 0&#x60;, &#x60;imageIndex: 1&#x60; - Second
-   * face in the second image: &#x60;faceIndex: 1&#x60;, &#x60;imageIndex: 1&#x60;
+   * &lt;br&gt;&lt;br&gt; Note that no more than two images of the same &#x60;type&#x60; are allowed
+   * for comparison.&lt;br&gt;&lt;br&gt; The face detection result is displayed in the
+   * &#x60;detections&#x60; field. Each face is identified by two parameters: &#x60;faceIndex&#x60;
+   * (the index number of the face) and &#x60;imageIndex&#x60; (the index number of the image on
+   * which the face is detected). So, if there are two images each of which has two faces in them,
+   * the parameters will be the following: - First face in the first image: &#x60;faceIndex:
+   * 0&#x60;, &#x60;imageIndex: 0&#x60; - Second face in the first image: &#x60;faceIndex: 1&#x60;,
+   * &#x60;imageIndex: 0&#x60; - First face of the second image: &#x60;faceIndex: 0&#x60;,
+   * &#x60;imageIndex: 1&#x60; - Second face in the second image: &#x60;faceIndex: 1&#x60;,
+   * &#x60;imageIndex: 1&#x60;
    *
    * @param matchRequest (required)
    * @param xRequestID Request header label. (optional)
@@ -455,7 +459,8 @@ public class MatchApi {
    * compare faces (1:1) (asynchronously) To perform a comparison of faces in the same image or in
    * two different images, use POST &#x60;/api/match&#x60;. It&#39;s possible to compare faces in
    * the same image or in two different images, this is defined by the &#x60;images.type&#x60;
-   * parameter. &lt;br&gt;&lt;br&gt; The face detection result is displayed in the
+   * parameter. &lt;br&gt;&lt;br&gt; Note that no more than two images of the same &#x60;type&#x60;
+   * are allowed for comparison.&lt;br&gt;&lt;br&gt; The face detection result is displayed in the
    * &#x60;detections&#x60; field. Each face is identified by two parameters: &#x60;faceIndex&#x60;
    * (the index number of the face) and &#x60;imageIndex&#x60; (the index number of the image on
    * which the face is detected). So, if there are two images each of which has two faces in them,
