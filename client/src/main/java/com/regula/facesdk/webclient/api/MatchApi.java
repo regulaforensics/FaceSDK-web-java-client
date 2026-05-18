@@ -5,10 +5,10 @@ import com.regula.facesdk.webclient.ApiException;
 import com.regula.facesdk.webclient.ApiResponse;
 import com.regula.facesdk.webclient.gen.model.DetectRequest;
 import com.regula.facesdk.webclient.gen.model.DetectResponse;
-import com.regula.facesdk.webclient.gen.model.MatchRequest;
-import com.regula.facesdk.webclient.gen.model.MatchResponse;
 import com.regula.facesdk.webclient.gen.model.MatchAndSearchRequest;
 import com.regula.facesdk.webclient.gen.model.MatchAndSearchResponse;
+import com.regula.facesdk.webclient.gen.model.MatchRequest;
+import com.regula.facesdk.webclient.gen.model.MatchResponse;
 
 public class MatchApi extends com.regula.facesdk.webclient.gen.api.MatchApi {
   public MatchApi() {
@@ -37,11 +37,13 @@ public class MatchApi extends com.regula.facesdk.webclient.gen.api.MatchApi {
     return localVarResp.getData();
   }
 
-  public MatchAndSearchResponse matchAndSearch(MatchAndSearchRequest matchAndSearchRequest, String xRequestID) throws ApiException {
+  public MatchAndSearchResponse matchAndSearch(
+      MatchAndSearchRequest matchAndSearchRequest, String xRequestID) throws ApiException {
     return super.matchAndSearch(matchAndSearchRequest, xRequestID);
   }
 
-  public MatchAndSearchResponse matchAndSearch(MatchAndSearchRequest matchAndSearchRequest) throws ApiException {
+  public MatchAndSearchResponse matchAndSearch(MatchAndSearchRequest matchAndSearchRequest)
+      throws ApiException {
     return super.matchAndSearch(matchAndSearchRequest, "");
   }
 }
