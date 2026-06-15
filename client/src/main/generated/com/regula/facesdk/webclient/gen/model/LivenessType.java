@@ -20,15 +20,17 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /**
- * Liveness detection can be performed in two modes: active &#x60;0&#x60; and passive &#x60;1&#x60;.
- * [Learn
+ * Liveness detection can be performed in three modes: active &#x60;0&#x60;, passive &#x60;1&#x60;,
+ * and passive with blink &#x60;2&#x60;. [Learn
  * more](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/liveness/#active-and-passive-modes)
  */
 @JsonAdapter(LivenessType.Adapter.class)
 public enum LivenessType {
   ACTIVE(0),
 
-  PASSIVE(1);
+  PASSIVE(1),
+
+  PASSIVE_WITH_BLINK(2);
 
   private Integer value;
 
