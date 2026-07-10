@@ -173,7 +173,7 @@ public class ImageFields {
   }
 
   /**
-   * The maximum number of results to be returned.
+   * The maximum number of results to be returned. If not specified, the default value is 100.
    *
    * @return limit
    */
