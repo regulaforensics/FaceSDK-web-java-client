@@ -56,6 +56,12 @@ public class MatchImage {
   @javax.annotation.Nullable
   private Boolean detectAll = false;
 
+  public static final String SERIALIZED_NAME_LIVENESS_TRANSACTION_ID = "livenessTransactionId";
+
+  @SerializedName(SERIALIZED_NAME_LIVENESS_TRANSACTION_ID)
+  @javax.annotation.Nullable
+  private String livenessTransactionId;
+
   public MatchImage() {}
 
   public MatchImage index(@javax.annotation.Nullable Integer index) {
@@ -136,6 +142,27 @@ public class MatchImage {
     this.detectAll = detectAll;
   }
 
+  public MatchImage livenessTransactionId(@javax.annotation.Nullable String livenessTransactionId) {
+    this.livenessTransactionId = livenessTransactionId;
+    return this;
+  }
+
+  /**
+   * Identifier of the completed liveness transaction whose captured face is used as one of the
+   * comparison inputs. If this parameter is provided, it replaces one of the images in the matching
+   * request.
+   *
+   * @return livenessTransactionId
+   */
+  @javax.annotation.Nullable
+  public String getLivenessTransactionId() {
+    return livenessTransactionId;
+  }
+
+  public void setLivenessTransactionId(@javax.annotation.Nullable String livenessTransactionId) {
+    this.livenessTransactionId = livenessTransactionId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -148,12 +175,13 @@ public class MatchImage {
     return Objects.equals(this.index, matchImage.index)
         && Objects.equals(this.type, matchImage.type)
         && Arrays.equals(this.data, matchImage.data)
-        && Objects.equals(this.detectAll, matchImage.detectAll);
+        && Objects.equals(this.detectAll, matchImage.detectAll)
+        && Objects.equals(this.livenessTransactionId, matchImage.livenessTransactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, type, Arrays.hashCode(data), detectAll);
+    return Objects.hash(index, type, Arrays.hashCode(data), detectAll, livenessTransactionId);
   }
 
   @Override
@@ -164,6 +192,9 @@ public class MatchImage {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    detectAll: ").append(toIndentedString(detectAll)).append("\n");
+    sb.append("    livenessTransactionId: ")
+        .append(toIndentedString(livenessTransactionId))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -183,7 +214,9 @@ public class MatchImage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("index", "type", "data", "detectAll"));
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("index", "type", "data", "detectAll", "livenessTransactionId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("data"));
@@ -219,6 +252,14 @@ public class MatchImage {
     // validate the optional field `type`
     if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
       ImageSource.validateJsonElement(jsonObj.get("type"));
+    }
+    if ((jsonObj.get("livenessTransactionId") != null
+            && !jsonObj.get("livenessTransactionId").isJsonNull())
+        && !jsonObj.get("livenessTransactionId").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `livenessTransactionId` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("livenessTransactionId").toString()));
     }
   }
 

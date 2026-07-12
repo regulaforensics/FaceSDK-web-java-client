@@ -50,6 +50,12 @@ public class MatchAndSearchRequestImagesItem {
   @javax.annotation.Nullable
   private ImageSource type;
 
+  public static final String SERIALIZED_NAME_LIVENESS_TRANSACTION_ID = "livenessTransactionId";
+
+  @SerializedName(SERIALIZED_NAME_LIVENESS_TRANSACTION_ID)
+  @javax.annotation.Nullable
+  private String livenessTransactionId;
+
   public MatchAndSearchRequestImagesItem() {}
 
   public MatchAndSearchRequestImagesItem content(@javax.annotation.Nullable byte[] content) {
@@ -109,6 +115,28 @@ public class MatchAndSearchRequestImagesItem {
     this.type = type;
   }
 
+  public MatchAndSearchRequestImagesItem livenessTransactionId(
+      @javax.annotation.Nullable String livenessTransactionId) {
+    this.livenessTransactionId = livenessTransactionId;
+    return this;
+  }
+
+  /**
+   * Identifier of the completed liveness transaction whose captured face is used as one of the
+   * comparison inputs. If this parameter is provided, it replaces one of the images in the matching
+   * request.
+   *
+   * @return livenessTransactionId
+   */
+  @javax.annotation.Nullable
+  public String getLivenessTransactionId() {
+    return livenessTransactionId;
+  }
+
+  public void setLivenessTransactionId(@javax.annotation.Nullable String livenessTransactionId) {
+    this.livenessTransactionId = livenessTransactionId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -121,12 +149,14 @@ public class MatchAndSearchRequestImagesItem {
         (MatchAndSearchRequestImagesItem) o;
     return Arrays.equals(this.content, matchAndSearchRequestImagesItem.content)
         && Objects.equals(this.imageUrl, matchAndSearchRequestImagesItem.imageUrl)
-        && Objects.equals(this.type, matchAndSearchRequestImagesItem.type);
+        && Objects.equals(this.type, matchAndSearchRequestImagesItem.type)
+        && Objects.equals(
+            this.livenessTransactionId, matchAndSearchRequestImagesItem.livenessTransactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(Arrays.hashCode(content), imageUrl, type);
+    return Objects.hash(Arrays.hashCode(content), imageUrl, type, livenessTransactionId);
   }
 
   @Override
@@ -136,6 +166,9 @@ public class MatchAndSearchRequestImagesItem {
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    livenessTransactionId: ")
+        .append(toIndentedString(livenessTransactionId))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,7 +188,8 @@ public class MatchAndSearchRequestImagesItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("content", "imageUrl", "type"));
+    openapiFields =
+        new HashSet<String>(Arrays.asList("content", "imageUrl", "type", "livenessTransactionId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -190,6 +224,14 @@ public class MatchAndSearchRequestImagesItem {
     // validate the optional field `type`
     if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
       ImageSource.validateJsonElement(jsonObj.get("type"));
+    }
+    if ((jsonObj.get("livenessTransactionId") != null
+            && !jsonObj.get("livenessTransactionId").isJsonNull())
+        && !jsonObj.get("livenessTransactionId").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `livenessTransactionId` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("livenessTransactionId").toString()));
     }
   }
 
