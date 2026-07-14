@@ -87,7 +87,7 @@ public class SearchRequest extends TransactionLabels {
 
   @SerializedName(SERIALIZED_NAME_LIMIT)
   @javax.annotation.Nullable
-  private Integer limit;
+  private Integer limit = 100;
 
   public SearchRequest() {}
 
@@ -261,7 +261,7 @@ public class SearchRequest extends TransactionLabels {
   }
 
   /**
-   * The maximum number of results to be returned.
+   * The maximum number of results to be returned. If not specified, the default value is 100.
    *
    * @return limit
    */
