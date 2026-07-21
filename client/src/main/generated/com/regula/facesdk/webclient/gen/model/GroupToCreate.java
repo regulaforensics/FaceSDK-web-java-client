@@ -49,7 +49,7 @@ public class GroupToCreate {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
 
   @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Map<String, Object> metadata;
 
   public GroupToCreate() {}
@@ -92,7 +92,7 @@ public class GroupToCreate {
     this.name = name;
   }
 
-  public GroupToCreate metadata(@javax.annotation.Nonnull Map<String, Object> metadata) {
+  public GroupToCreate metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -110,12 +110,12 @@ public class GroupToCreate {
    *
    * @return metadata
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Map<String, Object> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(@javax.annotation.Nonnull Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
@@ -167,7 +167,7 @@ public class GroupToCreate {
     openapiFields = new HashSet<String>(Arrays.asList("tag", "name", "metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "metadata"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
   }
 
   /**
