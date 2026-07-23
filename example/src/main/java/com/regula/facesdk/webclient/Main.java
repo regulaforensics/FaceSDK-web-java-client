@@ -29,19 +29,21 @@ public class Main {
         var matchImages = List.of(matchImage1, matchImage2, matchImage3);
 
         var matchRequest = new MatchRequest().images(matchImages);
-
         var matchResponse = sdk.matchApi.match(matchRequest);
+        var matchResults = matchResponse.getResults();
 
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                          Match Results                          ");
         System.out.println("-----------------------------------------------------------------");
-        if (matchResponse != null && matchResponse.getResults() != null) {
-            for (var comparison : matchResponse.getResults()) {
+        if (matchResults != null) {
+            for (var comparison : matchResults) {
                 System.out.format(
                         "pair(%d, %d) similarity: %f%n",
                         comparison.getFirstIndex(), comparison.getSecondIndex(), comparison.getSimilarity()
                 );
             }
+        } else {
+            System.out.println(matchResponse.toJson());
         }
 
         var detectRequest = new DetectRequest().image(face2).tag("1");
@@ -52,7 +54,7 @@ public class Main {
         System.out.println("                         Detect Results                          ");
         System.out.println("-----------------------------------------------------------------");
 
-        if(detectResults != null) {
+        if (detectResults != null) {
             System.out.format("detectorType: %d%n", detectResults.getDetectorType());
             System.out.format("landmarkType: %d%n", detectResults.getLandmarksType());
             for (var detection : detectResults.getDetections()) {
@@ -60,6 +62,8 @@ public class Main {
                 System.out.format("roi: %s%n", detection.getRoi());
                 System.out.format("attributes: %s%n", detection.getAttributes());
             }
+        } else {
+            System.out.println(detectResponse.toJson());
         }
         System.out.println("-----------------------------------------------------------------");
         System.exit(0);
