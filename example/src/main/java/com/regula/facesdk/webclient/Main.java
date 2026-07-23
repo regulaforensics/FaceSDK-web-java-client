@@ -43,7 +43,7 @@ public class Main {
                 );
             }
         } else {
-            System.out.println(matchResponse);
+            System.out.println(matchResponse.toJson());
         }
 
         var detectRequest = new DetectRequest().image(face2).tag("1");
@@ -63,7 +63,7 @@ public class Main {
                 System.out.format("attributes: %s%n", detection.getAttributes());
             }
         } else {
-            System.out.println(detectResponse);
+            System.out.println(detectResponse.toJson());
         }
         System.out.println("-----------------------------------------------------------------");
         System.exit(0);
