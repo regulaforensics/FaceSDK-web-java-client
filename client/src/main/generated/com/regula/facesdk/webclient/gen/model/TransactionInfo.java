@@ -90,6 +90,18 @@ public class TransactionInfo {
   @javax.annotation.Nullable
   private LivenessType type;
 
+  public static final String SERIALIZED_NAME_ENROLL_RESULT = "enrollResult";
+
+  @SerializedName(SERIALIZED_NAME_ENROLL_RESULT)
+  @javax.annotation.Nullable
+  private EnrollResult enrollResult;
+
+  public static final String SERIALIZED_NAME_VERIFY_RESULT = "verifyResult";
+
+  @SerializedName(SERIALIZED_NAME_VERIFY_RESULT)
+  @javax.annotation.Nullable
+  private VerifyResult verifyResult;
+
   public TransactionInfo() {}
 
   public TransactionInfo code(@javax.annotation.Nullable Integer code) {
@@ -250,7 +262,7 @@ public class TransactionInfo {
   }
 
   /**
-   * A free-form object containing person&#39;s extended attributes.
+   * A free-form object containing the Person&#39;s extended attributes.
    *
    * @return metadata
    */
@@ -282,6 +294,44 @@ public class TransactionInfo {
     this.type = type;
   }
 
+  public TransactionInfo enrollResult(@javax.annotation.Nullable EnrollResult enrollResult) {
+    this.enrollResult = enrollResult;
+    return this;
+  }
+
+  /**
+   * Get enrollResult
+   *
+   * @return enrollResult
+   */
+  @javax.annotation.Nullable
+  public EnrollResult getEnrollResult() {
+    return enrollResult;
+  }
+
+  public void setEnrollResult(@javax.annotation.Nullable EnrollResult enrollResult) {
+    this.enrollResult = enrollResult;
+  }
+
+  public TransactionInfo verifyResult(@javax.annotation.Nullable VerifyResult verifyResult) {
+    this.verifyResult = verifyResult;
+    return this;
+  }
+
+  /**
+   * Get verifyResult
+   *
+   * @return verifyResult
+   */
+  @javax.annotation.Nullable
+  public VerifyResult getVerifyResult() {
+    return verifyResult;
+  }
+
+  public void setVerifyResult(@javax.annotation.Nullable VerifyResult verifyResult) {
+    this.verifyResult = verifyResult;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -299,12 +349,25 @@ public class TransactionInfo {
         && Objects.equals(this.age, transactionInfo.age)
         && Objects.equals(this.portrait, transactionInfo.portrait)
         && Objects.equals(this.metadata, transactionInfo.metadata)
-        && Objects.equals(this.type, transactionInfo.type);
+        && Objects.equals(this.type, transactionInfo.type)
+        && Objects.equals(this.enrollResult, transactionInfo.enrollResult)
+        && Objects.equals(this.verifyResult, transactionInfo.verifyResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, status, tag, transactionId, video, age, portrait, metadata, type);
+    return Objects.hash(
+        code,
+        status,
+        tag,
+        transactionId,
+        video,
+        age,
+        portrait,
+        metadata,
+        type,
+        enrollResult,
+        verifyResult);
   }
 
   @Override
@@ -320,6 +383,8 @@ public class TransactionInfo {
     sb.append("    portrait: ").append(toIndentedString(portrait)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    enrollResult: ").append(toIndentedString(enrollResult)).append("\n");
+    sb.append("    verifyResult: ").append(toIndentedString(verifyResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -350,7 +415,9 @@ public class TransactionInfo {
                 "age",
                 "portrait",
                 "metadata",
-                "type"));
+                "type",
+                "enrollResult",
+                "verifyResult"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -414,6 +481,14 @@ public class TransactionInfo {
     // validate the optional field `type`
     if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
       LivenessType.validateJsonElement(jsonObj.get("type"));
+    }
+    // validate the optional field `enrollResult`
+    if (jsonObj.get("enrollResult") != null && !jsonObj.get("enrollResult").isJsonNull()) {
+      EnrollResult.validateJsonElement(jsonObj.get("enrollResult"));
+    }
+    // validate the optional field `verifyResult`
+    if (jsonObj.get("verifyResult") != null && !jsonObj.get("verifyResult").isJsonNull()) {
+      VerifyResult.validateJsonElement(jsonObj.get("verifyResult"));
     }
   }
 
