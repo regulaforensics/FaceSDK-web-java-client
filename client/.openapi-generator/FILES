@@ -44,6 +44,8 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionAttributesDet
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionFace.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DetectionQuality.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/DeviceInfo.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/EnrollResult.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/EnrollSearchResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceAttribute.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityAlignType.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/FaceImageQualityGroups.java
@@ -113,3 +115,5 @@ src/main/generated/com/regula/facesdk/webclient/gen/model/SearchResult.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/TransactionInfo.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/TransactionLabels.java
 src/main/generated/com/regula/facesdk/webclient/gen/model/UpdateGroup.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/VerifyResult.java
+src/main/generated/com/regula/facesdk/webclient/gen/model/VerifyResultMatch.java

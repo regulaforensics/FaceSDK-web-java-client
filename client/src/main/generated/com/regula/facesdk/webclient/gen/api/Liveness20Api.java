@@ -348,7 +348,10 @@ public class Liveness20Api {
    * to strong consistency; refer to the [Architecture
    * page](https://docs.regulaforensics.com/develop/face-sdk/overview/architecture/#consistency-models)
    * for details. To access the liveness transaction data, use GET
-   * &#x60;/api/v2/liveness?transactionId&#x3D;{transactionId}&#x60;.
+   * &#x60;/api/v2/liveness?transactionId&#x3D;{transactionId}&#x60;. You can also use liveness as
+   * part of the &lt;a
+   * href&#x3D;\&quot;https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/enroll-verify/\&quot;
+   * target&#x3D;\&quot;_blank\&quot;&gt;Enroll and Verify&lt;/a&gt; flow.
    *
    * @param transactionId ID of the current liveness transaction. (required)
    * @return TransactionInfo
@@ -386,7 +389,10 @@ public class Liveness20Api {
    * to strong consistency; refer to the [Architecture
    * page](https://docs.regulaforensics.com/develop/face-sdk/overview/architecture/#consistency-models)
    * for details. To access the liveness transaction data, use GET
-   * &#x60;/api/v2/liveness?transactionId&#x3D;{transactionId}&#x60;.
+   * &#x60;/api/v2/liveness?transactionId&#x3D;{transactionId}&#x60;. You can also use liveness as
+   * part of the &lt;a
+   * href&#x3D;\&quot;https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/enroll-verify/\&quot;
+   * target&#x3D;\&quot;_blank\&quot;&gt;Enroll and Verify&lt;/a&gt; flow.
    *
    * @param transactionId ID of the current liveness transaction. (required)
    * @return ApiResponse&lt;TransactionInfo&gt;
@@ -424,7 +430,10 @@ public class Liveness20Api {
    * to strong consistency; refer to the [Architecture
    * page](https://docs.regulaforensics.com/develop/face-sdk/overview/architecture/#consistency-models)
    * for details. To access the liveness transaction data, use GET
-   * &#x60;/api/v2/liveness?transactionId&#x3D;{transactionId}&#x60;.
+   * &#x60;/api/v2/liveness?transactionId&#x3D;{transactionId}&#x60;. You can also use liveness as
+   * part of the &lt;a
+   * href&#x3D;\&quot;https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/enroll-verify/\&quot;
+   * target&#x3D;\&quot;_blank\&quot;&gt;Enroll and Verify&lt;/a&gt; flow.
    *
    * @param transactionId ID of the current liveness transaction. (required)
    * @param _callback The callback to be executed when the API call finishes

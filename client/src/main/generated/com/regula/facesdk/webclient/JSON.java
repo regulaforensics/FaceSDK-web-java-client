@@ -301,6 +301,10 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.facesdk.webclient.gen.model.DeviceInfo.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.facesdk.webclient.gen.model.EnrollResult.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.facesdk.webclient.gen.model.EnrollSearchResult.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.facesdk.webclient.gen.model.FacesResponse.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.facesdk.webclient.gen.model.FacesResponseData.CustomTypeAdapterFactory());
@@ -403,6 +407,10 @@ public class JSON {
         new com.regula.facesdk.webclient.gen.model.TransactionInfo.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.facesdk.webclient.gen.model.UpdateGroup.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.facesdk.webclient.gen.model.VerifyResult.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.facesdk.webclient.gen.model.VerifyResultMatch.CustomTypeAdapterFactory());
     gson = gsonBuilder.create();
   }
 
