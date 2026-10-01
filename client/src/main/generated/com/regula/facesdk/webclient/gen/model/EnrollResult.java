@@ -84,7 +84,8 @@ public class EnrollResult {
 
   /**
    * The Person created during enrollment. Present only when &#x60;enrolled&#x60; is
-   * &#x60;true&#x60;.
+   * &#x60;true&#x60;. If enrollment was started with an empty person object (&#x60;{}&#x60;), the
+   * Person is created with a randomly generated UUID as its &#x60;name&#x60;.
    *
    * @return person
    */

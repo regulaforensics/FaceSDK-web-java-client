@@ -30,8 +30,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Allows to filter the search results based on the Person&#39;s &#x60;name&#x60;. If enabled, only
- * the search results that meet the filter condition will be returned.
+ * Allows you to filter search results by Person fields. Currently, filtering is supported only by
+ * the &#x60;name&#x60; field.
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
@@ -82,7 +82,8 @@ public class FilterSearchRequest {
   }
 
   /**
-   * &#x60;name&#x60; of the Person.
+   * The Person field to which the filter is applied. Currently, only &#x60;name&#x60; is supported.
+   * If another field is specified, the filter is ignored.
    *
    * @return field
    */
@@ -109,7 +110,7 @@ public class FilterSearchRequest {
   }
 
   /**
-   * The list of &#x60;name&#x60; values against which the &#x60;field&#x60; is compared.
+   * The list of values against which the specified &#x60;field&#x60; is compared.
    *
    * @return value
    */

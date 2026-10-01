@@ -82,7 +82,7 @@ public class VerifyResult {
   }
 
   /**
-   * The Person the liveness portrait was verified against.
+   * The Person the liveness portrait was verified against. Absent when the liveness check fails.
    *
    * @return person
    */
