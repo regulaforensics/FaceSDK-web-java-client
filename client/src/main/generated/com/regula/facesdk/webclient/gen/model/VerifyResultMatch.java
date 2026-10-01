@@ -52,8 +52,9 @@ public class VerifyResultMatch {
   }
 
   /**
-   * Whether the faces matched according to the specified similarity threshold. &#x60;true&#x60;
-   * when the face similarity meets the threshold; &#x60;false&#x60; when it does not.
+   * Whether the faces matched according to the specified threshold. &#x60;true&#x60; when the
+   * distance between the captured and enrolled portraits does not exceed the threshold;
+   * &#x60;false&#x60; when it exceeds the threshold.
    *
    * @return verified
    */

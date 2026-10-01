@@ -161,7 +161,7 @@ public class MatchAndSearchRequest {
   }
 
   /**
-   * The similarity threshold.
+   * Maximum distance allowed for a match (lower value &#x3D; stricter match).
    *
    * @return threshold
    */
