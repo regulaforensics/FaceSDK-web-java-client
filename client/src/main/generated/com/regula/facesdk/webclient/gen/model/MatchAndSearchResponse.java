@@ -218,10 +218,11 @@ public class MatchAndSearchResponse extends FaceSDKResult {
     // a set of all properties/fields (JSON key names)
     openapiFields =
         new HashSet<String>(
-            Arrays.asList("code", "results", "elapsedTime", "metadata", "detections"));
+            Arrays.asList(
+                "code", "transactionId", "results", "elapsedTime", "metadata", "detections"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("code"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("code", "transactionId"));
   }
 
   /**

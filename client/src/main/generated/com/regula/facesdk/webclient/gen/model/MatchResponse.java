@@ -185,10 +185,12 @@ public class MatchResponse extends FaceSDKResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("code", "detections", "results", "metadata"));
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("code", "transactionId", "detections", "results", "metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("code"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("code", "transactionId"));
   }
 
   /**
