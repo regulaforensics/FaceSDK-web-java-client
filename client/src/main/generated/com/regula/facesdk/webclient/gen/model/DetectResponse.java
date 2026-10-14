@@ -101,10 +101,10 @@ public class DetectResponse extends FaceSDKResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("code", "results"));
+    openapiFields = new HashSet<String>(Arrays.asList("code", "transactionId", "results"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("code"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("code", "transactionId"));
   }
 
   /**
