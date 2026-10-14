@@ -23,5 +23,5 @@ jobs:
       - name: Run Smoke Test
         run: ./gradlew clean :example:run
         env:
-          API_BASE_PATH: "https://faceapi.regulaforensics.com"
+          API_BASE_PATH: ${{ github.base_ref == 'develop' && 'https://nightly-faceapi.regulaforensics.com' || github.base_ref == 'stable' && 'https://rc-faceapi.regulaforensics.com' || github.base_ref == 'master' && 'https://faceapi.regulaforensics.com' || 'https://nightly-faceapi.regulaforensics.com' }}
           TEST_LICENSE: ${{secrets.TEST_LICENSE}}
