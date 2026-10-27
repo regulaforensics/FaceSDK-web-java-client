@@ -150,7 +150,7 @@ public enum FaceSDKResultCode {
   FACER_ABORTED_LIVENESS_TRANSACTION(252),
 
   /** Liveness spoofing attempt detected. */
-  FACER_GENERAL_ERROR(253),
+  FACER_GENERAL_CHECK_FAIL(253),
 
   /** Liveness spoofing attempt detected. */
   FACER_PASSIVE_LIVENESS_FAIL(254),
