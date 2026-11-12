@@ -79,7 +79,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
             maven {
                 name = "BunnyCDN"
                 url =
-                    uri("https://storage.bunnycdn.com/maven-production-regulaforensics-sz/RegulaDocumentReaderWebClient/$type/")
+                    uri("https://storage.bunnycdn.com/maven-production-regulaforensics-sz/FaceSDKWebClient/$type/")
 
                 credentials(HttpHeaderCredentials::class) {
                     this.name = "AccessKey"

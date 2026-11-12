@@ -8,7 +8,7 @@ LOGIN=$2
 PASSW=$3
 BUNNY_CREDS=$4
 DELETE_OLDER=15
-PACKAGE="com/regula/facerecognition/webclient/"
+PACKAGE="com/regula/facesdk/webclient"
 
 # Protect Release builds
 if [ "$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "release" ]; then
@@ -26,10 +26,10 @@ fi
     FTP_HOST="maven-master.regulaforensics.com"
     FTP_USER="$LOGIN"
     FTP_PASS="$PASSW"
-    FTP_BASE_URL="https://maven-master.regulaforensics.com/FaceRecognitionWebClient/$TYPE"
-    FTP_PATH="FaceRecognitionWebClient/$TYPE/$PACKAGE"
+    FTP_BASE_URL="https://maven-master.regulaforensics.com/FaceSDKWebClient/$TYPE"
+    FTP_PATH="FaceSDKWebClient/$TYPE/$PACKAGE"
 
-BUNNY_BASE_URL="https://storage.bunnycdn.com/maven-production-regulaforensics-sz/FaceRecognitionWebClient/${TYPE}/${PACKAGE}"
+BUNNY_BASE_URL="https://storage.bunnycdn.com/maven-production-regulaforensics-sz/FaceSDKWebClient/${TYPE}/${PACKAGE}"
 
 
 # --- Update XML & Generate Hashes ---
@@ -157,7 +157,7 @@ process_ftp_storage() {
                 echo "FTP Version: $version | Age: $age days"
 
                 if [ "$age" -gt "$DELETE_OLDER" ]; then
-                    delete_ftp_version "$version"
+                    echo "delete_ftp_version "$version""
                 fi
             fi
         fi
@@ -183,7 +183,7 @@ process_bunny_storage() {
                 echo "Bunny Version: $version | Age: $age days"
 
                 if [ "$age" -gt "$DELETE_OLDER" ]; then
-                    delete_bunny_version "$version"
+                    echo "delete_bunny_version "$version""
                 fi
             fi
         fi
