@@ -48,7 +48,16 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
 
     val regulaforensicsMavenPassword: String by project
     val regulaforensicsMavenUser: String by project
+    val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
 
+    val type = when {
+        version.toString().contains("beta", ignoreCase = true) -> "Beta"
+        version.toString().contains("nightly", ignoreCase = true) -> "Nightly"
+        version.toString().contains("rc", ignoreCase = true) -> "RC"
+        else -> ""
+    }
+
+    val finalUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient/$type")
     publishing {
         publications {
             create<MavenPublication>("client") {
@@ -58,25 +67,63 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
         }
         repositories {
             maven {
-
-                val releasesRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient")
-                val rcRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient/RC")
-                val nightlyRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/FaceSDKWebClient/Nightly")
-
-                val resultRepoUrl = if(version.toString().contains("nightly")) nightlyRepoUrl
-                    else if(version.toString().contains("rc")) rcRepoUrl
-                    else releasesRepoUrl
-
-                println("Version: $version repoUrl: $resultRepoUrl")
-
                 name = "regulaforensics"
                 version = version.toString().split('-')[0]
-                url  = resultRepoUrl
+                url  = finalUrl
                 credentials {
                     username = regulaforensicsMavenUser
                     password = regulaforensicsMavenPassword
                 }
             }
+
+            maven {
+                name = "BunnyCDN"
+                url =
+                    uri("https://storage.bunnycdn.com/maven-production-regulaforensics-sz/RegulaDocumentReaderWebClient/$type/")
+
+                credentials(HttpHeaderCredentials::class) {
+                    this.name = "AccessKey"
+                    this.value = bunnyCreds
+                }
+
+                authentication {
+                    create<HttpHeaderAuthentication>("header")
+                }
+            }
+        }
+    }
+
+    tasks.register("runMavenClean") {
+        val typeParam = (project.findProperty("Type") as? String) ?: ""
+        val regulaforensicsMavenPassword: String by project
+        val regulaforensicsMavenUser: String by project
+        val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
+        val scriptDir = project.rootProject.file("scripts")
+
+        doLast {
+            if (typeParam.isNotEmpty() &&
+                regulaforensicsMavenUser.isNotEmpty() &&
+                regulaforensicsMavenPassword.isNotEmpty() &&
+                bunnyCreds.isNotEmpty()
+            ) {
+                println("Conditions met, executing maven_clean.sh")
+
+                project.exec {
+                    workingDir = scriptDir
+                    commandLine(
+                        "bash",
+                        "maven_clean.sh",
+                        typeParam,
+                        regulaforensicsMavenUser,
+                        regulaforensicsMavenPassword,
+                        bunnyCreds
+                    )
+                }
+
+            } else {
+                println("Skipping execution: Some parameters are missing.")
+            }
         }
     }
 }
+
