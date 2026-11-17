@@ -30,6 +30,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 /** TransactionInfo */
 @javax.annotation.Generated(
@@ -40,7 +41,7 @@ public class TransactionInfo {
 
   @SerializedName(SERIALIZED_NAME_CODE)
   @javax.annotation.Nullable
-  private Integer code;
+  private FaceSDKResultCode code;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
 
@@ -104,23 +105,22 @@ public class TransactionInfo {
 
   public TransactionInfo() {}
 
-  public TransactionInfo code(@javax.annotation.Nullable Integer code) {
+  public TransactionInfo code(@javax.annotation.Nullable FaceSDKResultCode code) {
     this.code = code;
     return this;
   }
 
   /**
-   * Result code, see the [FaceSDKResultCode
-   * enum](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/enums/face-sdk-result-code/).
+   * Get code
    *
    * @return code
    */
   @javax.annotation.Nullable
-  public Integer getCode() {
+  public FaceSDKResultCode getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nullable Integer code) {
+  public void setCode(@javax.annotation.Nullable FaceSDKResultCode code) {
     this.code = code;
   }
 
@@ -354,6 +354,15 @@ public class TransactionInfo {
         && Objects.equals(this.verifyResult, transactionInfo.verifyResult);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b
+        || (a != null
+            && b != null
+            && a.isPresent()
+            && b.isPresent()
+            && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(
@@ -368,6 +377,13 @@ public class TransactionInfo {
         type,
         enrollResult,
         verifyResult);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
   }
 
   @Override
@@ -441,6 +457,10 @@ public class TransactionInfo {
     }
 
     JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the optional field `code`
+    if (jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) {
+      FaceSDKResultCode.validateJsonElement(jsonObj.get("code"));
+    }
     if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull())
         && !jsonObj.get("tag").isJsonPrimitive()) {
       throw new IllegalArgumentException(

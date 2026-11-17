@@ -47,7 +47,7 @@ public class MatchImage {
   public static final String SERIALIZED_NAME_DATA = "data";
 
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private byte[] data;
 
   public static final String SERIALIZED_NAME_DETECT_ALL = "detectAll";
@@ -103,7 +103,7 @@ public class MatchImage {
     this.type = type;
   }
 
-  public MatchImage data(@javax.annotation.Nonnull byte[] data) {
+  public MatchImage data(@javax.annotation.Nullable byte[] data) {
     this.data = data;
     return this;
   }
@@ -113,12 +113,12 @@ public class MatchImage {
    *
    * @return data
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public byte[] getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull byte[] data) {
+  public void setData(@javax.annotation.Nullable byte[] data) {
     this.data = data;
   }
 
@@ -219,7 +219,7 @@ public class MatchImage {
             Arrays.asList("index", "type", "data", "detectAll", "livenessTransactionId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("data"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -239,15 +239,6 @@ public class MatchImage {
       }
     }
 
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : MatchImage.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the optional field `type`
     if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {

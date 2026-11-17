@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.UUID;
 
 /** FaceSDKResult */
 @javax.annotation.Generated(
@@ -31,6 +32,12 @@ public class FaceSDKResult {
   @SerializedName(SERIALIZED_NAME_CODE)
   @javax.annotation.Nonnull
   private FaceSDKResultCode code;
+
+  public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
+
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
+  @javax.annotation.Nonnull
+  private UUID transactionId;
 
   public FaceSDKResult() {}
 
@@ -53,6 +60,25 @@ public class FaceSDKResult {
     this.code = code;
   }
 
+  public FaceSDKResult transactionId(@javax.annotation.Nonnull UUID transactionId) {
+    this.transactionId = transactionId;
+    return this;
+  }
+
+  /**
+   * Transaction identifier
+   *
+   * @return transactionId
+   */
+  @javax.annotation.Nonnull
+  public UUID getTransactionId() {
+    return transactionId;
+  }
+
+  public void setTransactionId(@javax.annotation.Nonnull UUID transactionId) {
+    this.transactionId = transactionId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -62,12 +88,13 @@ public class FaceSDKResult {
       return false;
     }
     FaceSDKResult faceSDKResult = (FaceSDKResult) o;
-    return Objects.equals(this.code, faceSDKResult.code);
+    return Objects.equals(this.code, faceSDKResult.code)
+        && Objects.equals(this.transactionId, faceSDKResult.transactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(code, transactionId);
   }
 
   @Override
@@ -75,6 +102,7 @@ public class FaceSDKResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class FaceSDKResult {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -94,10 +122,10 @@ public class FaceSDKResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("code"));
+    openapiFields = new HashSet<String>(Arrays.asList("code", "transactionId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("code"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("code", "transactionId"));
   }
 
   /**
@@ -119,6 +147,12 @@ public class FaceSDKResult {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the required field `code`
     FaceSDKResultCode.validateJsonElement(jsonObj.get("code"));
+    if (!jsonObj.get("transactionId").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("transactionId").toString()));
+    }
   }
 
   /**

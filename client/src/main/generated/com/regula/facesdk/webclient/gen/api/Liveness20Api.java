@@ -67,9 +67,9 @@ public class Liveness20Api {
   /**
    * Build call for deleteLivenessTransaction
    *
-   * @param transactionId ID of the current liveness transaction. (required)
+   * @param transactionId ID of the current liveness transaction. (optional)
    * @param tag A unique tag associated with a liveness transaction session. Used to identify and
-   *     delete the corresponding transaction. (required)
+   *     delete the corresponding transaction. (optional)
    * @param _callback Callback for upload/download progress
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
@@ -81,8 +81,8 @@ public class Liveness20Api {
    * </table>
    */
   public okhttp3.Call deleteLivenessTransactionCall(
-      @javax.annotation.Nonnull UUID transactionId,
-      @javax.annotation.Nonnull String tag,
+      @javax.annotation.Nullable UUID transactionId,
+      @javax.annotation.Nullable String tag,
       final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
@@ -147,22 +147,10 @@ public class Liveness20Api {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call deleteLivenessTransactionValidateBeforeCall(
-      @javax.annotation.Nonnull UUID transactionId,
-      @javax.annotation.Nonnull String tag,
+      @javax.annotation.Nullable UUID transactionId,
+      @javax.annotation.Nullable String tag,
       final ApiCallback _callback)
       throws ApiException {
-    // verify the required parameter 'transactionId' is set
-    if (transactionId == null) {
-      throw new ApiException(
-          "Missing the required parameter 'transactionId' when calling deleteLivenessTransaction(Async)");
-    }
-
-    // verify the required parameter 'tag' is set
-    if (tag == null) {
-      throw new ApiException(
-          "Missing the required parameter 'tag' when calling deleteLivenessTransaction(Async)");
-    }
-
     return deleteLivenessTransactionCall(transactionId, tag, _callback);
   }
 
@@ -171,9 +159,9 @@ public class Liveness20Api {
    * specified &#x60;tag&#x60; or &#x60;transactionId&#x60;. At least one of the parameters must be
    * provided for the operation to be valid.
    *
-   * @param transactionId ID of the current liveness transaction. (required)
+   * @param transactionId ID of the current liveness transaction. (optional)
    * @param tag A unique tag associated with a liveness transaction session. Used to identify and
-   *     delete the corresponding transaction. (required)
+   *     delete the corresponding transaction. (optional)
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
@@ -184,7 +172,7 @@ public class Liveness20Api {
    * </table>
    */
   public void deleteLivenessTransaction(
-      @javax.annotation.Nonnull UUID transactionId, @javax.annotation.Nonnull String tag)
+      @javax.annotation.Nullable UUID transactionId, @javax.annotation.Nullable String tag)
       throws ApiException {
     deleteLivenessTransactionWithHttpInfo(transactionId, tag);
   }
@@ -194,9 +182,9 @@ public class Liveness20Api {
    * specified &#x60;tag&#x60; or &#x60;transactionId&#x60;. At least one of the parameters must be
    * provided for the operation to be valid.
    *
-   * @param transactionId ID of the current liveness transaction. (required)
+   * @param transactionId ID of the current liveness transaction. (optional)
    * @param tag A unique tag associated with a liveness transaction session. Used to identify and
-   *     delete the corresponding transaction. (required)
+   *     delete the corresponding transaction. (optional)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -208,7 +196,7 @@ public class Liveness20Api {
    * </table>
    */
   public ApiResponse<Void> deleteLivenessTransactionWithHttpInfo(
-      @javax.annotation.Nonnull UUID transactionId, @javax.annotation.Nonnull String tag)
+      @javax.annotation.Nullable UUID transactionId, @javax.annotation.Nullable String tag)
       throws ApiException {
     okhttp3.Call localVarCall =
         deleteLivenessTransactionValidateBeforeCall(transactionId, tag, null);
@@ -220,9 +208,9 @@ public class Liveness20Api {
    * on either the specified &#x60;tag&#x60; or &#x60;transactionId&#x60;. At least one of the
    * parameters must be provided for the operation to be valid.
    *
-   * @param transactionId ID of the current liveness transaction. (required)
+   * @param transactionId ID of the current liveness transaction. (optional)
    * @param tag A unique tag associated with a liveness transaction session. Used to identify and
-   *     delete the corresponding transaction. (required)
+   *     delete the corresponding transaction. (optional)
    * @param _callback The callback to be executed when the API call finishes
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -234,8 +222,8 @@ public class Liveness20Api {
    * </table>
    */
   public okhttp3.Call deleteLivenessTransactionAsync(
-      @javax.annotation.Nonnull UUID transactionId,
-      @javax.annotation.Nonnull String tag,
+      @javax.annotation.Nullable UUID transactionId,
+      @javax.annotation.Nullable String tag,
       final ApiCallback<Void> _callback)
       throws ApiException {
 
